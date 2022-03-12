@@ -1,4 +1,4 @@
-# daily_muslim
+# Daily Muslim
 
 A new Flutter project.
 
