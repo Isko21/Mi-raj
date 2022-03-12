@@ -1,0 +1,71 @@
+com/baseflow/geolocator/location/LocationAccuracyManager.java
+ com.baseflow.geolocator.location.LocationAccuracyManager
+com/baseflow/geolocator/MethodCallHandlerImpl.java
+ com.baseflow.geolocator.MethodCallHandlerImpl
+com/baseflow/geolocator/location/ServiceStatus.java
+ com.baseflow.geolocator.location.ServiceStatus
+com/baseflow/geolocator/location/PositionChangedCallback.java
+ com.baseflow.geolocator.location.PositionChangedCallback
+com/baseflow/geolocator/permission/LocationPermission.java
+ com.baseflow.geolocator.permission.LocationPermission
+ com.baseflow.geolocator.permission.LocationPermission$1
+com/baseflow/geolocator/permission/PermissionManager.java
+ com.baseflow.geolocator.permission.PermissionManager
+com/baseflow/geolocator/location/LocationOptions.java
+ com.baseflow.geolocator.location.LocationOptions
+com/baseflow/geolocator/BuildConfig.java
+ com.baseflow.geolocator.BuildConfig
+com/baseflow/geolocator/location/LocationAccuracy.java
+ com.baseflow.geolocator.location.LocationAccuracy
+com/baseflow/geolocator/location/FusedLocationClient.java
+ com.baseflow.geolocator.location.FusedLocationClient
+ com.baseflow.geolocator.location.FusedLocationClient$1
+ com.baseflow.geolocator.location.FusedLocationClient$2
+com/baseflow/geolocator/location/LocationClient.java
+ com.baseflow.geolocator.location.LocationClient
+com/baseflow/geolocator/location/GeolocationManager.java
+ com.baseflow.geolocator.location.GeolocationManager
+com/baseflow/geolocator/location/BackgroundNotification.java
+ com.baseflow.geolocator.location.BackgroundNotification
+com/baseflow/geolocator/permission/PermissionUtils.java
+ com.baseflow.geolocator.permission.PermissionUtils
+com/baseflow/geolocator/errors/PermissionUndefinedException.java
+ com.baseflow.geolocator.errors.PermissionUndefinedException
+com/baseflow/geolocator/LocationServiceHandlerImpl.java
+ com.baseflow.geolocator.LocationServiceHandlerImpl
+com/baseflow/geolocator/location/LocationAccuracyStatus.java
+ com.baseflow.geolocator.location.LocationAccuracyStatus
+com/baseflow/geolocator/GeolocatorPlugin.java
+ com.baseflow.geolocator.GeolocatorPlugin
+ com.baseflow.geolocator.GeolocatorPlugin$1
+com/baseflow/geolocator/utils/Utils.java
+ com.baseflow.geolocator.utils.Utils
+com/baseflow/geolocator/permission/PermissionResultCallback.java
+ com.baseflow.geolocator.permission.PermissionResultCallback
+com/baseflow/geolocator/GeolocatorLocationService.java
+ com.baseflow.geolocator.GeolocatorLocationService
+ com.baseflow.geolocator.GeolocatorLocationService$LocalBinder
+com/baseflow/geolocator/location/LocationServiceListener.java
+ com.baseflow.geolocator.location.LocationServiceListener
+com/baseflow/geolocator/location/NotificationImportance.java
+ com.baseflow.geolocator.location.NotificationImportance
+com/baseflow/geolocator/location/ForegroundNotificationOptions.java
+ com.baseflow.geolocator.location.ForegroundNotificationOptions
+com/baseflow/geolocator/location/LocationServiceStatusReceiver.java
+ com.baseflow.geolocator.location.LocationServiceStatusReceiver
+com/baseflow/geolocator/errors/ErrorCallback.java
+ com.baseflow.geolocator.errors.ErrorCallback
+com/baseflow/geolocator/errors/ErrorCodes.java
+ com.baseflow.geolocator.errors.ErrorCodes
+ com.baseflow.geolocator.errors.ErrorCodes$1
+com/baseflow/geolocator/location/LocationMapper.java
+ com.baseflow.geolocator.location.LocationMapper
+com/baseflow/geolocator/location/LocationManagerClient.java
+ com.baseflow.geolocator.location.LocationManagerClient
+ com.baseflow.geolocator.location.LocationManagerClient$1
+com/baseflow/geolocator/location/AndroidIconResource.java
+ com.baseflow.geolocator.location.AndroidIconResource
+com/baseflow/geolocator/StreamHandlerImpl.java
+ com.baseflow.geolocator.StreamHandlerImpl
+com/baseflow/geolocator/location/FlutterLocationServiceListener.java
+ com.baseflow.geolocator.location.FlutterLocationServiceListener

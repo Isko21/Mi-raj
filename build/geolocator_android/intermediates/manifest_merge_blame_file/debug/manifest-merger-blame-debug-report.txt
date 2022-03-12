@@ -1,0 +1,26 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.baseflow.geolocator" >
+4
+5    <uses-sdk android:minSdkVersion="16" />
+5-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml
+6
+7    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+7-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml:4:5-76
+7-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml:4:22-74
+8
+9    <application>
+9-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml:6:5-12:19
+10        <service
+10-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml:7:9-11:60
+11            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+11-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml:11:17-58
+12            android:enabled="true"
+12-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml:8:17-39
+13            android:exported="false"
+13-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml:9:17-41
+14            android:foregroundServiceType="location" />
+14-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\geolocator_android-3.1.0\android\src\main\AndroidManifest.xml:10:17-57
+15    </application>
+16
+17</manifest>

@@ -1,0 +1,8 @@
+io/flutter/plugins/androidintent/MethodCallHandlerImpl.java
+ io.flutter.plugins.androidintent.MethodCallHandlerImpl
+io/flutter/plugins/androidintent/IntentSender.java
+ io.flutter.plugins.androidintent.IntentSender
+io/flutter/plugins/androidintent/AndroidIntentPlugin.java
+ io.flutter.plugins.androidintent.AndroidIntentPlugin
+io/flutter/plugins/androidintent/BuildConfig.java
+ io.flutter.plugins.androidintent.BuildConfig
