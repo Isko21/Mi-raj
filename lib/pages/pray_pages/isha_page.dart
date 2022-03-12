@@ -20,7 +20,7 @@ class _IshaState extends State<Isha> {
         body: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(color: colorStr),
+          decoration: BoxDecoration(color: white),
           child: ListView(
             padding: EdgeInsets.only(right: 15, left: 15, top: 75),
             children: <Widget>[],

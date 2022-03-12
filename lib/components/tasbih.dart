@@ -17,41 +17,42 @@ class Description extends StatelessWidget {
           return Text(
               "After performing the obligatory Fajr prayer and salutation:",
               style: TextStyle(
-                  color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center);
           break;
         case "Бешим":
           return Text(
               "After performing the obligatory Dhuhr prayer and salutation:",
               style: TextStyle(
-                  color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center);
           break;
         case "Аср":
           return Text(
               "After performing the obligatory Asr prayer and salutation:",
               style: TextStyle(
-                  color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center);
           break;
         case "Шам":
           return Text(
               "After performing the obligatory Maghrib prayer and salutation:",
               style: TextStyle(
-                  color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center);
           break;
         case "Куптан":
           return Text(
               "After performing the obligatory Isha prayer and salutation:",
               style: TextStyle(
-                  color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center);
       }
     }
     return Text(
       text + ' намаздын парзы окулуп, салам берилгенден кийин:',
-      style: TextStyle(color: white, fontSize: 25, fontWeight: FontWeight.bold),
+      style:
+          TextStyle(color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
       textAlign: TextAlign.center,
     );
   }
@@ -68,7 +69,7 @@ class Nav extends StatelessWidget {
     return Text(
       isArabic ? textAr : textRu,
       style: TextStyle(
-        color: white,
+        color: colorStr,
         fontSize: 21,
         fontWeight: FontWeight.bold,
       ),
@@ -104,13 +105,13 @@ class Solatan extends StatelessWidget {
           bis
               ? Text(isArab ? bismiAR : bismiRU,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: white, fontSize: 30))
+                  style: TextStyle(color: colorStr, fontSize: 30))
               : Text(''),
           Text(
             isArab ? arab : rus,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: white,
+              color: colorStr,
               fontSize: isArab ? 28 : 20,
             ),
           ),
@@ -175,10 +176,7 @@ class _CounterState extends State<Counter> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              width: 1,
-              color: white,
-            ),
+            border: Border.all(width: 1, color: colorStr),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -195,7 +193,7 @@ class _CounterState extends State<Counter> {
               Text(
                 first.toString(),
                 style: TextStyle(
-                  color: white,
+                  color: colorStr,
                   fontSize: 28,
                 ),
               ),

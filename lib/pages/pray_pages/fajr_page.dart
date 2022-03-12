@@ -32,7 +32,7 @@ class _FajrState extends State<Fajr> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        color: colorStr,
+        color: white,
         child: SafeArea(
           child: ListView(
             scrollDirection: Axis.vertical,

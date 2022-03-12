@@ -18,7 +18,7 @@ class _ToolsState extends State<ToolsPage> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(color: colorStr),
+      decoration: BoxDecoration(color: white),
       child: SafeArea(
         child: ListView(padding: EdgeInsets.all(20), children: [
           Row(

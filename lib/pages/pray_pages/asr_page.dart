@@ -21,7 +21,7 @@ class _AsrState extends State<Asr> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: colorStr,
+          color: white,
         ),
         child: ListView(
           padding: EdgeInsets.only(right: 15, left: 15, top: 75),
