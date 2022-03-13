@@ -103,7 +103,6 @@ class _LoggedInState extends State<LoggedIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
         appBar: AppBarCustom(title: appBar, page: Pages.home, change: () {}),
         drawer: NavBar(
           state: state,
