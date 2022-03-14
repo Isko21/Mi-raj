@@ -34,7 +34,7 @@ class _SurahIndexState extends State<SurahIndex> {
       appBar: AppBarCustom(
         change: () {},
         title: "Surah",
-        page: Pages.home,
+        page: Pages.quran,
       ),
       body: Container(
         child: SafeArea(

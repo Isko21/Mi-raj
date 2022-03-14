@@ -41,7 +41,7 @@ class _JuzIndexState extends State<JuzIndex> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBarCustom(change: () {}, title: "Juzz", page: Pages.home),
+      appBar: AppBarCustom(change: () {}, title: "Juzz", page: Pages.quran),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
