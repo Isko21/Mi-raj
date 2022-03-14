@@ -1,0 +1,25 @@
+io/flutter/plugins/googlesignin/BackgroundTaskRunner.java
+ io.flutter.plugins.googlesignin.BackgroundTaskRunner
+ io.flutter.plugins.googlesignin.BackgroundTaskRunner$1
+ io.flutter.plugins.googlesignin.BackgroundTaskRunner$2
+ io.flutter.plugins.googlesignin.BackgroundTaskRunner$Callback
+io/flutter/plugins/googlesignin/GoogleSignInPlugin.java
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate$1
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate$2
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate$3
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate$4
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate$5
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate$6
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate$7
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$Delegate$PendingOperation
+ io.flutter.plugins.googlesignin.GoogleSignInPlugin$IDelegate
+io/flutter/plugins/googlesignin/BuildConfig.java
+ io.flutter.plugins.googlesignin.BuildConfig
+io/flutter/plugins/googlesignin/GoogleSignInWrapper.java
+ io.flutter.plugins.googlesignin.GoogleSignInWrapper
+io/flutter/plugins/googlesignin/Executors.java
+ io.flutter.plugins.googlesignin.Executors
+ io.flutter.plugins.googlesignin.Executors$1
+ io.flutter.plugins.googlesignin.Executors$UiThreadExecutor

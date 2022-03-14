@@ -1,0 +1,53 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.dexterous.flutterlocalnotifications" >
+4
+5    <uses-sdk android:minSdkVersion="16" />
+5-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml
+6
+7    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+7-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:3:5-80
+7-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:3:22-78
+8    <uses-permission android:name="android.permission.VIBRATE" />
+8-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:4:5-66
+8-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:4:22-63
+9    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+9-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:5:5-81
+9-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:5:22-78
+10    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+10-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:6:5-79
+10-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:6:22-76
+11
+12    <application>
+12-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:7:5-17:19
+13        <receiver
+13-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:8:9-131
+14            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+14-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:8:44-128
+15            android:exported="false" />
+15-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:8:19-43
+16        <receiver
+16-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:9:9-16:20
+17            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+17-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:9:44-132
+18            android:exported="false" >
+18-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:9:19-43
+19            <intent-filter>
+19-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:10:13-15:29
+20                <action android:name="android.intent.action.BOOT_COMPLETED" />
+20-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:11:17-78
+20-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:11:25-76
+21                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+21-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:12:17-83
+21-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:12:25-81
+22                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+22-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:13:17-82
+22-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:13:25-79
+23                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+23-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:14:17-81
+23-->C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:14:25-79
+24            </intent-filter>
+25        </receiver>
+26    </application>
+27
+28</manifest>

@@ -1,0 +1,67 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:1:1-18:12
+INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:1:1-18:12
+INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:1:1-18:12
+	package
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:2:3-52
+		INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:3:5-80
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:3:22-78
+uses-permission#android.permission.VIBRATE
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:4:5-66
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:4:22-63
+uses-permission#android.permission.USE_FULL_SCREEN_INTENT
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:5:22-78
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:6:22-76
+application
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:7:5-17:19
+receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:8:9-131
+	android:exported
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:8:19-43
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:8:44-128
+receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:9:9-16:20
+	android:exported
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:9:19-43
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:9:44-132
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:10:13-15:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:11:17-78
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:11:25-76
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:12:17-83
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:12:25-81
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:13:25-79
+action#com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:14:17-81
+	android:name
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml:14:25-79
+uses-sdk
+INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml
+INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\flutter_local_notifications-9.4.0\android\src\main\AndroidManifest.xml

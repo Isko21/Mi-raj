@@ -1,0 +1,6 @@
+flutter/plugins/vibrate/BuildConfig.java
+ flutter.plugins.vibrate.BuildConfig
+flutter/plugins/vibrate/VibrateMethodCallHandler.java
+ flutter.plugins.vibrate.VibrateMethodCallHandler
+flutter/plugins/vibrate/VibratePlugin.java
+ flutter.plugins.vibrate.VibratePlugin
