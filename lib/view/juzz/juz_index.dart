@@ -40,17 +40,14 @@ class _JuzIndexState extends State<JuzIndex> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBarCustom(change: () {}, title: "Juzz", page: Pages.home),
+      backgroundColor: white,
+      appBar: AppBarCustom(change: () {}, title: "Juzs", page: Pages.home),
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(color: colorStr),
         child: SafeArea(
             child: Stack(
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: GridView.builder(
                 itemCount: 30,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -65,10 +62,11 @@ class _JuzIndexState extends State<JuzIndex> {
                         ),
                       ),
                       child: Container(
-                        margin: EdgeInsets.all(5),
+                        margin: EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          color: white.withAlpha(200),
-                          borderRadius: BorderRadius.circular(20.0),
+                          border: Border.all(color: color),
+                          color: color.withAlpha(50),
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                         alignment: Alignment.center,
                         child: Text(

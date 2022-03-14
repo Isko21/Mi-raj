@@ -9,7 +9,7 @@ class Calligraphy extends StatelessWidget {
     return Center(
       child: Image.asset(
         "assets/img/read_quran.jpg",
-        height: height * 0.5,
+        height: height * 0.4,
       ),
     );
   }

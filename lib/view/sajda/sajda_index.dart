@@ -29,12 +29,10 @@ class _SajdaIndexState extends State<SajdaIndex> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBarCustom(change: () {}, title: "Sajda", page: Pages.quran),
+      backgroundColor: white,
+      appBar: AppBarCustom(change: () {}, title: "Sajda", page: Pages.home),
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(color: colorStr),
+        padding: EdgeInsets.symmetric(vertical: 10),
         child: SafeArea(
           child: Stack(
             children: <Widget>[
@@ -43,8 +41,7 @@ class _SajdaIndexState extends State<SajdaIndex> {
                       text: "Sajdas",
                     )
                   : Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: ListView.separated(
                         itemCount: _sajdas!.length,
                         separatorBuilder: (context, index) => const SizedBox(
@@ -54,9 +51,10 @@ class _SajdaIndexState extends State<SajdaIndex> {
                           return WidgetAnimator(
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: white.withAlpha(200),
+                                  border: Border.all(color: color),
+                                  color: color.withAlpha(50),
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20))),
+                                      BorderRadius.all(Radius.circular(10))),
                               child: ListTile(
                                 onLongPress: () => _sajdaInfoBox(index),
                                 leading: Text(

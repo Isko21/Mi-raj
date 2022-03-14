@@ -57,7 +57,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           const Calligraphy(),
           Center(
@@ -68,17 +68,15 @@ class MainScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child:
-                        CoolButton(title: "Surah Index", route: '/surahIndex'),
+                    child: CoolButton(title: "Surah", route: '/surahIndex'),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: CoolButton(title: "Juz Index", route: '/juzIndex'),
+                    child: CoolButton(title: "Juz", route: '/juzIndex'),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child:
-                        CoolButton(title: "Sajda Index", route: '/sajdaIndex'),
+                    child: CoolButton(title: "Sajda", route: '/sajdaIndex'),
                   ),
                 ],
               ),

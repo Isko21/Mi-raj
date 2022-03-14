@@ -29,26 +29,23 @@ class _SurahIndexState extends State<SurahIndex> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: colorStr,
+      backgroundColor: white,
       appBar: AppBarCustom(
         change: () {},
-        title: "Surah",
+        title: "Surahs",
         page: Pages.home,
       ),
       body: Container(
+        padding: EdgeInsets.symmetric(vertical: 10),
         child: SafeArea(
           child: Stack(
             children: <Widget>[
               _surahs!.isEmpty
                   ? const Center(
-                      child: LoadingShimmer(
-                        text: "Surahs",
-                      ),
+                      child: LoadingShimmer(text: "Surahs"),
                     )
                   : Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: ListView.separated(
                         separatorBuilder: (context, index) {
                           return const SizedBox(height: 10);
@@ -57,9 +54,10 @@ class _SurahIndexState extends State<SurahIndex> {
                         itemBuilder: (context, index) {
                           return Container(
                             decoration: BoxDecoration(
-                                color: white.withAlpha(200),
+                                border: Border.all(color: color),
+                                color: color.withAlpha(50),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
+                                    BorderRadius.all(Radius.circular(10))),
                             child: WidgetAnimator(
                               child: ListTile(
                                 onLongPress: () => _surahInforBox(index),
@@ -198,7 +196,7 @@ class _SurahInformationState extends State<SurahInformation>
             width: width * 0.75,
             height: height * 0.37,
             decoration: ShapeDecoration(
-              color: Colors.grey[800],
+              color: white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),
@@ -209,7 +207,7 @@ class _SurahInformationState extends State<SurahInformation>
               children: <Widget>[
                 Text(
                   "Surah Information",
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context).textTheme.headline5,
                 ),
                 SizedBox(
                   height: height * 0.02,
@@ -237,6 +235,10 @@ class _SurahInformationState extends State<SurahInformation>
                 SizedBox(
                   height: height * 0.05,
                   child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(color),
+                      ),
                       onPressed: () => Navigator.pop(context),
                       child: const Text("OK")),
                 )
