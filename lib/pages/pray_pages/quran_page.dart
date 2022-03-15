@@ -1,3 +1,4 @@
+import 'package:daily_muslim/animations/bottom_animation.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/widgets/calligraphy.dart';
 import 'package:flutter/material.dart';
@@ -104,9 +105,11 @@ class CoolButton extends StatelessWidget {
               MaterialStateProperty.resolveWith((states) => Size(100, 60)),
           backgroundColor: MaterialStateColor.resolveWith((states) => color)),
       onPressed: () => Navigator.pushNamed(context, route),
-      child: Text(
-        title,
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      child: WidgetAnimator(
+        child: Text(
+          title,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

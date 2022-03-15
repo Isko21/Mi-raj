@@ -1,27 +1,27 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-MERGED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
-MERGED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
-MERGED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
-MERGED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-17:12
-MERGED from [:flutter_vibrate] D:\User\Desktop\daily_muslim\build\flutter_vibrate\intermediates\library_manifest\release\AndroidManifest.xml:2:1-11:12
-MERGED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:2:1-28:12
-MERGED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-14:12
-MERGED from [:path_provider_android] D:\User\Desktop\daily_muslim\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:shared_preferences_android] D:\User\Desktop\daily_muslim\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:permission_handler_android] D:\User\Desktop\daily_muslim\build\permission_handler_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:connectivity] D:\User\Desktop\daily_muslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
-MERGED from [:geocoding] D:\User\Desktop\daily_muslim\build\geocoding\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_keyboard_visibility] D:\User\Desktop\daily_muslim\build\flutter_keyboard_visibility\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:package_info_plus] D:\User\Desktop\daily_muslim\build\package_info_plus\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:2:1-19:12
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:2:1-18:12
-MERGED from [:google_sign_in] D:\User\Desktop\daily_muslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
-MERGED from [:android_intent] D:\User\Desktop\daily_muslim\build\android_intent\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+MERGED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
+MERGED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-17:12
+MERGED from [:flutter_vibrate] D:\User\Desktop\DailyMuslim\build\flutter_vibrate\intermediates\library_manifest\release\AndroidManifest.xml:2:1-11:12
+MERGED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:2:1-28:12
+MERGED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-14:12
+MERGED from [:path_provider_android] D:\User\Desktop\DailyMuslim\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:shared_preferences_android] D:\User\Desktop\DailyMuslim\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:permission_handler_android] D:\User\Desktop\DailyMuslim\build\permission_handler_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:geocoding] D:\User\Desktop\DailyMuslim\build\geocoding\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_keyboard_visibility] D:\User\Desktop\DailyMuslim\build\flutter_keyboard_visibility\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:package_info_plus] D:\User\Desktop\DailyMuslim\build\package_info_plus\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:2:1-19:12
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:2:1-18:12
+MERGED from [:google_sign_in] D:\User\Desktop\DailyMuslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:android_intent] D:\User\Desktop\DailyMuslim\build\android_intent\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\398ee7d49c617e5ffef09f638de90796\jetified-firebase-analytics-ktx-20.0.2\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e1c3c5571be7a37753db03cf09c92098\jetified-firebase-common-ktx-20.0.0\AndroidManifest.xml:2:1-21:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\User\.gradle\caches\transforms-2\files-2.1\0a510837d829daf1a13a919e114c0532\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
@@ -88,33 +88,33 @@ MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\User\.gradle\caches\transform
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\User\.gradle\caches\transforms-2\files-2.1\f74c813a7ee8d956fbe97c2708fc74c2\jetified-threetenabp-1.2.3\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\79c44cf3e99a0b1c32e05cf19a7f54db\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\dfc73f35b9148ba802d7f591a84f6be5\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
 	package
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:2:5-34
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:2:5-34
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.VIBRATE
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:3:5-65
-MERGED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:8:5-66
-MERGED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:8:5-66
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:3:5-65
+MERGED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:8:5-66
+MERGED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:8:5-66
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:3:22-63
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:3:22-63
 uses-permission#android.permission.INTERNET
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:4:5-66
-MERGED from [:google_sign_in] D:\User\Desktop\daily_muslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:7:5-67
-MERGED from [:google_sign_in] D:\User\Desktop\daily_muslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:7:5-67
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:4:5-66
+MERGED from [:google_sign_in] D:\User\Desktop\DailyMuslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:7:5-67
+MERGED from [:google_sign_in] D:\User\Desktop\DailyMuslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:7:5-67
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\49dce84e663580cb650c1a7a49ff3c6a\jetified-firebase-auth-21.0.1\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\49dce84e663580cb650c1a7a49ff3c6a\jetified-firebase-auth-21.0.1\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\0db65d0ba4a45c19c391ab73c914a998\jetified-firebase-firestore-24.0.1\AndroidManifest.xml:14:5-67
@@ -130,47 +130,47 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\b4a0ceca952dcc7c7ce4215762b084d0\jetified-play-services-measurement-sdk-api-20.0.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\b4a0ceca952dcc7c7ce4215762b084d0\jetified-play-services-measurement-sdk-api-20.0.2\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:4:22-64
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:5:5-78
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:8:5-79
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:8:5-79
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:5:5-78
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:8:5-79
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:8:5-79
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:5:22-76
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:5:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:6:5-80
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:7:5-81
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:7:5-81
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:6:5-80
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:7:5-81
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:7:5-81
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:6:22-78
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:6:22-78
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:7:5-77
-MERGED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-77
-MERGED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-77
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:7:5-77
+MERGED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-77
+MERGED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-77
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:7:22-74
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:7:22-74
 uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:8:5-84
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:8:5-84
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:8:22-82
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:8:22-82
 application
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:9:4-46:19
-MERGED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
-MERGED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
-MERGED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
-MERGED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
-MERGED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
-MERGED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
-MERGED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:9:5-15:19
-MERGED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:9:5-15:19
-MERGED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:12:5-26:19
-MERGED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:12:5-26:19
-MERGED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-12:19
-MERGED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:7:5-17:19
-MERGED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:7:5-17:19
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:10:5-16:19
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:10:5-16:19
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:9:4-46:19
+MERGED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+MERGED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+MERGED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:9:5-15:19
+MERGED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:9:5-15:19
+MERGED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:12:5-26:19
+MERGED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:12:5-26:19
+MERGED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-12:19
+MERGED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:7:5-17:19
+MERGED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:7:5-17:19
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:10:5-16:19
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:10:5-16:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\398ee7d49c617e5ffef09f638de90796\jetified-firebase-analytics-ktx-20.0.2\AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\398ee7d49c617e5ffef09f638de90796\jetified-firebase-analytics-ktx-20.0.2\AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e1c3c5571be7a37753db03cf09c92098\jetified-firebase-common-ktx-20.0.0\AndroidManifest.xml:11:5-19:19
@@ -230,91 +230,91 @@ MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\User\.gradl
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\0eb3c3bf69776f10b11effa28f97921f\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:10:9-37
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:10:9-37
 	android:icon
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:11:9-43
 activity#io.isko.dailymuslim.MainActivity
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:12:9-40:20
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:12:9-40:20
 	android:launchMode
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:14:13-43
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:14:13-43
 	android:hardwareAccelerated
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:17:13-47
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:17:13-47
 	android:windowSoftInputMode
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:18:13-55
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:18:13-55
 	android:configChanges
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:16:13-163
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:16:13-163
 	android:theme
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:15:13-47
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:15:13-47
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:13:13-41
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:13:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:23:13-26:17
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:23:13-26:17
 	android:resource
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:25:15-52
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:25:15-52
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:24:15-70
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:24:15-70
 meta-data#io.flutter.embedding.android.SplashScreenDrawable
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:32:13-35:17
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:32:13-35:17
 	android:resource
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:34:15-61
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:34:15-61
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:33:15-79
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:33:15-79
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:36:13-39:29
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:36:13-39:29
 action#android.intent.action.MAIN
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:37:17-68
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:37:17-68
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:37:25-66
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:37:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:38:17-76
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:38:17-76
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:38:27-74
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:38:27-74
 meta-data#flutterEmbedding
-ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:43:9-45:33
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:43:9-45:33
 	android:value
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:45:13-30
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:45:13-30
 	android:name
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml:44:13-44
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:44:13-44
 uses-sdk
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-MERGED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_vibrate] D:\User\Desktop\daily_muslim\build\flutter_vibrate\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
-MERGED from [:flutter_vibrate] D:\User\Desktop\daily_muslim\build\flutter_vibrate\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
-MERGED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:path_provider_android] D:\User\Desktop\daily_muslim\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:path_provider_android] D:\User\Desktop\daily_muslim\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences_android] D:\User\Desktop\daily_muslim\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences_android] D:\User\Desktop\daily_muslim\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:permission_handler_android] D:\User\Desktop\daily_muslim\build\permission_handler_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:permission_handler_android] D:\User\Desktop\daily_muslim\build\permission_handler_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:connectivity] D:\User\Desktop\daily_muslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:connectivity] D:\User\Desktop\daily_muslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:geocoding] D:\User\Desktop\daily_muslim\build\geocoding\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:geocoding] D:\User\Desktop\daily_muslim\build\geocoding\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_keyboard_visibility] D:\User\Desktop\daily_muslim\build\flutter_keyboard_visibility\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_keyboard_visibility] D:\User\Desktop\daily_muslim\build\flutter_keyboard_visibility\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:package_info_plus] D:\User\Desktop\daily_muslim\build\package_info_plus\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:package_info_plus] D:\User\Desktop\daily_muslim\build\package_info_plus\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:google_sign_in] D:\User\Desktop\daily_muslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:google_sign_in] D:\User\Desktop\daily_muslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:android_intent] D:\User\Desktop\daily_muslim\build\android_intent\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:android_intent] D:\User\Desktop\daily_muslim\build\android_intent\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+MERGED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_vibrate] D:\User\Desktop\DailyMuslim\build\flutter_vibrate\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
+MERGED from [:flutter_vibrate] D:\User\Desktop\DailyMuslim\build\flutter_vibrate\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
+MERGED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] D:\User\Desktop\DailyMuslim\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] D:\User\Desktop\DailyMuslim\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] D:\User\Desktop\DailyMuslim\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] D:\User\Desktop\DailyMuslim\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler_android] D:\User\Desktop\DailyMuslim\build\permission_handler_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler_android] D:\User\Desktop\DailyMuslim\build\permission_handler_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:geocoding] D:\User\Desktop\DailyMuslim\build\geocoding\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:geocoding] D:\User\Desktop\DailyMuslim\build\geocoding\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_keyboard_visibility] D:\User\Desktop\DailyMuslim\build\flutter_keyboard_visibility\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_keyboard_visibility] D:\User\Desktop\DailyMuslim\build\flutter_keyboard_visibility\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:package_info_plus] D:\User\Desktop\DailyMuslim\build\package_info_plus\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:package_info_plus] D:\User\Desktop\DailyMuslim\build\package_info_plus\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:google_sign_in] D:\User\Desktop\DailyMuslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:google_sign_in] D:\User\Desktop\DailyMuslim\build\google_sign_in\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:android_intent] D:\User\Desktop\DailyMuslim\build\android_intent\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:android_intent] D:\User\Desktop\DailyMuslim\build\android_intent\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\398ee7d49c617e5ffef09f638de90796\jetified-firebase-analytics-ktx-20.0.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\398ee7d49c617e5ffef09f638de90796\jetified-firebase-analytics-ktx-20.0.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e1c3c5571be7a37753db03cf09c92098\jetified-firebase-common-ktx-20.0.0\AndroidManifest.xml:6:5-8:41
@@ -447,22 +447,22 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Use
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\79c44cf3e99a0b1c32e05cf19a7f54db\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\dfc73f35b9148ba802d7f591a84f6be5\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\dfc73f35b9148ba802d7f591a84f6be5\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\User\Desktop\daily_muslim\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
-MERGED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
-MERGED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
-MERGED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
-MERGED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
+ADDED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\398ee7d49c617e5ffef09f638de90796\jetified-firebase-analytics-ktx-20.0.2\AndroidManifest.xml:8:9-14:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\398ee7d49c617e5ffef09f638de90796\jetified-firebase-analytics-ktx-20.0.2\AndroidManifest.xml:8:9-14:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e1c3c5571be7a37753db03cf09c92098\jetified-firebase-common-ktx-20.0.0\AndroidManifest.xml:12:9-18:19
@@ -484,87 +484,87 @@ MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\User\.gradle\c
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\eed6be46054f296cc81a62e81fdcac1a\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 	android:name
-		ADDED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:8:18-89
+		ADDED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:8:18-89
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
-ADDED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+ADDED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 	android:value
-		ADDED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+		ADDED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 	android:name
-		ADDED from [:cloud_firestore] D:\User\Desktop\daily_muslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:10:17-134
+		ADDED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:10:17-134
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
-ADDED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+ADDED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 	android:value
-		ADDED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+		ADDED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 	android:name
-		ADDED from [:firebase_auth] D:\User\Desktop\daily_muslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:10:17-124
+		ADDED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:10:17-124
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
-ADDED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+ADDED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 	android:value
-		ADDED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+		ADDED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 	android:name
-		ADDED from [:firebase_core] D:\User\Desktop\daily_muslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:10:17-124
+		ADDED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:10:17-124
 service#com.baseflow.geolocator.GeolocatorLocationService
-ADDED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:10:9-14:56
+ADDED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:10:9-14:56
 	android:enabled
-		ADDED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:12:13-35
+		ADDED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:12:13-35
 	android:exported
-		ADDED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:13:13-37
+		ADDED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:13:13-37
 	android:foregroundServiceType
-		ADDED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:14:13-53
+		ADDED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:14:13-53
 	android:name
-		ADDED from [:geolocator_android] D:\User\Desktop\daily_muslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-77
+		ADDED from [:geolocator_android] D:\User\Desktop\DailyMuslim\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-77
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:7:5-81
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:7:5-81
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:7:22-78
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.USE_FULL_SCREEN_INTENT
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:9:5-81
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:9:22-78
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:9:22-78
 uses-permission#android.permission.SCHEDULE_EXACT_ALARM
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:10:5-79
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:10:22-76
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:10:22-76
 receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:13:9-15:40
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:13:9-15:40
 	android:exported
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:15:13-37
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:15:13-37
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:14:13-97
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:14:13-97
 receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:16:9-25:20
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:16:9-25:20
 	android:exported
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:18:13-37
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:18:13-37
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:17:13-101
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:17:13-101
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:com.htc.intent.action.QUICKBOOT_POWERON
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:19:13-24:29
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:19:13-24:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:20:17-79
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:20:17-79
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:20:25-76
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:20:25-76
 action#android.intent.action.MY_PACKAGE_REPLACED
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:21:17-84
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:21:17-84
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:21:25-81
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:21:25-81
 action#android.intent.action.QUICKBOOT_POWERON
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:22:17-82
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:22:17-82
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:22:25-79
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:22:25-79
 action#com.htc.intent.action.QUICKBOOT_POWERON
-ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:23:17-82
+ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:23:17-82
 	android:name
-		ADDED from [:flutter_local_notifications] D:\User\Desktop\daily_muslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:23:25-79
+		ADDED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:23:25-79
 activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:8:9-11:74
+ADDED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:8:9-11:74
 	android:exported
-		ADDED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:10:13-37
+		ADDED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:10:13-37
 	android:theme
-		ADDED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-71
+		ADDED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-71
 	android:name
-		ADDED from [:url_launcher_android] D:\User\Desktop\daily_muslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:9:13-74
+		ADDED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:9:13-74
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:connectivity] D:\User\Desktop\daily_muslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:7:5-79
+ADDED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:7:5-79
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\49dce84e663580cb650c1a7a49ff3c6a\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\49dce84e663580cb650c1a7a49ff3c6a\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\0db65d0ba4a45c19c391ab73c914a998\jetified-firebase-firestore-24.0.1\AndroidManifest.xml:13:5-79
@@ -582,33 +582,33 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.2] C:
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4cc9fdeaebdb92823cad8f0657212d15\jetified-grpc-android-1.41.0\AndroidManifest.xml:11:5-79
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4cc9fdeaebdb92823cad8f0657212d15\jetified-grpc-android-1.41.0\AndroidManifest.xml:11:5-79
 	android:name
-		ADDED from [:connectivity] D:\User\Desktop\daily_muslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:7:22-76
+		ADDED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:7:22-76
 provider#io.flutter.plugins.share.ShareFileProvider
-ADDED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:8:9-16:20
+ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:8:9-16:20
 	android:grantUriPermissions
-		ADDED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:12:13-47
+		ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:12:13-47
 	android:authorities
-		ADDED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:10:13-74
+		ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:10:13-74
 	android:exported
-		ADDED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:11:13-37
+		ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:11:13-37
 	android:name
-		ADDED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:9:13-70
+		ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:9:13-70
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:13:13-15:68
+ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:13:13-15:68
 	android:resource
-		ADDED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:15:17-65
+		ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:15:17-65
 	android:name
-		ADDED from [:share] D:\User\Desktop\daily_muslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:14:17-67
+		ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:14:17-67
 service#com.lyokone.location.FlutterLocationService
-ADDED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:11:9-15:56
+ADDED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:11:9-15:56
 	android:enabled
-		ADDED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:13:13-35
+		ADDED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:13:13-35
 	android:exported
-		ADDED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
+		ADDED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
 	android:foregroundServiceType
-		ADDED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:15:13-53
+		ADDED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:15:13-53
 	android:name
-		ADDED from [:location] D:\User\Desktop\daily_muslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:12:13-71
+		ADDED from [:location] D:\User\Desktop\DailyMuslim\build\location\intermediates\library_manifest\release\AndroidManifest.xml:12:13-71
 meta-data#com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar
 ADDED from [com.google.firebase:firebase-analytics-ktx:20.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\398ee7d49c617e5ffef09f638de90796\jetified-firebase-analytics-ktx-20.0.2\AndroidManifest.xml:11:13-13:85
 	android:value

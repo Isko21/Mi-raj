@@ -111,6 +111,7 @@ class _NavBarState extends State<NavBar> {
             onTap: () {
               index = 5;
               appBar = "Settings";
+              widget.state();
               Navigator.pop(context);
             },
           ),

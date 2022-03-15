@@ -216,7 +216,7 @@ class _SajdaInformationState extends State<SajdaInformation>
               children: <Widget>[
                 Text(
                   "Sajda Information",
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context).textTheme.headline5,
                 ),
                 SizedBox(
                   height: height * 0.02,
@@ -245,6 +245,9 @@ class _SajdaInformationState extends State<SajdaInformation>
                 SizedBox(
                   height: height * 0.05,
                   child: ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(color)),
                     onPressed: () => Navigator.pop(context),
                     child: const Text("OK"),
                   ),

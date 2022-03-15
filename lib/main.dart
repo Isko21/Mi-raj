@@ -1,19 +1,20 @@
+import 'package:daily_muslim/pages/settings.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
-import 'package:daily_muslim/components/auth.dart';
-import 'package:daily_muslim/components/firebase.dart';
-import 'package:daily_muslim/components/shared_pref.dart';
-import 'package:daily_muslim/model/ayat/ayat.dart';
-import 'package:daily_muslim/model/juzz/juz_list.dart';
-import 'package:daily_muslim/pages/pray_pages/asr_page.dart';
-import 'package:daily_muslim/pages/pray_pages/dhuhr_page.dart';
-import 'package:daily_muslim/pages/pray_pages/fajr_page.dart';
-import 'package:daily_muslim/pages/pray_pages/isha_page.dart';
-import 'package:daily_muslim/pages/pray_pages/maghrib_page.dart';
-import 'package:daily_muslim/view/sajda/sajda_index.dart';
+import '../components/auth.dart';
+import '../components/firebase.dart';
+import '../components/shared_pref.dart';
+import '../model/ayat/ayat.dart';
+import '../model/juzz/juz_list.dart';
+import '../pages/pray_pages/asr_page.dart';
+import '../pages/pray_pages/dhuhr_page.dart';
+import '../pages/pray_pages/fajr_page.dart';
+import '../pages/pray_pages/isha_page.dart';
+import '../pages/pray_pages/maghrib_page.dart';
+import '../view/sajda/sajda_index.dart';
 import '../components/appbar.dart';
 import '../components/navbar.dart';
 import '../components/properties.dart';
@@ -69,11 +70,12 @@ class _MyAppState extends State<MyApp> {
             '/surahIndex': (context) => const SurahIndex(),
             '/sajdaIndex': (context) => const SajdaIndex(),
             '/juzIndex': (context) => const JuzIndex(),
+            '/settings': (context) => new Settings()
           },
           debugShowCheckedModeBanner: false,
           title: 'Daily Muslim',
           theme: ThemeData(
-            textTheme: GoogleFonts.ralewayTextTheme(),
+            textTheme: GoogleFonts.openSansTextTheme(),
             brightness: Brightness.light,
           ),
           home: MyHomePage(),

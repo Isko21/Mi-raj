@@ -1,11 +1,9 @@
-import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:daily_muslim/animations/bottom_animation.dart';
 import 'package:daily_muslim/components/properties.dart';
-import "package:http/http.dart" as http;
 import 'package:daily_muslim/components/shared_pref.dart';
+
+import '../model/pray_time/prayer_time.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -17,49 +15,42 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var fajr = '',
-      sunrise = '',
-      dhuhr = '',
-      asr = '',
-      maghrib = '',
-      isha = '',
-      arDate = '';
-
   var city = '';
-
   var country = '';
-
-  Future getWeather() async {
-    http.Response response = await http.get(Uri.parse(
-        'http://api.aladhan.com/v1/timingsByCity?city=' +
-            city.toString() +
-            '&country=' +
-            country.toString() +
-            '&method=3&school=1'));
-    var result = jsonDecode(response.body);
-    setState(() {
-      this.fajr = result['data']['timings']['Fajr'];
-      this.sunrise = result['data']['timings']['Sunrise'];
-      this.dhuhr = result['data']['timings']['Dhuhr'];
-      this.asr = result['data']['timings']['Asr'];
-      this.maghrib = result['data']['timings']['Maghrib'];
-      this.isha = result['data']['timings']['Isha'];
-      this.arDate = result['data']['date']['hijri']['day'] +
-          ' ' +
-          result['data']['date']['hijri']['month']['en'] +
-          ' ' +
-          result['data']['date']['hijri']['year'] +
-          ' ' +
-          result['data']['date']['hijri']['designation']['abbreviated'];
-    });
-  }
+  List<String> _prayerTimes = [];
+  List<String> _prayerNames = [];
 
   @override
   void initState() {
     super.initState();
     city = AllUserData.getLocationData('city');
     country = AllUserData.getLocationData('country');
-    this.getWeather();
+    getPrayerTimes();
+    //this.getWeather();
+  }
+
+  getPrayerTimes() {
+    PrayerTime prayers = new PrayerTime();
+
+    prayers.setTimeFormat(prayers.getTime24());
+    prayers.setCalcMethod(prayers.getMWL());
+    prayers.setAsrJuristic(prayers.getHanafi());
+    prayers.setAdjustHighLats(prayers.getAdjustHighLats());
+
+    List<int> offsets = List.filled(7, 0);
+    // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
+    prayers.tune(offsets);
+
+    var currentTime = DateTime.now();
+
+    setState(() {
+      _prayerTimes = prayers.getPrayerTimes(
+          currentTime,
+          AllUserData.getLatitude(),
+          AllUserData.getLongitude(),
+          DateTime.now().timeZoneOffset.inHours + 0.0);
+      _prayerNames = prayers.getTimeNames();
+    });
   }
 
   @override
@@ -77,14 +68,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(Icons.date_range, color: colorStr),
-                      ),
-                      Text(arDate,
-                          style: TextStyle(color: colorStr, fontSize: 19)),
-                    ],
+                    children: [],
                   ),
                   Row(
                     children: [
@@ -131,83 +115,54 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      fajr.isEmpty
-                          ? Shimmer.fromColors(
-                              highlightColor: Colors.grey[100]!,
-                              baseColor: Colors.grey[300]!,
-                              child: LinePrayer(pray: "Loading", title: "Fajr"))
-                          : WidgetAnimator(
-                              child: LinePrayer(pray: fajr, title: "Fajr")),
+                      WidgetAnimator(
+                          child: LinePrayer(
+                              pray: _prayerTimes[0], title: _prayerNames[0])),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Divider(
                           color: black,
                         ),
                       ),
-                      fajr.isEmpty
-                          ? Shimmer.fromColors(
-                              child:
-                                  LinePrayer(pray: "Loading", title: "Sunrise"),
-                              baseColor: Colors.grey[300]!,
-                              highlightColor: Colors.grey[100]!)
-                          : WidgetAnimator(
-                              child:
-                                  LinePrayer(pray: sunrise, title: "Sunrise")),
+                      WidgetAnimator(
+                          child: LinePrayer(
+                              pray: _prayerTimes[1], title: _prayerNames[1])),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Divider(
                           color: black,
                         ),
                       ),
-                      fajr.isEmpty
-                          ? Shimmer.fromColors(
-                              child:
-                                  LinePrayer(pray: "Loading", title: "Dhuhr"),
-                              baseColor: Colors.grey[300]!,
-                              highlightColor: Colors.grey[100]!)
-                          : WidgetAnimator(
-                              child: LinePrayer(pray: dhuhr, title: "Dhuhr")),
+                      WidgetAnimator(
+                          child: LinePrayer(
+                              pray: _prayerTimes[2], title: _prayerNames[2])),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Divider(
                           color: black,
                         ),
                       ),
-                      fajr.isEmpty
-                          ? Shimmer.fromColors(
-                              child: LinePrayer(pray: "Loading", title: "Asr"),
-                              baseColor: Colors.grey[300]!,
-                              highlightColor: Colors.grey[100]!)
-                          : WidgetAnimator(
-                              child: LinePrayer(pray: asr, title: "Asr")),
+                      WidgetAnimator(
+                          child: LinePrayer(
+                              pray: _prayerTimes[3], title: _prayerNames[3])),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Divider(
                           color: black,
                         ),
                       ),
-                      fajr.isEmpty
-                          ? Shimmer.fromColors(
-                              child:
-                                  LinePrayer(pray: "Loading", title: "Maghrib"),
-                              baseColor: Colors.grey[300]!,
-                              highlightColor: Colors.grey[100]!)
-                          : WidgetAnimator(
-                              child:
-                                  LinePrayer(pray: maghrib, title: "Maghrib")),
+                      WidgetAnimator(
+                          child: LinePrayer(
+                              pray: _prayerTimes[5], title: _prayerNames[5])),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Divider(
                           color: black,
                         ),
                       ),
-                      fajr.isEmpty
-                          ? Shimmer.fromColors(
-                              child: LinePrayer(pray: "Loading", title: "Isha"),
-                              baseColor: Colors.grey[300]!,
-                              highlightColor: Colors.grey[100]!)
-                          : WidgetAnimator(
-                              child: LinePrayer(pray: isha, title: 'Isha')),
+                      WidgetAnimator(
+                          child: LinePrayer(
+                              pray: _prayerTimes[6], title: _prayerNames[6])),
                     ]),
               ),
             ),

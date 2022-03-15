@@ -22,19 +22,19 @@ class AllUserData {
     setPrayers(name, getPrayers(name) - 1);
   }
 
-  static String getLatitude() {
-    return _preferences.getString("latitude") ?? "";
+  static double getLatitude() {
+    return _preferences.getDouble("lat") ?? 0.0;
   }
 
-  static String getLongitude() {
-    return _preferences.getString("longitude") ?? "";
+  static double getLongitude() {
+    return _preferences.getDouble("long") ?? 0.0;
   }
 
-  static Future setLongitude(String value) async =>
-      await _preferences.setString("longitude", value);
+  static Future setLongitude(double value) async =>
+      await _preferences.setDouble("long", value);
 
-  static Future setLatitude(String value) async =>
-      await _preferences.setString("latitude", value);
+  static Future setLatitude(double value) async =>
+      await _preferences.setDouble("lat", value);
 
   static Future setLocationData(String value, String key) async =>
       await _preferences.setString(key, value);

@@ -25,20 +25,18 @@ class _AuthPageState extends State<AuthPage> {
     print("Succesfully added prayer times");
   }
 
-  String? lat, long, coutry, city;
-
+  String? country, city;
+  late double? lat, long;
   void getLocation() async {
     final service = UsersLocation();
     final locationData = await service.getLocation();
     if (locationData != null) {
       final placeMark = await service.getPlaceMark(locationData: locationData);
 
-      setState(() {
-        lat = locationData.latitude.toString();
-        long = locationData.longitude.toString();
-        coutry = placeMark?.country.toString();
-        city = placeMark?.subAdministrativeArea.toString();
-      });
+      lat = locationData.latitude;
+      long = locationData.longitude;
+      country = placeMark?.country.toString();
+      city = placeMark?.subAdministrativeArea.toString();
     }
   }
 
@@ -88,7 +86,9 @@ class _AuthPageState extends State<AuthPage> {
                         listen: false);
                     provider.googleLogIn();
                     AllUserData.setLocationData(city.toString(), 'city');
-                    AllUserData.setLocationData(coutry.toString(), 'country');
+                    AllUserData.setLocationData(country.toString(), 'country');
+                    AllUserData.setLatitude(lat!);
+                    AllUserData.setLongitude(long!);
                     print('all location saved');
                   },
                   icon: FaIcon(
