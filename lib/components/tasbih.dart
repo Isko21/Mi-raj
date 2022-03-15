@@ -14,46 +14,70 @@ class Description extends StatelessWidget {
     if (isArab) {
       switch (text) {
         case "Багымдат":
-          return Text(
-              "After performing the obligatory Fajr prayer and salutation:",
-              style: TextStyle(
-                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center);
+          return Container(
+            color: color.withAlpha(150),
+            padding: EdgeInsets.all(10),
+            child: Text(
+                "After performing the obligatory Fajr prayer and salutation:",
+                style: TextStyle(
+                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
+          );
           break;
         case "Бешим":
-          return Text(
-              "After performing the obligatory Dhuhr prayer and salutation:",
-              style: TextStyle(
-                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center);
+          return Container(
+            color: color.withAlpha(150),
+            padding: EdgeInsets.all(10),
+            child: Text(
+                "After performing the obligatory Dhuhr prayer and salutation:",
+                style: TextStyle(
+                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
+          );
           break;
         case "Аср":
-          return Text(
-              "After performing the obligatory Asr prayer and salutation:",
-              style: TextStyle(
-                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center);
+          return Container(
+            color: color.withAlpha(150),
+            padding: EdgeInsets.all(10),
+            child: Text(
+                "After performing the obligatory Asr prayer and salutation:",
+                style: TextStyle(
+                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
+          );
           break;
         case "Шам":
-          return Text(
-              "After performing the obligatory Maghrib prayer and salutation:",
-              style: TextStyle(
-                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center);
+          return Container(
+            padding: EdgeInsets.all(10),
+            color: color.withAlpha(150),
+            child: Text(
+                "After performing the obligatory Maghrib prayer and salutation:",
+                style: TextStyle(
+                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
+          );
           break;
         case "Куптан":
-          return Text(
-              "After performing the obligatory Isha prayer and salutation:",
-              style: TextStyle(
-                  color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center);
+          return Container(
+            color: color.withAlpha(150),
+            padding: EdgeInsets.all(10),
+            child: Text(
+                "After performing the obligatory Isha prayer and salutation:",
+                style: TextStyle(
+                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
+          );
       }
     }
-    return Text(
-      text + ' намаздын парзы окулуп, салам берилгенден кийин:',
-      style:
-          TextStyle(color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
-      textAlign: TextAlign.center,
+    return Container(
+      color: color.withAlpha(150),
+      padding: EdgeInsets.all(10),
+      child: Text(
+        text + ' намаздын парзы окулуп, салам берилгенден кийин:',
+        style: TextStyle(
+            color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
@@ -66,14 +90,18 @@ class Nav extends StatelessWidget {
   Nav({required this.textRu, required this.isArabic, required this.textAr});
   @override
   Widget build(BuildContext context) {
-    return Text(
-      isArabic ? textAr : textRu,
-      style: TextStyle(
-        color: colorStr,
-        fontSize: 21,
-        fontWeight: FontWeight.bold,
+    return Container(
+      padding: EdgeInsets.all(10),
+      color: color.withAlpha(100),
+      child: Text(
+        isArabic ? textAr : textRu,
+        style: TextStyle(
+          color: colorStr,
+          fontSize: 21,
+          fontWeight: FontWeight.bold,
+        ),
+        textAlign: TextAlign.center,
       ),
-      textAlign: TextAlign.center,
     );
   }
 }
@@ -85,21 +113,19 @@ class Solatan extends StatelessWidget {
   final bool isArab;
   final String arab;
   final String desk;
-  final TextAlign align;
-  const Solatan(
-      {Key? key,
-      required this.bis,
-      required this.isArab,
-      required this.arab,
-      required this.rus,
-      required this.desk,
-      required this.align});
+  const Solatan({
+    Key? key,
+    required this.bis,
+    required this.isArab,
+    required this.arab,
+    required this.rus,
+    required this.desk,
+  });
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 8,
-      ),
+    return Container(
+      padding: isArab ? EdgeInsets.fromLTRB(5, 0, 10, 10) : EdgeInsets.all(5),
+      color: color.withAlpha(50),
       child: Column(
         children: <Widget>[
           bis
@@ -107,14 +133,21 @@ class Solatan extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(color: colorStr, fontSize: 30))
               : Text(''),
-          Text(
-            isArab ? arab : rus,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: colorStr,
-              fontSize: isArab ? 28 : 20,
-            ),
-          ),
+          !isArab
+              ? Text(
+                  rus,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: colorStr,
+                    fontSize: 18,
+                  ),
+                )
+              : Text(
+                  arab,
+                  textAlign: TextAlign.right,
+                  textDirection: TextDirection.rtl,
+                  style: TextStyle(fontSize: 21),
+                ),
         ],
       ),
     );
@@ -160,45 +193,42 @@ class _CounterState extends State<Counter> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: InkWell(
-        onTap: !_canVibrate
-            ? null
-            : () {
-                Vibrate.feedback(FeedbackType.light);
-                add();
-                if (first == widget.max) {
-                  Vibrate.feedback(FeedbackType.heavy);
-                  first = 1;
-                }
-              },
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(width: 1, color: colorStr),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Solatan(
-                bis: false,
-                arab: widget.ar,
-                isArab: widget.isArabic,
-                rus: widget.ru,
-                desk: '',
-                align: TextAlign.center,
+    return InkWell(
+      onTap: !_canVibrate
+          ? null
+          : () {
+              Vibrate.feedback(FeedbackType.light);
+              add();
+              if (first == widget.max) {
+                Vibrate.feedback(FeedbackType.heavy);
+              }
+              if (first - widget.max == 1) {
+                first = 1;
+              }
+            },
+      child: Container(
+        color: color.withAlpha(200),
+        padding: EdgeInsets.all(5),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              widget.isArabic ? widget.ar : widget.ru,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: colorStr,
+                fontSize: widget.isArabic ? 28 : 20,
               ),
-              Text(
-                first.toString(),
-                style: TextStyle(
-                  color: colorStr,
-                  fontSize: 28,
-                ),
+            ),
+            Text(
+              '$first/${widget.max}',
+              style: TextStyle(
+                color: colorStr,
+                fontSize: 28,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -36,7 +36,6 @@ class _FajrState extends State<Fajr> {
         child: SafeArea(
           child: ListView(
             scrollDirection: Axis.vertical,
-            padding: EdgeInsets.only(right: 15, left: 15),
             children: <Widget>[
               Description(
                 text: 'Багымдат',
@@ -47,8 +46,7 @@ class _FajrState extends State<Fajr> {
                   arab: afterSalamAR,
                   rus: afterSalamRU,
                   isArab: isArabic,
-                  desk: afterSalamDesk,
-                  align: TextAlign.center),
+                  desk: afterSalamDesk),
               Nav(
                   textAr:
                       "After saying that, the Solatan Tunjina prayer below is read by raising the hands up.",
@@ -59,8 +57,7 @@ class _FajrState extends State<Fajr> {
                   arab: solatanAR,
                   rus: solatanRU,
                   desk: solatanDesk,
-                  isArab: isArabic,
-                  align: TextAlign.center),
+                  isArab: isArabic),
               /*Nav(
                 text: navAferSolatan,
                 isArabic: isArabic,
@@ -70,8 +67,7 @@ class _FajrState extends State<Fajr> {
                   arab: nukaddimuAR,
                   rus: nukaddimuRU,
                   isArab: isArabic,
-                  desk: nukaddimuDesk,
-                  align: TextAlign.center),
+                  desk: nukaddimuDesk),
               Counter(
                   max: 10, ar: shahaadaAR, isArabic: isArabic, ru: shahaadaRU),
               Solatan(
@@ -79,8 +75,7 @@ class _FajrState extends State<Fajr> {
                   arab: uaIlayhilAR,
                   rus: uaIlayhilRU,
                   isArab: isArabic,
-                  desk: uaIlayhilDesk,
-                  align: TextAlign.center),
+                  desk: uaIlayhilDesk),
               /*Nav(
                 text: navAfteruaIlayhil,
                 isArabic: isArabic,
@@ -91,8 +86,7 @@ class _FajrState extends State<Fajr> {
                   arab: azhirnaLongAR,
                   rus: azhirnaLongRU,
                   isArab: isArabic,
-                  desk: azhirnaLongDesk,
-                  align: TextAlign.start),
+                  desk: azhirnaLongDesk),
               Counter(
                   max: 3, ar: biawfikaAR, isArabic: isArabic, ru: biawfikaRU),
               Solatan(
@@ -100,8 +94,7 @@ class _FajrState extends State<Fajr> {
                   arab: adhilnaAR,
                   rus: adhilnaRU,
                   isArab: isArabic,
-                  desk: adhilnaDesk,
-                  align: TextAlign.center),
+                  desk: adhilnaDesk),
               /* Nav(
                 text: navAferAdhilna,
                 isArabic: isArabic,
@@ -111,15 +104,13 @@ class _FajrState extends State<Fajr> {
                   arab: subhanAllohiAR,
                   rus: subhanAllohiRU,
                   isArab: isArabic,
-                  desk: subhanAllohiDesk,
-                  align: TextAlign.center),
+                  desk: subhanAllohiDesk),
               Solatan(
                   bis: true,
                   arab: ayatulKursiAR,
                   rus: ayatulKursiRU,
                   isArab: isArabic,
-                  desk: ayatulKursiDesk,
-                  align: TextAlign.center),
+                  desk: ayatulKursiDesk),
               /* Nav(
                 text: navAfterAyatulKursi,
                 isArabic: isArabic,
@@ -144,43 +135,39 @@ class _FajrState extends State<Fajr> {
                   arab: uahdahuAR,
                   rus: uahdahuRU,
                   isArab: isArabic,
-                  desk: uahdahuDesk,
-                  align: TextAlign.center),
+                  desk: uahdahuDesk),
               Solatan(
                   bis: false,
                   arab: falamAR,
                   isArab: isArabic,
                   rus: falamRU,
-                  desk: falamDesk,
-                  align: TextAlign.center),
-              Solatan(
-                  bis: false,
-                  arab: lailahaAR,
-                  isArab: isArabic,
-                  rus: lailahaRU,
-                  desk: lailahaDesk,
-                  align: TextAlign.center),
+                  desk: falamDesk),
+              Counter(
+                  max: 33, ar: lailahaAR, isArabic: isArabic, ru: lailahaRU),
               Solatan(
                   bis: false,
                   arab: MuhammadAR,
                   rus: MuhammadRU,
                   desk: MuhammadDesk,
+                  isArab: isArabic),
+              Solatan(
+                  bis: false,
                   isArab: isArabic,
-                  align: TextAlign.center),
+                  arab: afterMuhammadAR,
+                  rus: afterMuhammadRU,
+                  desk: afterMuhammadDesk),
               Solatan(
                   bis: true,
                   arab: innAllohAR,
                   isArab: isArabic,
                   rus: innAllohRU,
-                  desk: innAllohDesk,
-                  align: TextAlign.center),
+                  desk: innAllohDesk),
               Solatan(
                   bis: true,
                   isArab: isArabic,
-                  arab: subhanakaYaaAllah,
-                  rus: "",
-                  desk: "dsa",
-                  align: TextAlign.center)
+                  arab: subhanakaYaaAllahAR,
+                  rus: subhanakaYaaAllahRU,
+                  desk: '')
             ],
           ),
         ),
