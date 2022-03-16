@@ -59,7 +59,15 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
           actions: [
             IconButton(
                 onPressed: () => showModalBottomSheet(
-                    context: context, builder: (context) => buildSheet()),
+                    isScrollControlled: true,
+                    elevation: 2.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15)),
+                    ),
+                    context: context,
+                    builder: (context) => buildSheet()),
                 icon: Icon(FontAwesomeIcons.ellipsisH),
                 color: colorStr,
                 iconSize: 15),
@@ -68,43 +76,72 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
     }
   }
 
-  Widget buildSheet() => Column(mainAxisSize: MainAxisSize.min, children: [
-        ExpansionTile(
-          collapsedIconColor: colorStr,
-          iconColor: colorStr,
-          textColor: colorStr,
-          title: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Text(
-                "Language",
-                style: TextStyle(color: colorStr, fontWeight: FontWeight.bold),
-              )),
-          children: [
-            PopupMenuItem(
-                onTap: () => change(1),
-                child: ListTile(
+  Widget buildSheet() => Container(
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Container(
+              height: 8,
+              width: 80,
+              decoration: BoxDecoration(
+                  color: Colors.grey[500],
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
+            ),
+          ),
+          Theme(
+            data: ThemeData().copyWith(dividerColor: Colors.transparent),
+            child: ExpansionTile(
+              initiallyExpanded: false,
+              collapsedIconColor: colorStr,
+              iconColor: colorStr,
+              textColor: colorStr,
+              title: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(
+                    "Language",
+                    style:
+                        TextStyle(color: colorStr, fontWeight: FontWeight.bold),
+                  )),
+              children: [
+                PopupMenuItem(
+                  onTap: () => change(1),
+                  child: ListTile(
                     leading: Text(
-                      "1. ",
+                      "1.",
                       style: TextStyle(color: colorStr),
                     ),
                     title: Text(
                       "Arabic",
                       style: TextStyle(color: colorStr),
-                    ))),
-            PopupMenuItem(
-                onTap: () => change(2),
-                child: ListTile(
+                    ),
+                    trailing: Text(
+                      '🇦🇪',
+                      style: TextStyle(color: colorStr),
+                    ),
+                  ),
+                ),
+                PopupMenuItem(
+                  onTap: () => change(2),
+                  child: ListTile(
                     leading: Text(
-                      "2. ",
+                      "2.",
                       style: TextStyle(color: colorStr),
                     ),
                     title: Text(
                       "Kyrgyz",
                       style: TextStyle(color: colorStr),
-                    ))),
-          ],
-        ),
-      ]);
+                    ),
+                    trailing: Text(
+                      '🇰🇬',
+                      style: TextStyle(color: colorStr),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ]),
+      );
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
