@@ -73,7 +73,8 @@ class _SurahIndexState extends State<SurahIndex> {
                                     "${_surahs![index].englishNameTranslation}"),
                                 trailing: Text(
                                   "${_surahs![index].name}",
-                                  style: TextStyle(fontSize: 19),
+                                  style: TextStyle(
+                                      fontSize: 19, fontFamily: 'Noore'),
                                 ),
                                 onTap: () {
                                   Navigator.push(

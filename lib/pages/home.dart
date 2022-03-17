@@ -188,7 +188,7 @@ class LinePrayer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,

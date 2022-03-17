@@ -34,8 +34,9 @@ class SajdaAyah extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBarCustom(change: () {}, title: "Sajda", page: Pages.quran),
-      backgroundColor: colorStr,
+      appBar: AppBarCustom(
+          change: () {}, title: surahEnglishName!, page: Pages.home),
+      backgroundColor: white,
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -56,7 +57,7 @@ class SajdaAyah extends StatelessWidget {
                       Text(
                         "Sajda Ayah",
                         style: TextStyle(
-                          color: white,
+                          color: black,
                           fontSize: 30,
                           fontWeight: FontWeight.w600,
                         ),
@@ -140,9 +141,9 @@ class Sajda extends StatelessWidget {
           ayah!,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: MediaQuery.of(context).size.height * 0.03,
-            color: Colors.white,
-          ),
+              fontSize: MediaQuery.of(context).size.height * 0.03,
+              color: black,
+              fontFamily: 'Noore'),
         ),
       ),
     );
@@ -163,8 +164,8 @@ class SajdaInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.white,
-      highlightColor: Colors.grey,
+      baseColor: colorStr,
+      highlightColor: color,
       enabled: true,
       child: Column(
         children: <Widget>[

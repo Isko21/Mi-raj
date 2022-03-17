@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:daily_muslim/components/shared_pref.dart';
 import '../../components/firebase.dart';
 import '../../components/location.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import '../../components/properties.dart';
 
 class AuthPage extends StatefulWidget {
@@ -16,16 +15,16 @@ class _AuthPageState extends State<AuthPage> {
   @override
   void initState() {
     super.initState();
-    getLocation.call();
     AllUserData.setPrayers("fajr", 0);
     AllUserData.setPrayers("dhuhr", 0);
     AllUserData.setPrayers("asr", 0);
     AllUserData.setPrayers("maghrib", 0);
     AllUserData.setPrayers("isha", 0);
+    getLocation();
     print("Succesfully added prayer times");
   }
 
-  String? country, city;
+  late String? country, city;
   late double? lat, long;
   void getLocation() async {
     final service = UsersLocation();
@@ -33,10 +32,10 @@ class _AuthPageState extends State<AuthPage> {
     if (locationData != null) {
       final placeMark = await service.getPlaceMark(locationData: locationData);
 
-      lat = locationData.latitude;
-      long = locationData.longitude;
-      country = placeMark?.country.toString();
-      city = placeMark?.subAdministrativeArea.toString();
+      lat = locationData.latitude!;
+      long = locationData.longitude!;
+      country = placeMark!.country;
+      city = placeMark.subAdministrativeArea;
     }
   }
 
@@ -57,12 +56,11 @@ class _AuthPageState extends State<AuthPage> {
                   'assets/img/mus.png',
                   height: height / 2.0,
                 ),
-                AutoSizeText(
+                Text(
                   'Assalamu alaikum',
                   textAlign: TextAlign.center,
-                  maxLines: 1,
                   style: TextStyle(
-                      fontSize: width * 0.2,
+                      fontSize: width * 0.05,
                       color: colorStr,
                       fontWeight: FontWeight.bold),
                 ),
@@ -82,14 +80,14 @@ class _AuthPageState extends State<AuthPage> {
                       backgroundColor:
                           MaterialStateColor.resolveWith((states) => color)),
                   onPressed: () async {
+                    await AllUserData.setLocationData(city!, 'city');
+                    await AllUserData.setLocationData(country!, 'country');
+                    await AllUserData.setLatitude(lat!);
+                    await AllUserData.setLongitude(long!);
+                    print('all location saved');
                     final provider = Provider.of<GoogleSignInProvider>(context,
                         listen: false);
                     provider.googleLogIn();
-                    AllUserData.setLocationData(city.toString(), 'city');
-                    AllUserData.setLocationData(country.toString(), 'country');
-                    AllUserData.setLatitude(lat!);
-                    AllUserData.setLongitude(long!);
-                    print('all location saved');
                   },
                   icon: FaIcon(
                     FontAwesomeIcons.google,

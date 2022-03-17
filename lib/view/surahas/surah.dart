@@ -22,16 +22,13 @@ class SurahAyats extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-        extendBodyBehindAppBar: true,
         appBar: AppBarCustom(
             change: () {},
             title: surahEnglishName.toString(),
-            page: Pages.quran),
-        backgroundColor: colorStr,
+            page: Pages.home),
+        backgroundColor: white,
         body: Container(
           padding: EdgeInsets.symmetric(vertical: 10),
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(),
           child: SafeArea(
             child: CustomScrollView(
@@ -65,7 +62,8 @@ class SurahAyats extends StatelessWidget {
           ),
           title: Text(ayatsList![index].text!,
               textAlign: TextAlign.right,
-              style: TextStyle(fontSize: height * 0.03, color: Colors.white)),
+              style: TextStyle(
+                  fontSize: height * 0.033, color: black, fontFamily: 'Noore')),
         ),
       ),
     );

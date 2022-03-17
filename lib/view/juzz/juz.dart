@@ -32,7 +32,7 @@ class _JuzState extends State<Juz> {
       extendBodyBehindAppBar: true,
       appBar: AppBarCustom(
           change: () {}, title: widget.juzIndex.toString(), page: Pages.home),
-      backgroundColor: colorStr,
+      backgroundColor: white,
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -98,7 +98,8 @@ class JuzAyahsBuilder extends StatelessWidget {
                 textAlign: TextAlign.right,
                 style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.03,
-                    color: Colors.white)),
+                    color: black,
+                    fontFamily: 'Noore')),
             trailing: CircleAvatar(
               radius: MediaQuery.of(context).size.height * 0.018,
               backgroundColor: const Color(0xff04364f),
@@ -108,8 +109,7 @@ class JuzAyahsBuilder extends StatelessWidget {
                 child: Text(
                   juzAyahs![index].ayahNumber.toString(),
                   style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.0135,
-                  ),
+                      fontSize: MediaQuery.of(context).size.height * 0.0135),
                 ),
               ),
             ),

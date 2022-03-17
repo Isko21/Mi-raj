@@ -1,5 +1,3 @@
-// ignore_for_file: dead_code
-
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:daily_muslim/components/properties.dart';
@@ -23,7 +21,6 @@ class Description extends StatelessWidget {
                     color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
-          break;
         case "Бешим":
           return Container(
             color: color.withAlpha(150),
@@ -34,7 +31,6 @@ class Description extends StatelessWidget {
                     color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
-          break;
         case "Аср":
           return Container(
             color: color.withAlpha(150),
@@ -45,7 +41,6 @@ class Description extends StatelessWidget {
                     color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
-          break;
         case "Шам":
           return Container(
             padding: EdgeInsets.all(10),
@@ -56,7 +51,6 @@ class Description extends StatelessWidget {
                     color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
-          break;
         case "Куптан":
           return Container(
             color: color.withAlpha(150),
@@ -97,7 +91,7 @@ class Nav extends StatelessWidget {
         isArabic ? textAr : textRu,
         style: TextStyle(
           color: colorStr,
-          fontSize: 21,
+          fontSize: 19,
           fontWeight: FontWeight.bold,
         ),
         textAlign: TextAlign.center,
@@ -112,41 +106,47 @@ class Solatan extends StatelessWidget {
   final String rus;
   final bool isArab;
   final String arab;
-  final String desk;
-  const Solatan({
-    Key? key,
-    required this.bis,
-    required this.isArab,
-    required this.arab,
-    required this.rus,
-    required this.desk,
-  });
+  const Solatan(
+      {Key? key,
+      required this.bis,
+      required this.isArab,
+      required this.arab,
+      required this.rus});
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Container(
-      padding: isArab ? EdgeInsets.fromLTRB(5, 0, 10, 10) : EdgeInsets.all(5),
-      color: color.withAlpha(50),
+      padding: isArab
+          ? EdgeInsets.fromLTRB(5, 0, 10, 10)
+          : EdgeInsets.fromLTRB(5, 5, 5, 20),
       child: Column(
         children: <Widget>[
           bis
-              ? Text(isArab ? bismiAR : bismiRU,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: colorStr, fontSize: 30))
+              ? Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: Text(isArab ? bismiAR : bismiRU,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: colorStr,
+                          fontWeight: FontWeight.bold,
+                          fontSize: isArab ? 30 : 21,
+                          fontFamily: 'Noore')),
+                )
               : Text(''),
           !isArab
               ? Text(
                   rus,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: colorStr,
                     fontSize: 18,
                   ),
                 )
               : Text(
                   arab,
-                  textAlign: TextAlign.right,
+                  textAlign: TextAlign.center,
                   textDirection: TextDirection.rtl,
-                  style: TextStyle(fontSize: 21),
+                  style:
+                      TextStyle(fontSize: height * 0.03, fontFamily: 'Noore'),
                 ),
         ],
       ),
@@ -207,8 +207,8 @@ class _CounterState extends State<Counter> {
               }
             },
       child: Container(
-        color: color.withAlpha(200),
-        padding: EdgeInsets.all(5),
+        color: color.withAlpha(100),
+        padding: EdgeInsets.all(15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -217,16 +217,14 @@ class _CounterState extends State<Counter> {
               widget.isArabic ? widget.ar : widget.ru,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: colorStr,
-                fontSize: widget.isArabic ? 28 : 20,
-              ),
+                  color: black,
+                  fontSize: widget.isArabic ? 28 : 20,
+                  fontFamily: widget.isArabic ? 'Noore' : null),
             ),
             Text(
               '$first/${widget.max}',
               style: TextStyle(
-                color: colorStr,
-                fontSize: 28,
-              ),
+                  color: black, fontSize: 21, fontWeight: FontWeight.bold),
             ),
           ],
         ),

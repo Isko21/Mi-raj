@@ -18,13 +18,10 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
           child: AppBar(
               iconTheme: IconThemeData(color: colorStr),
               centerTitle: true,
-              backgroundColor: colorStr,
+              backgroundColor: white,
               title: WidgetAnimator(
                   child: Text(title,
-                      style: TextStyle(
-                          color: colorStr,
-                          fontSize: 21,
-                          fontWeight: FontWeight.bold)))),
+                      style: TextStyle(color: colorStr, fontSize: 21)))),
         );
       case Pages.home:
         return AppBar(
@@ -59,6 +56,7 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
           actions: [
             IconButton(
                 onPressed: () => showModalBottomSheet(
+                    backgroundColor: Color.fromARGB(255, 235, 231, 231),
                     isScrollControlled: true,
                     elevation: 2.0,
                     shape: RoundedRectangleBorder(
@@ -81,8 +79,8 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
           Padding(
             padding: const EdgeInsets.only(top: 10.0),
             child: Container(
-              height: 8,
-              width: 80,
+              height: 5,
+              width: 50,
               decoration: BoxDecoration(
                   color: Colors.grey[500],
                   borderRadius: BorderRadius.all(Radius.circular(8))),
@@ -103,37 +101,43 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
                         TextStyle(color: colorStr, fontWeight: FontWeight.bold),
                   )),
               children: [
-                PopupMenuItem(
-                  onTap: () => change(1),
-                  child: ListTile(
-                    leading: Text(
-                      "1.",
-                      style: TextStyle(color: colorStr),
-                    ),
-                    title: Text(
-                      "Arabic",
-                      style: TextStyle(color: colorStr),
-                    ),
-                    trailing: Text(
-                      '🇦🇪',
-                      style: TextStyle(color: colorStr),
+                Card(
+                  elevation: 2.0,
+                  child: PopupMenuItem(
+                    onTap: () => change(1),
+                    child: ListTile(
+                      leading: Text(
+                        "1.",
+                        style: TextStyle(color: colorStr),
+                      ),
+                      title: Text(
+                        "Arabic",
+                        style: TextStyle(color: colorStr),
+                      ),
+                      trailing: Text(
+                        '🇸🇦',
+                        style: TextStyle(color: colorStr),
+                      ),
                     ),
                   ),
                 ),
-                PopupMenuItem(
-                  onTap: () => change(2),
-                  child: ListTile(
-                    leading: Text(
-                      "2.",
-                      style: TextStyle(color: colorStr),
-                    ),
-                    title: Text(
-                      "Kyrgyz",
-                      style: TextStyle(color: colorStr),
-                    ),
-                    trailing: Text(
-                      '🇰🇬',
-                      style: TextStyle(color: colorStr),
+                Card(
+                  elevation: 2.0,
+                  child: PopupMenuItem(
+                    onTap: () => change(2),
+                    child: ListTile(
+                      leading: Text(
+                        "2.",
+                        style: TextStyle(color: colorStr),
+                      ),
+                      title: Text(
+                        "Kyrgyz",
+                        style: TextStyle(color: colorStr),
+                      ),
+                      trailing: Text(
+                        '🇰🇬',
+                        style: TextStyle(color: colorStr),
+                      ),
                     ),
                   ),
                 ),
