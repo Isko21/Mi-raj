@@ -53,10 +53,6 @@ class _FajrState extends State<Fajr> {
                   rus: solatanRU,
                   isArab: isArabic),
               divider(),
-              /*Nav(
-                text: navAferSolatan,
-                isArabic: isArabic,
-              ),*/
               Solatan(
                   bis: false,
                   arab: nukaddimuAR,
@@ -69,17 +65,25 @@ class _FajrState extends State<Fajr> {
                   arab: uaIlayhilAR,
                   rus: uaIlayhilRU,
                   isArab: isArabic),
-              /*Nav(
-                text: navAfteruaIlayhil,
-                isArabic: isArabic,
-              ),*/
+              Nav(
+                  isArabic: isArabic,
+                  textAr: uaIlayhilDeskAR,
+                  textRu: uaIlayhilDeskRU),
               Counter(max: 7, ar: azhirnaAR, isArabic: isArabic, ru: azhirnaRU),
+              Nav(
+                  textRu: azhirnaDeskRU,
+                  isArabic: isArabic,
+                  textAr: azhirnaDeskAR),
               Solatan(
                   bis: false,
                   arab: azhirnaLongAR,
                   rus: azhirnaLongRU,
                   isArab: isArabic),
               divider(),
+              Nav(
+                  textRu: beforebiawFikaRU,
+                  isArabic: isArabic,
+                  textAr: beforebiawFikaAR),
               Solatan(
                   bis: false,
                   isArab: isArabic,
@@ -92,11 +96,12 @@ class _FajrState extends State<Fajr> {
                   arab: adhilnaAR,
                   rus: adhilnaRU,
                   isArab: isArabic),
-              /* Nav(
-                text: navAferAdhilna,
-                isArabic: isArabic,
-              ),*/
               divider(),
+              Solatan(
+                  bis: false,
+                  isArab: isArabic,
+                  arab: salavatAR,
+                  rus: salavarRU),
               Solatan(
                   bis: false,
                   arab: subhanAllohiAR,
@@ -107,10 +112,6 @@ class _FajrState extends State<Fajr> {
                   arab: ayatulKursiAR,
                   rus: ayatulKursiRU,
                   isArab: isArabic),
-              /* Nav(
-                text: navAfterAyatulKursi,
-                isArabic: isArabic,
-              ),*/
               Counter(
                   max: 33,
                   ar: subhanaAllohAR,
@@ -180,21 +181,35 @@ class _FajrState extends State<Fajr> {
                   bis: true,
                   isArab: isArabic,
                   arab: subhanakaYaaAllahAR,
-                  rus: subhanakaYaaAllahRU)
+                  rus: subhanakaYaaAllahRU),
+              divider(),
+              Nav(
+                  textRu: beforebiawFikaRU,
+                  isArabic: isArabic,
+                  textAr: beforebiawFikaAR),
+              Solatan(
+                  bis: false,
+                  isArab: isArabic,
+                  arab: aahiyanAR,
+                  rus: aahiyanRU),
+              Nav(textRu: subhanakaRU, isArabic: isArabic, textAr: subhanakaAR),
+              Solatan(
+                  bis: false,
+                  isArab: isArabic,
+                  arab: uaminKulliAR,
+                  rus: uaminKulliRU),
+              Nav(textRu: subhanakaRU, isArabic: isArabic, textAr: palmUpAR),
+              Solatan(bis: false, isArab: isArabic, arab: lastAR, rus: lastRU),
+              Nav(
+                  textRu: khashrDeskRU,
+                  isArabic: isArabic,
+                  textAr: khashrDeskAR),
+              Solatan(
+                  bis: true, isArab: isArabic, arab: khashrAR, rus: khashrRU)
             ],
           ),
         ),
       ),
     );
   }
-
-  Widget divider() => Container(
-        padding: EdgeInsets.all(5),
-        child: Center(
-          child: Text(
-            '❁  ❁  ❁  ❁  ❁',
-            style: TextStyle(color: colorStr, fontSize: 30),
-          ),
-        ),
-      );
 }

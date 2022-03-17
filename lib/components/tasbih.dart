@@ -86,7 +86,7 @@ class Nav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      color: color.withAlpha(100),
+      color: color.withAlpha(50),
       child: Text(
         isArabic ? textAr : textRu,
         style: TextStyle(
@@ -153,6 +153,16 @@ class Solatan extends StatelessWidget {
     );
   }
 }
+
+Widget divider() => Container(
+      padding: EdgeInsets.all(5),
+      child: Center(
+        child: Text(
+          '❁  ❁  ❁  ❁  ❁',
+          style: TextStyle(color: colorStr, fontSize: 30),
+        ),
+      ),
+    );
 
 class Counter extends StatefulWidget {
   final int max;
