@@ -114,6 +114,17 @@ class _DhuhrState extends State<Dhuhr> {
                 isArab: isArabic,
                 arab: yaaRohmanAR,
                 rus: yaaRohmanRU),
+            Nav(
+                textRu: beforebiawFikaRU,
+                isArabic: isArabic,
+                textAr: beforebiawFikaAR),
+            Solatan(
+                bis: false,
+                isArab: isArabic,
+                arab: yaaRobbasAR,
+                rus: yaaRobbasRU),
+            Nav(textRu: fathDeskRU, isArabic: isArabic, textAr: fathDeskAR),
+            Solatan(bis: true, isArab: isArabic, arab: fathAR, rus: fathRU),
           ],
           scrollDirection: Axis.vertical,
         ),
