@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/appbar.dart';
 import 'package:daily_muslim/components/properties.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../components/shared_pref.dart';
-import '../home.dart';
 
 class MissedPrays extends StatefulWidget {
   MissedPrays({Key? key}) : super(key: key);
@@ -91,43 +91,32 @@ class _MissedPraysState extends State<MissedPrays> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: colorStr,
       appBar: AppBarCustom(
           change: () {}, title: "Missed Prays", page: Pages.settings),
-      extendBodyBehindAppBar: true,
       body: Container(
-        padding: EdgeInsets.all(20),
-        child: SafeArea(
-          child: Column(children: [
+        color: white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
             Container(
+              margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                  color: white,
+                  color: color.withAlpha(50),
                   borderRadius: BorderRadius.all(Radius.circular(20))),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          "Missed prays",
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.bold),
-                        ),
-                      ),
                       MissPrayer(
                         count: _fajr,
                         title: "Fajr",
                         plus: () => add("fajr"),
                         minus: () => subtract("fajr"),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Divider(
-                          color: black,
-                        ),
+                      Divider(
+                        height: 10,
+                        color: black,
                       ),
                       MissPrayer(
                         count: _dhuhr,
@@ -135,11 +124,9 @@ class _MissedPraysState extends State<MissedPrays> {
                         plus: () => add("dhuhr"),
                         minus: () => subtract("dhuhr"),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Divider(
-                          color: black,
-                        ),
+                      Divider(
+                        height: 10,
+                        color: black,
                       ),
                       MissPrayer(
                         count: _asr,
@@ -147,11 +134,9 @@ class _MissedPraysState extends State<MissedPrays> {
                         plus: () => add("asr"),
                         minus: () => subtract("asr"),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Divider(
-                          color: black,
-                        ),
+                      Divider(
+                        height: 10,
+                        color: black,
                       ),
                       MissPrayer(
                         count: _maghrib,
@@ -159,11 +144,9 @@ class _MissedPraysState extends State<MissedPrays> {
                         plus: () => add("maghrib"),
                         minus: () => subtract("maghrib"),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Divider(
-                          color: black,
-                        ),
+                      Divider(
+                        height: 10,
+                        color: black,
                       ),
                       MissPrayer(
                         count: _isha,
@@ -171,11 +154,144 @@ class _MissedPraysState extends State<MissedPrays> {
                         plus: () => add("isha"),
                         minus: () => subtract("isha"),
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                            onTap: () => print('subtract 1 day'),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                'SUBTRACT 1 DAY',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    color: colorStr),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => print('add 1 day'),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                'ADD 1 DAY',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    color: colorStr),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ]),
               ),
             ),
-          ]),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: ElevatedButton.icon(
+                style: ButtonStyle(
+                  elevation: MaterialStateProperty.resolveWith((states) => 3),
+                  shadowColor:
+                      MaterialStateColor.resolveWith((states) => Colors.black),
+                  minimumSize: MaterialStateProperty.resolveWith(
+                      (states) => Size(100, 60)),
+                  foregroundColor:
+                      MaterialStateColor.resolveWith((states) => white),
+                  backgroundColor:
+                      MaterialStateColor.resolveWith((states) => color),
+                ),
+                onPressed: () {
+                  showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1950),
+                    lastDate: DateTime.now(),
+                    confirmText: 'OK!',
+                    cancelText: 'CANCEL!',
+                    helpText: 'This is calculates your all kadtha prays',
+                    currentDate: DateTime.now(),
+                    initialDatePickerMode: DatePickerMode.year,
+                  );
+                },
+                icon: FaIcon(
+                  FontAwesomeIcons.calculator,
+                ),
+                label: Text(
+                  'Calculate your all missed prays',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
+      ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
+class MissPrayer extends StatelessWidget {
+  MissPrayer({
+    Key? key,
+    required this.title,
+    required this.count,
+    required this.minus,
+    required this.plus,
+  }) : super(key: key);
+
+  int count;
+  final String title;
+  final Function plus;
+  final Function minus;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: TextStyle(fontSize: 15),
+          ),
+          Row(
+            children: [
+              MaterialButton(
+                color: color,
+                shape: const CircleBorder(),
+                onPressed: () => minus.call(),
+                child: const Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Text(
+                    '-',
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                ),
+              ),
+              Text(
+                count.toString(),
+                style: TextStyle(fontSize: 15),
+              ),
+              MaterialButton(
+                color: color,
+                shape: const CircleBorder(),
+                onPressed: () => plus.call(),
+                child: const Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Text(
+                    '+',
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }
