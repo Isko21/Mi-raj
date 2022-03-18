@@ -82,12 +82,13 @@ class ComingSoon extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.centerRight,
                           child: Text(
-                            'surotul al-fatiha',
+                            'surotul al-fatihaa',
                             textDirection: TextDirection.rtl,
                             textAlign: TextAlign.end,
                           ),
                         ),
-                      )
+                      ),
+                      Icon(Icons.abc),
                     ])),
               );
             }, childCount: 2),
