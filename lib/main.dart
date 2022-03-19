@@ -23,7 +23,6 @@ import 'model/sajda/sajda.dart';
 import 'model/sajda/sajda_list.dart';
 import 'model/surah/surah.dart';
 import 'model/surah/surah_list.dart';
-
 import 'view/juzz/juz_index.dart';
 
 import 'view/surahas/surah_index.dart';

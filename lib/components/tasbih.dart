@@ -143,7 +143,7 @@ class Solatan extends StatelessWidget {
                 )
               : Text(
                   arab,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.right,
                   textDirection: TextDirection.rtl,
                   style:
                       TextStyle(fontSize: height * 0.03, fontFamily: 'Noore'),
