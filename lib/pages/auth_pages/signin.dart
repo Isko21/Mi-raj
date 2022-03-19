@@ -24,18 +24,26 @@ class _AuthPageState extends State<AuthPage> {
     print("Succesfully added prayer times");
   }
 
-  late String? country, city;
+  late String? city;
   late double? lat, long;
   void getLocation() async {
     final service = UsersLocation();
     final locationData = await service.getLocation();
     if (locationData != null) {
       final placeMark = await service.getPlaceMark(locationData: locationData);
-
-      lat = locationData.latitude!;
-      long = locationData.longitude!;
-      country = placeMark!.country;
-      city = placeMark.subAdministrativeArea;
+      try{
+        city = placeMark!.administrativeArea;
+        lat = locationData.latitude!;
+        long = locationData.longitude!;
+        await AllUserData.setLocationData(city!, 'city');
+        await AllUserData.setLatitude(lat!);
+        await AllUserData.setLongitude(long!);
+        print('all location saved');
+      }
+      catch(e)
+      {
+        print(e);
+      }
     }
   }
 
@@ -79,12 +87,7 @@ class _AuthPageState extends State<AuthPage> {
                           (states) => Size(100, 60)),
                       backgroundColor:
                           MaterialStateColor.resolveWith((states) => color)),
-                  onPressed: () async {
-                    await AllUserData.setLocationData(city!, 'city');
-                    await AllUserData.setLocationData(country!, 'country');
-                    await AllUserData.setLatitude(lat!);
-                    await AllUserData.setLongitude(long!);
-                    print('all location saved');
+                  onPressed: () {
                     final provider = Provider.of<GoogleSignInProvider>(context,
                         listen: false);
                     provider.googleLogIn();
@@ -113,7 +116,7 @@ class _AuthPageState extends State<AuthPage> {
                     backgroundColor: MaterialStateColor.resolveWith(
                         (states) => Colors.white),
                   ),
-                  onPressed: () {},
+                  onPressed: () =>print('your button is working properly'),
                   icon: FaIcon(
                     FontAwesomeIcons.mailBulk,
                   ),
