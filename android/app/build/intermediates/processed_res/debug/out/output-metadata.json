@@ -4,7 +4,7 @@
     "type": "PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.isko.daily.muslim.plus",
+  "applicationId": "io.isko.dailymuslim",
   "variantName": "processDebugResources",
   "elements": [
     {

@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:175847291599:android:9b66499d6f53ddcd6815ba",
+        "mobilesdk_app_id": "1:175847291599:android:b4f002574a71f53c6815ba",
         "android_client_info": {
-          "package_name": "com.isko.daily.muslim.plus"
+          "package_name": "io.isko.dailymuslim"
         }
       },
       "oauth_client": [
@@ -29,6 +29,13 @@
             {
               "client_id": "175847291599-j2ndn2163r7kp4mvh5ru0d62uh8khgn0.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "175847291599-3ujl3hiqbtahf6vf13vocu7ih1uegbcj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.isko.dailymuslim"
+              }
             }
           ]
         }

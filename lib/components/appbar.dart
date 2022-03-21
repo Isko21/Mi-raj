@@ -76,15 +76,13 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
 
   Widget buildSheet() => Container(
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0),
-            child: Container(
-              height: 5,
-              width: 50,
-              decoration: BoxDecoration(
-                  color: Colors.grey[500],
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
-            ),
+          Container(
+            margin: EdgeInsets.all(10),
+            height: 5,
+            width: 50,
+            decoration: BoxDecoration(
+                color: Colors.grey[500],
+                borderRadius: BorderRadius.all(Radius.circular(8))),
           ),
           Theme(
             data: ThemeData().copyWith(dividerColor: Colors.transparent),

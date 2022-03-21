@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/appbar.dart';
 import 'package:daily_muslim/components/properties.dart';
@@ -88,6 +89,8 @@ class _MissedPraysState extends State<MissedPrays> {
     });
   }
 
+  DateTime teenAge = DateTime.now();
+  DateTime startPraying = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -203,19 +206,57 @@ class _MissedPraysState extends State<MissedPrays> {
                       MaterialStateColor.resolveWith((states) => color),
                 ),
                 onPressed: () {
-                  showDatePicker(
-                    context: context,
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(1950),
-                    lastDate: DateTime.now(),
-                    confirmText: 'OK!',
-                    cancelText: 'CANCEL!',
-                    helpText: 'This is calculates your all kadtha prays',
-                    currentDate: DateTime.now(),
-                    initialDatePickerMode: DatePickerMode.year,
-                  );
+                  showModalBottomSheet<void>(
+                      backgroundColor: Color.fromARGB(255, 235, 231, 231),
+                      isScrollControlled: true,
+                      isDismissible: true,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20)),
+                      ),
+                      context: context,
+                      builder: (_) => Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Column(
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.all(10),
+                                    height: 5,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                        color: Colors.grey[500],
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20))),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              CupertinoButton(
+                                  color: color,
+                                  child: Text(getFirstText(
+                                      teenAge, 'When you became a teenager')),
+                                  onPressed: () =>
+                                      showAndroidTimePicker(context, teenAge)),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              CupertinoButton(
+                                  color: colorStr,
+                                  child: Text(getFirstText(
+                                      teenAge, 'When you started praying')),
+                                  onPressed: () => showIOSDateTimePicker(
+                                      context, startPraying)),
+                            ],
+                          )));
                 },
-                icon: FaIcon(
+                icon: Icon(
                   FontAwesomeIcons.calculator,
                 ),
                 label: Text(
@@ -231,6 +272,44 @@ class _MissedPraysState extends State<MissedPrays> {
         ),
       ),
     );
+  }
+
+  String getFirstText(DateTime dt, String text) {
+    return dt != DateTime.now() ? text : '${dt.month}/${dt.day}/${dt.year}';
+  }
+
+  Future showAndroidTimePicker(context, DateTime dt) async {
+    final newDate = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(DateTime.now().year - 100),
+        lastDate: DateTime.now());
+    setState(() => dt = newDate as DateTime);
+  }
+
+  Future showIOSDateTimePicker(context, DateTime dt) async {
+    showCupertinoModalPopup(
+        context: context,
+        builder: (_) => Container(
+              height: 190,
+              color: Color.fromARGB(255, 255, 255, 255),
+              child: Column(
+                children: [
+                  Container(
+                    height: 180,
+                    child: CupertinoDatePicker(
+                        initialDateTime: DateTime.now(),
+                        mode: CupertinoDatePickerMode.date,
+                        dateOrder: DatePickerDateOrder.mdy,
+                        onDateTimeChanged: (val) {
+                          setState(() {
+                            dt = val;
+                          });
+                        }),
+                  ),
+                ],
+              ),
+            ));
   }
 }
 
