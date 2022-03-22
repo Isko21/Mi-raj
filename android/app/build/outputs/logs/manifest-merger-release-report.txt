@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
 MERGED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] D:\User\Desktop\DailyMuslim\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
@@ -88,20 +88,20 @@ MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\User\.gradle\caches\transform
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\User\.gradle\caches\transforms-2\files-2.1\f74c813a7ee8d956fbe97c2708fc74c2\jetified-threetenabp-1.2.3\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\79c44cf3e99a0b1c32e05cf19a7f54db\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\dfc73f35b9148ba802d7f591a84f6be5\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
-INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
+INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
 	package
 		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:2:5-34
 		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
 		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-47:12
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:1-50:12
 		INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -153,8 +153,38 @@ uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
 ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:8:5-84
 	android:name
 		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:8:22-82
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:9:5-79
+MERGED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:7:5-79
+MERGED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-auth:21.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\a77927729cfd8ef1771aa558148712bc\jetified-firebase-auth-21.0.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-auth:21.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\a77927729cfd8ef1771aa558148712bc\jetified-firebase-auth-21.0.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\cf9f4e635c4c457130861b4f755a17ea\jetified-firebase-firestore-24.0.2\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\cf9f4e635c4c457130861b4f755a17ea\jetified-firebase-firestore-24.0.2\AndroidManifest.xml:13:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\b4526196451611fe769d8320631140b6\jetified-play-services-measurement-api-20.1.1\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\b4526196451611fe769d8320631140b6\jetified-play-services-measurement-api-20.1.1\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2d71eb87580e74fea6ec9ce6694d780b\jetified-firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2d71eb87580e74fea6ec9ce6694d780b\jetified-firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e28cb500013723c03bb78fc1b130643f\jetified-play-services-measurement-20.1.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e28cb500013723c03bb78fc1b130643f\jetified-play-services-measurement-20.1.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\1b886d735a1a2ab12f164161f5b3ce87\jetified-play-services-measurement-impl-20.1.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\1b886d735a1a2ab12f164161f5b3ce87\jetified-play-services-measurement-impl-20.1.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\7563c4422003ad7a53c5e2b6e2dca0be\jetified-play-services-measurement-sdk-api-20.1.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\7563c4422003ad7a53c5e2b6e2dca0be\jetified-play-services-measurement-sdk-api-20.1.1\AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c2531414b8f4f8014a833ff69ff3dfdc\jetified-grpc-android-1.44.1\AndroidManifest.xml:9:5-79
+MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c2531414b8f4f8014a833ff69ff3dfdc\jetified-grpc-android-1.44.1\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:9:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:10:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:11:22-78
 application
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:9:4-46:19
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:12:4-49:19
 MERGED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] D:\User\Desktop\DailyMuslim\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] D:\User\Desktop\DailyMuslim\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
@@ -230,51 +260,51 @@ MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\User\.gradl
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\0eb3c3bf69776f10b11effa28f97921f\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:10:9-37
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:13:9-37
 	android:icon
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:14:9-43
 activity#io.isko.dailymuslim.MainActivity
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:12:9-40:20
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:15:9-43:20
 	android:launchMode
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:14:13-43
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:17:13-43
 	android:hardwareAccelerated
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:17:13-47
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:20:13-47
 	android:windowSoftInputMode
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:18:13-55
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:21:13-55
 	android:configChanges
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:16:13-163
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:19:13-163
 	android:theme
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:15:13-47
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:18:13-47
 	android:name
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:13:13-41
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:16:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:23:13-26:17
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:26:13-29:17
 	android:resource
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:25:15-52
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:28:15-52
 	android:name
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:24:15-70
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:27:15-70
 meta-data#io.flutter.embedding.android.SplashScreenDrawable
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:32:13-35:17
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:35:13-38:17
 	android:resource
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:34:15-61
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:37:15-61
 	android:name
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:33:15-79
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:36:15-79
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:36:13-39:29
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:39:13-42:29
 action#android.intent.action.MAIN
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:37:17-68
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:40:17-68
 	android:name
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:37:25-66
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:40:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:38:17-76
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:41:17-76
 	android:name
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:38:27-74
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:41:27-74
 meta-data#flutterEmbedding
-ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:43:9-45:33
+ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:46:9-48:33
 	android:value
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:45:13-30
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:48:13-30
 	android:name
-		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:44:13-44
+		ADDED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml:47:13-44
 uses-sdk
 INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\User\Desktop\DailyMuslim\android\app\src\main\AndroidManifest.xml
@@ -563,26 +593,6 @@ ADDED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launche
 		ADDED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-71
 	android:name
 		ADDED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:9:13-74
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:7:5-79
-MERGED from [com.google.firebase:firebase-auth:21.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\a77927729cfd8ef1771aa558148712bc\jetified-firebase-auth-21.0.2\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-auth:21.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\a77927729cfd8ef1771aa558148712bc\jetified-firebase-auth-21.0.2\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-firestore:24.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\cf9f4e635c4c457130861b4f755a17ea\jetified-firebase-firestore-24.0.2\AndroidManifest.xml:13:5-79
-MERGED from [com.google.firebase:firebase-firestore:24.0.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\cf9f4e635c4c457130861b4f755a17ea\jetified-firebase-firestore-24.0.2\AndroidManifest.xml:13:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\b4526196451611fe769d8320631140b6\jetified-play-services-measurement-api-20.1.1\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\b4526196451611fe769d8320631140b6\jetified-play-services-measurement-api-20.1.1\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-installations:17.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2d71eb87580e74fea6ec9ce6694d780b\jetified-firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
-MERGED from [com.google.firebase:firebase-installations:17.0.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2d71eb87580e74fea6ec9ce6694d780b\jetified-firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
-MERGED from [com.google.android.gms:play-services-measurement:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e28cb500013723c03bb78fc1b130643f\jetified-play-services-measurement-20.1.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e28cb500013723c03bb78fc1b130643f\jetified-play-services-measurement-20.1.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\1b886d735a1a2ab12f164161f5b3ce87\jetified-play-services-measurement-impl-20.1.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\1b886d735a1a2ab12f164161f5b3ce87\jetified-play-services-measurement-impl-20.1.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\7563c4422003ad7a53c5e2b6e2dca0be\jetified-play-services-measurement-sdk-api-20.1.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\7563c4422003ad7a53c5e2b6e2dca0be\jetified-play-services-measurement-sdk-api-20.1.1\AndroidManifest.xml:24:5-79
-MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c2531414b8f4f8014a833ff69ff3dfdc\jetified-grpc-android-1.44.1\AndroidManifest.xml:9:5-79
-MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c2531414b8f4f8014a833ff69ff3dfdc\jetified-grpc-android-1.44.1\AndroidManifest.xml:9:5-79
-	android:name
-		ADDED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\release\AndroidManifest.xml:7:22-76
 provider#io.flutter.plugins.share.ShareFileProvider
 ADDED from [:share] D:\User\Desktop\DailyMuslim\build\share\intermediates\library_manifest\release\AndroidManifest.xml:8:9-16:20
 	android:grantUriPermissions

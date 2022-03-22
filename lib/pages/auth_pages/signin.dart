@@ -31,7 +31,7 @@ class _AuthPageState extends State<AuthPage> {
     final locationData = await service.getLocation();
     if (locationData != null) {
       final placeMark = await service.getPlaceMark(locationData: locationData);
-      try{
+      try {
         city = placeMark!.administrativeArea;
         lat = locationData.latitude!;
         long = locationData.longitude!;
@@ -39,9 +39,7 @@ class _AuthPageState extends State<AuthPage> {
         await AllUserData.setLatitude(lat!);
         await AllUserData.setLongitude(long!);
         print('all location saved');
-      }
-      catch(e)
-      {
+      } catch (e) {
         print(e);
       }
     }
@@ -116,7 +114,7 @@ class _AuthPageState extends State<AuthPage> {
                     backgroundColor: MaterialStateColor.resolveWith(
                         (states) => Colors.white),
                   ),
-                  onPressed: () =>print('your button is working properly'),
+                  onPressed: () => print('your button is working properly'),
                   icon: FaIcon(
                     FontAwesomeIcons.mailBulk,
                   ),
