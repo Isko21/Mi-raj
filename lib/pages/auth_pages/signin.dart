@@ -15,12 +15,12 @@ class _AuthPageState extends State<AuthPage> {
   @override
   void initState() {
     super.initState();
+    getLocation();
     AllUserData.setPrayers("fajr", 0);
     AllUserData.setPrayers("dhuhr", 0);
     AllUserData.setPrayers("asr", 0);
     AllUserData.setPrayers("maghrib", 0);
     AllUserData.setPrayers("isha", 0);
-    getLocation();
     print("Succesfully added prayer times");
   }
 
@@ -31,17 +31,14 @@ class _AuthPageState extends State<AuthPage> {
     final locationData = await service.getLocation();
     if (locationData != null) {
       final placeMark = await service.getPlaceMark(locationData: locationData);
-      try {
-        city = placeMark!.administrativeArea;
-        lat = locationData.latitude!;
-        long = locationData.longitude!;
-        await AllUserData.setLocationData(city!, 'city');
-        await AllUserData.setLatitude(lat!);
-        await AllUserData.setLongitude(long!);
-        print('all location saved');
-      } catch (e) {
-        print(e);
-      }
+
+      city = placeMark!.subLocality;
+      lat = locationData.latitude!;
+      long = locationData.longitude!;
+      await AllUserData.setLocationData(city!, 'city');
+      await AllUserData.setLatitude(lat!);
+      await AllUserData.setLongitude(long!);
+      print('all location saved');
     }
   }
 

@@ -5,6 +5,8 @@ import 'package:daily_muslim/components/textinput.dart';
 
 import 'package:daily_muslim/pages/auth_pages/signin.dart';
 
+import '../../components/properties.dart';
+
 class SignUp extends StatefulWidget {
   SignUp({Key? key}) : super(key: key);
 
@@ -15,8 +17,6 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   String _gender = "male";
   bool _isVisible = false;
-  Color color = Color.fromRGBO(103, 118, 237, 1);
-  Color colorStr = Color.fromRGBO(0, 78, 141, 1);
   void updateStatus() {
     setState(() {
       _isVisible = !_isVisible;
