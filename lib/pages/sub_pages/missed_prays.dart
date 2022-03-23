@@ -205,67 +205,68 @@ class _MissedPraysState extends State<MissedPrays> {
                   backgroundColor:
                       MaterialStateColor.resolveWith((states) => color),
                 ),
-                onPressed: () {
-                  showModalBottomSheet<void>(
-                      backgroundColor: Color.fromARGB(255, 235, 231, 231),
-                      isScrollControlled: true,
-                      isDismissible: true,
-                      elevation: 2.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20)),
-                      ),
-                      context: context,
-                      builder: (_) => Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                onPressed: () => showModalBottomSheet(
+                  isDismissible: true,
+                  backgroundColor: Colors.transparent,
+                  context: context,
+                  builder: (_) => StatefulBuilder(
+                    builder: (context, setState) => Container(
+                      decoration: BoxDecoration(
+                          color: white,
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(20))),
+                      padding: EdgeInsets.all(15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Column(
                             children: [
-                              Column(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.all(10),
-                                    height: 5,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                        color: Colors.grey[500],
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
-                                  ),
-                                ],
+                              Container(
+                                margin: EdgeInsets.all(10),
+                                height: 5,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    color: Colors.grey[500],
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20))),
                               ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Center(
-                                child: Text(
-                                  'When you became a teenager?',
-                                  style: getStyle(21, colorStr, false),
-                                ),
-                              ),
-                              CupertinoButton(
-                                  color: color,
-                                  child: Text(getFirstText(teenAge)),
-                                  onPressed: () =>
-                                      showAndroidTimePicker(context)),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Center(
-                                child: Text(
-                                  'When you started praying?',
-                                  style: getStyle(21, colorStr, false),
-                                ),
-                              ),
-                              CupertinoButton(
-                                  color: colorStr,
-                                  child: Text(getFirstText(teenAge)),
-                                  onPressed: () =>
-                                      showIOSDateTimePicker(context)),
                             ],
-                          )));
-                },
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Center(
+                            child: Text(
+                              'When you became a teenager?',
+                              style: getStyle(21, colorStr, false),
+                            ),
+                          ),
+                          CupertinoButton(
+                              color: color,
+                              child: Text(
+                                  '${teenAge.month}/${teenAge.day}/${teenAge.year}'),
+                              onPressed: () => setState(
+                                  () async => showAndroidTimePicker(context))),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Center(
+                            child: Text(
+                              'When you started praying?',
+                              style: getStyle(21, colorStr, false),
+                            ),
+                          ),
+                          CupertinoButton(
+                              color: colorStr,
+                              child: Text(
+                                  '${startPraying.month}/${startPraying.day}/${startPraying.year}'),
+                              onPressed: () => setState(
+                                  () async => showIOSDateTimePicker(context))),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
                 icon: Icon(
                   FontAwesomeIcons.calculator,
                 ),
@@ -284,20 +285,16 @@ class _MissedPraysState extends State<MissedPrays> {
     );
   }
 
-  static String getFirstText(DateTime dt) {
-    return '${dt.month}/${dt.day}/${dt.year}';
-  }
-
-  Future showAndroidTimePicker(context) async {
-    final newDate = await showDatePicker(
+  void showAndroidTimePicker(context) {
+    final newDate = showDatePicker(
         context: context,
-        initialDate: DateTime.now(),
+        initialDate: teenAge,
         firstDate: DateTime(DateTime.now().year - 100),
         lastDate: DateTime.now());
-    setState(() => teenAge = newDate as DateTime);
+    teenAge = newDate as DateTime;
   }
 
-  Future showIOSDateTimePicker(context) async {
+  void showIOSDateTimePicker(context) {
     showCupertinoModalPopup(
         context: context,
         builder: (_) => Container(
@@ -308,15 +305,12 @@ class _MissedPraysState extends State<MissedPrays> {
                   Container(
                     height: 180,
                     child: CupertinoDatePicker(
-                        initialDateTime: DateTime.now(),
-                        mode: CupertinoDatePickerMode.date,
-                        dateOrder: DatePickerDateOrder.mdy,
-                        onDateTimeChanged: (val) {
-                          setState(() {
-                            startPraying = val;
-                          });
-                        }),
-                  ),
+                      initialDateTime: startPraying,
+                      mode: CupertinoDatePickerMode.date,
+                      dateOrder: DatePickerDateOrder.mdy,
+                      onDateTimeChanged: (val) => startPraying = val,
+                    ),
+                  )
                 ],
               ),
             ));
