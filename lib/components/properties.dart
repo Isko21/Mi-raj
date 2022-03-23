@@ -39,3 +39,10 @@ final pages = [
 ];
 String appBar = "Home";
 int index = 0;
+
+TextStyle getStyle(double size, Color c, bool isBold) {
+  return TextStyle(
+      color: c,
+      fontSize: size,
+      fontWeight: isBold ? FontWeight.bold : FontWeight.normal);
+}

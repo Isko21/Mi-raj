@@ -55,7 +55,7 @@ class _NavBarState extends State<NavBar> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home_filled, color: white),
+            leading: Icon(Icons.home, color: white),
             title: Text('Home', style: TextStyle(color: white)),
             onTap: () {
               index = 0;

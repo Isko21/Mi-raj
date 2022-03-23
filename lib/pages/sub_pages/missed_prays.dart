@@ -238,21 +238,31 @@ class _MissedPraysState extends State<MissedPrays> {
                               SizedBox(
                                 height: 20,
                               ),
+                              Center(
+                                child: Text(
+                                  'When you became a teenager?',
+                                  style: getStyle(21, colorStr, false),
+                                ),
+                              ),
                               CupertinoButton(
                                   color: color,
-                                  child: Text(getFirstText(
-                                      teenAge, 'When you became a teenager')),
+                                  child: Text(getFirstText(teenAge)),
                                   onPressed: () =>
-                                      showAndroidTimePicker(context, teenAge)),
+                                      showAndroidTimePicker(context)),
                               SizedBox(
                                 height: 20,
                               ),
+                              Center(
+                                child: Text(
+                                  'When you started praying?',
+                                  style: getStyle(21, colorStr, false),
+                                ),
+                              ),
                               CupertinoButton(
                                   color: colorStr,
-                                  child: Text(getFirstText(
-                                      teenAge, 'When you started praying')),
-                                  onPressed: () => showIOSDateTimePicker(
-                                      context, startPraying)),
+                                  child: Text(getFirstText(teenAge)),
+                                  onPressed: () =>
+                                      showIOSDateTimePicker(context)),
                             ],
                           )));
                 },
@@ -274,20 +284,20 @@ class _MissedPraysState extends State<MissedPrays> {
     );
   }
 
-  String getFirstText(DateTime dt, String text) {
-    return dt != DateTime.now() ? text : '${dt.month}/${dt.day}/${dt.year}';
+  static String getFirstText(DateTime dt) {
+    return '${dt.month}/${dt.day}/${dt.year}';
   }
 
-  Future showAndroidTimePicker(context, DateTime dt) async {
+  Future showAndroidTimePicker(context) async {
     final newDate = await showDatePicker(
         context: context,
         initialDate: DateTime.now(),
         firstDate: DateTime(DateTime.now().year - 100),
         lastDate: DateTime.now());
-    setState(() => dt = newDate as DateTime);
+    setState(() => teenAge = newDate as DateTime);
   }
 
-  Future showIOSDateTimePicker(context, DateTime dt) async {
+  Future showIOSDateTimePicker(context) async {
     showCupertinoModalPopup(
         context: context,
         builder: (_) => Container(
@@ -303,7 +313,7 @@ class _MissedPraysState extends State<MissedPrays> {
                         dateOrder: DatePickerDateOrder.mdy,
                         onDateTimeChanged: (val) {
                           setState(() {
-                            dt = val;
+                            startPraying = val;
                           });
                         }),
                   ),

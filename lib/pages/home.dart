@@ -19,7 +19,6 @@ class _HomePageState extends State<HomePage> {
   var country = '';
   List<String> _prayerTimes = [];
   List<String> _prayerNames = [];
-
   @override
   void initState() {
     super.initState();
@@ -55,11 +54,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(color: white),
-      child: SafeArea(
+    return SafeArea(
+      child: Container(
+        decoration: BoxDecoration(color: white),
         child: ListView(
           padding: EdgeInsets.only(left: 20, right: 20, bottom: 20.0),
           children: [
