@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:daily_muslim/components/properties.dart';
@@ -52,7 +53,7 @@ class Tool extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         switch (index) {
           case 0:
@@ -88,7 +89,7 @@ class Tool extends StatelessWidget {
                 color: colorStr,
                 size: 50,
               ),
-              Text(
+              AutoSizeText(
                 title,
                 maxLines: 1,
                 style: TextStyle(color: colorStr, fontSize: 20),

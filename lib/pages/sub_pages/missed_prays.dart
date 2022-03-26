@@ -8,6 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import '../../components/missed_prays_widget.dart';
 import '../../components/shared_pref.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class MissedPrays extends StatefulWidget {
   MissedPrays({Key? key}) : super(key: key);
@@ -236,150 +237,201 @@ class _MissedPraysState extends State<MissedPrays>
               ),
             ),
             Visibility(
+                replacement: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: ElevatedButton.icon(
+                    style: ButtonStyle(
+                      elevation:
+                          MaterialStateProperty.resolveWith((states) => 3),
+                      shadowColor: MaterialStateColor.resolveWith(
+                          (states) => Colors.black),
+                      minimumSize: MaterialStateProperty.resolveWith(
+                          (states) => Size(100, 60)),
+                      foregroundColor:
+                          MaterialStateColor.resolveWith((states) => white),
+                      backgroundColor:
+                          MaterialStateColor.resolveWith((states) => color),
+                    ),
+                    onPressed: () {
+                      if (!isVisible) {
+                        setState(() {
+                          isVisible = !isVisible;
+                        });
+                      }
+                    },
+                    icon: Icon(
+                      FontAwesomeIcons.calculator,
+                    ),
+                    label: Text(
+                      'Calculate your all missed prays',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
                 visible: isVisible,
                 maintainAnimation: isVisible,
                 maintainSize: isVisible,
                 maintainState: isVisible,
-                child: Column(
-                  children: [
-                    Center(
-                      child: Text(
-                        'When you became a teenager?',
-                        style: getStyle(21, colorStr, false),
-                      ),
-                    ),
-                    CupertinoButton(
-                        color: color,
-                        child: Text(getText(teenAge, 1)),
-                        onPressed: () => pickDate(context, 1)),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Center(
-                      child: Text(
-                        'When you started praying?',
-                        style: getStyle(21, colorStr, false),
-                      ),
-                    ),
-                    CupertinoButton(
-                        color: colorStr,
-                        child: Text(getText(startPraying, 2)),
-                        onPressed: () => pickDate(context, 2)),
-                  ],
-                )),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: ElevatedButton.icon(
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.resolveWith((states) => 3),
-                  shadowColor:
-                      MaterialStateColor.resolveWith((states) => Colors.black),
-                  minimumSize: MaterialStateProperty.resolveWith(
-                      (states) => Size(100, 60)),
-                  foregroundColor:
-                      MaterialStateColor.resolveWith((states) => white),
-                  backgroundColor:
-                      MaterialStateColor.resolveWith((states) => color),
-                ),
-                onPressed: () {
-                  if (!isVisible) {
-                    setState(() {
-                      isVisible = !isVisible;
-                    });
-                  } else {
-                    print(startPraying.difference(teenAge).inDays);
-                    showDialog(
-                        context: context,
-                        builder: (_) => ScaleTransition(
-                            scale: scaleAnimation,
-                            child: Center(
-                                child: Material(
-                                    color: Colors.transparent,
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 18.0, vertical: 10.0),
-                                      width: width * 0.75,
-                                      height: height * 0.39,
-                                      decoration: ShapeDecoration(
-                                        color: white,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15.0),
+                child: Container(
+                  margin: EdgeInsets.only(left: 20, right: 20),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                      color: colorStr.withAlpha(50)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: CupertinoButton(
+                              color: color,
+                              child: AutoSizeText(
+                                getText(teenAge, 1),
+                                maxLines: 1,
+                                style: getStyle(21, white, false),
+                              ),
+                              onPressed: () => pickDate(context, 1)),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: CupertinoButton(
+                              color: color,
+                              child: AutoSizeText(getText(startPraying, 2),
+                                  maxLines: 1),
+                              onPressed: () => pickDate(context, 2)),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        CupertinoButton(
+                            color: colorStr,
+                            child: Text('Calculate'),
+                            onPressed: () {
+                              print(startPraying.difference(teenAge).inDays);
+                              showDialog(
+                                barrierDismissible: false,
+                                context: context,
+                                builder: (_) => ScaleTransition(
+                                  scale: scaleAnimation,
+                                  child: Center(
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 18.0, vertical: 10.0),
+                                        width: width * 0.75,
+                                        height: height * 0.39,
+                                        decoration: ShapeDecoration(
+                                          color: white,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15.0),
+                                          ),
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text('Your Missed Days',
+                                                textAlign: TextAlign.center,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .headline5),
+                                            SizedBox(
+                                              height: height * 0.02,
+                                            ),
+                                            Text(
+                                                startPraying
+                                                    .difference(teenAge)
+                                                    .inDays
+                                                    .toString(),
+                                                style: getStyle(
+                                                    130.0, colorStr, true)),
+                                            Text(
+                                              'Do you want to set this data?',
+                                              style: getStyle(18, black, false),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                FlatButton(
+                                                    onPressed: () {
+                                                      setState(() {
+                                                        isVisible = !isVisible;
+                                                      });
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: Text(
+                                                      'NO',
+                                                      style: getStyle(
+                                                          18, color, false),
+                                                    )),
+                                                FlatButton(
+                                                    onPressed: () {
+                                                      setState(() {
+                                                        isVisible = !isVisible;
+                                                      });
+                                                      add(
+                                                          'fajr',
+                                                          startPraying
+                                                              .difference(
+                                                                  teenAge)
+                                                              .inDays);
+                                                      add(
+                                                          'dhuhr',
+                                                          startPraying
+                                                              .difference(
+                                                                  teenAge)
+                                                              .inDays);
+                                                      add(
+                                                          'asr',
+                                                          startPraying
+                                                              .difference(
+                                                                  teenAge)
+                                                              .inDays);
+                                                      add(
+                                                          'maghrib',
+                                                          startPraying
+                                                              .difference(
+                                                                  teenAge)
+                                                              .inDays);
+                                                      add(
+                                                          'isha',
+                                                          startPraying
+                                                              .difference(
+                                                                  teenAge)
+                                                              .inDays);
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: Text(
+                                                      'YES',
+                                                      style: getStyle(
+                                                          18, color, false),
+                                                    )),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          Text('Your Missed Days',
-                                              textAlign: TextAlign.center,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .headline5),
-                                          SizedBox(
-                                            height: height * 0.02,
-                                          ),
-                                          Text(
-                                              startPraying
-                                                  .difference(teenAge)
-                                                  .inDays
-                                                  .toString(),
-                                              style: getStyle(
-                                                  130.0, colorStr, true)),
-                                          Text(
-                                            'Do you want to set this data?',
-                                            style: getStyle(18, black, false),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              FlatButton(
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-
-                                                    setState(() {
-                                                      isVisible = !isVisible;
-                                                    });
-                                                  },
-                                                  child: Text(
-                                                    'NO',
-                                                    style: getStyle(
-                                                        21, color, false),
-                                                  )),
-                                              FlatButton(
-                                                  onPressed: () {
-                                                    setState(() {
-                                                      isVisible = !isVisible;
-                                                    });
-                                                    Navigator.pop(context);
-                                                  },
-                                                  child: Text(
-                                                    'YES',
-                                                    style: getStyle(
-                                                        21, color, true),
-                                                  )),
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    )))));
-                  }
-                },
-                icon: Icon(
-                  FontAwesomeIcons.calculator,
-                ),
-                label: Text(
-                  'Calculate your all missed prays',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            })
+                      ],
+                    ),
                   ),
-                ),
-              ),
-            ),
+                )),
           ],
         ),
       ),
