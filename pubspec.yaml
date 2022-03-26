@@ -66,6 +66,7 @@ dependencies:
   flutter_typeahead: ^3.2.4
   flutter_svg: ^1.0.3
   dotted_border: ^2.0.0+2
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

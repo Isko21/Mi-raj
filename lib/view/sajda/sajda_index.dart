@@ -214,10 +214,8 @@ class _SajdaInformationState extends State<SajdaInformation>
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text(
-                  "Sajda Information",
-                  style: Theme.of(context).textTheme.headline5,
-                ),
+                Text("Sajda Information",
+                    style: Theme.of(context).textTheme.headline5),
                 SizedBox(
                   height: height * 0.02,
                 ),

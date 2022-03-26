@@ -14,12 +14,12 @@ class AllUserData {
     return _preferences.getInt(name) ?? 0;
   }
 
-  static void addPrayer(String name) async {
-    setPrayers(name, getPrayers(name) + 1);
+  static void addPrayer(String name, int count) async {
+    setPrayers(name, getPrayers(name) + count);
   }
 
-  static void subtractPrayer(String name) async {
-    setPrayers(name, getPrayers(name) - 1);
+  static void subtractPrayer(String name, int count) async {
+    setPrayers(name, getPrayers(name) - count);
   }
 
   static double getLatitude() {
