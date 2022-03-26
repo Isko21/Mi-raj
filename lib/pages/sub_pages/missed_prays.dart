@@ -4,6 +4,7 @@ import 'package:daily_muslim/components/appbar.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../components/missed_prays_widget.dart';
 import '../../components/shared_pref.dart';
 
 class MissedPrays extends StatefulWidget {
@@ -160,7 +161,7 @@ class _MissedPraysState extends State<MissedPrays> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          GestureDetector(
+                          InkWell(
                             onTap: () => print('subtract 1 day'),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
@@ -173,7 +174,7 @@ class _MissedPraysState extends State<MissedPrays> {
                               ),
                             ),
                           ),
-                          GestureDetector(
+                          InkWell(
                             onTap: () => print('add 1 day'),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
@@ -314,68 +315,5 @@ class _MissedPraysState extends State<MissedPrays> {
                 ],
               ),
             ));
-  }
-}
-
-// ignore: must_be_immutable
-class MissPrayer extends StatelessWidget {
-  MissPrayer({
-    Key? key,
-    required this.title,
-    required this.count,
-    required this.minus,
-    required this.plus,
-  }) : super(key: key);
-
-  int count;
-  final String title;
-  final Function plus;
-  final Function minus;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: TextStyle(fontSize: 15),
-          ),
-          Row(
-            children: [
-              MaterialButton(
-                color: color,
-                shape: const CircleBorder(),
-                onPressed: () => minus.call(),
-                child: const Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Text(
-                    '-',
-                    style: TextStyle(color: Colors.white, fontSize: 24),
-                  ),
-                ),
-              ),
-              Text(
-                count.toString(),
-                style: TextStyle(fontSize: 15),
-              ),
-              MaterialButton(
-                color: color,
-                shape: const CircleBorder(),
-                onPressed: () => plus.call(),
-                child: const Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Text(
-                    '+',
-                    style: TextStyle(color: Colors.white, fontSize: 24),
-                  ),
-                ),
-              )
-            ],
-          )
-        ],
-      ),
-    );
   }
 }
