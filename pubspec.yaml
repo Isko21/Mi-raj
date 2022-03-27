@@ -106,7 +106,7 @@ flutter:
   fonts:
     - family: Al-Qalam
       fonts:
-        - asset: fonts/Al-Qalam-Quran-Majeed.ttf
+        - asset: fonts/Al-Qalam.ttf
     - family: Quran-Font
       fonts:
         - asset: fonts/Quran-Font.ttf

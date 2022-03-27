@@ -212,7 +212,14 @@ class _MissedPraysState extends State<MissedPrays>
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           FlatButton(
-                            onPressed: () => print('subtract 1 day'),
+                            onPressed: () {
+                              subtract('fajr', 1);
+                              subtract('dhuhr', 1);
+                              subtract('asr', 1);
+                              subtract('maghrib', 1);
+                              subtract('isha', 1);
+                              setState(() {});
+                            },
                             child: Text(
                               'SUBTRACT 1 DAY',
                               style: TextStyle(
@@ -222,7 +229,14 @@ class _MissedPraysState extends State<MissedPrays>
                             ),
                           ),
                           FlatButton(
-                            onPressed: () => print('add 1 day'),
+                            onPressed: () {
+                              add('fajr', 1);
+                              add('dhuhr', 1);
+                              add('asr', 1);
+                              add('maghrib', 1);
+                              add('isha', 1);
+                              setState(() {});
+                            },
                             child: Text(
                               'ADD 1 DAY',
                               style: TextStyle(
@@ -289,11 +303,8 @@ class _MissedPraysState extends State<MissedPrays>
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: CupertinoButton(
                               color: color,
-                              child: AutoSizeText(
-                                getText(teenAge, 1),
-                                maxLines: 1,
-                                style: getStyle(21, white, false),
-                              ),
+                              child: AutoSizeText(getText(teenAge, 1),
+                                  maxLines: 1),
                               onPressed: () => pickDate(context, 1)),
                         ),
                         SizedBox(
@@ -349,11 +360,12 @@ class _MissedPraysState extends State<MissedPrays>
                                             SizedBox(
                                               height: height * 0.02,
                                             ),
-                                            Text(
+                                            AutoSizeText(
                                                 startPraying
                                                     .difference(teenAge)
                                                     .inDays
                                                     .toString(),
+                                                maxLines: 1,
                                                 style: getStyle(
                                                     130.0, colorStr, true)),
                                             Text(
