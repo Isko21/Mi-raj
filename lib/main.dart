@@ -41,7 +41,6 @@ Future<void> main() async {
   Hive.registerAdapter<SurahsList>(SurahsListAdapter());
   Hive.registerAdapter<Surah>(SurahAdapter());
 
-  // box
   await Hive.openBox('data');
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

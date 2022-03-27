@@ -1,7 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/components/shared_pref.dart';
-
+import 'package:hijri/hijri_calendar.dart';
+// ignore: import_of_legacy_library_into_null_safe, unused_import
+import 'package:adhan/adhan.dart';
 import '../model/pray_time/prayer_time.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,7 +22,10 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     city = AllUserData.getLocationData('city');
     country = AllUserData.getLocationData('country');
+    long = AllUserData.getLongitude();
+    lat = AllUserData.getLatitude();
     getPrayerTimes();
+    getPrayer();
   }
 
   getPrayerTimes() {
@@ -46,17 +52,37 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  late PrayerTimes _prayerTimes;
+  getPrayer() {
+    var myCoordinates = Coordinates(lat, long);
+    var params = CalculationMethod.muslim_world_league.getParameters();
+    params.madhab = Madhab.hanafi;
+    _prayerTimes = PrayerTimes.today(myCoordinates, params);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Center(
-        child: Container(
-            child: Text(
-          'Temporarily\nempty',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 60, color: colorStr),
-        )),
-      ),
+      child: Container(
+          child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              HijriCalendar.now().hDay.toString(),
+              style: TextStyle(fontSize: 30),
+            ),
+            Text(DateFormat.j().format(_prayerTimes.fajr)),
+            Text(DateFormat.j().format(_prayerTimes.sunrise)),
+            Text(DateFormat.j().format(_prayerTimes.dhuhr)),
+            Text(DateFormat.j().format(_prayerTimes.asr)),
+            Text(DateFormat.j().format(_prayerTimes.maghrib)),
+            Text(DateFormat.j().format(_prayerTimes.isha)),
+            Text(_prayerTimes.nextPrayer().index.toString()),
+            Text(_prayerTimes.currentPrayer().index.toString()),
+            Text(_prayerTimes.nextPrayerByDateTime(DateTime.now()).toString())
+          ],
+        ),
+      )),
     );
   }
 }

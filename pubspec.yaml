@@ -69,6 +69,7 @@ dependencies:
   intl: ^0.17.0
   auto_size_text: ^3.0.0
   hijri: ^3.0.0
+  adhan: ^1.1.16
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,5 @@
 import 'package:daily_muslim/animations/bottom_animation.dart';
+import 'package:daily_muslim/components/properties.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -11,7 +12,7 @@ class LoadingShimmer extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Shimmer.fromColors(
-      baseColor: Colors.transparent,
+      baseColor: color,
       highlightColor: const Color(0xfff9e9b8),
       enabled: true,
       child: Container(

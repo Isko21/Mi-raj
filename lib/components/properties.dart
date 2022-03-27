@@ -50,7 +50,7 @@ TextStyle getStyle(double size, Color c, bool isBold) {
 }
 
 late String city;
-
+late double lat, long;
 late String country;
 List<String> prayerTimes = [];
 List<String> prayerNames = [];
