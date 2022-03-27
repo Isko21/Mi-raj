@@ -68,6 +68,7 @@ dependencies:
   dotted_border: ^2.0.0+2
   intl: ^0.17.0
   auto_size_text: ^3.0.0
+  hijri: ^3.0.0
 
 dev_dependencies:
   flutter_test:

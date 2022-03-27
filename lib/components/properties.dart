@@ -1,3 +1,4 @@
+import 'package:daily_muslim/pages/pray_pages/pray_times.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/pages/settings.dart';
@@ -32,6 +33,7 @@ enum Pages {
 final pages = [
   HomePage(),
   QuranPage(),
+  PrayTimes(),
   TasbihsPage(),
   JawshanPage(),
   ToolsPage(),
@@ -46,3 +48,9 @@ TextStyle getStyle(double size, Color c, bool isBold) {
       fontSize: size,
       fontWeight: isBold ? FontWeight.bold : FontWeight.normal);
 }
+
+late String city;
+
+late String country;
+List<String> prayerTimes = [];
+List<String> prayerNames = [];

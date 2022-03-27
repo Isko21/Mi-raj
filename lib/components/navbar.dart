@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../components/properties.dart';
@@ -75,10 +76,20 @@ class _NavBarState extends State<NavBar> {
             },
           ),
           ListTile(
+            leading: Icon(CupertinoIcons.clock_fill, color: white),
+            title: Text('Prayer Times', style: TextStyle(color: white)),
+            onTap: () {
+              index = 2;
+              appBar = 'Prayer Times';
+              widget.state();
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.one_k_plus, color: white),
             title: Text('Tasbihs', style: TextStyle(color: white)),
             onTap: () {
-              index = 2;
+              index = 3;
               appBar = "Tasbih";
               widget.state();
               Navigator.pop(context);
@@ -88,7 +99,7 @@ class _NavBarState extends State<NavBar> {
             leading: Icon(FontAwesomeIcons.shieldAlt, color: white),
             title: Text('Jawshan', style: TextStyle(color: white)),
             onTap: () {
-              index = 3;
+              index = 4;
               appBar = "Jawshan";
               widget.state();
               Navigator.pop(context);
@@ -98,7 +109,7 @@ class _NavBarState extends State<NavBar> {
             leading: Icon(FontAwesomeIcons.tools, color: white),
             title: Text('Tools', style: TextStyle(color: white)),
             onTap: () {
-              index = 4;
+              index = 5;
               appBar = "Tools";
               widget.state();
               Navigator.pop(context);
@@ -109,7 +120,7 @@ class _NavBarState extends State<NavBar> {
             leading: Icon(Icons.settings, color: white),
             title: Text('Settings', style: TextStyle(color: white)),
             onTap: () {
-              index = 5;
+              index = 6;
               appBar = "Settings";
               widget.state();
               Navigator.pop(context);
