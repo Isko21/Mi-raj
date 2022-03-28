@@ -7,7 +7,7 @@ packages:
       name: adhan
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.16"
+    version: "2.0.0-nullsafety.2"
   android_intent:
     dependency: "direct main"
     description:
@@ -21,7 +21,7 @@ packages:
       name: animated_splash_screen
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0"
   archive:
     dependency: transitive
     description:
@@ -98,21 +98,21 @@ packages:
       name: cloud_firestore
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.8"
+    version: "3.1.10"
   cloud_firestore_platform_interface:
     dependency: transitive
     description:
       name: cloud_firestore_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.4.13"
+    version: "5.5.1"
   cloud_firestore_web:
     dependency: transitive
     description:
       name: cloud_firestore_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.6.8"
+    version: "2.6.10"
   collection:
     dependency: transitive
     description:
@@ -217,42 +217,42 @@ packages:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.3.7"
+    version: "3.3.11"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
       name: firebase_auth_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.11"
+    version: "6.2.1"
   firebase_auth_web:
     dependency: transitive
     description:
       name: firebase_auth_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.3.7"
+    version: "3.3.9"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.12.0"
+    version: "1.13.1"
   firebase_core_platform_interface:
     dependency: transitive
     description:
       name: firebase_core_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.2.4"
+    version: "4.2.5"
   firebase_core_web:
     dependency: transitive
     description:
       name: firebase_core_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.4"
+    version: "1.6.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -325,7 +325,7 @@ packages:
       name: flutter_native_splash
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.1.2+1"
   flutter_overboard:
     dependency: "direct main"
     description:
@@ -333,13 +333,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.1"
-  flutter_sidebar:
-    dependency: "direct main"
-    description:
-      name: flutter_sidebar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.1"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -377,14 +370,14 @@ packages:
       name: font_awesome_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "9.2.0"
+    version: "10.1.0"
   geocoding:
     dependency: "direct main"
     description:
       name: geocoding
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.4"
   geocoding_platform_interface:
     dependency: transitive
     description:
@@ -482,7 +475,7 @@ packages:
       name: hive
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.6"
+    version: "2.1.0"
   hive_flutter:
     dependency: "direct main"
     description:
@@ -531,7 +524,7 @@ packages:
       name: loading_indicator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "3.0.3"
   location:
     dependency: "direct main"
     description:
@@ -567,13 +560,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.3"
-  mdi:
-    dependency: "direct main"
-    description:
-      name: mdi
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.0"
   meta:
     dependency: transitive
     description:
@@ -643,7 +629,7 @@ packages:
       name: page_transition
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1-nullsafety.0"
+    version: "2.0.5"
   path:
     dependency: transitive
     description:
@@ -1035,5 +1021,5 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.15.1 <3.0.0"
+  dart: ">=2.16.0 <3.0.0"
   flutter: ">=2.10.0"

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/components/shared_pref.dart';
 import 'package:hijri/hijri_calendar.dart';
-// ignore: import_of_legacy_library_into_null_safe, unused_import
 import 'package:adhan/adhan.dart';
 import '../model/pray_time/prayer_time.dart';
 
@@ -77,8 +76,8 @@ class _HomePageState extends State<HomePage> {
             Text(DateFormat.j().format(_prayerTimes.asr)),
             Text(DateFormat.j().format(_prayerTimes.maghrib)),
             Text(DateFormat.j().format(_prayerTimes.isha)),
-            Text(_prayerTimes.nextPrayer().index.toString()),
-            Text(_prayerTimes.currentPrayer().index.toString()),
+            Text(_prayerTimes.nextPrayer().name),
+            Text(_prayerTimes.currentPrayer().name),
             Text(_prayerTimes.nextPrayerByDateTime(DateTime.now()).toString())
           ],
         ),

@@ -115,7 +115,7 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                   onPressed: () => print('your button is working properly'),
                   icon: FaIcon(
-                    FontAwesomeIcons.mailBulk,
+                    FontAwesomeIcons.envelopesBulk,
                   ),
                   label: Text(
                     'Sign in with Email',

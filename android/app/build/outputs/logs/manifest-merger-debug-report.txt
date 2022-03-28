@@ -13,6 +13,7 @@ MERGED from [:flutter_vibrate] D:\User\Desktop\DailyMuslim\build\flutter_vibrate
 MERGED from [:flutter_local_notifications] D:\User\Desktop\DailyMuslim\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-28:12
 MERGED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider_android] D:\User\Desktop\DailyMuslim\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_native_splash] D:\User\Desktop\DailyMuslim\build\flutter_native_splash\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences_android] D:\User\Desktop\DailyMuslim\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:permission_handler_android] D:\User\Desktop\DailyMuslim\build\permission_handler_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:connectivity] D:\User\Desktop\DailyMuslim\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -328,6 +329,8 @@ MERGED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launch
 MERGED from [:url_launcher_android] D:\User\Desktop\DailyMuslim\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] D:\User\Desktop\DailyMuslim\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] D:\User\Desktop\DailyMuslim\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_native_splash] D:\User\Desktop\DailyMuslim\build\flutter_native_splash\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_native_splash] D:\User\Desktop\DailyMuslim\build\flutter_native_splash\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] D:\User\Desktop\DailyMuslim\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] D:\User\Desktop\DailyMuslim\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:permission_handler_android] D:\User\Desktop\DailyMuslim\build\permission_handler_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44

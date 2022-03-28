@@ -13,15 +13,14 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     switch (page) {
       case Pages.quran:
-        return Theme(
-          data: ThemeData(primaryIconTheme: IconThemeData(color: colorStr)),
-          child: AppBar(
-              iconTheme: IconThemeData(color: colorStr),
-              centerTitle: true,
-              backgroundColor: white,
-              title: WidgetAnimator(
-                  child: Text(title,
-                      style: TextStyle(color: colorStr, fontSize: 21)))),
+        return AppBar(
+          iconTheme: IconThemeData(color: colorStr),
+          elevation: 1,
+          centerTitle: true,
+          backgroundColor: white,
+          title: WidgetAnimator(
+              child:
+                  Text(title, style: TextStyle(color: colorStr, fontSize: 21))),
         );
       case Pages.home:
         return AppBar(
@@ -30,10 +29,7 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
             backgroundColor: white,
             title: WidgetAnimator(
                 child: Text(title,
-                    style: TextStyle(
-                      color: colorStr,
-                      fontSize: 21,
-                    ))));
+                    style: TextStyle(color: colorStr, fontSize: 21))));
       case Pages.settings:
         return AppBar(
             centerTitle: true,
@@ -41,17 +37,12 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
             backgroundColor: white,
             title: WidgetAnimator(
                 child: Text(title,
-                    style: TextStyle(
-                        color: colorStr,
-                        fontSize: 21,
-                        fontWeight: FontWeight.bold))));
+                    style: TextStyle(color: colorStr, fontSize: 21))));
       default:
         return AppBar(
           centerTitle: true,
           iconTheme: IconThemeData(color: colorStr),
-          title: Text(title,
-              style: TextStyle(
-                  fontSize: 21, color: colorStr, fontWeight: FontWeight.bold)),
+          title: Text(title, style: TextStyle(fontSize: 21, color: colorStr)),
           backgroundColor: white,
           actions: [
             IconButton(
@@ -66,7 +57,7 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
                     ),
                     context: context,
                     builder: (context) => buildSheet()),
-                icon: Icon(FontAwesomeIcons.ellipsisH),
+                icon: Icon(FontAwesomeIcons.ellipsis),
                 color: colorStr,
                 iconSize: 15),
           ],

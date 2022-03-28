@@ -66,7 +66,7 @@ class _NavBarState extends State<NavBar> {
             },
           ),
           ListTile(
-            leading: Icon(FontAwesomeIcons.quran, color: white),
+            leading: Icon(FontAwesomeIcons.bookQuran, color: white),
             title: Text('Quran', style: TextStyle(color: white)),
             onTap: () {
               index = 1;
@@ -96,7 +96,7 @@ class _NavBarState extends State<NavBar> {
             },
           ),
           ListTile(
-            leading: Icon(FontAwesomeIcons.shieldAlt, color: white),
+            leading: Icon(FontAwesomeIcons.shieldHalved, color: white),
             title: Text('Jawshan', style: TextStyle(color: white)),
             onTap: () {
               index = 4;
@@ -106,7 +106,7 @@ class _NavBarState extends State<NavBar> {
             },
           ),
           ListTile(
-            leading: Icon(FontAwesomeIcons.tools, color: white),
+            leading: Icon(FontAwesomeIcons.screwdriverWrench, color: white),
             title: Text('Tools', style: TextStyle(color: white)),
             onTap: () {
               index = 5;
