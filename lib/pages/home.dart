@@ -85,16 +85,6 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(fontSize: 30),
                 ),
                 Text(DateFormat.j().format(_prayerTimes.fajr)),
-                Text(DateFormat.j().format(_prayerTimes.sunrise)),
-                Text(DateFormat.j().format(_prayerTimes.dhuhr)),
-                Text(DateFormat.j().format(_prayerTimes.asr)),
-                Text(DateFormat.j().format(_prayerTimes.maghrib)),
-                Text(DateFormat.j().format(_prayerTimes.isha)),
-                Text(_prayerTimes.nextPrayer().name),
-                Text(_prayerTimes.currentPrayer().name),
-                Text(_prayerTimes
-                    .nextPrayerByDateTime(DateTime.now())
-                    .toString())
               ],
             ),
           )),
