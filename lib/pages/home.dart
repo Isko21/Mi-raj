@@ -61,11 +61,25 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Container(
           child: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              margin: EdgeInsets.only(top: 30),
+              height: height * 0.3,
+              width: width,
+              child: Column(children: []),
+              decoration: BoxDecoration(
+                color: color.withAlpha(50),
+                image: DecorationImage(
+                    image: AssetImage('assets/img/mosque.png'),
+                    fit: BoxFit.fitWidth),
+              ),
+            ),
             Text(
               HijriCalendar.now().hDay.toString(),
               style: TextStyle(fontSize: 30),
