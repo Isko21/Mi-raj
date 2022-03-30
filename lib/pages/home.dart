@@ -63,26 +63,74 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    String current =
+        _prayerTimes.currentPrayer().toString().split('.').last.toLowerCase();
+    if (current == 'none') current = 'isha';
+    String next =
+        _prayerTimes.nextPrayer().toString().split('.').last.toUpperCase();
     return SafeArea(
       child: Container(
+          height: height,
+          width: width,
           color: color.withAlpha(50),
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(
+                  height: 30,
+                ),
                 Container(
-                  height: height * 0.3,
+                  height: height * 0.35,
                   width: width,
-                  child: Column(children: []),
+                  child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Now'),
+                                Text(current.toUpperCase()),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('upcoming'),
+                                Text(next),
+                              ],
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              child: Image.asset('assets/img/$current.png'),
+                              height: 50,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  HijriCalendar.now().hDay.toString(),
+                                  style: TextStyle(fontSize: 30),
+                                ),
+                                Text(
+                                    '${HijriCalendar.now().longMonthName}, ${HijriCalendar.now().hYear}')
+                              ],
+                            )
+                          ],
+                        )
+                      ]),
                   decoration: BoxDecoration(
-                    color: color.withAlpha(50),
                     image: DecorationImage(
-                        image: AssetImage('assets/img/mosque.png'),
+                        image: AssetImage(
+                          'assets/img/mosque.png',
+                        ),
                         fit: BoxFit.fitWidth),
                   ),
-                ),
-                Text(
-                  HijriCalendar.now().hDay.toString(),
-                  style: TextStyle(fontSize: 30),
                 ),
                 Text(DateFormat.j().format(_prayerTimes.fajr)),
               ],
