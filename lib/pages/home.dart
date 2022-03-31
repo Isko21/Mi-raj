@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/components/shared_pref.dart';
-import 'package:hijri/hijri_calendar.dart';
 import 'package:adhan/adhan.dart';
+import 'package:hijri/hijri_calendar.dart';
 import '../model/pray_time/prayer_time.dart';
 
 class HomePage extends StatefulWidget {
@@ -59,6 +59,10 @@ class _HomePageState extends State<HomePage> {
     _prayerTimes = PrayerTimes.today(myCoordinates, params);
   }
 
+  String getTime(DateTime dt) {
+    return DateFormat('Hm').format(dt);
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -68,6 +72,24 @@ class _HomePageState extends State<HomePage> {
     if (current == 'none') current = 'isha';
     String next =
         _prayerTimes.nextPrayer().toString().split('.').last.toUpperCase();
+    late String time;
+    switch (current) {
+      case 'fajr':
+        time = getTime(_prayerTimes.fajr);
+        break;
+      case 'dhuhr':
+        time = getTime(_prayerTimes.fajr);
+        break;
+      case 'asr':
+        time = getTime(_prayerTimes.fajr);
+        break;
+      case 'maghrib':
+        time = getTime(_prayerTimes.fajr);
+        break;
+      case 'isha':
+        time = getTime(_prayerTimes.fajr);
+        break;
+    }
     return SafeArea(
       child: Container(
           height: height,
@@ -76,63 +98,94 @@ class _HomePageState extends State<HomePage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
-                  height: 30,
-                ),
                 Container(
-                  height: height * 0.35,
+                  height: height * 0.3,
                   width: width,
-                  child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Column(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Now'),
-                                Text(current.toUpperCase()),
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('upcoming'),
-                                Text(next),
-                              ],
-                            )
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              child: Image.asset('assets/img/$current.png'),
-                              height: 50,
-                            ),
-                            Column(
+                        Container(
+                          padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Text(
-                                  HijriCalendar.now().hDay.toString(),
-                                  style: TextStyle(fontSize: 30),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Now',
+                                      style: getStyle(15, white, false),
+                                    ),
+                                    Text(
+                                      current.toUpperCase(),
+                                      style: getStyle(25, white, true),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                    '${HijriCalendar.now().longMonthName}, ${HijriCalendar.now().hYear}')
-                              ],
-                            )
-                          ],
+                                Container(
+                                  child: Image.asset('assets/img/$current.png'),
+                                  height: 50,
+                                ),
+                              ]),
+                        ),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'upcoming',
+                                    style: getStyle(15, white, false),
+                                  ),
+                                  Text(
+                                    next,
+                                    style: getStyle(25, white, true),
+                                  ),
+                                  Text(
+                                    time,
+                                    style: getStyle(25, white, false),
+                                  )
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    HijriCalendar.now().hDay.toString(),
+                                    style: getStyle(25, white, true),
+                                  ),
+                                  Text(
+                                    '${HijriCalendar.now().longMonthName}',
+                                    style: getStyle(15, white, false),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         )
                       ]),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
-                          'assets/img/mosque.png',
+                          'assets/img/back.jpg',
                         ),
-                        fit: BoxFit.fitWidth),
+                        fit: BoxFit.cover),
                   ),
                 ),
-                Text(DateFormat.j().format(_prayerTimes.fajr)),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: Column(children: [
+                    Text(
+                      'Assalamu alaikum',
+                      style: getStyle(23, black, true),
+                    )
+                  ]),
+                )
               ],
             ),
           )),
