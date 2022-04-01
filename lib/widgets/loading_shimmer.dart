@@ -16,7 +16,7 @@ class LoadingShimmer extends StatelessWidget {
       highlightColor: const Color(0xfff9e9b8),
       enabled: true,
       child: Container(
-        width: width,
+        width: width, 
         height: height,
         color: Colors.transparent,
         padding: const EdgeInsets.all(8.0),
