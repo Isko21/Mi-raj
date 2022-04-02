@@ -54,6 +54,7 @@ class _SurahIndexState extends State<SurahIndex> {
                         itemBuilder: (context, index) {
                           return Container(
                             decoration: BoxDecoration(
+                                boxShadow: [],
                                 border: Border.all(color: color),
                                 color: color.withAlpha(50),
                                 borderRadius:
