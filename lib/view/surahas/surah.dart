@@ -23,35 +23,38 @@ class SurahAyats extends StatelessWidget {
     return Scaffold(
       backgroundColor: white,
       body: Container(
-        child: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              expandedHeight: height * 0.3,
-              backgroundColor: white,
-              pinned: true,
-              floating: false,
-              flexibleSpace: FlexibleSpaceBar(
-                title: new Text('A Synthwave Mix'),
-                centerTitle: true,
-                titlePadding: const EdgeInsets.only(left: 20.0, bottom: 20.0),
-                background: ClipRRect(
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(50)),
-                  child: Image.network(
-                    'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4bb82b72535211.5bead62fe26d5.jpg',
-                    height: MediaQuery.of(context).size.height * 0.43,
-                    width: MediaQuery.of(context).size.width,
-                    fit: BoxFit.cover,
+        child: SafeArea(
+          child: CustomScrollView(
+            slivers: <Widget>[
+              SliverAppBar(
+                expandedHeight: height * 0.3,
+                backgroundColor: white,
+                pinned: true,
+                floating: false,
+                flexibleSpace: FlexibleSpaceBar(
+                  title: Text(
+                    surahEnglishName!,
+                    style: TextStyle(color: colorStr),
+                  ),
+                  centerTitle: true,
+                  titlePadding: EdgeInsets.only(left: 20.0, bottom: 20.0),
+                  background: ClipRRect(
+                    borderRadius:
+                        BorderRadius.vertical(bottom: Radius.circular(50)),
+                    child: Image.asset(
+                      'assets/img/read_quran.jpg',
+                      fit: BoxFit.fitHeight,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                  (context, index) => line(height, index, width),
-                  childCount: ayatsList!.length),
-            ),
-          ],
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                    (context, index) => line(height, index, width),
+                    childCount: ayatsList!.length),
+              ),
+            ],
+          ),
         ),
       ),
     );
