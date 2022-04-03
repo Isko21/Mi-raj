@@ -2,10 +2,10 @@ import 'package:daily_muslim/animations/bottom_animation.dart';
 import 'package:daily_muslim/components/appbar.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/controller/quran_controller.dart';
+import 'package:daily_muslim/view/surahas/surah.dart';
 import 'package:daily_muslim/widgets/loading_shimmer.dart';
 import 'package:daily_muslim/model/surah/surah.dart';
 import 'package:daily_muslim/model/surah/surah_list.dart';
-import 'package:daily_muslim/view/surahas/surah.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -53,48 +53,66 @@ class _SurahIndexState extends State<SurahIndex> {
                         itemCount: _surahs!.length,
                         itemBuilder: (context, index) {
                           return Container(
-                            decoration: BoxDecoration(
+                              decoration: BoxDecoration(
                                 boxShadow: [],
                                 border: Border.all(color: color),
                                 color: color.withAlpha(50),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                            child: WidgetAnimator(
-                              child: ListTile(
-                                onLongPress: () => _surahInforBox(index),
-                                leading: Text(
-                                  "${_surahs![index].number}",
-                                  style: TextStyle(fontSize: 17),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                    10,
+                                  ),
                                 ),
-                                title: Text(
-                                  "${_surahs![index].englishName}",
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                                subtitle: Text(
-                                    "${_surahs![index].englishNameTranslation}"),
-                                trailing: Text(
-                                  "${_surahs![index].name}",
-                                  style: TextStyle(
-                                      fontSize: 19, fontFamily: 'Noore'),
-                                ),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => SurahAyats(
-                                        ayatsList: _surahs![index].ayahs,
-                                        surahName: _surahs![index].name,
-                                        surahEnglishName:
-                                            _surahs![index].englishName,
-                                        englishMeaning: _surahs![index]
-                                            .englishNameTranslation,
-                                      ),
-                                    ),
-                                  );
-                                },
                               ),
-                            ),
-                          );
+                              child: WidgetAnimator(
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => SurahAyats(
+                                          ayatsList: _surahs![index].ayahs,
+                                          surahName: _surahs![index].name,
+                                          surahEnglishName:
+                                              _surahs![index].englishName,
+                                          englishMeaning: _surahs![index]
+                                              .englishNameTranslation,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  onLongPress: () => _surahInforBox(index),
+                                  child: ListTile(
+                                    onLongPress: () => _surahInforBox(index),
+                                    leading: Container(
+                                        margin: const EdgeInsets.all(10),
+                                        height: 70,
+                                        width: 70,
+                                        decoration: BoxDecoration(
+                                            color: colorStr,
+                                            image: const DecorationImage(
+                                              fit: BoxFit.cover,
+                                              opacity: 0.5,
+                                              image: AssetImage(
+                                                  'img/quran_page.jpg'),
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.all(
+                                                    Radius.circular(10))),
+                                        child: Center(child: Text(''))),
+                                    title: Text(
+                                      "${_surahs![index].englishName}",
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    subtitle: Text(
+                                        "${_surahs![index].englishNameTranslation}"),
+                                    trailing: Text(
+                                      "${_surahs![index].name}",
+                                      style: TextStyle(
+                                          fontSize: 19, fontFamily: 'Noore'),
+                                    ),
+                                  ),
+                                ),
+                              ));
                         },
                       ),
                     ),
