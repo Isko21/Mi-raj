@@ -43,11 +43,15 @@ class _JuzIndexState extends State<JuzIndex> {
       backgroundColor: white,
       appBar: AppBarCustom(change: () {}, title: "Juzs", page: Pages.home),
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/img/quran.png'),
+          ),
+        ),
         child: SafeArea(
             child: Stack(
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: GridView.builder(
                 itemCount: 30,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -64,14 +68,29 @@ class _JuzIndexState extends State<JuzIndex> {
                       child: Container(
                         margin: EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          border: Border.all(color: color),
-                          color: color.withAlpha(50),
-                          borderRadius: BorderRadius.circular(10.0),
+                          border: Border.all(color: black),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black,
+                                blurRadius: 20.0,
+                                offset: Offset(5, 5)),
+                            BoxShadow(color: Colors.white)
+                          ],
+                          color: black,
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            opacity: 0.5,
+                            image: AssetImage('assets/img/quran_page.jpg'),
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
                         alignment: Alignment.center,
                         child: Text(
                           "${index + 1}",
-                          style: TextStyle(fontSize: 21),
+                          style: TextStyle(
+                              fontSize: 21,
+                              color: Colors.white70,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),

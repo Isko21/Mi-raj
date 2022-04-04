@@ -75,19 +75,19 @@ class _HomePageState extends State<HomePage> {
     late String time;
     switch (current) {
       case 'fajr':
-        time = getTime(_prayerTimes.fajr);
+        time = getTime(_prayerTimes.sunrise);
         break;
       case 'dhuhr':
-        time = getTime(_prayerTimes.fajr);
+        time = getTime(_prayerTimes.dhuhr);
         break;
       case 'asr':
-        time = getTime(_prayerTimes.fajr);
+        time = getTime(_prayerTimes.asr);
         break;
       case 'maghrib':
-        time = getTime(_prayerTimes.fajr);
+        time = getTime(_prayerTimes.maghrib);
         break;
       case 'isha':
-        time = getTime(_prayerTimes.fajr);
+        time = getTime(_prayerTimes.isha);
         break;
     }
     return SafeArea(
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Now',
+                                      'now',
                                       style: getStyle(15, white, false),
                                     ),
                                     Text(
@@ -161,6 +161,11 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Text(
                                     '${HijriCalendar.now().longMonthName}',
+                                    style: getStyle(15, white, false),
+                                  ),
+                                  Text(
+                                    DateFormat('EEEE, d MMM')
+                                        .format(DateTime.now()),
                                     style: getStyle(15, white, false),
                                   )
                                 ],

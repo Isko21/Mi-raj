@@ -32,7 +32,9 @@ class _SajdaIndexState extends State<SajdaIndex> {
       backgroundColor: white,
       appBar: AppBarCustom(change: () {}, title: "Sajda", page: Pages.home),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: const AssetImage('assets/img/quran.png'))),
         child: SafeArea(
           child: Stack(
             children: <Widget>[
@@ -40,65 +42,104 @@ class _SajdaIndexState extends State<SajdaIndex> {
                   ? const LoadingShimmer(
                       text: "Sajdas",
                     )
-                  : Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: ListView.separated(
-                        itemCount: _sajdas!.length,
-                        separatorBuilder: (context, index) => const SizedBox(
-                          height: 10,
-                        ),
-                        itemBuilder: (context, index) {
-                          return WidgetAnimator(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: color),
-                                  color: color.withAlpha(50),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: ListTile(
-                                onLongPress: () => _sajdaInfoBox(index),
-                                leading: Text(
-                                  "${_sajdas![index].sajdaNumber}",
-                                  style: TextStyle(fontSize: 17),
+                  : ListView.separated(
+                      itemCount: _sajdas!.length,
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(height: 0);
+                      },
+                      itemBuilder: (context, index) {
+                        return WidgetAnimator(
+                          child: InkWell(
+                            onLongPress: () => _sajdaInfoBox(index),
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SajdaAyah(
+                                  surahName: _sajdas![index].surahName,
+                                  surahEnglishName:
+                                      _sajdas![index].surahEnglishName,
+                                  englishNameTranslation:
+                                      _sajdas![index].englishNameTranslation,
+                                  juz: _sajdas![index].juzNumber,
+                                  manzil: _sajdas![index].manzilNumber,
+                                  ruku: _sajdas![index].rukuNumber,
+                                  sajdaAyahs: _sajdas![index].text,
+                                  sajdaNumber: _sajdas![index].sajdaNumber,
+                                  revelationType:
+                                      _sajdas![index].revelationType,
                                 ),
-                                title: Text(
-                                  "${_sajdas![index].surahEnglishName}",
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                                subtitle: Text(
-                                  "${_sajdas![index].englishNameTranslation}",
-                                ),
-                                trailing: Text(
-                                  "${_sajdas![index].surahName}",
-                                  style: TextStyle(fontSize: 19),
-                                ),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => SajdaAyah(
-                                        surahName: _sajdas![index].surahName,
-                                        surahEnglishName:
-                                            _sajdas![index].surahEnglishName,
-                                        englishNameTranslation: _sajdas![index]
-                                            .englishNameTranslation,
-                                        juz: _sajdas![index].juzNumber,
-                                        manzil: _sajdas![index].manzilNumber,
-                                        ruku: _sajdas![index].rukuNumber,
-                                        sajdaAyahs: _sajdas![index].text,
-                                        sajdaNumber:
-                                            _sajdas![index].sajdaNumber,
-                                        revelationType:
-                                            _sajdas![index].revelationType,
-                                      ),
-                                    ),
-                                  );
-                                },
                               ),
                             ),
-                          );
-                        },
-                      ),
+                            child: Container(
+                              padding: EdgeInsets.all(10),
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 15),
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: black),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.black,
+                                        blurRadius: 20.0,
+                                        offset: Offset(5, 5)),
+                                    BoxShadow(color: Colors.white)
+                                  ],
+                                  color: white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                            margin: EdgeInsets.only(right: 10),
+                                            height: 70,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                                color: black,
+                                                image: const DecorationImage(
+                                                  fit: BoxFit.cover,
+                                                  opacity: 0.5,
+                                                  image: AssetImage(
+                                                      'assets/img/quran_page.jpg'),
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.all(
+                                                        Radius.circular(20))),
+                                            child: Center(
+                                                child: Text(
+                                              "${_sajdas![index].sajdaNumber}",
+                                              style: getStyle(
+                                                  21, Colors.white54, true),
+                                            ))),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              "${_sajdas![index].surahEnglishName}",
+                                              style: TextStyle(fontSize: 18),
+                                            ),
+                                            Text(
+                                              "${_sajdas![index].englishNameTranslation}",
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      "${_sajdas![index].surahName!.substring(7).trim()}",
+                                      style: TextStyle(
+                                          fontSize: 19, fontFamily: 'Noore'),
+                                    ),
+                                  ]),
+                            ),
+                          ),
+                        );
+                      },
                     ),
             ],
           ),
