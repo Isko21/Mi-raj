@@ -129,7 +129,7 @@ class _SurahIndexState extends State<SurahIndex> {
                                       ],
                                     ),
                                     Text(
-                                      "${_surahs![index].name}",
+                                      "${_surahs![index].name!.substring(7).trim()}",
                                       style: TextStyle(
                                           fontSize: 19, fontFamily: 'Noore'),
                                     ),

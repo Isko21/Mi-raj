@@ -27,23 +27,29 @@ class SurahAyats extends StatelessWidget {
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
+                iconTheme: IconThemeData(color: colorStr),
                 expandedHeight: height * 0.3,
                 backgroundColor: white,
                 pinned: true,
                 floating: false,
                 flexibleSpace: FlexibleSpaceBar(
-                  title: Text(
-                    surahEnglishName!,
-                    style: TextStyle(color: colorStr),
+                  title: Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: white,
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Text(
+                      surahEnglishName!,
+                      style: TextStyle(color: colorStr),
+                    ),
                   ),
                   centerTitle: true,
-                  titlePadding: EdgeInsets.only(left: 20.0, bottom: 20.0),
                   background: ClipRRect(
                     borderRadius:
-                        BorderRadius.vertical(bottom: Radius.circular(50)),
+                        BorderRadius.vertical(bottom: Radius.circular(20)),
                     child: Image.asset(
-                      'assets/img/read_quran.jpg',
-                      fit: BoxFit.fitHeight,
+                      'assets/img/reading.jpg',
+                      fit: BoxFit.fitWidth,
                     ),
                   ),
                 ),
@@ -64,22 +70,38 @@ class SurahAyats extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.fromLTRB(width * 0.015, 0, 0, 0),
       child: WidgetAnimator(
-        child: ListTile(
-          trailing: CircleAvatar(
-            radius: height * 0.013,
-            backgroundColor: const Color(0xff04364f),
-            child: CircleAvatar(
-                radius: height * 0.012,
-                backgroundColor: Colors.white,
-                child: Text(
-                  ayatsList![index].number.toString(),
-                  style: TextStyle(fontSize: height * 0.015),
-                )),
-          ),
-          title: Text(ayatsList![index].text!,
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                  fontSize: height * 0.033, color: black, fontFamily: 'Noore')),
+        child: Column(
+          children: [
+            if (index == 0 &&
+                surahEnglishName! != 'Al-Faatiha' &&
+                surahEnglishName! != 'At-Tawba')
+              Image.asset('assets/img/bismi.png', height: 120),
+            ListTile(
+              trailing: CircleAvatar(
+                radius: height * 0.013,
+                backgroundColor: const Color(0xff04364f),
+                child: CircleAvatar(
+                    radius: height * 0.012,
+                    backgroundColor: Colors.white,
+                    child: Text(
+                      ayatsList![index].number.toString(),
+                      style: TextStyle(fontSize: height * 0.015),
+                    )),
+              ),
+              title: Text(
+                  surahEnglishName! != 'Al-Faatiha' &&
+                          surahEnglishName! != 'At-Tawba'
+                      ? index == 0
+                          ? ayatsList![index].text!.substring(38).trim()
+                          : ayatsList![index].text!
+                      : ayatsList![index].text!,
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                      fontSize: height * 0.033,
+                      color: black,
+                      fontFamily: 'Noore')),
+            ),
+          ],
         ),
       ),
     );
