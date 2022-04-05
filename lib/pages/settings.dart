@@ -5,7 +5,7 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Column(
-      children: [],
+      children: [Text('Settins Page')],
     ));
   }
 }
