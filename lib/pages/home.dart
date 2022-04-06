@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
@@ -5,6 +7,7 @@ import 'package:daily_muslim/components/shared_pref.dart';
 import 'package:adhan/adhan.dart';
 import 'package:hijri/hijri_calendar.dart';
 import '../model/pray_time/prayer_time.dart';
+import 'package:quran/quran.dart' as quran;
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -25,6 +28,11 @@ class _HomePageState extends State<HomePage> {
     lat = AllUserData.getLatitude();
     getPrayerTimes();
     getPrayer();
+
+    Random random = Random();
+    surah = random.nextInt(114);
+    ayat = random.nextInt(quran.getVerseCount(surah));
+    generatedAyat = '$surah:$ayat';
   }
 
   getPrayerTimes() {
@@ -36,7 +44,7 @@ class _HomePageState extends State<HomePage> {
     prayers.setAdjustHighLats(prayers.getAdjustHighLats());
 
     List<int> offsets = List.filled(7, 0);
-    // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
+    // {F ajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
     prayers.tune(offsets);
 
     var currentTime = DateTime.now();
@@ -75,19 +83,19 @@ class _HomePageState extends State<HomePage> {
     late String time;
     switch (current) {
       case 'fajr':
-        time = getTime(_prayerTimes.sunrise);
-        break;
-      case 'dhuhr':
         time = getTime(_prayerTimes.dhuhr);
         break;
-      case 'asr':
+      case 'dhuhr':
         time = getTime(_prayerTimes.asr);
         break;
-      case 'maghrib':
+      case 'asr':
         time = getTime(_prayerTimes.maghrib);
         break;
-      case 'isha':
+      case 'maghrib':
         time = getTime(_prayerTimes.isha);
+        break;
+      case 'isha':
+        time = getTime(_prayerTimes.fajr);
         break;
     }
     return SafeArea(
@@ -185,10 +193,16 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   padding: EdgeInsets.all(10),
                   child: Column(children: [
-                    Text(
-                      'Assalamu alaikum',
-                      style: getStyle(23, black, true),
-                    )
+                    user.displayName != null
+                        ? Text(
+                            'Assalamu alaikum, ${user.displayName!.split(' ').first}',
+                            style: getStyle(23, black, true),
+                          )
+                        : Text(
+                            'Assalamu alaikum',
+                            style: getStyle(23, black, true),
+                          ),
+                    Text(generatedAyat),
                   ]),
                 )
               ],

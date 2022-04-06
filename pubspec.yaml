@@ -68,6 +68,7 @@ dependencies:
   auto_size_text: ^3.0.0
   hijri: ^3.0.0
   adhan: ^2.0.0-nullsafety.2
+  quran: ^1.1.2
 
 dev_dependencies:
   flutter_test:

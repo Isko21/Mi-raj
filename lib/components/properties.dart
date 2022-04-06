@@ -19,7 +19,10 @@ Padding kPadding = Padding(padding: EdgeInsets.symmetric(horizontal: 20));
 Color menu = Color(0xFF262AAA);
 Color color = Color.fromRGBO(103, 118, 237, 1);
 Color colorStr = Color.fromRGBO(0, 78, 141, 1);
-
+int surahs = 114;
+List<int> aya = List.filled(114, 0);
+String generatedAyat = 'Loading';
+late int surah, ayat;
 var user = FirebaseAuth.instance.currentUser!;
 enum Pages {
   home,
