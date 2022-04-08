@@ -1,7 +1,7 @@
 import 'package:daily_muslim/components/properties.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hijri/hijri_calendar.dart';
+import 'package:intl/intl.dart';
 
 class Header extends StatelessWidget {
   Header({Key? key}) : super(key: key);
@@ -48,12 +48,13 @@ class Header extends StatelessWidget {
                   children: [
                     Text(
                       'now',
-                      style: getStyle(15, white, false),
+                      style: TextStyle(fontSize: 25, color: white),
                     ),
-                    Text(
-                      current.toUpperCase(),
-                      style: getStyle(25, white, true),
-                    ),
+                    Text(current.toUpperCase(),
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: white,
+                            fontWeight: FontWeight.bold)),
                   ],
                 ),
                 Container(
@@ -73,32 +74,34 @@ class Header extends StatelessWidget {
                 children: [
                   Text(
                     'upcoming',
-                    style: getStyle(15, white, false),
+                    style: TextStyle(fontSize: 25, color: white),
                   ),
-                  Text(
-                    next,
-                    style: getStyle(25, white, true),
-                  ),
+                  Text(next,
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: white,
+                          fontWeight: FontWeight.bold)),
                   Text(
                     time,
-                    style: getStyle(25, white, false),
+                    style: TextStyle(fontSize: 25, color: white),
                   )
                 ],
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    HijriCalendar.now().hDay.toString(),
-                    style: getStyle(25, white, true),
-                  ),
+                  Text(HijriCalendar.now().hDay.toString(),
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: white,
+                          fontWeight: FontWeight.bold)),
                   Text(
                     '${HijriCalendar.now().longMonthName}',
-                    style: getStyle(15, white, false),
+                    style: TextStyle(fontSize: 25, color: white),
                   ),
                   Text(
                     DateFormat('EEEE, d MMM').format(DateTime.now()),
-                    style: getStyle(15, white, false),
+                    style: TextStyle(fontSize: 25, color: white),
                   )
                 ],
               )
@@ -116,26 +119,3 @@ class Header extends StatelessWidget {
     );
   }
 }
-// getPrayerTimes() {
-  //   PrayerTime prayers = new PrayerTime();
-
-  //   prayers.setTimeFormat(prayers.getTime24());
-  //   prayers.setCalcMethod(prayers.getMWL());
-  //   prayers.setAsrJuristic(prayers.getHanafi());
-  //   prayers.setAdjustHighLats(prayers.getAdjustHighLats());
-
-  //   List<int> offsets = List.filled(7, 0);
-  //   // {F ajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
-  //   prayers.tune(offsets);
-
-  //   var currentTime = DateTime.now();
-
-  //   setState(() {
-  //     prayerTimes = prayers.getPrayerTimes(
-  //         currentTime,
-  //         AllUserData.getLatitude(),
-  //         AllUserData.getLongitude(),
-  //         DateTime.now().timeZoneOffset.inHours + 0.0);
-  //     prayerNames = prayers.getTimeNames();
-  //   });
-  // }
