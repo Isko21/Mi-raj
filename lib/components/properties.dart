@@ -1,7 +1,9 @@
+import 'package:adhan/adhan.dart';
 import 'package:daily_muslim/pages/pray_pages/pray_times.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/pages/settings.dart';
+import 'package:intl/intl.dart';
 import '../pages/home.dart';
 import '../pages/pray_pages/jawshan_page.dart';
 import '../pages/pray_pages/tasbihs_page.dart';
@@ -22,7 +24,12 @@ Color colorStr = Color.fromRGBO(0, 78, 141, 1);
 int surahs = 114;
 List<int> aya = List.filled(114, 0);
 String generatedAyat = 'Loading';
-late int surah, ayat;
+String dailyAyatAR = '';
+String dailyAyatEN = '';
+late DateTime lastUpdateOfAyat;
+String dailyAyatSurah = '';
+late int ayat;
+Icon playAudio = Icon(Icons.play_arrow);
 var user = FirebaseAuth.instance.currentUser!;
 enum Pages {
   home,
@@ -55,5 +62,14 @@ TextStyle getStyle(double size, Color c, bool isBold) {
 late String city;
 late double lat, long;
 late String country;
-List<String> prayerTimes = [];
-List<String> prayerNames = [];
+String getTime(DateTime dt) {
+  return DateFormat('Hm').format(dt);
+}
+
+late PrayerTimes prayerTimes;
+getPrayer() {
+  var myCoordinates = Coordinates(lat, long);
+  var params = CalculationMethod.muslim_world_league.getParameters();
+  params.madhab = Madhab.hanafi;
+  prayerTimes = PrayerTimes.today(myCoordinates, params);
+}

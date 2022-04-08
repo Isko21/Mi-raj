@@ -56,7 +56,7 @@ class _PrayTimesState extends State<PrayTimes> {
                   ),
                   WidgetAnimator(
                       child: LinePrayer(
-                          pray: prayerTimes[0], title: prayerNames[0])),
+                          pray: getTime(prayerTimes.fajr), title: 'Fajr')),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Divider(
@@ -65,7 +65,8 @@ class _PrayTimesState extends State<PrayTimes> {
                   ),
                   WidgetAnimator(
                       child: LinePrayer(
-                          pray: prayerTimes[1], title: prayerNames[1])),
+                          pray: getTime(prayerTimes.sunrise),
+                          title: 'Sunrise')),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Divider(
@@ -74,7 +75,7 @@ class _PrayTimesState extends State<PrayTimes> {
                   ),
                   WidgetAnimator(
                       child: LinePrayer(
-                          pray: prayerTimes[2], title: prayerNames[2])),
+                          pray: getTime(prayerTimes.dhuhr), title: 'Dhuhr')),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Divider(
@@ -83,7 +84,7 @@ class _PrayTimesState extends State<PrayTimes> {
                   ),
                   WidgetAnimator(
                       child: LinePrayer(
-                          pray: prayerTimes[3], title: prayerNames[3])),
+                          pray: getTime(prayerTimes.asr), title: 'Asr')),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Divider(
@@ -92,7 +93,8 @@ class _PrayTimesState extends State<PrayTimes> {
                   ),
                   WidgetAnimator(
                       child: LinePrayer(
-                          pray: prayerTimes[5], title: prayerNames[5])),
+                          pray: getTime(prayerTimes.maghrib),
+                          title: 'Maghrib')),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Divider(
@@ -101,7 +103,7 @@ class _PrayTimesState extends State<PrayTimes> {
                   ),
                   WidgetAnimator(
                       child: LinePrayer(
-                          pray: prayerTimes[6], title: prayerNames[6])),
+                          pray: getTime(prayerTimes.isha), title: 'Isha')),
                 ]),
               ),
             ),

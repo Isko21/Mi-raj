@@ -1,13 +1,10 @@
+import 'dart:convert';
 import 'dart:math';
-
-import 'package:easy_localization/easy_localization.dart';
+import 'package:daily_muslim/components/header.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/components/shared_pref.dart';
-import 'package:adhan/adhan.dart';
-import 'package:hijri/hijri_calendar.dart';
-import '../model/pray_time/prayer_time.dart';
-import 'package:quran/quran.dart' as quran;
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -26,78 +23,35 @@ class _HomePageState extends State<HomePage> {
     country = AllUserData.getLocationData('country');
     long = AllUserData.getLongitude();
     lat = AllUserData.getLatitude();
-    getPrayerTimes();
     getPrayer();
 
     Random random = Random();
-    surah = random.nextInt(114);
-    ayat = random.nextInt(quran.getVerseCount(surah));
-    generatedAyat = '$surah:$ayat';
+    ayat = random.nextInt(6236);
+    getRandomAyat(ayat);
   }
 
-  getPrayerTimes() {
-    PrayerTime prayers = new PrayerTime();
+  Future<void> getRandomAyat(int ayat) async {
+    var endPointEN =
+        Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat/en.asad");
+    var responseEN = await http.get(endPointEN);
+    var bodyEN = jsonDecode(responseEN.body);
 
-    prayers.setTimeFormat(prayers.getTime24());
-    prayers.setCalcMethod(prayers.getMWL());
-    prayers.setAsrJuristic(prayers.getHanafi());
-    prayers.setAdjustHighLats(prayers.getAdjustHighLats());
-
-    List<int> offsets = List.filled(7, 0);
-    // {F ajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
-    prayers.tune(offsets);
-
-    var currentTime = DateTime.now();
-
-    setState(() {
-      prayerTimes = prayers.getPrayerTimes(
-          currentTime,
-          AllUserData.getLatitude(),
-          AllUserData.getLongitude(),
-          DateTime.now().timeZoneOffset.inHours + 0.0);
-      prayerNames = prayers.getTimeNames();
-    });
-  }
-
-  late PrayerTimes _prayerTimes;
-  getPrayer() {
-    var myCoordinates = Coordinates(lat, long);
-    var params = CalculationMethod.muslim_world_league.getParameters();
-    params.madhab = Madhab.hanafi;
-    _prayerTimes = PrayerTimes.today(myCoordinates, params);
-  }
-
-  String getTime(DateTime dt) {
-    return DateFormat('Hm').format(dt);
+    var responseAR =
+        await http.get(Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat"));
+    var bodyAR = jsonDecode(responseAR.body);
+    dailyAyatEN = bodyEN['data']['text'];
+    dailyAyatAR = bodyAR['data']['text'];
+    dailyAyatSurah = bodyEN['data']['surah']['englishName'];
+    //await player.setUrl(
+    //  'https://cdn.islamic.network//quran//audio//128//ar.alafasy//262.mp3');
+    print(ayat);
   }
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    String current =
-        _prayerTimes.currentPrayer().toString().split('.').last.toLowerCase();
-    if (current == 'none') current = 'isha';
-    String next =
-        _prayerTimes.nextPrayer().toString().split('.').last.toUpperCase();
-    late String time;
-    switch (current) {
-      case 'fajr':
-        time = getTime(_prayerTimes.dhuhr);
-        break;
-      case 'dhuhr':
-        time = getTime(_prayerTimes.asr);
-        break;
-      case 'asr':
-        time = getTime(_prayerTimes.maghrib);
-        break;
-      case 'maghrib':
-        time = getTime(_prayerTimes.isha);
-        break;
-      case 'isha':
-        time = getTime(_prayerTimes.fajr);
-        break;
-    }
+
     return SafeArea(
       child: Container(
           height: height,
@@ -106,92 +60,13 @@ class _HomePageState extends State<HomePage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  height: height * 0.3,
-                  width: width,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'now',
-                                      style: getStyle(15, white, false),
-                                    ),
-                                    Text(
-                                      current.toUpperCase(),
-                                      style: getStyle(25, white, true),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  child: Image.asset('assets/img/$current.png'),
-                                  height: 50,
-                                ),
-                              ]),
-                        ),
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'upcoming',
-                                    style: getStyle(15, white, false),
-                                  ),
-                                  Text(
-                                    next,
-                                    style: getStyle(25, white, true),
-                                  ),
-                                  Text(
-                                    time,
-                                    style: getStyle(25, white, false),
-                                  )
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    HijriCalendar.now().hDay.toString(),
-                                    style: getStyle(25, white, true),
-                                  ),
-                                  Text(
-                                    '${HijriCalendar.now().longMonthName}',
-                                    style: getStyle(15, white, false),
-                                  ),
-                                  Text(
-                                    DateFormat('EEEE, d MMM')
-                                        .format(DateTime.now()),
-                                    style: getStyle(15, white, false),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        )
-                      ]),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(
-                          'assets/img/back.jpg',
-                        ),
-                        fit: BoxFit.cover),
-                  ),
-                ),
+                Header(),
                 Container(
                   padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: color.withAlpha(50),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: Column(children: [
                     user.displayName != null
                         ? Text(
@@ -202,7 +77,35 @@ class _HomePageState extends State<HomePage> {
                             'Assalamu alaikum',
                             style: getStyle(23, black, true),
                           ),
-                    Text(generatedAyat),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Daily Quran Verses for you',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        IconButton(
+                          icon: playAudio,
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: Text(
+                        dailyAyatAR,
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(fontSize: 22, fontFamily: 'Noore'),
+                      ),
+                    ),
+                    Text(
+                      dailyAyatEN,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Text(dailyAyatSurah)
                   ]),
                 )
               ],

@@ -1,5 +1,6 @@
 # This is a generated file; do not edit or check into version control.
 android_intent=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\android_intent-2.0.2\\
+audio_session=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\audio_session-0.1.6+1\\
 cloud_firestore=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\cloud_firestore-3.1.10\\
 cloud_firestore_web=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\cloud_firestore_web-2.6.10\\
 connectivity=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\connectivity-3.0.6\\
@@ -22,6 +23,8 @@ geolocator_web=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang
 geolocator_windows=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\geolocator_windows-0.1.0\\
 google_sign_in=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\google_sign_in-5.2.4\\
 google_sign_in_web=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\google_sign_in_web-0.10.0+4\\
+just_audio=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\just_audio-0.9.20\\
+just_audio_web=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\just_audio_web-0.4.7\\
 location=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\location-4.3.0\\
 location_web=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\location_web-3.1.1\\
 package_info_plus=C:\\Users\\User\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\package_info_plus-1.4.0\\
