@@ -48,11 +48,11 @@ class Header extends StatelessWidget {
                   children: [
                     Text(
                       'now',
-                      style: TextStyle(fontSize: 25, color: white),
+                      style: TextStyle(fontSize: 18, color: white),
                     ),
                     Text(current.toUpperCase(),
                         style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 23,
                             color: white,
                             fontWeight: FontWeight.bold)),
                   ],
@@ -74,16 +74,16 @@ class Header extends StatelessWidget {
                 children: [
                   Text(
                     'upcoming',
-                    style: TextStyle(fontSize: 25, color: white),
+                    style: TextStyle(fontSize: 18, color: white),
                   ),
                   Text(next,
                       style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 23,
                           color: white,
                           fontWeight: FontWeight.bold)),
                   Text(
                     time,
-                    style: TextStyle(fontSize: 25, color: white),
+                    style: TextStyle(fontSize: 21, color: white),
                   )
                 ],
               ),
@@ -92,16 +92,16 @@ class Header extends StatelessWidget {
                 children: [
                   Text(HijriCalendar.now().hDay.toString(),
                       style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 23,
                           color: white,
                           fontWeight: FontWeight.bold)),
                   Text(
                     '${HijriCalendar.now().longMonthName}',
-                    style: TextStyle(fontSize: 25, color: white),
+                    style: TextStyle(fontSize: 18, color: white),
                   ),
                   Text(
                     DateFormat('EEEE, d MMM').format(DateTime.now()),
-                    style: TextStyle(fontSize: 25, color: white),
+                    style: TextStyle(fontSize: 18, color: white),
                   )
                 ],
               )

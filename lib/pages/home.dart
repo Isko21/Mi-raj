@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/components/shared_pref.dart';
 import 'package:http/http.dart' as http;
+import 'dart:ui' as ui;
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -19,18 +20,17 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    Random random = Random();
+    ayat = random.nextInt(6236);
+    getRandomAyat(ayat);
     city = AllUserData.getLocationData('city');
     country = AllUserData.getLocationData('country');
     long = AllUserData.getLongitude();
     lat = AllUserData.getLatitude();
     getPrayer();
-
-    Random random = Random();
-    ayat = random.nextInt(6236);
-    getRandomAyat(ayat);
   }
 
-  Future<void> getRandomAyat(int ayat) async {
+  void getRandomAyat(int ayat) async {
     var endPointEN =
         Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat/en.asad");
     var responseEN = await http.get(endPointEN);
@@ -39,12 +39,14 @@ class _HomePageState extends State<HomePage> {
     var responseAR =
         await http.get(Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat"));
     var bodyAR = jsonDecode(responseAR.body);
-    dailyAyatEN = bodyEN['data']['text'];
-    dailyAyatAR = bodyAR['data']['text'];
-    dailyAyatSurah = bodyEN['data']['surah']['englishName'];
+    setState(() {
+      dailyAyatEN = bodyEN['data']['text'];
+      dailyAyatAR = bodyAR['data']['text'];
+      dailyAyatSurah = bodyEN['data']['surah']['englishName'];
+    });
+
     //await player.setUrl(
     //  'https://cdn.islamic.network//quran//audio//128//ar.alafasy//262.mp3');
-    print(ayat);
   }
 
   @override
@@ -77,14 +79,17 @@ class _HomePageState extends State<HomePage> {
                             'Assalamu alaikum',
                             style: getStyle(23, black, true),
                           ),
+                    Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Daily Quran Verses for you',
+                          'Daily Quran Verse',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 20,
+                              color: color,
+                              fontWeight: FontWeight.bold),
                         ),
                         IconButton(
                           icon: playAudio,
@@ -97,6 +102,7 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         dailyAyatAR,
                         textAlign: TextAlign.justify,
+                        textDirection: ui.TextDirection.rtl,
                         style: TextStyle(fontSize: 22, fontFamily: 'Noore'),
                       ),
                     ),
