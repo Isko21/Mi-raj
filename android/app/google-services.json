@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "175847291599",
+    "project_id": "daily-muslim-plus",
+    "storage_bucket": "daily-muslim-plus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175847291599:android:b4f002574a71f53c6815ba",
+        "android_client_info": {
+          "package_name": "io.isko.dailymuslim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175847291599-j2ndn2163r7kp4mvh5ru0d62uh8khgn0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1wqUjLEh0ICmEBnbjTf6dgTvckX8MyHs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175847291599-j2ndn2163r7kp4mvh5ru0d62uh8khgn0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "175847291599-3ujl3hiqbtahf6vf13vocu7ih1uegbcj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.isko.dailymuslim"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
