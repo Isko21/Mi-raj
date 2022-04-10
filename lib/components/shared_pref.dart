@@ -63,4 +63,11 @@ class AllUserData {
   static String getSurahName() {
     return _preferences.getString('surah') ?? '';
   }
+
+  static Future setVerseAudio(String value) async =>
+      await _preferences.setString('audio', value);
+
+  static String getVerseAudio() {
+    return _preferences.getString('audio') ?? '';
+  }
 }

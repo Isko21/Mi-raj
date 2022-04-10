@@ -23,15 +23,13 @@ Color color = Color.fromRGBO(103, 118, 237, 1);
 Color colorStr = Color.fromRGBO(0, 78, 141, 1);
 int surahs = 114;
 List<int> aya = List.filled(114, 0);
-String generatedAyat = 'Loading';
 late String dailyAyatAR = '';
 late String dailyAyatEN = '';
 late int dailyVerseDate = 0;
 late String dailyVerseSurah = '';
-late DateTime lastUpdateOfAyat;
+late String dailyVerseUrl = '';
 String dailyAyatSurah = '';
 late int ayat;
-Icon playAudio = Icon(Icons.play_arrow);
 var user = FirebaseAuth.instance.currentUser!;
 enum Pages {
   home,

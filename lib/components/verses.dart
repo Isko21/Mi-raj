@@ -1,19 +1,40 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
-
 import 'package:shimmer/shimmer.dart';
-
 import '../animations/bottom_animation.dart';
 
 class DailyVerse extends StatefulWidget {
-  DailyVerse({Key? key}) : super(key: key);
+  final String url;
+  DailyVerse({Key? key, required this.url}) : super(key: key);
 
   @override
   State<DailyVerse> createState() => _DailyVerseState();
 }
 
 class _DailyVerseState extends State<DailyVerse> {
+  bool playing = false;
+  AudioPlayer audioPlayer = AudioPlayer();
+  PlayerState playerState = PlayerState.PAUSED;
+
+  @override
+  void initState() {
+    super.initState();
+    audioPlayer.onPlayerStateChanged.listen((event) {
+      setState(() {
+        playerState = event;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    audioPlayer.release();
+    audioPlayer.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,8 +64,10 @@ class _DailyVerseState extends State<DailyVerse> {
                   fontSize: 20, color: color, fontWeight: FontWeight.bold),
             ),
             IconButton(
-              icon: playAudio,
-              onPressed: () {},
+              icon: !playing ? Icon(Icons.play_arrow) : Icon(Icons.pause),
+              onPressed: () {
+                playing ? pauseVerse() : playVerse();
+              },
             ),
           ],
         ),
@@ -84,5 +107,19 @@ class _DailyVerseState extends State<DailyVerse> {
               ))
       ]),
     );
+  }
+
+  playVerse() async {
+    await audioPlayer.play(widget.url);
+    setState(() {
+      playing = !playing;
+    });
+  }
+
+  pauseVerse() async {
+    await audioPlayer.pause();
+    setState(() {
+      playing = !playing;
+    });
   }
 }

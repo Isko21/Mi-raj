@@ -69,7 +69,7 @@ dependencies:
   hijri: ^3.0.0
   adhan: ^2.0.0-nullsafety.2
   quran: ^1.1.2
-  just_audio: ^0.9.20
+  audioplayers: ^0.20.1
 
 dev_dependencies:
   flutter_test:

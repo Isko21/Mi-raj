@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
     dailyAyatEN = AllUserData.getVerse('en');
     dailyAyatSurah = AllUserData.getSurahName();
     dailyVerseDate = AllUserData.getVerseDate();
+    dailyVerseUrl = AllUserData.getVerseAudio();
     if (dailyVerseDate != DateTime.now().day) {
       getRandomAyat(ayat);
     }
@@ -42,24 +43,23 @@ class _HomePageState extends State<HomePage> {
     var responseEN = await http.get(endPointEN);
     var bodyEN = jsonDecode(responseEN.body);
 
-    var responseAR =
-        await http.get(Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat"));
+    var responseAR = await http
+        .get(Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat/ar.alafasy"));
     var bodyAR = jsonDecode(responseAR.body);
     AllUserData.setVerse(bodyEN['data']['text'], 'en');
-    AllUserData.setVerse(dailyAyatAR = bodyAR['data']['text'], 'ar');
+    AllUserData.setVerse(bodyAR['data']['text'], 'ar');
     AllUserData.setSurahName(bodyEN['data']['surah']['englishName'] +
         ' : ' +
         bodyEN['data']['numberInSurah'].toString());
     AllUserData.setVerseDate(DateTime.now().day);
+    AllUserData.setVerseAudio(bodyAR['data']['audio']);
     setState(() {
       dailyAyatAR = AllUserData.getVerse('ar');
       dailyAyatEN = AllUserData.getVerse('en');
       dailyAyatSurah = AllUserData.getSurahName();
       dailyVerseDate = AllUserData.getVerseDate();
+      dailyVerseUrl = AllUserData.getVerseAudio();
     });
-
-    //await player.setUrl(
-    //  'https://cdn.islamic.network//quran//audio//128//ar.alafasy//262.mp3');
   }
 
   @override
@@ -74,7 +74,12 @@ class _HomePageState extends State<HomePage> {
           color: color.withAlpha(50),
           child: SingleChildScrollView(
             child: Column(
-              children: [Header(), DailyVerse()],
+              children: [
+                Header(),
+                DailyVerse(
+                  url: dailyVerseUrl,
+                )
+              ],
             ),
           )),
     );
