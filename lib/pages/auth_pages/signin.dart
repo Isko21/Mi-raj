@@ -43,6 +43,7 @@ class _AuthPageState extends State<AuthPage> {
     }
   }
 
+  bool pressed = false;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -74,32 +75,50 @@ class _AuthPageState extends State<AuthPage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ElevatedButton.icon(
-                  style: ButtonStyle(
-                      elevation:
-                          MaterialStateProperty.resolveWith((states) => 3),
-                      shadowColor: MaterialStateColor.resolveWith(
-                          (states) => Colors.black),
-                      minimumSize: MaterialStateProperty.resolveWith(
-                          (states) => Size(100, 60)),
-                      backgroundColor:
-                          MaterialStateColor.resolveWith((states) => color)),
-                  onPressed: () {
-                    final provider = Provider.of<GoogleSignInProvider>(context,
-                        listen: false);
-                    provider.googleLogIn();
-                  },
-                  icon: FaIcon(
-                    FontAwesomeIcons.google,
-                  ),
-                  label: Text(
-                    'Sign in with Google',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                !pressed
+                    ? ElevatedButton.icon(
+                        style: ButtonStyle(
+                            elevation: MaterialStateProperty.resolveWith(
+                                (states) => 3),
+                            shadowColor: MaterialStateColor.resolveWith(
+                                (states) => Colors.black),
+                            minimumSize: MaterialStateProperty.resolveWith(
+                                (states) => Size(100, 60)),
+                            backgroundColor: MaterialStateColor.resolveWith(
+                                (states) => color)),
+                        onPressed: () {
+                          final provider = Provider.of<GoogleSignInProvider>(
+                              context,
+                              listen: false);
+                          provider.googleLogIn();
+                          setState(() {
+                            pressed = !pressed;
+                          });
+                        },
+                        icon: FaIcon(
+                          FontAwesomeIcons.google,
+                        ),
+                        label: Text(
+                          'Sign in with Google',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ))
+                    : ElevatedButton(
+                        style: ButtonStyle(
+                            elevation: MaterialStateProperty.resolveWith(
+                                (states) => 3),
+                            shadowColor: MaterialStateColor.resolveWith(
+                                (states) => Colors.black),
+                            minimumSize: MaterialStateProperty.resolveWith(
+                                (states) => Size(100, 60)),
+                            backgroundColor:
+                                MaterialStateColor.resolveWith((states) => color)),
+                        onPressed: () {},
+                        child: CircularProgressIndicator.adaptive(
+                          valueColor: AlwaysStoppedAnimation<Color>(white),
+                        )),
                 SizedBox(height: 30.0),
                 ElevatedButton.icon(
                   style: ButtonStyle(
