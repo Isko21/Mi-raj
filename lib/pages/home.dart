@@ -22,7 +22,13 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     Random random = Random();
     ayat = random.nextInt(6236);
-    getRandomAyat(ayat);
+    dailyAyatAR = AllUserData.getVerse('ar');
+    dailyAyatEN = AllUserData.getVerse('en');
+    dailyAyatSurah = AllUserData.getSurahName();
+    dailyVerseDate = AllUserData.getVerseDate();
+    if (dailyVerseDate != DateTime.now().day) {
+      getRandomAyat(ayat);
+    }
     city = AllUserData.getLocationData('city');
     country = AllUserData.getLocationData('country');
     long = AllUserData.getLongitude();
@@ -39,10 +45,17 @@ class _HomePageState extends State<HomePage> {
     var responseAR =
         await http.get(Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat"));
     var bodyAR = jsonDecode(responseAR.body);
+    AllUserData.setVerse(bodyEN['data']['text'], 'en');
+    AllUserData.setVerse(dailyAyatAR = bodyAR['data']['text'], 'ar');
+    AllUserData.setSurahName(bodyEN['data']['surah']['englishName'] +
+        ' : ' +
+        bodyEN['data']['numberInSurah'].toString());
+    AllUserData.setVerseDate(DateTime.now().day);
     setState(() {
-      dailyAyatEN = bodyEN['data']['text'];
-      dailyAyatAR = bodyAR['data']['text'];
-      dailyAyatSurah = bodyEN['data']['surah']['englishName'];
+      dailyAyatAR = AllUserData.getVerse('ar');
+      dailyAyatEN = AllUserData.getVerse('en');
+      dailyAyatSurah = AllUserData.getSurahName();
+      dailyVerseDate = AllUserData.getVerseDate();
     });
 
     //await player.setUrl(

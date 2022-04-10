@@ -42,4 +42,25 @@ class AllUserData {
   static String getLocationData(String key) {
     return _preferences.getString(key) ?? '';
   }
+
+  static Future setVerse(String value, String key) async =>
+      await _preferences.setString(key, value);
+
+  static String getVerse(String key) {
+    return _preferences.getString(key) ?? '';
+  }
+
+  static Future setVerseDate(int value) async =>
+      await _preferences.setInt('date', value);
+
+  static int getVerseDate() {
+    return _preferences.getInt('date') ?? 0;
+  }
+
+  static Future setSurahName(String value) async =>
+      await _preferences.setString('surah', value);
+
+  static String getSurahName() {
+    return _preferences.getString('surah') ?? '';
+  }
 }

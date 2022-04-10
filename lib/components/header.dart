@@ -18,6 +18,9 @@ class Header extends StatelessWidget {
       case 'fajr':
         time = getTime(prayerTimes.dhuhr);
         break;
+      case 'sunrise':
+        time = getTime(prayerTimes.dhuhr);
+        break;
       case 'dhuhr':
         time = getTime(prayerTimes.asr);
         break;
@@ -58,7 +61,8 @@ class Header extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  child: Image.asset('assets/img/$current.png'),
+                  child: Image.asset(
+                      'assets/img/${current == 'sunrise' ? 'dhuhr' : current}.png'),
                   height: 50,
                 ),
               ]),

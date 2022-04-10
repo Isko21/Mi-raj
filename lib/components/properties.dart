@@ -26,6 +26,8 @@ List<int> aya = List.filled(114, 0);
 String generatedAyat = 'Loading';
 late String dailyAyatAR = '';
 late String dailyAyatEN = '';
+late int dailyVerseDate = 0;
+late String dailyVerseSurah = '';
 late DateTime lastUpdateOfAyat;
 String dailyAyatSurah = '';
 late int ayat;
