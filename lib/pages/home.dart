@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:math';
 import 'package:daily_muslim/components/header.dart';
+import 'package:daily_muslim/components/verses.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/components/shared_pref.dart';
 import 'package:http/http.dart' as http;
-import 'dart:ui' as ui;
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -61,60 +61,7 @@ class _HomePageState extends State<HomePage> {
           color: color.withAlpha(50),
           child: SingleChildScrollView(
             child: Column(
-              children: [
-                Header(),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                      color: color.withAlpha(50),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                  child: Column(children: [
-                    user.displayName != null
-                        ? Text(
-                            'Assalamu alaikum, ${user.displayName!.split(' ').first}',
-                            style: getStyle(23, black, true),
-                          )
-                        : Text(
-                            'Assalamu alaikum',
-                            style: getStyle(23, black, true),
-                          ),
-                    Divider(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Daily Quran Verse',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: color,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        IconButton(
-                          icon: playAudio,
-                          onPressed: () {},
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        dailyAyatAR,
-                        textAlign: TextAlign.justify,
-                        textDirection: ui.TextDirection.rtl,
-                        style: TextStyle(fontSize: 22, fontFamily: 'Noore'),
-                      ),
-                    ),
-                    Text(
-                      dailyAyatEN,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Text(dailyAyatSurah)
-                  ]),
-                )
-              ],
+              children: [Header(), DailyVerse()],
             ),
           )),
     );
