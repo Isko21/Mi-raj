@@ -26,10 +26,13 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
         return AppBar(
             iconTheme: IconThemeData(color: colorStr),
             centerTitle: true,
-            backgroundColor: white,
+            backgroundColor: Colors.transparent,
             title: WidgetAnimator(
                 child: Text(title,
-                    style: TextStyle(color: colorStr, fontSize: 21))));
+                    style: TextStyle(
+                        color: white,
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold))));
       case Pages.settings:
         return AppBar(
             centerTitle: true,

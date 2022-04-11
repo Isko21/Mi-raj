@@ -1,7 +1,6 @@
 import 'package:daily_muslim/pages/settings.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import '../components/auth.dart';
@@ -74,7 +73,7 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           title: 'Daily Muslim',
           theme: ThemeData(
-            textTheme: GoogleFonts.openSansTextTheme(),
+            fontFamily: 'Comfortaa',
             brightness: Brightness.light,
           ),
           home: MyHomePage(),
@@ -104,6 +103,7 @@ class _LoggedInState extends State<LoggedIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: AppBarCustom(title: appBar, page: Pages.home, change: () {}),
         drawer: NavBar(
           state: state,

@@ -67,22 +67,20 @@ class _HomePageState extends State<HomePage> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    return SafeArea(
-      child: Container(
-          height: height,
-          width: width,
-          color: color.withAlpha(50),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Header(),
-                DailyVerse(
-                  url: dailyVerseUrl,
-                )
-              ],
-            ),
-          )),
-    );
+    return Container(
+        height: height,
+        width: width,
+        color: color.withAlpha(50),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Header(),
+              DailyVerse(
+                url: dailyVerseUrl,
+              )
+            ],
+          ),
+        ));
   }
 }
 
