@@ -70,6 +70,7 @@ dependencies:
   adhan: ^2.0.0-nullsafety.2
   quran: ^1.1.2
   audioplayers: ^0.20.1
+  bottom_navy_bar: ^6.0.0
 
 dev_dependencies:
   flutter_test:
