@@ -23,28 +23,21 @@ import 'model/sajda/sajda_list.dart';
 import 'model/surah/surah.dart';
 import 'model/surah/surah_list.dart';
 import 'view/juzz/juz_index.dart';
-
 import 'view/surahas/surah_index.dart';
 
 Future<void> main() async {
   await Hive.initFlutter();
-
   Hive.registerAdapter<Ayat>(AyatAdapter());
-
   Hive.registerAdapter<JuzList>(JuzListAdapter());
   Hive.registerAdapter<JuzAyahs>(JuzAyahsAdapter());
-
   Hive.registerAdapter<SajdaList>(SajdaListAdapter());
   Hive.registerAdapter<SajdaAyat>(SajdaAyatAdapter());
-
   Hive.registerAdapter<SurahsList>(SurahsListAdapter());
   Hive.registerAdapter<Surah>(SurahAdapter());
-
   await Hive.openBox('data');
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await AllUserData.init();
-
   runApp(MyApp());
 }
 
@@ -65,10 +58,10 @@ class _MyAppState extends State<MyApp> {
             '/dhuhr': (context) => Dhuhr(),
             '/maghrib': (context) => Maghrib(),
             '/isha': (context) => Isha(),
-            '/surahIndex': (context) => const SurahIndex(),
-            '/sajdaIndex': (context) => const SajdaIndex(),
-            '/juzIndex': (context) => const JuzIndex(),
-            '/settings': (context) => new Settings()
+            '/surahIndex': (context) => SurahIndex(),
+            '/sajdaIndex': (context) => SajdaIndex(),
+            '/juzIndex': (context) => JuzIndex(),
+            '/settings': (context) => Settings()
           },
           debugShowCheckedModeBanner: false,
           title: 'Daily Muslim',
