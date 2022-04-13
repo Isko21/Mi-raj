@@ -124,6 +124,9 @@ flutter:
         - asset: fonts/Comfortaa-Regular.ttf 
         - asset: fonts/Comfortaa-Bold.ttf
           weight: 700
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
