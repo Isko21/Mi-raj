@@ -15,9 +15,8 @@ class _FajrState extends State<Fajr> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(
+      appBar: AppBarWithSetState(
         title: "Fajr",
-        page: Pages.prayer,
         change: (int a) {
           setState(() {
             if (a == 1) {
