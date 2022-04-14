@@ -16,7 +16,7 @@ class Header extends StatelessWidget {
     late String time;
     switch (current) {
       case 'fajr':
-        time = getTime(prayerTimes.dhuhr);
+        time = getTime(prayerTimes.sunrise);
         break;
       case 'sunrise':
         time = getTime(prayerTimes.dhuhr);
@@ -41,7 +41,7 @@ class Header extends StatelessWidget {
       width: width,
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Container(
-          padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+          padding: EdgeInsets.fromLTRB(20, 30, 20, 10),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -51,11 +51,11 @@ class Header extends StatelessWidget {
                   children: [
                     Text(
                       'now',
-                      style: TextStyle(fontSize: 18, color: white),
+                      style: TextStyle(fontSize: 15, color: Colors.white70),
                     ),
                     Text(current.toUpperCase(),
                         style: TextStyle(
-                            fontSize: 23,
+                            fontSize: 21,
                             color: white,
                             fontWeight: FontWeight.bold)),
                   ],
@@ -78,16 +78,16 @@ class Header extends StatelessWidget {
                 children: [
                   Text(
                     'upcoming',
-                    style: TextStyle(fontSize: 18, color: white),
+                    style: TextStyle(fontSize: 15, color: Colors.white70),
                   ),
                   Text(next,
                       style: TextStyle(
-                          fontSize: 23,
+                          fontSize: 21,
                           color: white,
                           fontWeight: FontWeight.bold)),
                   Text(
                     time,
-                    style: TextStyle(fontSize: 21, color: white),
+                    style: TextStyle(fontSize: 19, color: white),
                   )
                 ],
               ),
@@ -116,7 +116,7 @@ class Header extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
             image: AssetImage(
-              'assets/img/back.jpg',
+              'assets/img/head_drawer.jpg',
             ),
             fit: BoxFit.cover),
       ),
