@@ -20,14 +20,14 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    Random random = Random();
-    ayat = random.nextInt(6236);
     dailyAyatAR = AllUserData.getVerse('ar');
     dailyAyatEN = AllUserData.getVerse('en');
     dailyAyatSurah = AllUserData.getSurahName();
     dailyVerseDate = AllUserData.getVerseDate();
     dailyVerseUrl = AllUserData.getVerseAudio();
     if (dailyVerseDate != DateTime.now().day) {
+      Random random = Random();
+      ayat = random.nextInt(6236);
       getRandomAyat(ayat);
     }
     city = AllUserData.getLocationData('city');
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
         height: height,
         width: width,
-        color: color.withAlpha(50),
+        color: white,
         child: SingleChildScrollView(
           child: Column(
             children: [
