@@ -16,9 +16,8 @@ class _DhuhrState extends State<Dhuhr> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(
+      appBar: AppBarWithSetState(
           title: "Dhuhr",
-          page: Pages.prayer,
           change: (int a) {
             setState(() {
               if (a == 1) {
