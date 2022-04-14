@@ -41,7 +41,7 @@ class _JuzIndexState extends State<JuzIndex> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white,
-      appBar: AppBarCustom(change: () {}, title: "Juzs", page: Pages.home),
+      appBar: AppBarCustom(title: "Juzs"),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
