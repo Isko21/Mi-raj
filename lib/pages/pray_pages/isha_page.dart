@@ -14,9 +14,8 @@ class _IshaState extends State<Isha> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBarCustom(
+        appBar: AppBarWithSetState(
             title: "Isha",
-            page: Pages.prayer,
             change: (int a) {
               setState(() {
                 if (a == 1) {
