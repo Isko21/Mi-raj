@@ -42,7 +42,7 @@ class _QuranPageState extends State<QuranPage> with TickerProviderStateMixin {
       child: AnimatedBuilder(
         animation: animationController,
         builder: (context, _) {
-          return SafeArea(
+          return Container(
             child: MainScreen(),
           );
         },
@@ -67,18 +67,9 @@ class MainScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: CoolButton(title: "Surah", route: '/surahIndex'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: CoolButton(title: "Juz", route: '/juzIndex'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: CoolButton(title: "Sajda", route: '/sajdaIndex'),
-                  ),
+                  CoolButton(title: "Surah", route: '/surahIndex'),
+                  CoolButton(title: "Juz", route: '/juzIndex'),
+                  CoolButton(title: "Sajda", route: '/sajdaIndex'),
                 ],
               ),
             ),
@@ -97,18 +88,22 @@ class CoolButton extends StatelessWidget {
   final String route;
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-          elevation: MaterialStateProperty.resolveWith((states) => 3),
-          shadowColor: MaterialStateColor.resolveWith((states) => Colors.black),
-          minimumSize:
-              MaterialStateProperty.resolveWith((states) => Size(100, 60)),
-          backgroundColor: MaterialStateColor.resolveWith((states) => color)),
-      onPressed: () => Navigator.pushNamed(context, route),
-      child: WidgetAnimator(
-        child: Text(
-          title,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    return Padding(
+      padding: const EdgeInsets.only(top: 5.0),
+      child: ElevatedButton(
+        style: ButtonStyle(
+            elevation: MaterialStateProperty.resolveWith((states) => 3),
+            shadowColor:
+                MaterialStateColor.resolveWith((states) => Colors.black),
+            minimumSize:
+                MaterialStateProperty.resolveWith((states) => Size(100, 60)),
+            backgroundColor: MaterialStateColor.resolveWith((states) => color)),
+        onPressed: () => Navigator.pushNamed(context, route),
+        child: WidgetAnimator(
+          child: Text(
+            title,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );
