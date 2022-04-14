@@ -30,7 +30,7 @@ class _SajdaIndexState extends State<SajdaIndex> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white,
-      appBar: AppBarCustom(change: () {}, title: "Sajda", page: Pages.home),
+      appBar: AppBarCustom(title: "Sajda"),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
