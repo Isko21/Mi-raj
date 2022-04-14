@@ -15,9 +15,8 @@ class _MaghribState extends State<Maghrib> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(
+      appBar: AppBarWithSetState(
           title: "Maghrib",
-          page: Pages.prayer,
           change: (int a) {
             setState(() {
               if (a == 1) {
