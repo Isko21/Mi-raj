@@ -1,6 +1,8 @@
 import 'package:daily_muslim/pages/settings.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import '../components/auth.dart';
@@ -15,7 +17,6 @@ import '../pages/pray_pages/isha_page.dart';
 import '../pages/pray_pages/maghrib_page.dart';
 import '../view/sajda/sajda_index.dart';
 import '../components/appbar.dart';
-import '../components/navbar.dart';
 import '../components/properties.dart';
 import 'model/juzz/juz.dart';
 import 'model/sajda/sajda.dart';
@@ -97,13 +98,56 @@ class _LoggedInState extends State<LoggedIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBarCustom(title: appBar, page: Pages.home, change: () {}),
-      drawer: NavBar(
-        state: state,
-        fullname: user.displayName,
-        email: user.email,
-        url: user.photoURL,
+      appBar: AppBarCustom(title: appBar),
+      // drawer: NavBar(
+      //   state: state,
+      //   fullname: user.displayName,
+      //   email: user.email,
+      //   url: user.photoURL,
+      // ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black12,
+        type: BottomNavigationBarType.shifting,
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+        currentIndex: index,
+        fixedColor: color,
+        onTap: (_index) => setState(() {
+          index = _index;
+          switch (index) {
+            case 0:
+              appBar = 'Home';
+              break;
+            case 1:
+              appBar = 'Quran';
+              break;
+            case 2:
+              appBar = 'Prayer Times';
+              break;
+            case 3:
+              appBar = 'Jawshan';
+              break;
+            case 4:
+              appBar = 'Settings';
+              break;
+          }
+        }),
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.home, color: color), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(FontAwesomeIcons.bookQuran, color: color),
+              label: 'Quran'),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.clock, color: color),
+              label: 'Prayer Times'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shield_moon, color: color), label: 'Jawshan'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings, color: color), label: 'More')
+        ],
       ),
+
       body: pages[index],
       // bottomNavigationBar: BottomNavigationBar(items: [BottomNavigationBarItem(icon: Icon)]),)
     );
