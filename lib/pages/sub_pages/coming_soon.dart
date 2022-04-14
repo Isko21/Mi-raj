@@ -16,8 +16,7 @@ class _ComingSoonState extends State<ComingSoon> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBarCustom(
-            change: () {}, page: Pages.jawshan, title: 'Coming Soon'),
+        appBar: AppBarCustom(title: 'Coming Soon'),
         body: Container(color: color.withAlpha(50), child: Text("Hello")));
   }
 
