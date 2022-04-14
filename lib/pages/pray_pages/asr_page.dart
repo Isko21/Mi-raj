@@ -11,23 +11,19 @@ class Asr extends StatefulWidget {
 }
 
 class _AsrState extends State<Asr> {
-  bool isArabic = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(
+      appBar: AppBarWithSetState(
         title: "Asr",
-        page: Pages.prayer,
-        change: (int a) {
-          setState(() {
-            if (a == 1) {
+        change: (int a) => setState(
+          () {
+            if (a == 1)
               isArabic = true;
-            } else {
+            else
               isArabic = false;
-            }
-          });
-        },
+          },
+        ),
       ),
       body: Container(
         color: color.withAlpha(50),
