@@ -30,8 +30,7 @@ class _JuzState extends State<Juz> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBarCustom(
-          change: () {}, title: widget.juzIndex.toString(), page: Pages.home),
+      appBar: AppBarCustom(title: widget.juzIndex.toString()),
       backgroundColor: white,
       body: Container(
         height: MediaQuery.of(context).size.height,
