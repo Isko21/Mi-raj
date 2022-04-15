@@ -36,9 +36,7 @@ class _QuranPageState extends State<QuranPage> with TickerProviderStateMixin {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color: white,
-      ),
+      color: color.withAlpha(50),
       child: AnimatedBuilder(
         animation: animationController,
         builder: (context, _) {
@@ -122,11 +120,11 @@ class AyahBottom extends StatelessWidget {
           Text(
             "\"Indeed, It is We who sent down the Qur'an\nand indeed, We will be its Guardian\"\n",
             textAlign: TextAlign.center,
-            style: TextStyle(color: colorStr),
+            style: TextStyle(color: white),
           ),
           Text(
             "Surah Al-Hijr\n",
-            style: TextStyle(color: colorStr),
+            style: TextStyle(color: white),
           ),
         ],
       ),

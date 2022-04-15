@@ -1,14 +1,15 @@
 import 'package:adhan/adhan.dart';
-import 'package:daily_muslim/pages/pray_pages/pray_times.dart';
+import 'package:daily_muslim/pages/pray_times.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/pages/settings.dart';
 import 'package:intl/intl.dart';
+
 import '../pages/home.dart';
-import '../pages/pray_pages/jawshan_page.dart';
-import '../pages/pray_pages/tasbihs_page.dart';
-import '../pages/pray_pages/tools_page.dart';
-import '../pages/pray_pages/quran_page.dart';
+import '../pages/jawshan_page.dart';
+import '../pages/quran_page.dart';
+import '../pages/tasbihs_page.dart';
+import '../pages/tools_page.dart';
 
 String userName = user.displayName.toString();
 String firstName = userName.split(' ')[0];
@@ -44,10 +45,10 @@ final pages = [
   HomePage(),
   QuranPage(),
   PrayTimes(),
-  TasbihsPage(),
   JawshanPage(),
+  Settings(),
+  TasbihsPage(),
   ToolsPage(),
-  Settings()
 ];
 String appBar = "Home";
 int index = 0;

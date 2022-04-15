@@ -8,7 +8,7 @@ class JawshanPage extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        color: white,
+        color: color.withAlpha(50),
       ),
       child: ListView(
         padding: EdgeInsets.only(right: 15, left: 15, top: 75),

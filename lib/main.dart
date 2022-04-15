@@ -97,6 +97,7 @@ class _LoggedInState extends State<LoggedIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: black,
       extendBodyBehindAppBar: true,
       appBar: AppBarCustom(title: appBar),
       // drawer: NavBar(
@@ -106,12 +107,13 @@ class _LoggedInState extends State<LoggedIn> {
       //   url: user.photoURL,
       // ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black12,
-        type: BottomNavigationBarType.shifting,
-        showUnselectedLabels: false,
-        showSelectedLabels: false,
+        backgroundColor: color.withAlpha(50),
+        type: BottomNavigationBarType.fixed,
         currentIndex: index,
-        fixedColor: color,
+        showUnselectedLabels: false,
+        unselectedLabelStyle: TextStyle(color: Colors.white70),
+        unselectedIconTheme: IconThemeData(color: Colors.white70),
+        fixedColor: white,
         onTap: (_index) => setState(() {
           index = _index;
           switch (index) {
@@ -134,17 +136,30 @@ class _LoggedInState extends State<LoggedIn> {
         }),
         items: [
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.home, color: color), label: 'Home'),
+              icon: Icon(
+                CupertinoIcons.home,
+              ),
+              label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.bookQuran, color: color),
+              icon: Icon(
+                FontAwesomeIcons.bookQuran,
+              ),
               label: 'Quran'),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.clock, color: color),
-              label: 'Prayer Times'),
+              icon: Icon(
+                CupertinoIcons.clock,
+              ),
+              label: 'Times'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shield_moon, color: color), label: 'Jawshan'),
+              icon: Icon(
+                Icons.shield_moon,
+              ),
+              label: 'Jawshan'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.settings, color: color), label: 'More')
+              icon: Icon(
+                CupertinoIcons.person,
+              ),
+              label: 'Me')
         ],
       ),
 

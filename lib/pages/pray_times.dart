@@ -1,9 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:flutter/material.dart';
-
-import '../../animations/bottom_animation.dart';
-import '../home.dart';
+import '../animations/bottom_animation.dart';
+import 'home.dart';
 
 class PrayTimes extends StatefulWidget {
   PrayTimes({Key? key}) : super(key: key);
@@ -16,6 +15,7 @@ class _PrayTimesState extends State<PrayTimes> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: 30),
       color: color.withAlpha(50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,7 +109,7 @@ class _PrayTimesState extends State<PrayTimes> {
             child: AutoSizeText(
                 'The best act of man is namaz.\nThe best namaz is the timely namaz.',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: colorStr)),
+                style: TextStyle(color: white)),
           )
         ],
       ),

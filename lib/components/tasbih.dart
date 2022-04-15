@@ -123,23 +123,28 @@ class Solatan extends StatelessWidget {
         children: <Widget>[
           bis
               ? Padding(
-                  padding: const EdgeInsets.only(bottom: 15),
-                  child: Text(isArab ? bismiAR : bismiRU,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: colorStr,
-                          fontWeight: FontWeight.bold,
-                          fontSize: isArab ? 30 : 21,
-                          fontFamily: 'Noore')),
+                  padding: isArab
+                      ? EdgeInsets.all(0)
+                      : EdgeInsets.symmetric(vertical: 15),
+                  child: isArab
+                      ? Image.asset(
+                          'assets/img/bismi.png',
+                          height: 200,
+                        )
+                      : Text(bismiRU,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: colorStr,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 21,
+                              fontFamily: 'Comfortaa')),
                 )
               : Text(''),
           !isArab
               ? Text(
                   rus,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
+                  style: TextStyle(fontSize: 20),
                 )
               : Text(
                   arab,

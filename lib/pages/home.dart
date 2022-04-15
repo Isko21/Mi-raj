@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
         height: height,
         width: width,
-        color: white,
+        color: color.withAlpha(50),
         child: SingleChildScrollView(
           child: Column(
             children: [

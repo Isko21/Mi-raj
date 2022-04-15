@@ -17,7 +17,7 @@ class _TasbihsPageState extends State<TasbihsPage> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: white,
+          color: color.withAlpha(50),
         ),
         child: SafeArea(
           child: ListView(
