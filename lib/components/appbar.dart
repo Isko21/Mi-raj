@@ -51,7 +51,7 @@ class AppBarWithSetState extends StatelessWidget with PreferredSizeWidget {
                 ),
                 context: context,
                 builder: (context) => buildSheet(change)),
-            icon: Icon(FontAwesomeIcons.ellipsis),
+            icon: Icon(FontAwesomeIcons.ellipsisH),
             color: colorStr,
             iconSize: 15),
       ],
