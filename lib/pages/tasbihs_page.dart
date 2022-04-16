@@ -1,3 +1,4 @@
+import 'package:daily_muslim/components/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
 
@@ -13,13 +14,16 @@ class _TasbihsPageState extends State<TasbihsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: color.withAlpha(50),
-        ),
-        child: SafeArea(
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: black.withAlpha(50),
+      appBar: AppBarCustom(title: 'Tasbih'),
+      body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            color: color.withAlpha(50),
+          ),
           child: ListView(
               padding: EdgeInsets.only(right: 15, left: 15, top: 75),
               children: [
@@ -53,7 +57,7 @@ class _TasbihsPageState extends State<TasbihsPage> {
                   },
                   child: Text("Isha"),
                 ),
-              ]),
-        ));
+              ])),
+    );
   }
 }
