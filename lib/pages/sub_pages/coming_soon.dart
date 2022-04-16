@@ -14,10 +14,22 @@ class ComingSoon extends StatefulWidget {
 
 class _ComingSoonState extends State<ComingSoon> {
   @override
+  void initState() {
+    super.initState();
+    getLocation();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBarCustom(title: 'Coming Soon'),
-        body: Container(color: color.withAlpha(50), child: Text("Hello")));
+        backgroundColor: black.withAlpha(50),
+        extendBodyBehindAppBar: true,
+        appBar: AppBarCustom(title: widget.title),
+        body: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            color: color.withAlpha(50),
+            child: Center(child: Text(name))));
   }
 
   String name = 'Warsawa';
