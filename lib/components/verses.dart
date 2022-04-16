@@ -1,8 +1,12 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:daily_muslim/components/properties.dart';
+import 'package:daily_muslim/pages/sub_pages/coming_soon.dart';
+import 'package:daily_muslim/pages/sub_pages/missed_prays.dart';
+import 'package:daily_muslim/pages/tasbihs_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:shimmer/shimmer.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../animations/bottom_animation.dart';
 
 class DailyVerse extends StatefulWidget {
@@ -39,16 +43,6 @@ class _DailyVerseState extends State<DailyVerse> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 15),
-        user.displayName != null
-            ? Text(
-                'Assalamu alaikum, ${user.displayName!.split(' ').first}',
-                style: getStyle(23, white, true),
-              )
-            : Text(
-                'Assalamu alaikum',
-                style: getStyle(23, black, true),
-              ),
         Container(
           padding: EdgeInsets.all(10),
           margin: EdgeInsets.all(15),
@@ -125,5 +119,275 @@ class _DailyVerseState extends State<DailyVerse> {
     setState(() {
       playing = !playing;
     });
+  }
+}
+
+class ToolsRow extends StatelessWidget {
+  const ToolsRow({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: unused_local_variable
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    return Container(
+        margin: EdgeInsets.all(20),
+        padding: EdgeInsets.only(right: 8),
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => new TasbihsPage())),
+                  child: Container(
+                    width: width / 5,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                            margin: EdgeInsets.all(5),
+                            child: ClipRRect(
+                              borderRadius:
+                                  BorderRadius.circular(20), // Image border
+                              child: SizedBox.fromSize(
+                                size: Size.fromRadius(30),
+                                child: Image.asset('assets/img/tasbih.png',
+                                    fit: BoxFit.cover),
+                              ),
+                            )),
+                        Text(
+                          'Tasbih',
+                          style: TextStyle(color: white, fontSize: 12),
+                        ),
+                        SizedBox(height: 8)
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => MissedPrays())),
+                  child: Container(
+                      width: width / 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(30),
+                                  child: Image.asset('assets/img/missed.png',
+                                      fit: BoxFit.cover),
+                                ),
+                              )),
+                          Text('Missed Prayers',
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style: TextStyle(color: white, fontSize: 12)),
+                          SizedBox(height: 8),
+                        ],
+                      )),
+                ),
+                InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ComingSoon(
+                            title: 'Qibla',
+                          ))),
+                  child: Container(
+                    width: width / 5,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                            margin: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: SizedBox.fromSize(
+                                size: Size.fromRadius(30),
+                                child: Image.asset('assets/img/qibla.png',
+                                    fit: BoxFit.cover),
+                              ),
+                            )),
+                        Text('Qibla',
+                            style: TextStyle(color: white, fontSize: 12)),
+                        SizedBox(height: 8),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () => launch(
+                      'https://www.google.com/maps/search/mosques+near+me'),
+                  child: Container(
+                      width: width / 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(30),
+                                  child: Image.asset('assets/img/mosque.png',
+                                      fit: BoxFit.cover),
+                                ),
+                              )),
+                          Text('Mosques',
+                              style: TextStyle(fontSize: 12, color: white)),
+                          SizedBox(height: 8),
+                        ],
+                      )),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InkWell(
+                  onTap: () => launch(
+                      'https://www.google.com/maps/search/halal+places+near+me'),
+                  child: Container(
+                      width: width / 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(30),
+                                  child: Image.asset('assets/img/halal.png',
+                                      fit: BoxFit.cover),
+                                ),
+                              )),
+                          Text('Halal Places',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: white,
+                                  fontSize: 12,
+                                  overflow: TextOverflow.ellipsis)),
+                          SizedBox(height: 8),
+                        ],
+                      )),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                      width: width / 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(30),
+                                  child: Image.asset('assets/img/name.png',
+                                      fit: BoxFit.cover),
+                                ),
+                              )),
+                          Text('Allah Names',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: white,
+                                  fontSize: 12,
+                                  overflow: TextOverflow.ellipsis)),
+                          SizedBox(height: 8),
+                        ],
+                      )),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                      width: width / 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(30),
+                                  child: Image.asset('assets/img/dua.png',
+                                      fit: BoxFit.cover),
+                                ),
+                              )),
+                          Text('Duas',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: white,
+                                  fontSize: 12,
+                                  overflow: TextOverflow.ellipsis)),
+                          SizedBox(height: 8),
+                        ],
+                      )),
+                ),
+                InkWell(
+                  onTap: () =>
+                      launch('https://www.youtube.com/watch?v=h4LV2viNHmk'),
+                  child: Container(
+                      width: width / 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(30),
+                                  child: Image.asset('assets/img/kaaba.png',
+                                      fit: BoxFit.cover),
+                                ),
+                              )),
+                          Text('Kaaba Live',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: white,
+                                  fontSize: 12,
+                                  overflow: TextOverflow.ellipsis)),
+                          SizedBox(height: 8),
+                        ],
+                      )),
+                ),
+              ],
+            )
+          ],
+        ),
+        decoration: BoxDecoration(
+            color: color.withAlpha(50),
+            borderRadius: BorderRadius.all(Radius.circular(20))));
   }
 }

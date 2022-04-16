@@ -13,6 +13,7 @@ class Header extends StatelessWidget {
     if (current == 'none') current = 'isha';
     String next =
         prayerTimes.nextPrayer().toString().split('.').last.toUpperCase();
+    if (next == 'NONE') next = 'FAJR';
     late String time;
     switch (current) {
       case 'fajr':

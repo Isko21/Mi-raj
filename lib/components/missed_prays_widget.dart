@@ -25,7 +25,7 @@ class MissPrayer extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 15),
+            style: TextStyle(fontSize: 17, color: white),
           ),
           Row(
             children: [
@@ -43,7 +43,7 @@ class MissPrayer extends StatelessWidget {
               ),
               Text(
                 count.toString(),
-                style: TextStyle(fontSize: 15),
+                style: TextStyle(fontSize: 15, color: white),
               ),
               MaterialButton(
                 color: color,
