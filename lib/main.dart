@@ -1,4 +1,4 @@
-import 'package:daily_muslim/pages/settings.dart';
+import 'package:daily_muslim/pages/tasbihs_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +62,7 @@ class _MyAppState extends State<MyApp> {
             '/surahIndex': (context) => SurahIndex(),
             '/sajdaIndex': (context) => SajdaIndex(),
             '/juzIndex': (context) => JuzIndex(),
-            '/settings': (context) => Settings()
+            '/tasbih': (context) => TasbihsPage()
           },
           debugShowCheckedModeBanner: false,
           title: 'Daily Muslim',
@@ -111,8 +111,8 @@ class _LoggedInState extends State<LoggedIn> {
         type: BottomNavigationBarType.fixed,
         currentIndex: index,
         showUnselectedLabels: false,
-        unselectedLabelStyle: TextStyle(color: Colors.white70),
-        unselectedIconTheme: IconThemeData(color: Colors.white70),
+        unselectedLabelStyle: TextStyle(color: Colors.white60),
+        unselectedIconTheme: IconThemeData(color: Colors.white60),
         fixedColor: white,
         onTap: (_index) => setState(() {
           index = _index;
@@ -135,36 +135,27 @@ class _LoggedInState extends State<LoggedIn> {
           }
         }),
         items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.home,
-              ),
-              label: 'Home'),
+              icon: Icon(FontAwesomeIcons.bookQuran), label: 'Quran'),
           BottomNavigationBarItem(
-              icon: Icon(
-                FontAwesomeIcons.bookQuran,
-              ),
-              label: 'Quran'),
+              icon: Icon(CupertinoIcons.clock), label: 'Times'),
           BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.clock,
-              ),
-              label: 'Times'),
+              icon: Icon(Icons.shield_moon), label: 'Jawshan'),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.shield_moon,
-              ),
-              label: 'Jawshan'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.person,
-              ),
-              label: 'Me')
+              icon: Icon(CupertinoIcons.person), label: 'Me')
         ],
       ),
-
       body: pages[index],
-      // bottomNavigationBar: BottomNavigationBar(items: [BottomNavigationBarItem(icon: Icon)]),)
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.add,
+          color: white,
+        ),
+        backgroundColor: color,
+        onPressed: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
