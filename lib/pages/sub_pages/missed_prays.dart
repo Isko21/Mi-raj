@@ -146,9 +146,11 @@ class _MissedPraysState extends State<MissedPrays>
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: black.withAlpha(50),
       appBar: AppBarCustom(title: "Missed Prays"),
       body: Container(
-        color: white,
+        color: color.withAlpha(50),
         child: ListView(
           children: [
             Container(
@@ -220,11 +222,30 @@ class _MissedPraysState extends State<MissedPrays>
                               setState(() {});
                             },
                             child: Text(
-                              'SUBTRACT 1 DAY',
+                              '- 1 DAY',
                               style: TextStyle(
                                   fontSize: 17,
                                   fontWeight: FontWeight.bold,
-                                  color: colorStr),
+                                  color: color),
+                            ),
+                          ),
+                          FlatButton(
+                            onPressed: () {
+                              AllUserData.setPrayers('fajr', 0);
+                              AllUserData.setPrayers('dhuhr', 0);
+                              AllUserData.setPrayers('asr', 0);
+                              AllUserData.setPrayers('maghrib', 0);
+                              AllUserData.setPrayers('isha', 0);
+                              _fajr = AllUserData.getPrayers("fajr");
+                              _dhuhr = AllUserData.getPrayers("dhuhr");
+                              _asr = AllUserData.getPrayers("asr");
+                              _maghrib = AllUserData.getPrayers("maghrib");
+                              _isha = AllUserData.getPrayers("isha");
+                              setState(() {});
+                            },
+                            child: Icon(
+                              Icons.restart_alt_outlined,
+                              color: color,
                             ),
                           ),
                           FlatButton(
@@ -237,11 +258,11 @@ class _MissedPraysState extends State<MissedPrays>
                               setState(() {});
                             },
                             child: Text(
-                              'ADD 1 DAY',
+                              '+ 1 DAY',
                               style: TextStyle(
                                   fontSize: 17,
                                   fontWeight: FontWeight.bold,
-                                  color: colorStr),
+                                  color: color),
                             ),
                           )
                         ],
