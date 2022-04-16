@@ -75,6 +75,17 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Header(),
+              SizedBox(height: 15),
+              user.displayName != null
+                  ? Text(
+                      'Assalamu alaikum, ${user.displayName!.split(' ').first}',
+                      style: getStyle(23, white, true),
+                    )
+                  : Text(
+                      'Assalamu alaikum',
+                      style: getStyle(23, black, true),
+                    ),
+              ToolsRow(),
               DailyVerse(
                 url: dailyVerseUrl,
               )
