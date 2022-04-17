@@ -71,6 +71,10 @@ dependencies:
   quran: ^1.1.2
   audioplayers: ^0.20.1
   bottom_navy_bar: ^6.0.0
+  flutter_qiblah: ^2.0.2
+
+dependency_overrides:
+  geolocator: ^8.2.0
 
 dev_dependencies:
   flutter_test:

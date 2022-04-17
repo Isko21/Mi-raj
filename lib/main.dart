@@ -18,6 +18,7 @@ import '../pages/pray_pages/maghrib_page.dart';
 import '../view/sajda/sajda_index.dart';
 import '../components/appbar.dart';
 import '../components/properties.dart';
+import 'components/location.dart';
 import 'model/juzz/juz.dart';
 import 'model/sajda/sajda.dart';
 import 'model/sajda/sajda_list.dart';
@@ -88,10 +89,26 @@ class _LoggedInState extends State<LoggedIn> {
   @override
   void initState() {
     super.initState();
+    getLocation();
   }
 
   void state() {
     setState(() {});
+  }
+
+  void getLocation() async {
+    final service = UsersLocation();
+    final locationData = await service.getLocation();
+    if (locationData != null) {
+      final placeMark = await service.getPlaceMark(locationData: locationData);
+      try {
+        setState(() {
+          address = placeMark!.subLocality!;
+        });
+      } catch (e) {
+        print(e);
+      }
+    }
   }
 
   @override

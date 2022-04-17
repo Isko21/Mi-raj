@@ -1,7 +1,7 @@
 import 'package:daily_muslim/components/properties.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hijri/hijri_calendar.dart';
-import 'package:intl/intl.dart';
 
 class Header extends StatelessWidget {
   Header({Key? key}) : super(key: key);
@@ -102,11 +102,23 @@ class Header extends StatelessWidget {
                           fontWeight: FontWeight.bold)),
                   Text(
                     '${HijriCalendar.now().longMonthName}',
-                    style: TextStyle(fontSize: 18, color: white),
+                    style: TextStyle(fontSize: 15, color: white),
                   ),
-                  Text(
-                    DateFormat('EEEE, d MMM').format(DateTime.now()),
-                    style: TextStyle(fontSize: 18, color: white),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        address,
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(CupertinoIcons.location, color: white)
+                    ],
                   )
                 ],
               )

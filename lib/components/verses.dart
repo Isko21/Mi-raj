@@ -1,7 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/pages/sub_pages/coming_soon.dart';
 import 'package:daily_muslim/pages/sub_pages/missed_prays.dart';
+import 'package:daily_muslim/pages/sub_pages/qibla_compass.dart';
 import 'package:daily_muslim/pages/tasbihs_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
@@ -199,10 +199,8 @@ class ToolsRow extends StatelessWidget {
                       )),
                 ),
                 InkWell(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => ComingSoon(
-                            title: 'Qibla',
-                          ))),
+                  onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => QiblaCompass())),
                   child: Container(
                     width: width / 5,
                     child: Column(

@@ -60,6 +60,7 @@ TextStyle getStyle(double size, Color c, bool isBold) {
       fontWeight: isBold ? FontWeight.bold : FontWeight.normal);
 }
 
+late String address = 'Loading';
 late String city;
 late double lat, long;
 late String country;
