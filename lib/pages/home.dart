@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:convert';
 import 'dart:math';
 import 'package:daily_muslim/components/header.dart';
@@ -88,7 +90,7 @@ class _HomePageState extends State<HomePage> {
               ToolsRow(),
               DailyVerse(
                 url: dailyVerseUrl,
-              )
+              ),
             ],
           ),
         ));

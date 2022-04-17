@@ -1,3 +1,5 @@
+import 'package:daily_muslim/pages/jawshan_page.dart';
+import 'package:daily_muslim/pages/sub_pages/asmaulhusna.dart';
 import 'package:daily_muslim/pages/tasbihs_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -25,6 +27,7 @@ import 'model/sajda/sajda_list.dart';
 import 'model/surah/surah.dart';
 import 'model/surah/surah_list.dart';
 import 'view/juzz/juz_index.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'view/surahas/surah_index.dart';
 
 Future<void> main() async {
@@ -90,6 +93,45 @@ class _LoggedInState extends State<LoggedIn> {
   void initState() {
     super.initState();
     getLocation();
+    getNames();
+    getJawshan();
+  }
+
+  getNames() async {
+    String res;
+    res = await rootBundle.loadString('assets/names.txt');
+    var line = res.split('.');
+    for (int i = 0; i < line.length; i++) {
+      names.add(AlHusna(
+          tr: line[i].split('	')[3],
+          eng: line[i].split('	')[2],
+          ar: line[i].split('	')[1]));
+    }
+  }
+
+  getJawshan() async {
+    String res;
+    res = await rootBundle.loadString('assets/jawshan.txt');
+    var bapp = res.split('(');
+    var ar = <String>[];
+    var eng = <String>[];
+    var tr = <String>[];
+    for (int i = 1; i < bapp.length; i++) {
+      for (int j = 0; j < bapp[i].split('\n').length; j++) {
+        if (j == 0 || i == 0) continue;
+        if ((j + 3) % 4 == 0) {
+          ar.add(bapp[i].split('\n')[j]);
+        } else if ((j + j) % 4 == 0) {
+          eng.add(bapp[i].split('\n')[j]);
+        } else {
+          tr.add(bapp[i].split('\n')[j]);
+        }
+      }
+      jawshans.add(Jawshan(tr: tr, ar: ar, eng: eng));
+      ar = <String>[];
+      eng = <String>[];
+      tr = <String>[];
+    }
   }
 
   void state() {

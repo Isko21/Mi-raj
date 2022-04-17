@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:daily_muslim/components/properties.dart';
+import 'package:daily_muslim/pages/sub_pages/asmaulhusna.dart';
 import 'package:daily_muslim/pages/sub_pages/missed_prays.dart';
 import 'package:daily_muslim/pages/sub_pages/qibla_compass.dart';
 import 'package:daily_muslim/pages/tasbihs_page.dart';
@@ -290,7 +291,8 @@ class ToolsRow extends StatelessWidget {
                       )),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => AsMaulHusna())),
                   child: Container(
                       width: width / 5,
                       child: Column(
@@ -309,7 +311,7 @@ class ToolsRow extends StatelessWidget {
                                       fit: BoxFit.cover),
                                 ),
                               )),
-                          Text('Allah Names',
+                          Text('Names',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: white,

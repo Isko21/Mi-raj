@@ -6,14 +6,30 @@ class JawshanPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color: color.withAlpha(50),
-      ),
-      child: ListView(
-        padding: EdgeInsets.only(right: 15, left: 15, top: 75),
-        children: <Widget>[],
-      ),
+      color: color.withAlpha(50),
+      child: ListView.builder(
+          itemCount: jawshans[0].eng.length,
+          itemBuilder: (context, index) {
+            return Text(
+              jawshans[0].eng[index],
+              style: TextStyle(fontSize: 20, color: white),
+            );
+          }),
     );
   }
 }
+
+String bap = '';
+
+class Jawshan {
+  final List<String> eng;
+  final List<String> tr;
+  final List<String> ar;
+  int bap = 0;
+
+  Jawshan({required this.tr, required this.ar, required this.eng}) {
+    bap++;
+  }
+}
+
+List<Jawshan> jawshans = <Jawshan>[];

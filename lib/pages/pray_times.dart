@@ -42,17 +42,6 @@ class _PrayTimesState extends State<PrayTimes> {
                   color: white,
                   borderRadius: BorderRadius.all(Radius.circular(20))),
               child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: WidgetAnimator(
-                    child: Text(
-                      "Today's prayer times",
-                      textAlign: TextAlign.start,
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
                 WidgetAnimator(
                     child: LinePrayer(
                         pray: getTime(prayerTimes.fajr), title: 'Fajr')),
