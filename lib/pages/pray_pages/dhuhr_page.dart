@@ -11,11 +11,10 @@ class Dhuhr extends StatefulWidget {
 }
 
 class _DhuhrState extends State<Dhuhr> {
-  bool isArabic = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: black.withAlpha(50),
       appBar: AppBarWithSetState(
           title: "Dhuhr",
           change: (int a) {
@@ -28,7 +27,8 @@ class _DhuhrState extends State<Dhuhr> {
             });
           }),
       body: Container(
-        color: white,
+        color: color.withAlpha(50),
+        height: MediaQuery.of(context).size.height,
         child: ListView(
           children: [
             Description(

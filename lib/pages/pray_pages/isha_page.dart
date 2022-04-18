@@ -10,10 +10,10 @@ class Isha extends StatefulWidget {
 }
 
 class _IshaState extends State<Isha> {
-  bool isArabic = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: black.withAlpha(50),
         appBar: AppBarWithSetState(
             title: "Isha",
             change: (int a) {

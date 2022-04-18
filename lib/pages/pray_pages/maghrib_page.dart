@@ -11,10 +11,10 @@ class Maghrib extends StatefulWidget {
 }
 
 class _MaghribState extends State<Maghrib> {
-  bool isArabic = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: black.withAlpha(50),
       appBar: AppBarWithSetState(
           title: "Maghrib",
           change: (int a) {

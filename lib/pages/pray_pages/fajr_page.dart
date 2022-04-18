@@ -10,11 +10,10 @@ class Fajr extends StatefulWidget {
 }
 
 class _FajrState extends State<Fajr> {
-  bool isArabic = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: black.withAlpha(50),
       appBar: AppBarWithSetState(
         title: "Fajr",
         change: (int a) {
