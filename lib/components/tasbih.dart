@@ -18,7 +18,7 @@ class Description extends StatelessWidget {
             child: Text(
                 "After performing the obligatory Fajr prayer and salutation:",
                 style: TextStyle(
-                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
         case "Бешим":
@@ -28,7 +28,7 @@ class Description extends StatelessWidget {
             child: Text(
                 "After performing the obligatory Dhuhr prayer and salutation:",
                 style: TextStyle(
-                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
         case "Аср":
@@ -38,7 +38,7 @@ class Description extends StatelessWidget {
             child: Text(
                 "After performing the obligatory Asr prayer and salutation:",
                 style: TextStyle(
-                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
         case "Шам":
@@ -48,7 +48,7 @@ class Description extends StatelessWidget {
             child: Text(
                 "After performing the obligatory Maghrib prayer and salutation:",
                 style: TextStyle(
-                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
         case "Куптан":
@@ -58,7 +58,7 @@ class Description extends StatelessWidget {
             child: Text(
                 "After performing the obligatory Isha prayer and salutation:",
                 style: TextStyle(
-                    color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
       }
@@ -68,8 +68,8 @@ class Description extends StatelessWidget {
       padding: EdgeInsets.all(10),
       child: Text(
         text + ' намаздын парзы окулуп, салам берилгенден кийин:',
-        style: TextStyle(
-            color: colorStr, fontSize: 25, fontWeight: FontWeight.bold),
+        style:
+            TextStyle(color: white, fontSize: 25, fontWeight: FontWeight.bold),
         textAlign: TextAlign.center,
       ),
     );
@@ -90,7 +90,7 @@ class Nav extends StatelessWidget {
       child: Text(
         isArabic ? textAr : textRu,
         style: TextStyle(
-          color: colorStr,
+          color: white.withOpacity(0.8),
           fontSize: 19,
           fontWeight: FontWeight.bold,
         ),
@@ -118,7 +118,7 @@ class Solatan extends StatelessWidget {
     return Container(
       padding: isArab
           ? EdgeInsets.fromLTRB(5, 0, 10, 10)
-          : EdgeInsets.fromLTRB(5, 5, 5, 20),
+          : EdgeInsets.fromLTRB(5, 5, 5, 10),
       child: Column(
         children: <Widget>[
           bis
@@ -129,12 +129,12 @@ class Solatan extends StatelessWidget {
                   child: isArab
                       ? Image.asset(
                           'assets/img/bismi.png',
-                          height: 200,
+                          height: 150,
                         )
                       : Text(bismiRU,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: colorStr,
+                              color: white,
                               fontWeight: FontWeight.bold,
                               fontSize: 21,
                               fontFamily: 'Comfortaa')),
@@ -144,14 +144,17 @@ class Solatan extends StatelessWidget {
               ? Text(
                   rus,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(
+                      fontSize: 20, fontFamily: 'Roboto', color: white),
                 )
               : Text(
                   arab,
                   textAlign: TextAlign.right,
                   textDirection: TextDirection.rtl,
-                  style:
-                      TextStyle(fontSize: height * 0.03, fontFamily: 'Noore'),
+                  style: TextStyle(
+                      fontSize: height * 0.03,
+                      color: white,
+                      fontFamily: 'Noore'),
                 ),
         ],
       ),
@@ -164,7 +167,7 @@ Widget divider() => Container(
       child: Center(
         child: Text(
           '❁  ❁  ❁  ❁  ❁',
-          style: TextStyle(color: colorStr, fontSize: 30),
+          style: TextStyle(color: white, fontSize: 30),
         ),
       ),
     );
@@ -232,14 +235,15 @@ class _CounterState extends State<Counter> {
               widget.isArabic ? widget.ar : widget.ru,
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: black,
+                  color: white,
                   fontSize: widget.isArabic ? 28 : 20,
                   fontFamily: widget.isArabic ? 'Noore' : null),
             ),
+            SizedBox(height: 0),
             Text(
               '$first/${widget.max}',
               style: TextStyle(
-                  color: black, fontSize: 21, fontWeight: FontWeight.bold),
+                  color: white, fontSize: 21, fontWeight: FontWeight.bold),
             ),
           ],
         ),

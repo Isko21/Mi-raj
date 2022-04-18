@@ -1,4 +1,5 @@
 import 'package:adhan/adhan.dart';
+import 'package:daily_muslim/components/appbar.dart';
 import 'package:daily_muslim/pages/pray_times.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,6 @@ import 'package:intl/intl.dart';
 import '../pages/home.dart';
 import '../pages/jawshan_page.dart';
 import '../pages/quran_page.dart';
-import '../pages/tasbihs_page.dart';
-import '../pages/tools_page.dart';
 
 String userName = user.displayName.toString();
 String firstName = userName.split(' ')[0];
@@ -47,10 +46,15 @@ final pages = [
   PrayTimes(),
   JawshanPage(),
   Settings(),
-  TasbihsPage(),
-  ToolsPage(),
 ];
-String appBar = "Home";
+final appBars = [
+  AppBarCustom(title: 'Home'),
+  AppBarCustom(title: 'Quran'),
+  AppBarCustom(title: 'Prayer Timings'),
+  AppBarWithSetState(title: 'Jawshan', change: () {}),
+  AppBarCustom(title: 'Settings')
+];
+
 int index = 0;
 bool isArabic = true;
 TextStyle getStyle(double size, Color c, bool isBold) {
@@ -60,8 +64,7 @@ TextStyle getStyle(double size, Color c, bool isBold) {
       fontWeight: isBold ? FontWeight.bold : FontWeight.normal);
 }
 
-late String address = 'Loading';
-late String city;
+late String city = 'Loading';
 late double lat, long;
 late String country;
 String getTime(DateTime dt) {

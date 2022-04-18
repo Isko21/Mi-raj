@@ -60,7 +60,6 @@ class _NavBarState extends State<NavBar> {
             title: Text('Home', style: TextStyle(color: white)),
             onTap: () {
               index = 0;
-              appBar = "Home";
               widget.state();
               Navigator.pop(context);
             },
@@ -70,7 +69,6 @@ class _NavBarState extends State<NavBar> {
             title: Text('Quran', style: TextStyle(color: white)),
             onTap: () {
               index = 1;
-              appBar = "Quran";
               widget.state();
               Navigator.pop(context);
             },
@@ -80,7 +78,6 @@ class _NavBarState extends State<NavBar> {
             title: Text('Prayer Times', style: TextStyle(color: white)),
             onTap: () {
               index = 2;
-              appBar = 'Prayer Times';
               widget.state();
               Navigator.pop(context);
             },
@@ -90,7 +87,6 @@ class _NavBarState extends State<NavBar> {
             title: Text('Tasbihs', style: TextStyle(color: white)),
             onTap: () {
               index = 3;
-              appBar = "Tasbih";
               widget.state();
               Navigator.pop(context);
             },
@@ -100,7 +96,6 @@ class _NavBarState extends State<NavBar> {
             title: Text('Jawshan', style: TextStyle(color: white)),
             onTap: () {
               index = 4;
-              appBar = "Jawshan";
               widget.state();
               Navigator.pop(context);
             },
@@ -110,7 +105,6 @@ class _NavBarState extends State<NavBar> {
             title: Text('Tools', style: TextStyle(color: white)),
             onTap: () {
               index = 5;
-              appBar = "Tools";
               widget.state();
               Navigator.pop(context);
             },
@@ -121,7 +115,6 @@ class _NavBarState extends State<NavBar> {
             title: Text('Settings', style: TextStyle(color: white)),
             onTap: () {
               index = 6;
-              appBar = "Settings";
               widget.state();
               Navigator.pop(context);
             },

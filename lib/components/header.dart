@@ -1,3 +1,4 @@
+import 'package:daily_muslim/animations/bottom_animation.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -47,24 +48,28 @@ class Header extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'now',
-                      style: TextStyle(fontSize: 15, color: Colors.white70),
-                    ),
-                    Text(current.toUpperCase(),
-                        style: TextStyle(
-                            fontSize: 21,
-                            color: white,
-                            fontWeight: FontWeight.bold)),
-                  ],
+                WidgetAnimator(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'now',
+                        style: TextStyle(fontSize: 15, color: Colors.white70),
+                      ),
+                      Text(current.toUpperCase(),
+                          style: TextStyle(
+                              fontSize: 21,
+                              color: white,
+                              fontWeight: FontWeight.bold)),
+                    ],
+                  ),
                 ),
-                Container(
-                  child: Image.asset(
-                      'assets/img/${current == 'sunrise' ? 'dhuhr' : current}.png'),
-                  height: 50,
+                WidgetAnimator(
+                  child: Container(
+                    child: Image.asset(
+                        'assets/img/${current == 'sunrise' ? 'dhuhr' : current}.png'),
+                    height: 50,
+                  ),
                 ),
               ]),
         ),
@@ -74,53 +79,57 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'upcoming',
-                    style: TextStyle(fontSize: 15, color: Colors.white70),
-                  ),
-                  Text(next,
-                      style: TextStyle(
-                          fontSize: 21,
-                          color: white,
-                          fontWeight: FontWeight.bold)),
-                  Text(
-                    time,
-                    style: TextStyle(fontSize: 19, color: white),
-                  )
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(HijriCalendar.now().hDay.toString(),
-                      style: TextStyle(
-                          fontSize: 23,
-                          color: white,
-                          fontWeight: FontWeight.bold)),
-                  Text(
-                    '${HijriCalendar.now().longMonthName}',
-                    style: TextStyle(fontSize: 15, color: white),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        address,
+              WidgetAnimator(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'upcoming',
+                      style: TextStyle(fontSize: 15, color: Colors.white70),
+                    ),
+                    Text(next,
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 21,
                             color: white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(CupertinoIcons.location, color: white)
-                    ],
-                  )
-                ],
+                            fontWeight: FontWeight.bold)),
+                    Text(
+                      time,
+                      style: TextStyle(fontSize: 19, color: white),
+                    )
+                  ],
+                ),
+              ),
+              WidgetAnimator(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(HijriCalendar.now().hDay.toString(),
+                        style: TextStyle(
+                            fontSize: 23,
+                            color: white,
+                            fontWeight: FontWeight.bold)),
+                    Text(
+                      '${HijriCalendar.now().longMonthName}',
+                      style: TextStyle(fontSize: 15, color: white),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          city,
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Icon(CupertinoIcons.location, color: white)
+                      ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
