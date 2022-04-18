@@ -1,4 +1,5 @@
 import 'package:daily_muslim/components/appbar.dart';
+import 'package:daily_muslim/pages/quran_page.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/properties.dart';
 
@@ -15,48 +16,29 @@ class _TasbihsPageState extends State<TasbihsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       backgroundColor: black.withAlpha(50),
       appBar: AppBarCustom(title: 'Tasbih'),
       body: Container(
+          padding: EdgeInsets.all(20),
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             color: color.withAlpha(50),
           ),
-          child: ListView(
-              padding: EdgeInsets.only(right: 15, left: 15, top: 75),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisSize: MainAxisSize.max,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/fajr');
-                  },
-                  child: Text("Fajr"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/dhuhr');
-                  },
-                  child: Text("Dhuhr"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/asr');
-                  },
-                  child: Text("Asr"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/maghrib');
-                  },
-                  child: Text("Maghrib"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/isha');
-                  },
-                  child: Text("Isha"),
-                ),
+                CoolButtonIcon(
+                    image: 'fajr.png', title: 'Fajr', route: '/fajr'),
+                CoolButtonIcon(
+                    image: 'dhuhr.png', title: 'Dhuhr', route: '/dhuhr'),
+                CoolButtonIcon(image: 'asr.png', title: 'Asr', route: '/asr'),
+                CoolButtonIcon(
+                    image: 'maghrib.png', title: 'Maghrib', route: '/maghrib'),
+                CoolButtonIcon(
+                    image: 'isha.png', title: 'Isha', route: '/isha'),
               ])),
     );
   }

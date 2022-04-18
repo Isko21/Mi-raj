@@ -18,7 +18,6 @@ import '../pages/pray_pages/fajr_page.dart';
 import '../pages/pray_pages/isha_page.dart';
 import '../pages/pray_pages/maghrib_page.dart';
 import '../view/sajda/sajda_index.dart';
-import '../components/appbar.dart';
 import '../components/properties.dart';
 import 'components/location.dart';
 import 'model/juzz/juz.dart';
@@ -145,7 +144,7 @@ class _LoggedInState extends State<LoggedIn> {
       final placeMark = await service.getPlaceMark(locationData: locationData);
       try {
         setState(() {
-          address = placeMark!.subLocality!;
+          city = placeMark!.subLocality!;
         });
       } catch (e) {
         print(e);
@@ -158,47 +157,23 @@ class _LoggedInState extends State<LoggedIn> {
     return Scaffold(
       backgroundColor: black,
       extendBodyBehindAppBar: true,
-      appBar: AppBarCustom(title: appBar),
-      // drawer: NavBar(
-      //   state: state,
-      //   fullname: user.displayName,
-      //   email: user.email,
-      //   url: user.photoURL,
-      // ),
+      appBar: appBars[index] as PreferredSizeWidget,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: color.withAlpha(50),
         type: BottomNavigationBarType.fixed,
         currentIndex: index,
-        showUnselectedLabels: false,
+        showUnselectedLabels: true,
         unselectedLabelStyle: TextStyle(color: Colors.white60),
         unselectedIconTheme: IconThemeData(color: Colors.white60),
-        fixedColor: white,
-        onTap: (_index) => setState(() {
-          index = _index;
-          switch (index) {
-            case 0:
-              appBar = 'Home';
-              break;
-            case 1:
-              appBar = 'Quran';
-              break;
-            case 2:
-              appBar = 'Prayer Times';
-              break;
-            case 3:
-              appBar = 'Jawshan';
-              break;
-            case 4:
-              appBar = 'Settings';
-              break;
-          }
-        }),
+        unselectedItemColor: white.withOpacity(0.5),
+        selectedItemColor: white,
+        onTap: (_index) => setState(() => index = _index),
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.bookQuran), label: 'Quran'),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.clock), label: 'Times'),
+              icon: Icon(CupertinoIcons.clock), label: 'Timings'),
           BottomNavigationBarItem(
               icon: Icon(Icons.shield_moon), label: 'Jawshan'),
           BottomNavigationBarItem(
