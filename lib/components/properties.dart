@@ -30,6 +30,7 @@ late String dailyVerseSurah = '';
 late String dailyVerseUrl = '';
 String dailyAyatSurah = '';
 late int ayat;
+String language = 'ar';
 var user = FirebaseAuth.instance.currentUser!;
 enum Pages {
   home,
@@ -51,7 +52,7 @@ final appBars = [
   AppBarCustom(title: 'Home'),
   AppBarCustom(title: 'Quran'),
   AppBarCustom(title: 'Prayer Timings'),
-  AppBarWithSetState(title: 'Jawshan', change: () {}),
+  AppBarJawshan(),
   AppBarCustom(title: 'Settings')
 ];
 

@@ -88,7 +88,7 @@ class _MissedPraysState extends State<MissedPrays>
     final newDate = await showDatePicker(
       context: context,
       initialDate: teenAge,
-      firstDate: DateTime(DateTime.now().year - 5),
+      firstDate: DateTime(DateTime.now().year - 100),
       lastDate: DateTime.now(),
     );
 
@@ -468,35 +468,4 @@ class _MissedPraysState extends State<MissedPrays>
       ),
     );
   }
-
-  // void showAndroidTimePicker(context) {
-  //   final newDate = showDatePicker(
-  //       context: context,
-  //       initialDate: teenAge,
-  //       firstDate: DateTime(DateTime.now().year - 100),
-  //       lastDate: DateTime.now());
-  //   teenAge = newDate as DateTime;
-  // }
-
-  // void showIOSDateTimePicker(context) {
-  //   showCupertinoModalPopup(
-  //       context: context,
-  //       builder: (_) => Container(
-  //             height: 190,
-  //             color: Color.fromARGB(255, 255, 255, 255),
-  //             child: Column(
-  //               children: [
-  //                 Container(
-  //                   height: 180,
-  //                   child: CupertinoDatePicker(
-  //                     initialDateTime: startPraying,
-  //                     mode: CupertinoDatePickerMode.date,
-  //                     dateOrder: DatePickerDateOrder.mdy,
-  //                     onDateTimeChanged: (val) => startPraying = val,
-  //                   ),
-  //                 )
-  //               ],
-  //             ),
-  //           ));
-  // }
 }

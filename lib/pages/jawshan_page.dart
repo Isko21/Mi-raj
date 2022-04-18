@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:daily_muslim/animations/bottom_animation.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 import 'package:daily_muslim/components/properties.dart';
 
 class JawshanPage extends StatefulWidget {
@@ -13,6 +14,7 @@ class _JawshanPageState extends State<JawshanPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20),
       color: color.withAlpha(50),
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
@@ -23,17 +25,31 @@ class _JawshanPageState extends State<JawshanPage> {
             curve: Curves.ease,
             layout: SwiperLayout.DEFAULT,
             controller: SwiperController(),
+            index: currentIndex.toInt(),
             loop: false,
-            onIndexChanged: (i) =>
-                setState(() => currentIndex = (i).toDouble()),
+            onIndexChanged: (i) {
+              currentIndex = (i).toDouble();
+              setState(() {});
+            },
             itemCount: jawshans.length - 1,
             itemBuilder: (context, i) => ListView.builder(
-                itemCount: jawshans[currentIndex.toInt()].eng.length,
+                itemCount: language == 'ar'
+                    ? jawshans[currentIndex.toInt()].ar.length
+                    : jawshans[currentIndex.toInt()].eng.length,
                 itemBuilder: (context, index) {
                   return WidgetAnimator(
                     child: Text(
-                      jawshans[currentIndex.toInt()].eng[index],
-                      style: TextStyle(fontSize: 18, color: white),
+                      language == 'ar'
+                          ? jawshans[currentIndex.toInt()].ar[index]
+                          : jawshans[currentIndex.toInt()].eng[index],
+                      style: TextStyle(
+                        fontSize: language == 'ar' ? 24 : 18,
+                        color: white,
+                        fontFamily: language == 'ar' ? 'Noore' : 'Comfortaa',
+                      ),
+                      textDirection: language == 'ar'
+                          ? ui.TextDirection.rtl
+                          : ui.TextDirection.ltr,
                     ),
                   );
                 }),
@@ -48,15 +64,14 @@ class _JawshanPageState extends State<JawshanPage> {
                 style: TextStyle(color: white),
               ),
               Slider(
-                max: 100,
+                max: 101,
                 divisions: 20,
                 min: 1,
                 label: currentIndex.round().toString(),
                 value: currentIndex + 1,
                 onChanged: (val) {
-                  setState(() {
-                    currentIndex = val;
-                  });
+                  currentIndex = val;
+                  setState(() {});
                 },
               ),
             ],

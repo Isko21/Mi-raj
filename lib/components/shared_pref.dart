@@ -70,4 +70,11 @@ class AllUserData {
   static String getVerseAudio() {
     return _preferences.getString('audio') ?? '';
   }
+
+  static Future setInstallDate(String value) async =>
+      await _preferences.setString('data', value);
+
+  static String getInstallDate() {
+    return _preferences.getString('data') ?? '';
+  }
 }

@@ -22,6 +22,7 @@ class _AuthPageState extends State<AuthPage> {
     AllUserData.setPrayers("asr", 0);
     AllUserData.setPrayers("maghrib", 0);
     AllUserData.setPrayers("isha", 0);
+    AllUserData.setInstallDate(DateTime.now().toString());
     print("Succesfully added prayer times");
   }
 

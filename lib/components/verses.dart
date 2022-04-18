@@ -48,7 +48,7 @@ class _DailyVerseState extends State<DailyVerse> {
           padding: EdgeInsets.all(10),
           margin: EdgeInsets.all(15),
           decoration: BoxDecoration(
-              color: white.withAlpha(50),
+              color: white.withOpacity(0.9),
               borderRadius: BorderRadius.all(Radius.circular(20))),
           child: Column(children: [
             Row(
@@ -58,10 +58,20 @@ class _DailyVerseState extends State<DailyVerse> {
                   'Daily Quran Verse',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      fontSize: 20, color: color, fontWeight: FontWeight.bold),
+                      fontSize: 20,
+                      color: colorStr,
+                      fontWeight: FontWeight.bold),
                 ),
                 IconButton(
-                  icon: !playing ? Icon(Icons.play_arrow) : Icon(Icons.pause),
+                  icon: !playing
+                      ? Icon(
+                          Icons.play_arrow,
+                          color: colorStr,
+                        )
+                      : Icon(
+                          Icons.pause,
+                          color: colorStr,
+                        ),
                   onPressed: () {
                     playing ? pauseVerse() : playVerse();
                   },
@@ -85,7 +95,10 @@ class _DailyVerseState extends State<DailyVerse> {
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 18),
                       ),
-                      Text(dailyAyatSurah)
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text('Surah $dailyAyatSurah')
                     ]),
                   )
                 : Center(
