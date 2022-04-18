@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 import 'dart:math';
+import 'package:daily_muslim/animations/bottom_animation.dart';
 import 'package:daily_muslim/components/header.dart';
 import 'package:daily_muslim/components/verses.dart';
 import 'package:flutter/material.dart';
@@ -79,17 +80,23 @@ class _HomePageState extends State<HomePage> {
               Header(),
               SizedBox(height: 15),
               user.displayName != null
-                  ? Text(
-                      'Assalamu alaikum, ${user.displayName!.split(' ').first}',
-                      style: getStyle(23, white, true),
+                  ? WidgetAnimator(
+                      child: Text(
+                        'Assalamu alaikum, ${user.displayName!.split(' ').first}',
+                        style: getStyle(23, white, true),
+                      ),
                     )
-                  : Text(
-                      'Assalamu alaikum',
-                      style: getStyle(23, black, true),
+                  : WidgetAnimator(
+                      child: Text(
+                        'Assalamu alaikum',
+                        style: getStyle(23, black, true),
+                      ),
                     ),
-              ToolsRow(),
-              DailyVerse(
-                url: dailyVerseUrl,
+              WidgetAnimator(child: ToolsRow()),
+              WidgetAnimator(
+                child: DailyVerse(
+                  url: dailyVerseUrl,
+                ),
               ),
             ],
           ),

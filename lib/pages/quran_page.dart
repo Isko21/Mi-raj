@@ -1,6 +1,7 @@
 import 'package:daily_muslim/animations/bottom_animation.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/widgets/calligraphy.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class QuranPage extends StatefulWidget {
@@ -64,6 +65,8 @@ class MainScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CoolButton(title: "Surah", route: '/surahIndex'),
                   CoolButton(title: "Juz", route: '/juzIndex'),
@@ -72,8 +75,50 @@ class MainScreen extends StatelessWidget {
               ),
             ),
           ),
-          const AyahBottom(),
+          WidgetAnimator(child: const AyahBottom()),
         ],
+      ),
+    );
+  }
+}
+
+class CoolButtonIcon extends StatelessWidget {
+  final String image;
+  final String title;
+  final String route;
+  CoolButtonIcon(
+      {required this.image, required this.title, required this.route});
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        style: ButtonStyle(
+            elevation: MaterialStateProperty.resolveWith((states) => 3),
+            shadowColor:
+                MaterialStateColor.resolveWith((states) => Colors.black),
+            minimumSize:
+                MaterialStateProperty.resolveWith((states) => Size(100, 60)),
+            backgroundColor: MaterialStateColor.resolveWith((states) => color)),
+        onPressed: () => Navigator.pushNamed(context, route),
+        child: WidgetAnimator(
+          child: Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  'assets/img/$image',
+                  height: 50,
+                ),
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Icon(CupertinoIcons.right_chevron, color: white)
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -87,7 +132,7 @@ class CoolButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 5.0),
+      padding: const EdgeInsets.all(8),
       child: ElevatedButton(
         style: ButtonStyle(
             elevation: MaterialStateProperty.resolveWith((states) => 3),
