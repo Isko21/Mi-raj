@@ -8,7 +8,6 @@ class AsMaulHusna extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       backgroundColor: black.withAlpha(50),
       appBar: AppBarCustom(title: 'Al Asma Ul Husna'),
       body: Container(

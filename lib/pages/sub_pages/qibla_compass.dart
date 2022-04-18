@@ -30,7 +30,6 @@ class _QiblaCompassState extends State<QiblaCompass> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarCustom(title: 'Qibla'),
-      extendBodyBehindAppBar: true,
       backgroundColor: black.withAlpha(50),
       body: Container(
         color: color.withAlpha(50),
