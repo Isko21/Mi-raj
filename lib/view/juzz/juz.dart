@@ -29,13 +29,12 @@ class _JuzState extends State<Juz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBarCustom(title: widget.juzIndex.toString()),
-      backgroundColor: white,
+      backgroundColor: black.withAlpha(50),
       body: Container(
+        color: Colors.green.shade200,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(),
         child: NestedScrollView(
           headerSliverBuilder:
               (BuildContext context, bool innerBoxIsScrolled) => <Widget>[],

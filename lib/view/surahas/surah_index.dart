@@ -29,12 +29,10 @@ class _SurahIndexState extends State<SurahIndex> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: black.withAlpha(50),
       appBar: AppBarCustom(title: "Surahs"),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: const AssetImage('assets/img/quran.png'))),
+        color: color.withAlpha(50),
         child: Stack(
           children: <Widget>[
             _surahs!.isEmpty

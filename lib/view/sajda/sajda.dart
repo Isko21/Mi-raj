@@ -33,13 +33,12 @@ class SajdaAyah extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBarCustom(title: surahEnglishName!),
-      backgroundColor: white,
+      backgroundColor: black.withAlpha(50),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(),
+        color: Colors.green.shade200,
         child: NestedScrollView(
           headerSliverBuilder:
               (BuildContext context, bool innerBoxIsScrolled) => <Widget>[],

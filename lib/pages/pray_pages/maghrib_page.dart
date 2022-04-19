@@ -14,7 +14,7 @@ class _MaghribState extends State<Maghrib> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: black.withAlpha(50),
+      backgroundColor: Colors.green.withAlpha(100),
       appBar: AppBarWithSetState(
           title: "Maghrib",
           change: (int a) {
@@ -27,7 +27,7 @@ class _MaghribState extends State<Maghrib> {
             });
           }),
       body: Container(
-        color: color.withAlpha(50),
+        color: white.withAlpha(100),
         child: ListView(
           children: <Widget>[
             Description(

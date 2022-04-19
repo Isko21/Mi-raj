@@ -29,12 +29,10 @@ class _SajdaIndexState extends State<SajdaIndex> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: black.withAlpha(50),
       appBar: AppBarCustom(title: "Sajda"),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: const AssetImage('assets/img/quran.png'))),
+        color: color.withAlpha(50),
         child: SafeArea(
           child: Stack(
             children: <Widget>[

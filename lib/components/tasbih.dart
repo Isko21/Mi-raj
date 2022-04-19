@@ -13,7 +13,7 @@ class Description extends StatelessWidget {
       switch (text) {
         case "Багымдат":
           return Container(
-            color: color.withAlpha(150),
+            color: black.withAlpha(150),
             padding: EdgeInsets.all(10),
             child: Text(
                 "After performing the obligatory Fajr prayer and salutation:",
@@ -23,7 +23,7 @@ class Description extends StatelessWidget {
           );
         case "Бешим":
           return Container(
-            color: color.withAlpha(150),
+            color: black.withAlpha(150),
             padding: EdgeInsets.all(10),
             child: Text(
                 "After performing the obligatory Dhuhr prayer and salutation:",
@@ -33,7 +33,7 @@ class Description extends StatelessWidget {
           );
         case "Аср":
           return Container(
-            color: color.withAlpha(150),
+            color: black.withAlpha(150),
             padding: EdgeInsets.all(10),
             child: Text(
                 "After performing the obligatory Asr prayer and salutation:",
@@ -44,7 +44,7 @@ class Description extends StatelessWidget {
         case "Шам":
           return Container(
             padding: EdgeInsets.all(10),
-            color: color.withAlpha(150),
+            color: black.withAlpha(150),
             child: Text(
                 "After performing the obligatory Maghrib prayer and salutation:",
                 style: TextStyle(
@@ -53,7 +53,7 @@ class Description extends StatelessWidget {
           );
         case "Куптан":
           return Container(
-            color: color.withAlpha(150),
+            color: black.withAlpha(150),
             padding: EdgeInsets.all(10),
             child: Text(
                 "After performing the obligatory Isha prayer and salutation:",
@@ -64,12 +64,12 @@ class Description extends StatelessWidget {
       }
     }
     return Container(
-      color: color.withAlpha(150),
+      color: black.withAlpha(150),
       padding: EdgeInsets.all(10),
       child: Text(
         text + ' намаздын парзы окулуп, салам берилгенден кийин:',
         style:
-            TextStyle(color: white, fontSize: 25, fontWeight: FontWeight.bold),
+            TextStyle(color: black, fontSize: 25, fontWeight: FontWeight.bold),
         textAlign: TextAlign.center,
       ),
     );
@@ -86,11 +86,11 @@ class Nav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      color: color.withAlpha(50),
+      color: black.withAlpha(100),
       child: Text(
         isArabic ? textAr : textRu,
         style: TextStyle(
-          color: white.withOpacity(0.8),
+          color: black.withOpacity(0.8),
           fontSize: 19,
           fontWeight: FontWeight.bold,
         ),
@@ -134,7 +134,7 @@ class Solatan extends StatelessWidget {
                       : Text(bismiRU,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: white,
+                              color: black,
                               fontWeight: FontWeight.bold,
                               fontSize: 21,
                               fontFamily: 'Comfortaa')),
@@ -145,7 +145,7 @@ class Solatan extends StatelessWidget {
                   rus,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 20, fontFamily: 'Roboto', color: white),
+                      fontSize: 20, fontFamily: 'Roboto', color: black),
                 )
               : Text(
                   arab,
@@ -153,7 +153,7 @@ class Solatan extends StatelessWidget {
                   textDirection: TextDirection.rtl,
                   style: TextStyle(
                       fontSize: height * 0.03,
-                      color: white,
+                      color: black,
                       fontFamily: 'Noore'),
                 ),
         ],
@@ -167,7 +167,7 @@ Widget divider() => Container(
       child: Center(
         child: Text(
           '❁  ❁  ❁  ❁  ❁',
-          style: TextStyle(color: white, fontSize: 30),
+          style: TextStyle(color: black, fontSize: 30),
         ),
       ),
     );
@@ -204,9 +204,7 @@ class _CounterState extends State<Counter> {
 
   init() async {
     bool canVibrate = await Vibrate.canVibrate;
-    setState(() {
-      _canVibrate = canVibrate;
-    });
+    _canVibrate = canVibrate;
   }
 
   @override
@@ -215,17 +213,17 @@ class _CounterState extends State<Counter> {
       onTap: !_canVibrate
           ? null
           : () {
-              Vibrate.feedback(FeedbackType.light);
+              Vibrate.feedback(FeedbackType.medium);
               add();
               if (first == widget.max) {
-                Vibrate.feedback(FeedbackType.heavy);
+                Vibrate.feedback(FeedbackType.warning);
               }
               if (first - widget.max == 1) {
                 first = 1;
               }
             },
       child: Container(
-        color: color.withAlpha(100),
+        color: black.withAlpha(70),
         padding: EdgeInsets.all(15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -235,15 +233,15 @@ class _CounterState extends State<Counter> {
               widget.isArabic ? widget.ar : widget.ru,
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: white,
+                  color: black,
                   fontSize: widget.isArabic ? 28 : 20,
                   fontFamily: widget.isArabic ? 'Noore' : null),
             ),
-            SizedBox(height: 0),
+            SizedBox(height: 15),
             Text(
               '$first/${widget.max}',
               style: TextStyle(
-                  color: white, fontSize: 21, fontWeight: FontWeight.bold),
+                  color: black, fontSize: 21, fontWeight: FontWeight.bold),
             ),
           ],
         ),

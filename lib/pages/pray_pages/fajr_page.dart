@@ -30,7 +30,7 @@ class _FajrState extends State<Fajr> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: black.withAlpha(50),
+      backgroundColor: Colors.green.withAlpha(100),
       appBar: AppBarWithSetState(
         title: "Fajr",
         change: (int a) {
@@ -44,9 +44,11 @@ class _FajrState extends State<Fajr> {
         },
       ),
       body: Container(
-        color: color.withAlpha(50),
+        color: white.withAlpha(100),
         child: ListView(
+          addAutomaticKeepAlives: true,
           scrollDirection: Axis.vertical,
+          addRepaintBoundaries: true,
           children: <Widget>[
             Description(
               text: 'Багымдат',
@@ -189,7 +191,7 @@ class _FajrState extends State<Fajr> {
                           : Text(bismiRU,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: white,
+                                  color: black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 21,
                                   fontFamily: 'Comfortaa')),
@@ -201,7 +203,7 @@ class _FajrState extends State<Fajr> {
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                           fontSize: MediaQuery.of(context).size.height * 0.03,
-                          color: white,
+                          color: black,
                           fontFamily: 'Noore'),
                     )
                   else
@@ -211,7 +213,7 @@ class _FajrState extends State<Fajr> {
                         text: TextSpan(
                           text: '❁ Субхаанака йаа ',
                           style: TextStyle(
-                              fontSize: 18, color: white, fontFamily: 'Roboto'),
+                              fontSize: 18, color: black, fontFamily: 'Roboto'),
                           children: <TextSpan>[
                             TextSpan(
                               text: '«${i.split(' ').first.trim()}»',
@@ -219,14 +221,14 @@ class _FajrState extends State<Fajr> {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                   fontFamily: 'Comfortaa',
-                                  color: red),
+                                  color: Colors.red.shade900),
                             ),
                             TextSpan(
                               text: " та'аалайта йаа ",
                               style: TextStyle(
                                   fontSize: 18,
                                   fontFamily: 'Robot',
-                                  color: white),
+                                  color: black),
                             ),
                             TextSpan(
                               text: '«${i.split(' ').last.trim()}»',
@@ -234,7 +236,7 @@ class _FajrState extends State<Fajr> {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                   fontFamily: 'Comfortaa',
-                                  color: red),
+                                  color: Colors.red.shade900),
                             ),
                             TextSpan(
                               text:
@@ -242,7 +244,7 @@ class _FajrState extends State<Fajr> {
                               style: TextStyle(
                                   fontSize: 18,
                                   fontFamily: 'Roboto',
-                                  color: white),
+                                  color: black),
                             ),
                           ],
                         ),

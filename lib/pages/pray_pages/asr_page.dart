@@ -31,7 +31,7 @@ class _AsrState extends State<Asr> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: black.withAlpha(50),
+      backgroundColor: Colors.green.withAlpha(100),
       appBar: AppBarWithSetState(
         title: "Asr",
         change: (int a) => setState(
@@ -45,7 +45,7 @@ class _AsrState extends State<Asr> {
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
-        color: color.withAlpha(50),
+        color: white.withAlpha(100),
         child: ListView(
           children: [
             Description(

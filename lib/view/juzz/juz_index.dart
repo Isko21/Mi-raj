@@ -40,14 +40,10 @@ class _JuzIndexState extends State<JuzIndex> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: black.withAlpha(50),
       appBar: AppBarCustom(title: "Juzs"),
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/img/quran.png'),
-          ),
-        ),
+        color: color.withAlpha(50),
         child: SafeArea(
             child: Stack(
           children: <Widget>[
@@ -66,31 +62,38 @@ class _JuzIndexState extends State<JuzIndex> {
                         ),
                       ),
                       child: Container(
-                        margin: EdgeInsets.all(20),
+                        margin: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          border: Border.all(color: black),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 20.0,
-                                offset: Offset(5, 5)),
-                            BoxShadow(color: Colors.white)
-                          ],
-                          color: black,
-                          image: const DecorationImage(
-                            fit: BoxFit.cover,
-                            opacity: 0.5,
-                            image: AssetImage('assets/img/quran_page.jpg'),
+                            color: white,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        padding: EdgeInsets.all(15),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: black),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black,
+                                  blurRadius: 20.0,
+                                  offset: Offset(5, 5)),
+                              BoxShadow(color: Colors.white)
+                            ],
+                            color: black,
+                            image: const DecorationImage(
+                              fit: BoxFit.cover,
+                              opacity: 0.5,
+                              image: AssetImage('assets/img/quran_page.jpg'),
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          "${index + 1}",
-                          style: TextStyle(
-                              fontSize: 21,
-                              color: Colors.white70,
-                              fontWeight: FontWeight.bold),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "${index + 1}",
+                            style: TextStyle(
+                                fontSize: 21,
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),

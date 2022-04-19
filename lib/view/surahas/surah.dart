@@ -1,4 +1,5 @@
 import 'package:daily_muslim/animations/bottom_animation.dart';
+import 'package:daily_muslim/components/appbar.dart';
 import 'package:daily_muslim/components/properties.dart';
 import 'package:daily_muslim/model/ayat/ayat.dart';
 import 'package:flutter/material.dart';
@@ -21,46 +22,18 @@ class SurahAyats extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: black.withAlpha(50),
+      appBar: AppBarCustom(title: surahEnglishName!),
       body: Container(
-        child: SafeArea(
-          child: CustomScrollView(
-            slivers: <Widget>[
-              SliverAppBar(
-                iconTheme: IconThemeData(color: colorStr),
-                expandedHeight: height * 0.3,
-                backgroundColor: white,
-                pinned: true,
-                floating: false,
-                flexibleSpace: FlexibleSpaceBar(
-                  title: Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: white,
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    child: Text(
-                      surahEnglishName!,
-                      style: TextStyle(color: colorStr),
-                    ),
-                  ),
-                  centerTitle: true,
-                  background: ClipRRect(
-                    borderRadius:
-                        BorderRadius.vertical(bottom: Radius.circular(20)),
-                    child: Image.asset(
-                      'assets/img/reading.jpg',
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
-                ),
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                    (context, index) => line(height, index, width),
-                    childCount: ayatsList!.length),
-              ),
-            ],
-          ),
+        color: Colors.green.shade200,
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                  (context, index) => line(height, index, width),
+                  childCount: ayatsList!.length),
+            ),
+          ],
         ),
       ),
     );
@@ -85,6 +58,7 @@ class SurahAyats extends StatelessWidget {
                     backgroundColor: Colors.white,
                     child: Text(
                       ayatsList![index].number.toString(),
+                      textAlign: TextAlign.justify,
                       style: TextStyle(fontSize: height * 0.015),
                     )),
               ),

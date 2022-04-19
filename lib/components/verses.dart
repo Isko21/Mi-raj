@@ -352,7 +352,7 @@ class ToolsRow extends StatelessWidget {
                                       fit: BoxFit.cover),
                                 ),
                               )),
-                          Text('Duas',
+                          Text('Shahada',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: white,
