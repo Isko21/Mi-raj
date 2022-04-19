@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/appbar.dart';
 import 'package:daily_muslim/components/properties.dart';
+import 'package:flutter/services.dart';
 
 import '../../components/tasbih.dart';
 import '../../tasbihs/duas.dart';
@@ -11,6 +12,22 @@ class Asr extends StatefulWidget {
 }
 
 class _AsrState extends State<Asr> {
+  @override
+  void initState() {
+    super.initState();
+    getName();
+  }
+
+  List<String> list = <String>[];
+  void getName() async {
+    String res;
+    res = await rootBundle.loadString('assets/subhanaka.txt');
+    var line = res.split('\n');
+    for (int i = 0; i < line.length; i++) {
+      list.add(line[i]);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,11 +123,86 @@ class _AsrState extends State<Asr> {
                 isArab: isArabic,
                 arab: afterAlfiAR,
                 rus: afterAlfiRU),
-            Solatan(
-                bis: true,
-                isArab: isArabic,
-                arab: subhanakaYaaAllahAR,
-                rus: subhanakaYaaAllahRU),
+            Container(
+              padding: isArabic
+                  ? EdgeInsets.fromLTRB(5, 0, 10, 10)
+                  : EdgeInsets.fromLTRB(5, 5, 5, 10),
+              child: Column(
+                children: <Widget>[
+                  if (true)
+                    Padding(
+                      padding: isArabic
+                          ? EdgeInsets.all(0)
+                          : EdgeInsets.symmetric(vertical: 15),
+                      child: isArabic
+                          ? Image.asset(
+                              'assets/img/bismi.png',
+                              height: 150,
+                            )
+                          : Text(bismiRU,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 21,
+                                  fontFamily: 'Comfortaa')),
+                    ),
+                  if (isArabic)
+                    Text(
+                      subhanakaYaaAllahAR,
+                      textAlign: TextAlign.right,
+                      textDirection: TextDirection.rtl,
+                      style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.height * 0.03,
+                          color: white,
+                          fontFamily: 'Noore'),
+                    )
+                  else
+                    for (String i in list)
+                      RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
+                          text: '❁ Субхаанака йаа ',
+                          style: TextStyle(
+                              fontSize: 18, color: white, fontFamily: 'Roboto'),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: '«${i.split(' ').first.trim()}»',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  fontFamily: 'Comfortaa',
+                                  color: red),
+                            ),
+                            TextSpan(
+                              text: " та'аалайта йаа ",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontFamily: 'Robot',
+                                  color: white),
+                            ),
+                            TextSpan(
+                              text: '«${i.split(' ').last.trim()}»',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  fontFamily: 'Comfortaa',
+                                  color: red),
+                            ),
+                            TextSpan(
+                              text:
+                                  " ажирнаа минан наар би 'афвика йаа Рохмаан.\n",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontFamily: 'Roboto',
+                                  color: white),
+                            ),
+                          ],
+                        ),
+                      ),
+                ],
+              ),
+            ),
             Nav(
                 textRu: beforebiawFikaRU,
                 isArabic: isArabic,
