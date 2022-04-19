@@ -27,17 +27,15 @@ class _DailyVerseState extends State<DailyVerse> {
   void initState() {
     super.initState();
     audioPlayer.onPlayerStateChanged.listen((event) {
-      setState(() {
-        playerState = event;
-      });
+      playerState = event;
     });
   }
 
   @override
   void dispose() {
-    super.dispose();
     audioPlayer.release();
     audioPlayer.dispose();
+    super.dispose();
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:adhan/adhan.dart';
-import 'package:daily_muslim/components/appbar.dart';
 import 'package:daily_muslim/pages/pray_times.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -48,14 +47,8 @@ final pages = [
   JawshanPage(),
   Settings(),
 ];
-final appBars = [
-  AppBarCustom(title: 'Home'),
-  AppBarCustom(title: 'Quran'),
-  AppBarCustom(title: 'Prayer Timings'),
-  AppBarJawshan(),
-  AppBarCustom(title: 'Settings')
-];
 
+int jLang = 1;
 int index = 0;
 bool isArabic = true;
 TextStyle getStyle(double size, Color c, bool isBold) {

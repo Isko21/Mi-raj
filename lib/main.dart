@@ -19,6 +19,7 @@ import '../pages/pray_pages/isha_page.dart';
 import '../pages/pray_pages/maghrib_page.dart';
 import '../view/sajda/sajda_index.dart';
 import '../components/properties.dart';
+import 'components/appbar.dart';
 import 'components/location.dart';
 import 'model/juzz/juz.dart';
 import 'model/sajda/sajda.dart';
@@ -96,6 +97,24 @@ class _LoggedInState extends State<LoggedIn> {
     getJawshan();
   }
 
+  late final appBars = [
+    AppBarCustom(title: 'Home'),
+    AppBarCustom(title: 'Quran'),
+    AppBarCustom(title: 'Prayer Timings'),
+    AppBarJawshan(change: (int a) {
+      setState(() {
+        if (a == 1)
+          jLang = 1;
+        else if (a == 2)
+          jLang = 2;
+        else if (a == 3)
+          jLang = 3;
+        else
+          jLang = 4;
+      });
+    }),
+    AppBarCustom(title: 'Settings')
+  ];
   getNames() async {
     String res;
     res = await rootBundle.loadString('assets/names.txt');
@@ -119,11 +138,26 @@ class _LoggedInState extends State<LoggedIn> {
       for (int j = 0; j < bapp[i].split('\n').length; j++) {
         if (j == 0 || i == 0) continue;
         if ((j + 3) % 4 == 0) {
-          ar.add(bapp[i].split('\n')[j]);
+          if (bapp[i].split('\n')[j].length != 0)
+            ar.add(bapp[i].split('\n')[j].trim());
         } else if ((j + j) % 4 == 0) {
-          eng.add(bapp[i].split('\n')[j]);
+          if (bapp[i].split('\n')[j].length != 0)
+            eng.add(bapp[i].split('\n')[j].trim());
         } else {
-          tr.add(bapp[i].split('\n')[j]);
+          if (bapp[i].split('\n')[j].length != 0)
+            tr.add(bapp[i].split('\n')[j].trim());
+        }
+      }
+      for (int i = 0; i < ar.length; i++) {
+        if (ar[i].length == 0) {
+          ar.removeAt(i);
+          i--;
+        }
+      }
+      for (int i = 0; i < eng.length; i++) {
+        if (eng[i].length == 0) {
+          eng.removeAt(i);
+          i--;
         }
       }
       jawshans.add(Jawshan(tr: tr, ar: ar, eng: eng));
@@ -131,10 +165,6 @@ class _LoggedInState extends State<LoggedIn> {
       eng = <String>[];
       tr = <String>[];
     }
-  }
-
-  void state() {
-    setState(() {});
   }
 
   void getLocation() async {

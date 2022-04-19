@@ -74,6 +74,7 @@ dependencies:
   flutter_qiblah: ^2.0.2
   card_swiper: ^2.0.3
   path: ^1.8.0
+  sleek_circular_slider: ^2.0.1
 
 dependency_overrides:
   geolocator: ^8.2.0

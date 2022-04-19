@@ -25,6 +25,9 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
 }
 
 class AppBarJawshan extends StatelessWidget with PreferredSizeWidget {
+  final Function change;
+  AppBarJawshan({required this.change});
+
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 
@@ -54,80 +57,135 @@ class AppBarJawshan extends StatelessWidget with PreferredSizeWidget {
                             topRight: Radius.circular(15)),
                       ),
                       context: context,
-                      builder: (context) => buildJawshan())))
+                      builder: (context) => Container(
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.all(10),
+                                    height: 5,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                        color: white,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8))),
+                                  ),
+                                  Theme(
+                                    data: ThemeData().copyWith(
+                                        dividerColor: Colors.transparent),
+                                    child: ExpansionTile(
+                                      initiallyExpanded: false,
+                                      collapsedIconColor: white,
+                                      iconColor: white,
+                                      textColor: white,
+                                      title: Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Text(
+                                            "Language",
+                                            style: TextStyle(
+                                                color: white,
+                                                fontWeight: FontWeight.bold),
+                                          )),
+                                      children: [
+                                        Card(
+                                          elevation: 2.0,
+                                          child: PopupMenuItem(
+                                            onTap: () => change(1),
+                                            child: ListTile(
+                                              leading: Text(
+                                                "1.",
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                              title: Text(
+                                                "Arabic",
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                              trailing: Text(
+                                                '🇸🇦',
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Card(
+                                          elevation: 2.0,
+                                          child: PopupMenuItem(
+                                            onTap: () => change(2),
+                                            child: ListTile(
+                                              leading: Text(
+                                                "2.",
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                              title: Text(
+                                                "English",
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                              trailing: Text(
+                                                '🇬🇧',
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Card(
+                                          elevation: 2.0,
+                                          child: PopupMenuItem(
+                                            onTap: () => change(3),
+                                            child: ListTile(
+                                              leading: Text(
+                                                "3.",
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                              title: Text(
+                                                "Turkish",
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                              trailing: Text(
+                                                '🇹🇷',
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Card(
+                                          elevation: 2.0,
+                                          child: PopupMenuItem(
+                                            onTap: () => change(4),
+                                            child: ListTile(
+                                              leading: Text(
+                                                "4.",
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                              title: Text(
+                                                "Transliteration",
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                              trailing: Text(
+                                                '🔤',
+                                                style:
+                                                    TextStyle(color: colorStr),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ]),
+                          ))))
         ]);
   }
-}
-
-Widget buildJawshan() {
-  return Container(
-    child: Column(mainAxisSize: MainAxisSize.min, children: [
-      Container(
-        margin: EdgeInsets.all(10),
-        height: 5,
-        width: 50,
-        decoration: BoxDecoration(
-            color: white, borderRadius: BorderRadius.all(Radius.circular(8))),
-      ),
-      Theme(
-        data: ThemeData().copyWith(dividerColor: Colors.transparent),
-        child: ExpansionTile(
-          initiallyExpanded: false,
-          collapsedIconColor: white,
-          iconColor: white,
-          textColor: white,
-          title: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Text(
-                "Language",
-                style: TextStyle(color: white, fontWeight: FontWeight.bold),
-              )),
-          children: [
-            Card(
-              elevation: 2.0,
-              child: PopupMenuItem(
-                onTap: () => language = 'ar',
-                child: ListTile(
-                  leading: Text(
-                    "1.",
-                    style: TextStyle(color: colorStr),
-                  ),
-                  title: Text(
-                    "Arabic",
-                    style: TextStyle(color: colorStr),
-                  ),
-                  trailing: Text(
-                    '🇸🇦',
-                    style: TextStyle(color: colorStr),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              elevation: 2.0,
-              child: PopupMenuItem(
-                onTap: () => language = 'en',
-                child: ListTile(
-                  leading: Text(
-                    "2.",
-                    style: TextStyle(color: colorStr),
-                  ),
-                  title: Text(
-                    "Kyrgyz",
-                    style: TextStyle(color: colorStr),
-                  ),
-                  trailing: Text(
-                    '🇰🇬',
-                    style: TextStyle(color: colorStr),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ]),
-  );
 }
 
 class AppBarWithSetState extends StatelessWidget with PreferredSizeWidget {

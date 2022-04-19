@@ -33,21 +33,29 @@ class _JawshanPageState extends State<JawshanPage> {
             },
             itemCount: jawshans.length - 1,
             itemBuilder: (context, i) => ListView.builder(
-                itemCount: language == 'ar'
+                itemCount: jLang == 1
                     ? jawshans[currentIndex.toInt()].ar.length
-                    : jawshans[currentIndex.toInt()].eng.length,
+                    : jLang == 2
+                        ? jawshans[currentIndex.toInt()].eng.length
+                        : jLang == 4
+                            ? jawshans[currentIndex.toInt()].tr.length
+                            : 3,
                 itemBuilder: (context, index) {
                   return WidgetAnimator(
                     child: Text(
-                      language == 'ar'
-                          ? jawshans[currentIndex.toInt()].ar[index]
-                          : jawshans[currentIndex.toInt()].eng[index],
+                      jLang == 1
+                          ? '$index ${jawshans[currentIndex.toInt()].ar[index]}'
+                          : jLang == 2
+                              ? '$index ${jawshans[currentIndex.toInt()].eng[index]}'
+                              : jLang == 4
+                                  ? jawshans[currentIndex.toInt()].tr[index]
+                                  : '',
                       style: TextStyle(
-                        fontSize: language == 'ar' ? 24 : 18,
+                        fontSize: jLang == 1 ? 24 : 18,
                         color: white,
-                        fontFamily: language == 'ar' ? 'Noore' : 'Comfortaa',
+                        fontFamily: jLang == 1 ? 'Noore' : 'Comfortaa',
                       ),
-                      textDirection: language == 'ar'
+                      textDirection: jLang == 1
                           ? ui.TextDirection.rtl
                           : ui.TextDirection.ltr,
                     ),
