@@ -22,7 +22,7 @@ class _ComingSoonState extends State<ComingSoon> {
     return Scaffold(
         backgroundColor: black.withAlpha(50),
         extendBodyBehindAppBar: true,
-        appBar: AppBarCustom(title: widget.title),
+        appBar: AppBarCustom(title: widget.title, elevation: 1),
         body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,

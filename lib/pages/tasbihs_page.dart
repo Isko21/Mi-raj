@@ -17,7 +17,7 @@ class _TasbihsPageState extends State<TasbihsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: black.withAlpha(50),
-      appBar: AppBarCustom(title: 'Tasbih'),
+      appBar: AppBarCustom(title: 'Tasbih', elevation: 1),
       body: Container(
           padding: EdgeInsets.all(20),
           height: MediaQuery.of(context).size.height,

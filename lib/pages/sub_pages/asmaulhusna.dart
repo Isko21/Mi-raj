@@ -9,7 +9,7 @@ class AsMaulHusna extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: black.withAlpha(50),
-      appBar: AppBarCustom(title: 'Al Asma Ul Husna'),
+      appBar: AppBarCustom(title: 'Al Asma Ul Husna', elevation: 1),
       body: Container(
         height: MediaQuery.of(context).size.height,
         color: color.withAlpha(50),

@@ -29,7 +29,7 @@ class _JuzState extends State<Juz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(title: widget.juzIndex.toString()),
+      appBar: AppBarCustom(title: widget.juzIndex.toString(), elevation: 1),
       backgroundColor: black.withAlpha(50),
       body: Container(
         color: Colors.green.shade200,

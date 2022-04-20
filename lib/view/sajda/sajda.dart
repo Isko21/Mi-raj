@@ -33,7 +33,7 @@ class SajdaAyah extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBarCustom(title: surahEnglishName!),
+      appBar: AppBarCustom(title: surahEnglishName!, elevation: 1),
       backgroundColor: black.withAlpha(50),
       body: Container(
         height: MediaQuery.of(context).size.height,

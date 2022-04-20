@@ -147,7 +147,7 @@ class _MissedPraysState extends State<MissedPrays>
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: black.withAlpha(50),
-      appBar: AppBarCustom(title: "Missed Prays"),
+      appBar: AppBarCustom(title: "Missed Prays", elevation: 1),
       body: Container(
         color: color.withAlpha(50),
         child: ListView(

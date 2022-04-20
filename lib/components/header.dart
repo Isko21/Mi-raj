@@ -41,99 +41,119 @@ class Header extends StatelessWidget {
     return Container(
       height: height * 0.3,
       width: width,
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Container(
-          padding: EdgeInsets.fromLTRB(20, 30, 20, 10),
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                WidgetAnimator(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'now',
-                        style: TextStyle(fontSize: 15, color: Colors.white70),
-                      ),
-                      Text(current.toUpperCase(),
-                          style: TextStyle(
-                              fontSize: 21,
-                              color: white,
-                              fontWeight: FontWeight.bold)),
-                    ],
-                  ),
-                ),
-                WidgetAnimator(
-                  child: Container(
-                    child: Image.asset(
-                        'assets/img/${current == 'sunrise' ? 'dhuhr' : current}.png'),
-                    height: 50,
-                  ),
-                ),
-              ]),
-        ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              WidgetAnimator(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'upcoming',
-                      style: TextStyle(fontSize: 15, color: Colors.white70),
-                    ),
-                    Text(next,
-                        style: TextStyle(
-                            fontSize: 21,
-                            color: white,
-                            fontWeight: FontWeight.bold)),
-                    Text(
-                      time,
-                      style: TextStyle(fontSize: 19, color: white),
-                    )
-                  ],
-                ),
-              ),
-              WidgetAnimator(
-                child: Column(
+      child:
+          Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 75, 20, 10),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(HijriCalendar.now().hDay.toString(),
-                        style: TextStyle(
-                            fontSize: 23,
-                            color: white,
-                            fontWeight: FontWeight.bold)),
-                    Text(
-                      '${HijriCalendar.now().longMonthName}',
-                      style: TextStyle(fontSize: 15, color: white),
+                    WidgetAnimator(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'now',
+                            style:
+                                TextStyle(fontSize: 15, color: Colors.white70),
+                          ),
+                          Text(current.toUpperCase(),
+                              style: TextStyle(
+                                  fontSize: 21,
+                                  color: white,
+                                  fontWeight: FontWeight.bold)),
+                        ],
+                      ),
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                    WidgetAnimator(
+                      child: Container(
+                        child: Image.asset(
+                            'assets/img/${current == 'sunrise' ? 'dhuhr' : current}.png'),
+                        height: 50,
+                      ),
+                    ),
+                  ]),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  WidgetAnimator(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          city,
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: white,
-                              fontWeight: FontWeight.bold),
+                          'upcoming',
+                          style: TextStyle(fontSize: 15, color: Colors.white70),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(CupertinoIcons.location, color: white)
+                        Text(next,
+                            style: TextStyle(
+                                fontSize: 21,
+                                color: white,
+                                fontWeight: FontWeight.bold)),
+                        Text(
+                          time,
+                          style: TextStyle(fontSize: 19, color: white),
+                        )
                       ],
-                    )
-                  ],
+                    ),
+                  ),
+                  WidgetAnimator(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(HijriCalendar.now().hDay.toString(),
+                            style: TextStyle(
+                                fontSize: 23,
+                                color: white,
+                                fontWeight: FontWeight.bold)),
+                        Text(
+                          '${HijriCalendar.now().longMonthName}',
+                          style: TextStyle(fontSize: 15, color: white),
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              city,
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Icon(CupertinoIcons.location, color: white)
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+        user.displayName != null
+            ? WidgetAnimator(
+                child: Text(
+                  'Assalamu alaikum, ${user.displayName!.split(' ').first}',
+                  style: getStyle(23, white, true),
                 ),
               )
-            ],
-          ),
-        )
+            : WidgetAnimator(
+                child: Text(
+                  'Assalamu alaikum',
+                  style: getStyle(23, black, true),
+                ),
+              ),
       ]),
       decoration: BoxDecoration(
         image: DecorationImage(

@@ -78,20 +78,6 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Header(),
-              SizedBox(height: 15),
-              user.displayName != null
-                  ? WidgetAnimator(
-                      child: Text(
-                        'Assalamu alaikum, ${user.displayName!.split(' ').first}',
-                        style: getStyle(23, white, true),
-                      ),
-                    )
-                  : WidgetAnimator(
-                      child: Text(
-                        'Assalamu alaikum',
-                        style: getStyle(23, black, true),
-                      ),
-                    ),
               WidgetAnimator(child: ToolsRow()),
               WidgetAnimator(
                 child: DailyVerse(

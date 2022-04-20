@@ -77,4 +77,11 @@ class AllUserData {
   static String getInstallDate() {
     return _preferences.getString('data') ?? '';
   }
+
+  static Future setLang(bool lang) async =>
+      await _preferences.setBool('lang', lang);
+
+  static bool getLang() {
+    return _preferences.getBool('lang') ?? true;
+  }
 }

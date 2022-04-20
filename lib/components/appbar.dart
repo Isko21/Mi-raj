@@ -6,13 +6,14 @@ import 'package:daily_muslim/components/properties.dart';
 // ignore: must_be_immutable
 class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
   String title;
-  AppBarCustom({required this.title});
+  double elevation;
+  AppBarCustom({required this.elevation, required this.title});
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
+      elevation: elevation,
       centerTitle: true,
-      backgroundColor: Colors.transparent,
+      backgroundColor: elevation == 0 ? Colors.transparent : colorStr,
       title: WidgetAnimator(
           child: Text(title,
               style: TextStyle(
@@ -35,12 +36,12 @@ class AppBarJawshan extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
         centerTitle: true,
-        elevation: 0,
+        elevation: 1,
         title: WidgetAnimator(
             child: Text('Jawshan',
                 style: TextStyle(
                     color: white, fontWeight: FontWeight.bold, fontSize: 31))),
-        backgroundColor: Colors.transparent,
+        backgroundColor: colorStr,
         actions: [
           WidgetAnimator(
               child: IconButton(
@@ -48,7 +49,7 @@ class AppBarJawshan extends StatelessWidget with PreferredSizeWidget {
                   iconSize: 20,
                   icon: Icon(CupertinoIcons.settings),
                   onPressed: () => showModalBottomSheet(
-                      backgroundColor: color.withAlpha(200),
+                      backgroundColor: colorStr,
                       isScrollControlled: true,
                       elevation: 1.0,
                       shape: RoundedRectangleBorder(
@@ -199,17 +200,17 @@ class AppBarWithSetState extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      elevation: 0,
+      elevation: 1,
       title: WidgetAnimator(
           child: Text(title,
               style: TextStyle(
                   color: white, fontWeight: FontWeight.bold, fontSize: 31))),
-      backgroundColor: Colors.transparent,
+      backgroundColor: colorStr,
       actions: [
         WidgetAnimator(
           child: IconButton(
               onPressed: () => showModalBottomSheet(
-                  backgroundColor: color.withAlpha(200),
+                  backgroundColor: colorStr,
                   isScrollControlled: true,
                   elevation: 1.0,
                   shape: RoundedRectangleBorder(
@@ -219,7 +220,6 @@ class AppBarWithSetState extends StatelessWidget with PreferredSizeWidget {
                   ),
                   context: context,
                   builder: (context) => buildSheet(change)),
-              // ignore: deprecated_member_use
               icon: Icon(CupertinoIcons.settings),
               color: white,
               iconSize: 20),

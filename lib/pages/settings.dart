@@ -15,8 +15,7 @@ class _SettingsState extends State<Settings> {
   void initState() {
     super.initState();
     data = DateTime.parse(AllUserData.getInstallDate());
-    diff = data.difference(DateTime.now()).inDays;
-    if (diff == 0) diff = 1;
+    diff = DateTime.now().difference(data).inDays + 1;
   }
 
   late int diff;
@@ -28,8 +27,11 @@ class _SettingsState extends State<Settings> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: ListView(
-        padding: EdgeInsets.only(right: 15, left: 15, top: 75),
+        padding: EdgeInsets.only(right: 15, left: 15, top: 0),
         children: <Widget>[
+          SizedBox(
+            height: 10,
+          ),
           CircleAvatar(
             backgroundColor: color,
             radius: 40,
@@ -121,7 +123,7 @@ class _SettingsState extends State<Settings> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Icon(
-                    Icons.source,
+                    CupertinoIcons.moon_fill,
                     color: white,
                     size: 35,
                   ),
@@ -275,7 +277,7 @@ class _SettingsState extends State<Settings> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Icon(
-                      CupertinoIcons.money_dollar_circle_fill,
+                      Icons.help,
                       color: white,
                       size: 35,
                     ),
@@ -303,25 +305,6 @@ class _SettingsState extends State<Settings> {
               ),
             ),
           ),
-          SizedBox(height: 30),
-          Center(
-            child: RichText(
-              text: TextSpan(
-                text: 'Made with 💜 in ',
-                style: TextStyle(
-                    fontSize: 18, color: white, fontFamily: 'Comfortaa'),
-                children: <TextSpan>[
-                  TextSpan(
-                      text: 'Kyrgyzstan',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          fontFamily: 'Comfortaa',
-                          color: white)),
-                ],
-              ),
-            ),
-          )
         ],
       ),
     );

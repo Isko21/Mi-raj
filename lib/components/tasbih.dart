@@ -13,58 +13,58 @@ class Description extends StatelessWidget {
       switch (text) {
         case "Багымдат":
           return Container(
-            color: black.withAlpha(150),
+            color: black.withAlpha(50),
             padding: EdgeInsets.all(10),
             child: Text(
                 "After performing the obligatory Fajr prayer and salutation:",
                 style: TextStyle(
-                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: black, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
         case "Бешим":
           return Container(
-            color: black.withAlpha(150),
+            color: black.withAlpha(50),
             padding: EdgeInsets.all(10),
             child: Text(
                 "After performing the obligatory Dhuhr prayer and salutation:",
                 style: TextStyle(
-                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: black, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
         case "Аср":
           return Container(
-            color: black.withAlpha(150),
+            color: black.withAlpha(50),
             padding: EdgeInsets.all(10),
             child: Text(
                 "After performing the obligatory Asr prayer and salutation:",
                 style: TextStyle(
-                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: black, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
         case "Шам":
           return Container(
             padding: EdgeInsets.all(10),
-            color: black.withAlpha(150),
+            color: black.withAlpha(50),
             child: Text(
                 "After performing the obligatory Maghrib prayer and salutation:",
                 style: TextStyle(
-                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: black, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
         case "Куптан":
           return Container(
-            color: black.withAlpha(150),
+            color: black.withAlpha(50),
             padding: EdgeInsets.all(10),
             child: Text(
                 "After performing the obligatory Isha prayer and salutation:",
                 style: TextStyle(
-                    color: white, fontSize: 25, fontWeight: FontWeight.bold),
+                    color: black, fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
           );
       }
     }
     return Container(
-      color: black.withAlpha(150),
+      color: black.withAlpha(50),
       padding: EdgeInsets.all(10),
       child: Text(
         text + ' намаздын парзы окулуп, салам берилгенден кийин:',
@@ -86,11 +86,11 @@ class Nav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      color: black.withAlpha(100),
+      color: black.withAlpha(40),
       child: Text(
         isArabic ? textAr : textRu,
         style: TextStyle(
-          color: black.withOpacity(0.8),
+          color: black,
           fontSize: 19,
           fontWeight: FontWeight.bold,
         ),
@@ -114,48 +114,47 @@ class Solatan extends StatelessWidget {
       required this.rus});
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     return Container(
       padding: isArab
           ? EdgeInsets.fromLTRB(5, 0, 10, 10)
           : EdgeInsets.fromLTRB(5, 5, 5, 10),
       child: Column(
         children: <Widget>[
-          bis
-              ? Padding(
-                  padding: isArab
-                      ? EdgeInsets.all(0)
-                      : EdgeInsets.symmetric(vertical: 15),
-                  child: isArab
-                      ? Image.asset(
-                          'assets/img/bismi.png',
-                          height: 150,
-                        )
-                      : Text(bismiRU,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 21,
-                              fontFamily: 'Comfortaa')),
-                )
-              : Text(''),
-          !isArab
-              ? Text(
-                  rus,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 20, fontFamily: 'Roboto', color: black),
-                )
-              : Text(
-                  arab,
-                  textAlign: TextAlign.right,
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(
-                      fontSize: height * 0.03,
-                      color: black,
-                      fontFamily: 'Noore'),
-                ),
+          if (bis)
+            Padding(
+              padding: isArab
+                  ? EdgeInsets.all(0)
+                  : EdgeInsets.symmetric(vertical: 15),
+              child: isArab
+                  ? Image.asset(
+                      'assets/img/bismi.png',
+                      height: 150,
+                    )
+                  : Text(bismiRU,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 21,
+                          fontFamily: 'Comfortaa')),
+            ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 15),
+            child: !isArab
+                ? Text(
+                    rus,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 18, fontFamily: 'Comfortaa', color: black),
+                  )
+                : Text(
+                    arab,
+                    textAlign: TextAlign.right,
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(
+                        fontSize: 25, color: black, fontFamily: 'Noore'),
+                  ),
+          ),
         ],
       ),
     );

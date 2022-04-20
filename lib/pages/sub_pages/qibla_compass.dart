@@ -29,7 +29,7 @@ class _QiblaCompassState extends State<QiblaCompass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(title: 'Qibla'),
+      appBar: AppBarCustom(title: 'Qibla', elevation: 1),
       backgroundColor: black.withAlpha(50),
       body: Container(
         color: color.withAlpha(50),

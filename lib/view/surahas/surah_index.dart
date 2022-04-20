@@ -30,7 +30,7 @@ class _SurahIndexState extends State<SurahIndex> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: black.withAlpha(50),
-      appBar: AppBarCustom(title: "Surahs"),
+      appBar: AppBarCustom(title: "Surahs", elevation: 1),
       body: Container(
         color: color.withAlpha(50),
         child: Stack(

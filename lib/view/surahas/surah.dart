@@ -23,7 +23,7 @@ class SurahAyats extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: black.withAlpha(50),
-      appBar: AppBarCustom(title: surahEnglishName!),
+      appBar: AppBarCustom(title: surahEnglishName!, elevation: 1),
       body: Container(
         color: Colors.green.shade200,
         child: CustomScrollView(

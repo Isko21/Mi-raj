@@ -1,5 +1,6 @@
 import 'package:daily_muslim/pages/jawshan_page.dart';
 import 'package:daily_muslim/pages/sub_pages/asmaulhusna.dart';
+import 'package:daily_muslim/pages/sub_pages/counter.dart';
 import 'package:daily_muslim/pages/tasbihs_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -95,12 +96,13 @@ class _LoggedInState extends State<LoggedIn> {
     getLocation();
     getNames();
     getJawshan();
+    isArabic = AllUserData.getLang();
   }
 
   late final appBars = [
-    AppBarCustom(title: 'Home'),
-    AppBarCustom(title: 'Quran'),
-    AppBarCustom(title: 'Prayer Timings'),
+    AppBarCustom(title: 'Home', elevation: 0),
+    AppBarCustom(title: 'Quran', elevation: 1),
+    AppBarCustom(title: 'Prayer Timings', elevation: 1),
     AppBarJawshan(change: (int a) {
       setState(() {
         if (a == 1)
@@ -113,7 +115,7 @@ class _LoggedInState extends State<LoggedIn> {
           jLang = 4;
       });
     }),
-    AppBarCustom(title: 'Settings')
+    AppBarCustom(title: 'Settings', elevation: 1)
   ];
   getNames() async {
     String res;
@@ -182,11 +184,13 @@ class _LoggedInState extends State<LoggedIn> {
     }
   }
 
+  bool extend = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: extend,
       backgroundColor: black,
-      extendBodyBehindAppBar: true,
       appBar: appBars[index] as PreferredSizeWidget,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: color.withAlpha(50),
@@ -197,7 +201,17 @@ class _LoggedInState extends State<LoggedIn> {
         unselectedIconTheme: IconThemeData(color: Colors.white60),
         unselectedItemColor: white.withOpacity(0.5),
         selectedItemColor: white,
-        onTap: (_index) => setState(() => index = _index),
+        onTap: (_index) => setState(() {
+          index = _index;
+          switch (index) {
+            case 0:
+              extend = true;
+              break;
+            default:
+              extend = false;
+              break;
+          }
+        }),
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
@@ -217,7 +231,8 @@ class _LoggedInState extends State<LoggedIn> {
           color: white,
         ),
         backgroundColor: color,
-        onPressed: () {},
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TasbihCounter())),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
