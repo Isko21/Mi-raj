@@ -75,6 +75,7 @@ dependencies:
   card_swiper: ^2.0.3
   path: ^1.8.0
   sleek_circular_slider: ^2.0.1
+  syncfusion_flutter_gauges: ^20.1.50
 
 dependency_overrides:
   geolocator: ^8.2.0
@@ -82,10 +83,7 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-flutter_icons:
-  android: true
-  ios: true
-  image_path: "assets/img/icon.jpg"
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
