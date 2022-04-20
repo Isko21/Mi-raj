@@ -1,3 +1,4 @@
+import 'package:daily_muslim/components/shared_pref.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/appbar.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -15,6 +16,7 @@ class _FajrState extends State<Fajr> {
   void initState() {
     super.initState();
     getName();
+    isArabic = AllUserData.getLang();
   }
 
   List<String> list = <String>[];
@@ -30,7 +32,7 @@ class _FajrState extends State<Fajr> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green.withAlpha(100),
+      backgroundColor: Colors.white70,
       appBar: AppBarWithSetState(
         title: "Fajr",
         change: (int a) {
@@ -40,15 +42,13 @@ class _FajrState extends State<Fajr> {
             } else {
               isArabic = false;
             }
+            AllUserData.setLang(isArabic);
           });
         },
       ),
       body: Container(
-        color: white.withAlpha(100),
         child: ListView(
-          addAutomaticKeepAlives: true,
           scrollDirection: Axis.vertical,
-          addRepaintBoundaries: true,
           children: <Widget>[
             Description(
               text: 'Багымдат',
@@ -178,77 +178,35 @@ class _FajrState extends State<Fajr> {
                   : EdgeInsets.fromLTRB(5, 5, 5, 10),
               child: Column(
                 children: <Widget>[
-                  if (true)
-                    Padding(
-                      padding: isArabic
-                          ? EdgeInsets.all(0)
-                          : EdgeInsets.symmetric(vertical: 15),
-                      child: isArabic
-                          ? Image.asset(
-                              'assets/img/bismi.png',
-                              height: 150,
-                            )
-                          : Text(bismiRU,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 21,
-                                  fontFamily: 'Comfortaa')),
-                    ),
-                  if (isArabic)
-                    Text(
-                      subhanakaYaaAllahAR,
-                      textAlign: TextAlign.right,
-                      textDirection: TextDirection.rtl,
-                      style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height * 0.03,
-                          color: black,
-                          fontFamily: 'Noore'),
-                    )
-                  else
-                    for (String i in list)
-                      RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          text: '❁ Субхаанака йаа ',
+                  Padding(
+                    padding: isArabic
+                        ? EdgeInsets.all(0)
+                        : EdgeInsets.symmetric(vertical: 15),
+                    child: isArabic
+                        ? Image.asset(
+                            'assets/img/bismi.png',
+                            height: 150,
+                          )
+                        : Text(bismiRU,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 21,
+                                fontFamily: 'Comfortaa')),
+                  ),
+                  isArabic
+                      ? Text(
+                          subhanakaYaaAllahAR,
+                          textAlign: TextAlign.right,
+                          textDirection: TextDirection.rtl,
                           style: TextStyle(
-                              fontSize: 18, color: black, fontFamily: 'Roboto'),
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: '«${i.split(' ').first.trim()}»',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  fontFamily: 'Comfortaa',
-                                  color: Colors.red.shade900),
-                            ),
-                            TextSpan(
-                              text: " та'аалайта йаа ",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily: 'Robot',
-                                  color: black),
-                            ),
-                            TextSpan(
-                              text: '«${i.split(' ').last.trim()}»',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  fontFamily: 'Comfortaa',
-                                  color: Colors.red.shade900),
-                            ),
-                            TextSpan(
-                              text:
-                                  " ажирнаа минан наар би 'афвика йаа Рохмаан.\n",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily: 'Roboto',
-                                  color: black),
-                            ),
-                          ],
-                        ),
-                      ),
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.03,
+                              color: black,
+                              fontFamily: 'Noore'),
+                        )
+                      : Subhanaka(list: list)
                 ],
               ),
             ),
@@ -272,6 +230,56 @@ class _FajrState extends State<Fajr> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Subhanaka extends StatelessWidget {
+  final list;
+  const Subhanaka({Key? key, required this.list}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        for (String i in list)
+          RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              text: '❁ Субхаанака йаа ',
+              style: TextStyle(
+                  fontSize: 18, color: black, fontFamily: 'Comfortaa'),
+              children: <TextSpan>[
+                TextSpan(
+                  text: '${i.split(' ').first.trim()}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      fontFamily: 'Comfortaa',
+                      color: Color.fromARGB(255, 112, 7, 0)),
+                ),
+                TextSpan(
+                  text: " та'аалайта йаа ",
+                  style: TextStyle(
+                      fontSize: 18, fontFamily: 'Comfortaa', color: black),
+                ),
+                TextSpan(
+                  text: '${i.split(' ').last.trim()}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      fontFamily: 'Comfortaa',
+                      color: Color.fromARGB(255, 112, 7, 0)),
+                ),
+                TextSpan(
+                  text: " ажирнаа минан наар би 'афвика йаа Рохмаан.\n",
+                  style: TextStyle(
+                      fontSize: 18, fontFamily: 'Comfortaa', color: black),
+                ),
+              ],
+            ),
+          ),
+      ],
     );
   }
 }

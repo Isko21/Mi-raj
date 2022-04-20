@@ -1,9 +1,12 @@
+import 'package:daily_muslim/components/shared_pref.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/appbar.dart';
+import 'package:flutter/services.dart';
 
 import '../../components/properties.dart';
 import '../../components/tasbih.dart';
 import '../../tasbihs/duas.dart';
+import 'dhuhr_page.dart';
 
 class Maghrib extends StatefulWidget {
   @override
@@ -12,9 +15,26 @@ class Maghrib extends StatefulWidget {
 
 class _MaghribState extends State<Maghrib> {
   @override
+  void initState() {
+    super.initState();
+    getName();
+    isArabic = AllUserData.getLang();
+  }
+
+  List<String> list = <String>[];
+  void getName() async {
+    String res;
+    res = await rootBundle.loadString('assets/yaa.txt');
+    var line = res.split('\n');
+    for (int i = 0; i < line.length; i++) {
+      list.add(line[i]);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green.withAlpha(100),
+      backgroundColor: Colors.white70,
       appBar: AppBarWithSetState(
           title: "Maghrib",
           change: (int a) {
@@ -24,6 +44,7 @@ class _MaghribState extends State<Maghrib> {
               } else {
                 isArabic = false;
               }
+              AllUserData.setLang(isArabic);
             });
           }),
       body: Container(
@@ -142,11 +163,47 @@ class _MaghribState extends State<Maghrib> {
                 arab: afterAlfiAR,
                 rus: afterAlfiRU),
             divider(),
-            Solatan(
-                bis: false,
-                isArab: isArabic,
-                arab: yaaRohmanAR,
-                rus: yaaRohmanRU),
+            Container(
+              padding: isArabic
+                  ? EdgeInsets.fromLTRB(5, 0, 10, 10)
+                  : EdgeInsets.fromLTRB(5, 5, 5, 10),
+              child: Column(
+                children: <Widget>[
+                  if (true)
+                    Padding(
+                      padding: isArabic
+                          ? EdgeInsets.all(0)
+                          : EdgeInsets.symmetric(vertical: 15),
+                      child: isArabic
+                          ? Image.asset(
+                              'assets/img/bismi.png',
+                              height: 150,
+                            )
+                          : Text(bismiRU,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 21,
+                                  fontFamily: 'Comfortaa')),
+                    ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: !isArabic
+                        ? Yaa(list: list)
+                        : Text(
+                            yaaRohmanAR,
+                            textAlign: TextAlign.right,
+                            textDirection: TextDirection.rtl,
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: black,
+                                fontFamily: 'Noore'),
+                          ),
+                  ),
+                ],
+              ),
+            ),
             Nav(
                 textRu: beforebiawFikaRU,
                 isArabic: isArabic,

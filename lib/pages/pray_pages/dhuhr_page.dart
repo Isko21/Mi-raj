@@ -1,5 +1,7 @@
+import 'package:daily_muslim/components/shared_pref.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_muslim/components/appbar.dart';
+import 'package:flutter/services.dart';
 import '../../components/properties.dart';
 import '../../components/tasbih.dart';
 import '../../tasbihs/duas.dart';
@@ -12,9 +14,26 @@ class Dhuhr extends StatefulWidget {
 
 class _DhuhrState extends State<Dhuhr> {
   @override
+  void initState() {
+    super.initState();
+    getName();
+    isArabic = AllUserData.getLang();
+  }
+
+  List<String> list = <String>[];
+  void getName() async {
+    String res;
+    res = await rootBundle.loadString('assets/yaa.txt');
+    var line = res.split('\n');
+    for (int i = 0; i < line.length; i++) {
+      list.add(line[i]);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green.withAlpha(100),
+      backgroundColor: Colors.white70,
       appBar: AppBarWithSetState(
           title: "Dhuhr",
           change: (int a) {
@@ -24,10 +43,10 @@ class _DhuhrState extends State<Dhuhr> {
               } else {
                 isArabic = false;
               }
+              AllUserData.setLang(isArabic);
             });
           }),
       body: Container(
-        color: white.withAlpha(100),
         height: MediaQuery.of(context).size.height,
         child: ListView(
           children: [
@@ -108,11 +127,47 @@ class _DhuhrState extends State<Dhuhr> {
                 arab: afterAlfiAR,
                 rus: afterAlfiRU),
             divider(),
-            Solatan(
-                bis: false,
-                isArab: isArabic,
-                arab: yaaRohmanAR,
-                rus: yaaRohmanRU),
+            Container(
+              padding: isArabic
+                  ? EdgeInsets.fromLTRB(5, 0, 10, 10)
+                  : EdgeInsets.fromLTRB(5, 5, 5, 10),
+              child: Column(
+                children: <Widget>[
+                  if (true)
+                    Padding(
+                      padding: isArabic
+                          ? EdgeInsets.all(0)
+                          : EdgeInsets.symmetric(vertical: 15),
+                      child: isArabic
+                          ? Image.asset(
+                              'assets/img/bismi.png',
+                              height: 150,
+                            )
+                          : Text(bismiRU,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 21,
+                                  fontFamily: 'Comfortaa')),
+                    ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: !isArabic
+                        ? Yaa(list: list)
+                        : Text(
+                            yaaRohmanAR,
+                            textAlign: TextAlign.right,
+                            textDirection: TextDirection.rtl,
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: black,
+                                fontFamily: 'Noore'),
+                          ),
+                  ),
+                ],
+              ),
+            ),
             Nav(
                 textRu: beforebiawFikaRU,
                 isArabic: isArabic,
@@ -128,6 +183,51 @@ class _DhuhrState extends State<Dhuhr> {
           scrollDirection: Axis.vertical,
         ),
       ),
+    );
+  }
+}
+
+class Yaa extends StatelessWidget {
+  final list;
+  const Yaa({Key? key, required this.list}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        for (String i in list)
+          RichText(
+            textAlign: TextAlign.left,
+            text: TextSpan(
+              text: '❁ Йаа ',
+              style: TextStyle(
+                  fontSize: 18, color: black, fontFamily: 'Comfortaa'),
+              children: <TextSpan>[
+                TextSpan(
+                  text: '${i.trim()}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      fontFamily: 'Comfortaa',
+                      color: Color.fromARGB(255, 112, 7, 0)),
+                ),
+                TextSpan(
+                  text: " йаа ",
+                  style: TextStyle(
+                      fontSize: 18, fontFamily: 'Comfortaa', color: black),
+                ),
+                TextSpan(
+                  text: 'Аллаах\n',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      fontFamily: 'Comfortaa',
+                      color: Color.fromARGB(255, 112, 7, 0)),
+                ),
+              ],
+            ),
+          ),
+      ],
     );
   }
 }
