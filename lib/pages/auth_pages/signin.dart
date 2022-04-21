@@ -24,6 +24,10 @@ class _AuthPageState extends State<AuthPage> {
     AllUserData.setPrayers("isha", 0);
     AllUserData.setInstallDate(DateTime.now().toString());
     print("Succesfully added prayer times");
+    AllUserData.setPrayers('source', 5);
+    calcMethod = AllUserData.getPrayers('source');
+    AllUserData.setLocationData(calcMet, 'calc');
+    calcMet = AllUserData.getLocationData('calc');
   }
 
   late String? city;

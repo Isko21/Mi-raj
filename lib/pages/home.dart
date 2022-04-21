@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'dart:convert';
 import 'dart:math';
 import 'package:daily_muslim/animations/bottom_animation.dart';
@@ -45,7 +43,6 @@ class _HomePageState extends State<HomePage> {
         Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat/en.asad");
     var responseEN = await http.get(endPointEN);
     var bodyEN = jsonDecode(responseEN.body);
-
     var responseAR = await http
         .get(Uri.parse("http://api.alquran.cloud/v1/ayah/$ayat/ar.alafasy"));
     var bodyAR = jsonDecode(responseAR.body);

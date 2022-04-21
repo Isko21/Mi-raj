@@ -72,3 +72,6 @@ getPrayer() {
   params.madhab = Madhab.hanafi;
   prayerTimes = PrayerTimes.today(myCoordinates, params);
 }
+
+int calcMethod = -1;
+String calcMet = 'Muslim World League';

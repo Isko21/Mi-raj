@@ -15,7 +15,6 @@ class _JawshanPageState extends State<JawshanPage> {
     super.initState();
   }
 
-  int currentIndex = 0;
   change(int a) {
     if (a == 1) {
       jLang = 1;
@@ -28,8 +27,7 @@ class _JawshanPageState extends State<JawshanPage> {
     }
   }
 
-  var a = '123';
-  dynamic b = '';
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,7 +52,6 @@ class _JawshanPageState extends State<JawshanPage> {
               onIndexChanged: (i) {
                 setState(() {
                   currentIndex = i;
-                  print(currentIndex.toString() + ' hello ' + i.toString());
                 });
               },
               itemCount: jawshans.length,
@@ -108,7 +105,6 @@ class _JawshanPageState extends State<JawshanPage> {
                   onChanged: (val) {
                     setState(() {
                       currentIndex = val.toInt();
-                      print(currentIndex.toString() + ' ' + val.toString());
                     });
                   },
                 ),

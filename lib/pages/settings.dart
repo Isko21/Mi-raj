@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../components/picker.dart';
+
 class Settings extends StatefulWidget {
   @override
   State<Settings> createState() => _SettingsState();
@@ -18,6 +20,19 @@ class _SettingsState extends State<Settings> {
     diff = DateTime.now().difference(data).inDays + 1;
   }
 
+  final List<PickerItem> paymentModes = [
+    PickerItem("Egyptian General Authority of Survey"),
+    PickerItem("University of Islamic Sciences, Karachi"),
+    PickerItem("Kuwait"),
+    PickerItem("Moonsighting Committee Worldwide"),
+    PickerItem("Muslim World League"),
+    PickerItem("Islamic Society of North America"),
+    PickerItem("Qatar"),
+    PickerItem("Majlis Ugama Islam Singapura"),
+    PickerItem("Institute of Geophysics, University of Tehran"),
+    PickerItem("Diyanet İşleri Başkanlığı, Turkey"),
+    PickerItem('Umm Al-Qura University, Makkah'),
+  ];
   late int diff;
   late DateTime data;
   @override
@@ -78,34 +93,39 @@ class _SettingsState extends State<Settings> {
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             margin: EdgeInsets.only(top: 10, bottom: 20),
             height: 60,
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Icon(
-                    CupertinoIcons.location_circle_fill,
-                    color: white,
-                    size: 35,
+            child: InkWell(
+              onTap: () => showAboutDialog(context: context),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Icon(
+                      CupertinoIcons.location_circle_fill,
+                      color: white,
+                      size: 35,
+                    ),
                   ),
-                ),
-                Text(
-                  AllUserData.getLocationData('city'),
-                  style: TextStyle(
-                      color: white, fontWeight: FontWeight.bold, fontSize: 17),
-                ),
-                Expanded(
-                  child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Icon(
-                          FontAwesomeIcons.ellipsis,
-                          size: 20,
-                          color: white,
-                        ),
-                      )),
-                )
-              ],
+                  Text(
+                    AllUserData.getLocationData('city'),
+                    style: TextStyle(
+                        color: white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17),
+                  ),
+                  Expanded(
+                    child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Icon(
+                            FontAwesomeIcons.ellipsis,
+                            size: 20,
+                            color: white,
+                          ),
+                        )),
+                  )
+                ],
+              ),
             ),
           ),
           Text(
@@ -118,47 +138,80 @@ class _SettingsState extends State<Settings> {
             decoration: BoxDecoration(
                 color: white.withAlpha(50),
                 borderRadius: BorderRadius.all(Radius.circular(10))),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Icon(
-                    CupertinoIcons.moon_fill,
-                    color: white,
-                    size: 35,
+            child: InkWell(
+              onTap: () => showModalBottomSheet(
+                  backgroundColor: colorStr,
+                  isScrollControlled: true,
+                  elevation: 1.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15)),
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Prayer times source',
-                      style: TextStyle(
-                          color: white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17),
-                    ),
-                    Text('Muslim World League (MWL)',
-                        style: TextStyle(
-                            color: white.withOpacity(0.5),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15)),
-                  ],
-                ),
-                Expanded(
-                  child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Icon(
-                          FontAwesomeIcons.ellipsis,
-                          size: 20,
-                          color: white,
-                        ),
+                  context: context,
+                  builder: (context) => Container(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: 10),
+                              Text(
+                                'Calculation methods',
+                                style: TextStyle(
+                                    color: white,
+                                    fontSize: 21,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                height: 350,
+                                child: PickerWidget(pickerItems: paymentModes),
+                              ),
+                            ]),
                       )),
-                ),
-              ],
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Icon(
+                      CupertinoIcons.moon_fill,
+                      color: white,
+                      size: 35,
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Prayer times source',
+                        style: TextStyle(
+                            color: white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17),
+                      ),
+                      Text(calcMet,
+                          style: TextStyle(
+                              color: white.withOpacity(0.5),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15)),
+                    ],
+                  ),
+                  Expanded(
+                    child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Icon(
+                            FontAwesomeIcons.ellipsis,
+                            size: 20,
+                            color: white,
+                          ),
+                        )),
+                  ),
+                ],
+              ),
             ),
           ),
           Container(
@@ -217,10 +270,10 @@ class _SettingsState extends State<Settings> {
             'OTHER',
             style: TextStyle(color: white, fontSize: 18),
           ),
+          SizedBox(height: 10),
           InkWell(
             onTap: () => launch('https://www.buymeacoffee.com/iskhak'),
             child: Container(
-              margin: EdgeInsets.only(top: 10),
               height: 60,
               decoration: BoxDecoration(
                   color: white.withAlpha(50),
