@@ -28,6 +28,7 @@ class _AuthPageState extends State<AuthPage> {
     calcMethod = AllUserData.getPrayers('source');
     AllUserData.setLocationData(calcMet, 'calc');
     calcMet = AllUserData.getLocationData('calc');
+    AllUserData.setInteget('loop', 0);
   }
 
   late String? city;

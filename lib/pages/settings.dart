@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../components/location.dart';
 import '../components/picker.dart';
 
 class Settings extends StatefulWidget {
@@ -18,6 +19,24 @@ class _SettingsState extends State<Settings> {
     super.initState();
     data = DateTime.parse(AllUserData.getInstallDate());
     diff = DateTime.now().difference(data).inDays + 1;
+  }
+
+  late String? city;
+  late double? lat, long;
+  Future getLocation() async {
+    final service = UsersLocation();
+    final locationData = await service.getLocation();
+    if (locationData != null) {
+      final placeMark = await service.getPlaceMark(locationData: locationData);
+
+      city = placeMark!.subLocality;
+      lat = locationData.latitude!;
+      long = locationData.longitude!;
+      await AllUserData.setLocationData(city!, 'city');
+      await AllUserData.setLatitude(lat!);
+      await AllUserData.setLongitude(long!);
+      print('all location saved');
+    }
   }
 
   final List<PickerItem> paymentModes = [
@@ -94,7 +113,23 @@ class _SettingsState extends State<Settings> {
             margin: EdgeInsets.only(top: 10, bottom: 20),
             height: 60,
             child: InkWell(
-              onTap: () => showAboutDialog(context: context),
+              onTap: () async {
+                await getLocation();
+                showDialog(
+                    context: context,
+                    builder: (context) => Container(
+                          color: colorStr,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                city!,
+                                style: TextStyle(color: white),
+                              )
+                            ],
+                          ),
+                        ));
+              },
               child: Row(
                 children: [
                   Padding(
@@ -139,17 +174,18 @@ class _SettingsState extends State<Settings> {
                 color: white.withAlpha(50),
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             child: InkWell(
-              onTap: () => showModalBottomSheet(
-                  backgroundColor: colorStr,
-                  isScrollControlled: true,
-                  elevation: 1.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15)),
-                  ),
-                  context: context,
-                  builder: (context) => Container(
+              onTap: () {
+                showModalBottomSheet(
+                    backgroundColor: colorStr,
+                    isScrollControlled: true,
+                    elevation: 1.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15)),
+                    ),
+                    context: context,
+                    builder: (context) => Container(
                         padding: EdgeInsets.all(10),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,10 +202,112 @@ class _SettingsState extends State<Settings> {
                               SizedBox(height: 10),
                               Container(
                                 height: 350,
-                                child: PickerWidget(pickerItems: paymentModes),
+                                child: ListView.separated(
+                                  separatorBuilder: (context, index) =>
+                                      Divider(color: white),
+                                  itemBuilder: (context, index) {
+                                    PickerItem pickerItem = paymentModes[index];
+                                    bool isItemSelected = index == calcMethod;
+                                    return InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                          calcMethod = index;
+                                          switch (calcMethod) {
+                                            case 0:
+                                              calcMet =
+                                                  'Egyptian General Authority of Survey';
+                                              break;
+                                            case 1:
+                                              calcMet =
+                                                  'University of Islamic Sciences, Karachi';
+
+                                              break;
+                                            case 2:
+                                              calcMet = 'Kuwait';
+
+                                              break;
+                                            case 3:
+                                              calcMet =
+                                                  'Moonsighting Committee Worldwide';
+
+                                              break;
+                                            case 4:
+                                              calcMet = 'Muslim World League';
+
+                                              break;
+                                            case 5:
+                                              calcMet =
+                                                  'Islamic Society of North America';
+
+                                              break;
+                                            case 6:
+                                              calcMet = 'Qatar';
+
+                                              break;
+                                            case 7:
+                                              calcMet =
+                                                  'Majlis Ugama Islam Singapura';
+
+                                              break;
+                                            case 8:
+                                              calcMet =
+                                                  'Institute of Geophysics, Tehran';
+
+                                              break;
+                                            case 9:
+                                              calcMet =
+                                                  'Diyanet İşleri Başkanlığı, Turkey';
+
+                                              break;
+                                            case 10:
+                                              calcMet =
+                                                  'Umm Al-Qura University, Makkah';
+                                              break;
+                                          }
+                                          AllUserData.setLocationData(
+                                              calcMet, 'calc');
+                                          calcMet = AllUserData.getLocationData(
+                                              'calc');
+
+                                          Navigator.pop(context);
+                                        });
+                                      },
+                                      child: Container(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(width: 4),
+                                              Expanded(
+                                                child: Text(
+                                                  pickerItem.label,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 15,
+                                                      overflow: TextOverflow
+                                                          .ellipsis),
+                                                ),
+                                              ),
+                                              isItemSelected
+                                                  ? Icon(
+                                                      Icons.check_circle,
+                                                      size: 16,
+                                                      color: white,
+                                                    )
+                                                  : Container(),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  itemCount: paymentModes.length,
+                                ),
                               ),
-                            ]),
-                      )),
+                            ])));
+              },
               child: Row(
                 children: [
                   Padding(

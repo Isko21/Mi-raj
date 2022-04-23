@@ -39,7 +39,7 @@ class _PrayTimesState extends State<PrayTimes> {
                       offset: Offset(0, 2),
                     )
                   ],
-                  color: white,
+                  color: Colors.white70,
                   borderRadius: BorderRadius.all(Radius.circular(20))),
               child: Column(children: [
                 WidgetAnimator(
