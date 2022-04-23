@@ -178,140 +178,141 @@ class _SettingsState extends State<Settings> {
             child: InkWell(
               onTap: () {
                 showModalBottomSheet(
-                    backgroundColor: colorStr,
-                    isScrollControlled: true,
-                    elevation: 1.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15)),
-                    ),
-                    context: context,
-                    builder: (context) => Container(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(height: 10),
-                              Text(
-                                'Calculation methods',
-                                style: TextStyle(
-                                    color: white,
-                                    fontSize: 21,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 10),
-                              Container(
-                                height: 350,
-                                child: ListView.separated(
-                                  separatorBuilder: (context, index) =>
-                                      Divider(color: white),
-                                  itemBuilder: (context, index) {
-                                    PickerItem pickerItem = paymentModes[index];
-                                    bool isItemSelected = index == calcMethod;
-                                    return InkWell(
-                                      onTap: () {
-                                        setState(
-                                          () {
-                                            calcMethod = index;
-                                            switch (calcMethod) {
-                                              case 0:
-                                                calcMet =
-                                                    'Egyptian General Authority of Survey';
-                                                break;
-                                              case 1:
-                                                calcMet =
-                                                    'University of Islamic Sciences, Karachi';
+                  backgroundColor: colorStr,
+                  isScrollControlled: true,
+                  elevation: 1.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15)),
+                  ),
+                  context: context,
+                  builder: (context) => Container(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(height: 10),
+                        Text(
+                          'Calculation methods',
+                          style: TextStyle(
+                              color: white,
+                              fontSize: 21,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          height: 350,
+                          child: ListView.separated(
+                            separatorBuilder: (context, index) =>
+                                Divider(color: white),
+                            itemBuilder: (context, index) {
+                              PickerItem pickerItem = paymentModes[index];
+                              bool isItemSelected = index == calcMethod;
+                              return InkWell(
+                                onTap: () {
+                                  setState(
+                                    () {
+                                      calcMethod = index;
+                                      switch (calcMethod) {
+                                        case 0:
+                                          calcMet =
+                                              'Egyptian General Authority of Survey';
+                                          break;
+                                        case 1:
+                                          calcMet =
+                                              'University of Islamic Sciences, Karachi';
 
-                                                break;
-                                              case 2:
-                                                calcMet = 'Kuwait';
+                                          break;
+                                        case 2:
+                                          calcMet = 'Kuwait';
 
-                                                break;
-                                              case 3:
-                                                calcMet =
-                                                    'Moonsighting Committee Worldwide';
+                                          break;
+                                        case 3:
+                                          calcMet =
+                                              'Moonsighting Committee Worldwide';
 
-                                                break;
-                                              case 4:
-                                                calcMet = 'Muslim World League';
+                                          break;
+                                        case 4:
+                                          calcMet = 'Muslim World League';
 
-                                                break;
-                                              case 5:
-                                                calcMet =
-                                                    'Islamic Society of North America';
+                                          break;
+                                        case 5:
+                                          calcMet =
+                                              'Islamic Society of North America';
 
-                                                break;
-                                              case 6:
-                                                calcMet = 'Qatar';
+                                          break;
+                                        case 6:
+                                          calcMet = 'Qatar';
 
-                                                break;
-                                              case 7:
-                                                calcMet =
-                                                    'Majlis Ugama Islam Singapura';
+                                          break;
+                                        case 7:
+                                          calcMet =
+                                              'Majlis Ugama Islam Singapura';
 
-                                                break;
-                                              case 8:
-                                                calcMet =
-                                                    'Institute of Geophysics, Tehran';
+                                          break;
+                                        case 8:
+                                          calcMet =
+                                              'Institute of Geophysics, Tehran';
 
-                                                break;
-                                              case 9:
-                                                calcMet =
-                                                    'Diyanet İşleri Başkanlığı, Turkey';
+                                          break;
+                                        case 9:
+                                          calcMet =
+                                              'Diyanet İşleri Başkanlığı, Turkey';
 
-                                                break;
-                                              case 10:
-                                                calcMet =
-                                                    'Umm Al-Qura University, Makkah';
-                                                break;
-                                            }
-                                            AllUserData.setLocationData(
-                                                calcMet, 'calc');
-                                            calcMet =
-                                                AllUserData.getLocationData(
-                                                    'calc');
+                                          break;
+                                        case 10:
+                                          calcMet =
+                                              'Umm Al-Qura University, Makkah';
+                                          break;
+                                      }
+                                      AllUserData.setLocationData(
+                                          calcMet, 'calc');
+                                      calcMet =
+                                          AllUserData.getLocationData('calc');
 
-                                            Navigator.pop(context);
-                                          },
-                                        );
-                                      },
-                                      child: Container(
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(4.0),
-                                          child: Row(
-                                            children: [
-                                              SizedBox(width: 4),
-                                              Expanded(
-                                                child: Text(
-                                                  pickerItem.label,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 15,
-                                                      overflow: TextOverflow
-                                                          .ellipsis),
-                                                ),
-                                              ),
-                                              isItemSelected
-                                                  ? Icon(
-                                                      Icons.check_circle,
-                                                      size: 16,
-                                                      color: white,
-                                                    )
-                                                  : Container(),
-                                            ],
+                                      Navigator.pop(context);
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(width: 4),
+                                        Expanded(
+                                          child: Text(
+                                            pickerItem.label,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15,
+                                                overflow:
+                                                    TextOverflow.ellipsis),
                                           ),
                                         ),
-                                      ),
-                                    );
-                                  },
-                                  itemCount: paymentModes.length,
+                                        isItemSelected
+                                            ? Icon(
+                                                Icons.check_circle,
+                                                size: 16,
+                                                color: white,
+                                              )
+                                            : Container(),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ])));
+                              );
+                            },
+                            itemCount: paymentModes.length,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
               },
               child: Row(
                 children: [
