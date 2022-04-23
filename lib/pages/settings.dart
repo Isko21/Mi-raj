@@ -344,15 +344,16 @@ class _SettingsState extends State<Settings> {
                   ),
                   Expanded(
                     child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Icon(
-                            FontAwesomeIcons.ellipsis,
-                            size: 20,
-                            color: white,
-                          ),
-                        )),
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Icon(
+                          FontAwesomeIcons.ellipsis,
+                          size: 20,
+                          color: white,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -385,24 +386,27 @@ class _SettingsState extends State<Settings> {
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ),
-                    Text('Standard (Shafii, Maliki, Hanbali)',
-                        style: TextStyle(
-                            color: white.withOpacity(0.5),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15)),
+                    Text(
+                      'Standard (Shafii, Maliki, Hanbali)',
+                      style: TextStyle(
+                          color: white.withOpacity(0.5),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
+                    ),
                   ],
                 ),
                 Expanded(
                   child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Icon(
-                          FontAwesomeIcons.ellipsis,
-                          size: 20,
-                          color: white,
-                        ),
-                      )),
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Icon(
+                        FontAwesomeIcons.ellipsis,
+                        size: 20,
+                        color: white,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
