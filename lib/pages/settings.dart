@@ -116,19 +116,20 @@ class _SettingsState extends State<Settings> {
               onTap: () async {
                 await getLocation();
                 showDialog(
-                    context: context,
-                    builder: (context) => Container(
-                          color: colorStr,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                city!,
-                                style: TextStyle(color: white),
-                              )
-                            ],
-                          ),
-                        ));
+                  context: context,
+                  builder: (context) => Container(
+                    color: colorStr,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          city!,
+                          style: TextStyle(color: white),
+                        )
+                      ],
+                    ),
+                  ),
+                );
               },
               child: Row(
                 children: [
@@ -149,15 +150,16 @@ class _SettingsState extends State<Settings> {
                   ),
                   Expanded(
                     child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Icon(
-                            FontAwesomeIcons.ellipsis,
-                            size: 20,
-                            color: white,
-                          ),
-                        )),
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Icon(
+                          FontAwesomeIcons.ellipsis,
+                          size: 20,
+                          color: white,
+                        ),
+                      ),
+                    ),
                   )
                 ],
               ),
@@ -210,67 +212,70 @@ class _SettingsState extends State<Settings> {
                                     bool isItemSelected = index == calcMethod;
                                     return InkWell(
                                       onTap: () {
-                                        setState(() {
-                                          calcMethod = index;
-                                          switch (calcMethod) {
-                                            case 0:
-                                              calcMet =
-                                                  'Egyptian General Authority of Survey';
-                                              break;
-                                            case 1:
-                                              calcMet =
-                                                  'University of Islamic Sciences, Karachi';
+                                        setState(
+                                          () {
+                                            calcMethod = index;
+                                            switch (calcMethod) {
+                                              case 0:
+                                                calcMet =
+                                                    'Egyptian General Authority of Survey';
+                                                break;
+                                              case 1:
+                                                calcMet =
+                                                    'University of Islamic Sciences, Karachi';
 
-                                              break;
-                                            case 2:
-                                              calcMet = 'Kuwait';
+                                                break;
+                                              case 2:
+                                                calcMet = 'Kuwait';
 
-                                              break;
-                                            case 3:
-                                              calcMet =
-                                                  'Moonsighting Committee Worldwide';
+                                                break;
+                                              case 3:
+                                                calcMet =
+                                                    'Moonsighting Committee Worldwide';
 
-                                              break;
-                                            case 4:
-                                              calcMet = 'Muslim World League';
+                                                break;
+                                              case 4:
+                                                calcMet = 'Muslim World League';
 
-                                              break;
-                                            case 5:
-                                              calcMet =
-                                                  'Islamic Society of North America';
+                                                break;
+                                              case 5:
+                                                calcMet =
+                                                    'Islamic Society of North America';
 
-                                              break;
-                                            case 6:
-                                              calcMet = 'Qatar';
+                                                break;
+                                              case 6:
+                                                calcMet = 'Qatar';
 
-                                              break;
-                                            case 7:
-                                              calcMet =
-                                                  'Majlis Ugama Islam Singapura';
+                                                break;
+                                              case 7:
+                                                calcMet =
+                                                    'Majlis Ugama Islam Singapura';
 
-                                              break;
-                                            case 8:
-                                              calcMet =
-                                                  'Institute of Geophysics, Tehran';
+                                                break;
+                                              case 8:
+                                                calcMet =
+                                                    'Institute of Geophysics, Tehran';
 
-                                              break;
-                                            case 9:
-                                              calcMet =
-                                                  'Diyanet İşleri Başkanlığı, Turkey';
+                                                break;
+                                              case 9:
+                                                calcMet =
+                                                    'Diyanet İşleri Başkanlığı, Turkey';
 
-                                              break;
-                                            case 10:
-                                              calcMet =
-                                                  'Umm Al-Qura University, Makkah';
-                                              break;
-                                          }
-                                          AllUserData.setLocationData(
-                                              calcMet, 'calc');
-                                          calcMet = AllUserData.getLocationData(
-                                              'calc');
+                                                break;
+                                              case 10:
+                                                calcMet =
+                                                    'Umm Al-Qura University, Makkah';
+                                                break;
+                                            }
+                                            AllUserData.setLocationData(
+                                                calcMet, 'calc');
+                                            calcMet =
+                                                AllUserData.getLocationData(
+                                                    'calc');
 
-                                          Navigator.pop(context);
-                                        });
+                                            Navigator.pop(context);
+                                          },
+                                        );
                                       },
                                       child: Container(
                                         child: Padding(
