@@ -74,4 +74,5 @@ getPrayer() {
 }
 
 int calcMethod = -1;
-String calcMet = 'Muslim World League';
+String calcMet = '';
+int loop = 0;

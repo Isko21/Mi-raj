@@ -84,4 +84,11 @@ class AllUserData {
   static bool getLang() {
     return _preferences.getBool('lang') ?? true;
   }
+
+  static Future setInteget(String key, int value) async =>
+      await _preferences.setInt(key, value);
+
+  static int getInteger(String key) {
+    return _preferences.getInt(key) ?? 0;
+  }
 }
