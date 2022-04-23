@@ -29,25 +29,27 @@ class TasbihCounterState extends State<TasbihCounter>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: black.withAlpha(50),
-        appBar: AppBar(
-            centerTitle: true,
-            elevation: 1,
-            backgroundColor: colorStr,
-            bottom: TabBar(
-              controller: tabController,
-              tabs: [
-                Tab(text: 'Classic'),
-                Tab(
-                  text: 'Infinity',
-                  icon: Icon(FontAwesomeIcons.infinity),
-                )
-              ],
-            ),
-            title: Text('Tasbih Counter',
-                style: TextStyle(
-                    color: white, fontWeight: FontWeight.bold, fontSize: 31))),
-        body: TabBarView(controller: tabController, children: [
+      backgroundColor: black.withAlpha(50),
+      appBar: AppBar(
+          centerTitle: true,
+          elevation: 1,
+          backgroundColor: colorStr,
+          bottom: TabBar(
+            controller: tabController,
+            tabs: [
+              Tab(text: 'Classic'),
+              Tab(
+                text: 'Infinity',
+                icon: Icon(FontAwesomeIcons.infinity),
+              )
+            ],
+          ),
+          title: Text('Tasbih Counter',
+              style: TextStyle(
+                  color: white, fontWeight: FontWeight.bold, fontSize: 31))),
+      body: TabBarView(
+        controller: tabController,
+        children: [
           Container(
             color: color.withAlpha(50),
             child: Column(
@@ -253,6 +255,8 @@ class TasbihCounterState extends State<TasbihCounter>
               ),
             ),
           )
-        ]));
+        ],
+      ),
+    );
   }
 }
