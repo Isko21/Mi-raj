@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:hive/hive.dart';
-import 'package:daily_muslim/model/ayat/ayat.dart';
+import 'package:muslim_today/model/ayat/ayat.dart';
 
 part 'surah.g.dart';
 

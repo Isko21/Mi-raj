@@ -1,7 +1,8 @@
-import 'package:daily_muslim/pages/jawshan_page.dart';
-import 'package:daily_muslim/pages/sub_pages/asmaulhusna.dart';
-import 'package:daily_muslim/pages/sub_pages/counter.dart';
-import 'package:daily_muslim/pages/tasbihs_page.dart';
+import 'package:flutter/services.dart';
+import 'package:muslim_today/pages/jawshan_page.dart';
+import 'package:muslim_today/pages/sub_pages/asmaulhusna.dart';
+import 'package:muslim_today/pages/sub_pages/counter.dart';
+import 'package:muslim_today/pages/tasbihs_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,6 @@ import 'model/sajda/sajda_list.dart';
 import 'model/surah/surah.dart';
 import 'model/surah/surah_list.dart';
 import 'view/juzz/juz_index.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'view/surahas/surah_index.dart';
 
 Future<void> main() async {
@@ -44,6 +44,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await AllUserData.init();
+
   runApp(MyApp());
 }
 
@@ -54,30 +55,33 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  Widget build(BuildContext context) => ChangeNotifierProvider(
-        create: (context) => GoogleSignInProvider(),
-        child: MaterialApp(
-          initialRoute: '/',
-          routes: {
-            '/fajr': (context) => Fajr(),
-            '/asr': (context) => Asr(),
-            '/dhuhr': (context) => Dhuhr(),
-            '/maghrib': (context) => Maghrib(),
-            '/isha': (context) => Isha(),
-            '/surahIndex': (context) => SurahIndex(),
-            '/sajdaIndex': (context) => SajdaIndex(),
-            '/juzIndex': (context) => JuzIndex(),
-            '/tasbih': (context) => TasbihsPage()
-          },
-          debugShowCheckedModeBanner: false,
-          title: 'Daily Muslim',
-          theme: ThemeData(
-            fontFamily: 'Comfortaa',
-            brightness: Brightness.light,
-          ),
-          home: MyHomePage(),
+  Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    return ChangeNotifierProvider(
+      create: (context) => GoogleSignInProvider(),
+      child: MaterialApp(
+        initialRoute: '/',
+        routes: {
+          '/fajr': (context) => Fajr(),
+          '/asr': (context) => Asr(),
+          '/dhuhr': (context) => Dhuhr(),
+          '/maghrib': (context) => Maghrib(),
+          '/isha': (context) => Isha(),
+          '/surahIndex': (context) => SurahIndex(),
+          '/sajdaIndex': (context) => SajdaIndex(),
+          '/juzIndex': (context) => JuzIndex(),
+          '/tasbih': (context) => TasbihsPage()
+        },
+        debugShowCheckedModeBanner: false,
+        title: 'Daily Muslim',
+        theme: ThemeData(
+          fontFamily: 'Comfortaa',
+          brightness: Brightness.light,
         ),
-      );
+        home: MyHomePage(),
+      ),
+    );
+  }
 }
 
 class LoggedIn extends StatefulWidget {
@@ -100,7 +104,7 @@ class _LoggedInState extends State<LoggedIn> {
   }
 
   late final appBars = [
-    AppBarCustom(title: 'Home', elevation: 0),
+    AppBarCustom(title: "Mi'raj", elevation: 0),
     AppBarCustom(title: 'Quran', elevation: 1),
     AppBarCustom(title: 'Prayer Timings', elevation: 1),
     AppBarJawshan(change: (int a) {

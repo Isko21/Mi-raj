@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/tasbihs/duas.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/tasbihs/duas.dart';
 
 class Description extends StatelessWidget {
   final String text;

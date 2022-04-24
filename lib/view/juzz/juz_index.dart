@@ -1,8 +1,8 @@
-import 'package:daily_muslim/animations/bottom_animation.dart';
-import 'package:daily_muslim/components/appbar.dart';
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/controller/quran_controller.dart';
-import 'package:daily_muslim/view/juzz/juz.dart';
+import 'package:muslim_today/animations/bottom_animation.dart';
+import 'package:muslim_today/components/appbar.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/controller/quran_controller.dart';
+import 'package:muslim_today/view/juzz/juz.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 

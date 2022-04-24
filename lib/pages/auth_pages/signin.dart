@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:daily_muslim/components/shared_pref.dart';
+import 'package:muslim_today/components/shared_pref.dart';
 import '../../components/firebase.dart';
 import '../../components/location.dart';
 import '../../components/properties.dart';
@@ -24,10 +24,10 @@ class _AuthPageState extends State<AuthPage> {
     AllUserData.setPrayers("isha", 0);
     AllUserData.setInstallDate(DateTime.now().toString());
     print("Succesfully added prayer times");
-    AllUserData.setPrayers('source', 5);
+    AllUserData.setPrayers('source', 4);
     calcMethod = AllUserData.getPrayers('source');
-    AllUserData.setLocationData(calcMet, 'calc');
-    calcMet = AllUserData.getLocationData('calc');
+    AllUserData.setPrayers('madhab', 0);
+    asrMethod = AllUserData.getPrayers('madhab');
     AllUserData.setInteget('loop', 0);
   }
 

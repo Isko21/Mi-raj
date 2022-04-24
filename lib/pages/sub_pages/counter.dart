@@ -1,5 +1,5 @@
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/components/shared_pref.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/components/shared_pref.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -106,14 +106,15 @@ class TasbihCounterState extends State<TasbihCounter>
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 5),
                         child: Text(
-                          uahdahuAR,
+                          'آَاِلٰهَ اِلاَّاللّٰهُ وَحْدَهُ لاَشَرِ يكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلٰى كُلِّ شَىْءٍقَدِيرٌ',
                           textDirection: TextDirection.rtl,
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               color: white, fontSize: 25, fontFamily: 'Noore'),
                         ),
                       ),
                       Text(
-                        uahdahuRU,
+                        "Лаа илааха иллаллооху вахдахуу лаа шарийка лах, ва хува 'алаа кулли  шай-ин кодиир.",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: white, fontSize: 17),
                       )
@@ -121,24 +122,24 @@ class TasbihCounterState extends State<TasbihCounter>
                   ),
                 Center(
                   child: InkWell(
-                    enableFeedback: false,
                     onTap: () {
-                      pointer++;
-                      if (pointer == 33 || pointer == 66 || pointer == 99) {
-                        Vibrate.feedback(FeedbackType.heavy);
-                      } else if (pointer == 101) {
-                        Vibrate.feedback(FeedbackType.heavy);
-                        pointer = 1;
-                        loop++;
-                        AllUserData.setInteget('loop', loop);
-                        loop = AllUserData.getInteger('loop');
-                      }
-                      setState(() {});
+                      setState(() {
+                        pointer++;
+                        if (pointer == 33 || pointer == 66 || pointer == 99) {
+                          Vibrate.feedback(FeedbackType.heavy);
+                        } else if (pointer == 101) {
+                          Vibrate.feedback(FeedbackType.heavy);
+                          pointer = 1;
+                          loop++;
+                          AllUserData.setInteget('loop', loop);
+                          loop = AllUserData.getInteger('loop');
+                        }
+                      });
                     },
                     child: SfRadialGauge(axes: <RadialAxis>[
                       RadialAxis(
                         minimum: 0,
-                        maximum: 99,
+                        maximum: 100,
                         annotations: [
                           GaugeAnnotation(
                               positionFactor: 0.1,
@@ -164,7 +165,7 @@ class TasbihCounterState extends State<TasbihCounter>
                         ],
                         pointers: [
                           RangePointer(
-                            value: slider,
+                            value: pointer,
                             cornerStyle: CornerStyle.bothFlat,
                             width: 0.2,
                             color: white,

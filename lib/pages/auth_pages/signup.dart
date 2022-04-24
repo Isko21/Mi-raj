@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:daily_muslim/components/textinput.dart';
+import 'package:muslim_today/components/textinput.dart';
 
-import 'package:daily_muslim/pages/auth_pages/signin.dart';
+import 'package:muslim_today/pages/auth_pages/signin.dart';
 
 import '../../components/properties.dart';
 

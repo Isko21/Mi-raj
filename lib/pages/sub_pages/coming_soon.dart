@@ -1,4 +1,4 @@
-import 'package:daily_muslim/components/appbar.dart';
+import 'package:muslim_today/components/appbar.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/properties.dart';

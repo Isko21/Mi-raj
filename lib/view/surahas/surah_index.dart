@@ -1,11 +1,11 @@
-import 'package:daily_muslim/animations/bottom_animation.dart';
-import 'package:daily_muslim/components/appbar.dart';
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/controller/quran_controller.dart';
-import 'package:daily_muslim/view/surahas/surah.dart';
-import 'package:daily_muslim/widgets/loading_shimmer.dart';
-import 'package:daily_muslim/model/surah/surah.dart';
-import 'package:daily_muslim/model/surah/surah_list.dart';
+import 'package:muslim_today/animations/bottom_animation.dart';
+import 'package:muslim_today/components/appbar.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/controller/quran_controller.dart';
+import 'package:muslim_today/view/surahas/surah.dart';
+import 'package:muslim_today/widgets/loading_shimmer.dart';
+import 'package:muslim_today/model/surah/surah.dart';
+import 'package:muslim_today/model/surah/surah_list.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:daily_muslim/animations/bottom_animation.dart';
-import 'package:daily_muslim/components/properties.dart';
+import 'package:muslim_today/animations/bottom_animation.dart';
+import 'package:muslim_today/components/properties.dart';
 
 // ignore: must_be_immutable
 class AppBarCustom extends StatelessWidget with PreferredSizeWidget {

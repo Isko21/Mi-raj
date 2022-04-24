@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:math';
-import 'package:daily_muslim/animations/bottom_animation.dart';
-import 'package:daily_muslim/components/header.dart';
-import 'package:daily_muslim/components/verses.dart';
+import 'package:muslim_today/animations/bottom_animation.dart';
+import 'package:muslim_today/components/header.dart';
+import 'package:muslim_today/components/verses.dart';
 import 'package:flutter/material.dart';
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/components/shared_pref.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/components/shared_pref.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
-import 'package:daily_muslim/model/juzz/juz_list.dart';
-import 'package:daily_muslim/model/sajda/sajda_list.dart';
-import 'package:daily_muslim/model/surah/surah_list.dart';
+import 'package:muslim_today/model/juzz/juz_list.dart';
+import 'package:muslim_today/model/sajda/sajda_list.dart';
+import 'package:muslim_today/model/surah/surah_list.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';

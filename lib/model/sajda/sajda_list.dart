@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:hive/hive.dart';
-import 'package:daily_muslim/model/sajda/sajda.dart';
+import 'package:muslim_today/model/sajda/sajda.dart';
 
 part 'sajda_list.g.dart';
 

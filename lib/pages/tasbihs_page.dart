@@ -1,7 +1,7 @@
-import 'package:daily_muslim/components/appbar.dart';
-import 'package:daily_muslim/pages/quran_page.dart';
+import 'package:muslim_today/components/appbar.dart';
+import 'package:muslim_today/pages/quran_page.dart';
 import 'package:flutter/material.dart';
-import 'package:daily_muslim/components/properties.dart';
+import 'package:muslim_today/components/properties.dart';
 
 class TasbihsPage extends StatefulWidget {
   TasbihsPage({Key? key}) : super(key: key);

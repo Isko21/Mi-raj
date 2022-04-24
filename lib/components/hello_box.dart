@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:daily_muslim/components/properties.dart';
+import 'package:muslim_today/components/properties.dart';
 
 import '../animations/bottom_animation.dart';
 

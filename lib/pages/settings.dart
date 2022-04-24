@@ -1,5 +1,5 @@
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/components/shared_pref.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/components/shared_pref.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,6 +19,12 @@ class _SettingsState extends State<Settings> {
     super.initState();
     data = DateTime.parse(AllUserData.getInstallDate());
     diff = DateTime.now().difference(data).inDays + 1;
+    calcMet = getIndex(AllUserData.getPrayers('source'));
+    asrMethod = AllUserData.getPrayers('madhab');
+    if (asrMethod == 0)
+      asrMet = 'Hanafi';
+    else
+      asrMet = 'Shafii, Maliki, Hanbali';
   }
 
   late String? city;
@@ -39,6 +45,54 @@ class _SettingsState extends State<Settings> {
     }
   }
 
+  String getIndex(int method) {
+    switch (method) {
+      case 0:
+        calcMet = 'Egyptian General Authority of Survey';
+        break;
+      case 1:
+        calcMet = 'University of Islamic Sciences, Karachi';
+
+        break;
+      case 2:
+        calcMet = 'Kuwait';
+
+        break;
+      case 3:
+        calcMet = 'Moonsighting Committee Worldwide';
+
+        break;
+      case 4:
+        calcMet = 'Muslim World League';
+
+        break;
+      case 5:
+        calcMet = 'Islamic Society of North America';
+
+        break;
+      case 6:
+        calcMet = 'Qatar';
+
+        break;
+      case 7:
+        calcMet = 'Majlis Ugama Islam Singapura';
+
+        break;
+      case 8:
+        calcMet = 'Institute of Geophysics, Tehran';
+
+        break;
+      case 9:
+        calcMet = 'Diyanet İşleri Başkanlığı, Turkey';
+
+        break;
+      case 10:
+        calcMet = 'Umm Al-Qura University, Makkah';
+        break;
+    }
+    return calcMet;
+  }
+
   final List<PickerItem> paymentModes = [
     PickerItem("Egyptian General Authority of Survey"),
     PickerItem("University of Islamic Sciences, Karachi"),
@@ -51,6 +105,10 @@ class _SettingsState extends State<Settings> {
     PickerItem("Institute of Geophysics, University of Tehran"),
     PickerItem("Diyanet İşleri Başkanlığı, Turkey"),
     PickerItem('Umm Al-Qura University, Makkah'),
+  ];
+  final List<PickerItem> asrCalcMethods = [
+    PickerItem('Hanafi'),
+    PickerItem('Shafii, Maliki, Hanbali')
   ];
   late int diff;
   late DateTime data;
@@ -215,63 +273,11 @@ class _SettingsState extends State<Settings> {
                                   setState(
                                     () {
                                       calcMethod = index;
-                                      switch (calcMethod) {
-                                        case 0:
-                                          calcMet =
-                                              'Egyptian General Authority of Survey';
-                                          break;
-                                        case 1:
-                                          calcMet =
-                                              'University of Islamic Sciences, Karachi';
-
-                                          break;
-                                        case 2:
-                                          calcMet = 'Kuwait';
-
-                                          break;
-                                        case 3:
-                                          calcMet =
-                                              'Moonsighting Committee Worldwide';
-
-                                          break;
-                                        case 4:
-                                          calcMet = 'Muslim World League';
-
-                                          break;
-                                        case 5:
-                                          calcMet =
-                                              'Islamic Society of North America';
-
-                                          break;
-                                        case 6:
-                                          calcMet = 'Qatar';
-
-                                          break;
-                                        case 7:
-                                          calcMet =
-                                              'Majlis Ugama Islam Singapura';
-
-                                          break;
-                                        case 8:
-                                          calcMet =
-                                              'Institute of Geophysics, Tehran';
-
-                                          break;
-                                        case 9:
-                                          calcMet =
-                                              'Diyanet İşleri Başkanlığı, Turkey';
-
-                                          break;
-                                        case 10:
-                                          calcMet =
-                                              'Umm Al-Qura University, Makkah';
-                                          break;
-                                      }
-                                      AllUserData.setLocationData(
-                                          calcMet, 'calc');
-                                      calcMet =
-                                          AllUserData.getLocationData('calc');
-
+                                      AllUserData.setPrayers(
+                                          'source', calcMethod);
+                                      calcMet = getIndex(
+                                          AllUserData.getPrayers('source'));
+                                      getPrayer();
                                       Navigator.pop(context);
                                     },
                                   );
@@ -365,50 +371,130 @@ class _SettingsState extends State<Settings> {
             decoration: BoxDecoration(
                 color: white.withAlpha(50),
                 borderRadius: BorderRadius.all(Radius.circular(10))),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Icon(
-                    Icons.calculate,
-                    color: white,
-                    size: 35,
+            child: InkWell(
+              onTap: () => showModalBottomSheet(
+                  context: context,
+                  backgroundColor: colorStr,
+                  isScrollControlled: true,
+                  elevation: 1.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15)),
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Asr calculation method',
-                      style: TextStyle(
+                  builder: (context) => Container(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: 10),
+                              Text(
+                                'Asr calculation method',
+                                style: TextStyle(
+                                    color: white,
+                                    fontSize: 21,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                height: 100,
+                                child: ListView.separated(
+                                    itemBuilder: (context, index) {
+                                      PickerItem pickItem =
+                                          asrCalcMethods[index];
+                                      bool isSelected = index == asrMethod;
+                                      return InkWell(
+                                        onTap: () => setState(() {
+                                          asrMethod = index;
+                                          AllUserData.setPrayers(
+                                              'madhab', index);
+                                          asrMethod =
+                                              AllUserData.getPrayers('madhab');
+                                          if (asrMethod == 0)
+                                            asrMet = pickItem.label;
+                                          else
+                                            asrMet = pickItem.label;
+                                          getPrayer();
+                                          Navigator.pop(context);
+                                        }),
+                                        child: Container(
+                                          padding: EdgeInsets.all(4),
+                                          child: Row(children: [
+                                            SizedBox(width: 4),
+                                            Expanded(
+                                              child: Text(
+                                                pickItem.label,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 15,
+                                                    overflow:
+                                                        TextOverflow.ellipsis),
+                                              ),
+                                            ),
+                                            isSelected
+                                                ? Icon(
+                                                    Icons.check_circle,
+                                                    size: 16,
+                                                    color: white,
+                                                  )
+                                                : Container(),
+                                          ]),
+                                        ),
+                                      );
+                                    },
+                                    separatorBuilder: (context, index) =>
+                                        Divider(color: white),
+                                    itemCount: 2),
+                              )
+                            ]),
+                      )),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Icon(
+                      Icons.calculate,
+                      color: white,
+                      size: 35,
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Asr calculation method',
+                        style: TextStyle(
+                            color: white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17),
+                      ),
+                      Text(
+                        asrMet,
+                        style: TextStyle(
+                            color: white.withOpacity(0.5),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                    ],
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Icon(
+                          FontAwesomeIcons.ellipsis,
+                          size: 20,
                           color: white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17),
-                    ),
-                    Text(
-                      'Standard (Shafii, Maliki, Hanbali)',
-                      style: TextStyle(
-                          color: white.withOpacity(0.5),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15),
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Icon(
-                        FontAwesomeIcons.ellipsis,
-                        size: 20,
-                        color: white,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           SizedBox(

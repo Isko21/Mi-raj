@@ -1,9 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/pages/sub_pages/coming_soon.dart';
-import 'package:daily_muslim/pages/sub_pages/missed_prays.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/pages/sub_pages/coming_soon.dart';
+import 'package:muslim_today/pages/sub_pages/missed_prays.dart';
 
 class ToolsPage extends StatefulWidget {
   ToolsPage({Key? key}) : super(key: key);

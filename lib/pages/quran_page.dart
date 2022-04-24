@@ -1,6 +1,6 @@
-import 'package:daily_muslim/animations/bottom_animation.dart';
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/widgets/calligraphy.dart';
+import 'package:muslim_today/animations/bottom_animation.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/widgets/calligraphy.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

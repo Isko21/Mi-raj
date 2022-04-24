@@ -1,7 +1,7 @@
-import 'package:daily_muslim/animations/bottom_animation.dart';
-import 'package:daily_muslim/components/appbar.dart';
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/model/ayat/ayat.dart';
+import 'package:muslim_today/animations/bottom_animation.dart';
+import 'package:muslim_today/components/appbar.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/model/ayat/ayat.dart';
 import 'package:flutter/material.dart';
 
 class SurahAyats extends StatelessWidget {

@@ -2,8 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:daily_muslim/components/appbar.dart';
-import 'package:daily_muslim/components/properties.dart';
+import 'package:muslim_today/components/appbar.dart';
+import 'package:muslim_today/components/properties.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import '../../components/missed_prays_widget.dart';

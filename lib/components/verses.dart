@@ -1,9 +1,9 @@
 import 'package:audioplayers/audioplayers.dart';
-import 'package:daily_muslim/components/properties.dart';
-import 'package:daily_muslim/pages/sub_pages/asmaulhusna.dart';
-import 'package:daily_muslim/pages/sub_pages/missed_prays.dart';
-import 'package:daily_muslim/pages/sub_pages/qibla_compass.dart';
-import 'package:daily_muslim/pages/tasbihs_page.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:muslim_today/pages/sub_pages/asmaulhusna.dart';
+import 'package:muslim_today/pages/sub_pages/missed_prays.dart';
+import 'package:muslim_today/pages/sub_pages/qibla_compass.dart';
+import 'package:muslim_today/pages/tasbihs_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:shimmer/shimmer.dart';

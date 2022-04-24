@@ -1,8 +1,8 @@
 import 'package:adhan/adhan.dart';
-import 'package:daily_muslim/pages/pray_times.dart';
+import 'package:muslim_today/pages/pray_times.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:daily_muslim/pages/settings.dart';
+import 'package:muslim_today/pages/settings.dart';
 import 'package:intl/intl.dart';
 
 import '../pages/home.dart';
@@ -67,12 +67,58 @@ String getTime(DateTime dt) {
 
 late PrayerTimes prayerTimes;
 getPrayer() {
+  var params;
+  switch (calcMethod) {
+    case 0:
+      params = CalculationMethod.egyptian.getParameters();
+      break;
+    case 1:
+      params = CalculationMethod.karachi.getParameters();
+      break;
+    case 2:
+      params = CalculationMethod.kuwait.getParameters();
+      break;
+    case 3:
+      params = CalculationMethod.moon_sighting_committee.getParameters();
+      break;
+    case 4:
+      params = CalculationMethod.muslim_world_league.getParameters();
+      break;
+    case 5:
+      params = CalculationMethod.north_america.getParameters();
+      break;
+    case 6:
+      params = CalculationMethod.qatar.getParameters();
+      break;
+    case 7:
+      params = CalculationMethod.singapore.getParameters();
+      break;
+    case 8:
+      params = CalculationMethod.tehran.getParameters();
+      break;
+    case 9:
+      params = CalculationMethod.turkey.getParameters();
+      break;
+    case 10:
+      params = CalculationMethod.umm_al_qura.getParameters();
+      break;
+    default:
+      params = CalculationMethod.muslim_world_league.getParameters();
+  }
   var myCoordinates = Coordinates(lat, long);
-  var params = CalculationMethod.muslim_world_league.getParameters();
-  params.madhab = Madhab.hanafi;
+  switch (asrMethod) {
+    case 0:
+      params.madhab = Madhab.hanafi;
+      break;
+    case 1:
+      params.madhab = Madhab.shafi;
+      break;
+  }
   prayerTimes = PrayerTimes.today(myCoordinates, params);
 }
 
-int calcMethod = -1;
+int calcMethod = 4;
 String calcMet = '';
+int asrMethod = 0;
+String asrMet = '';
 int loop = 0;

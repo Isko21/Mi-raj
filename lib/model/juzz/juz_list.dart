@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:daily_muslim/model/juzz/juz.dart';
+import 'package:muslim_today/model/juzz/juz.dart';
 
 part 'juz_list.g.dart';
 
