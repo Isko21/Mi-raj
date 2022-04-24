@@ -73,7 +73,13 @@ class _MyAppState extends State<MyApp> {
           '/tasbih': (context) => TasbihsPage()
         },
         debugShowCheckedModeBanner: false,
-        title: 'Daily Muslim',
+        title: 'Miraj',
+        builder: (context, child) {
+          return MediaQuery(
+            child: child!,
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          );
+        },
         theme: ThemeData(
           fontFamily: 'Comfortaa',
           brightness: Brightness.light,
@@ -108,16 +114,10 @@ class _LoggedInState extends State<LoggedIn> {
     AppBarCustom(title: 'Quran', elevation: 1),
     AppBarCustom(title: 'Prayer Timings', elevation: 1),
     AppBarJawshan(change: (int a) {
-      setState(() {
-        if (a == 1)
-          jLang = 1;
-        else if (a == 2)
-          jLang = 2;
-        else if (a == 3)
-          jLang = 3;
-        else
-          jLang = 4;
-      });
+      if (a == 1)
+        jLang = 1;
+      else if (a == 2) jLang = 2;
+      setState(() {});
     }),
     AppBarCustom(title: 'Settings', elevation: 1)
   ];

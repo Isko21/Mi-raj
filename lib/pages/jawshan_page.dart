@@ -1,8 +1,8 @@
-import 'package:card_swiper/card_swiper.dart';
-import 'package:daily_muslim/animations/bottom_animation.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_today/components/properties.dart';
+import 'package:swipe/swipe.dart';
 import 'dart:ui' as ui;
-import 'package:daily_muslim/components/properties.dart';
+import '../animations/bottom_animation.dart';
 
 class JawshanPage extends StatefulWidget {
   @override
@@ -20,10 +20,6 @@ class _JawshanPageState extends State<JawshanPage> {
       jLang = 1;
     } else if (a == 2) {
       jLang = 2;
-    } else if (a == 3) {
-      jLang = 3;
-    } else if (a == 4) {
-      jLang = 4;
     }
   }
 
@@ -40,39 +36,30 @@ class _JawshanPageState extends State<JawshanPage> {
             color: white.withAlpha(200),
             borderRadius: BorderRadius.all(Radius.circular(20))),
         padding: EdgeInsets.only(top: 10, right: 10, left: 10),
-        child: Column(children: <Widget>[
-          Expanded(
-            child: Swiper(
-              scrollDirection: Axis.horizontal,
-              curve: Curves.ease,
-              layout: SwiperLayout.DEFAULT,
-              controller: SwiperController(),
-              index: currentIndex.toInt(),
-              loop: false,
-              onIndexChanged: (i) {
-                setState(() {
-                  currentIndex = i;
-                });
-              },
-              itemCount: jawshans.length,
-              itemBuilder: (context, i) => ListView.builder(
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Swipe(
+                onSwipeLeft: () => setState(
+                  () {
+                    if (currentIndex != 99) currentIndex++;
+                  },
+                ),
+                onSwipeRight: () => setState(
+                  () {
+                    if (currentIndex != 0) currentIndex--;
+                  },
+                ),
+                child: ListView.builder(
                   itemCount: jLang == 1
                       ? jawshans[currentIndex].ar.length
-                      : jLang == 2
-                          ? jawshans[currentIndex].eng.length
-                          : jLang == 4
-                              ? jawshans[currentIndex].tr.length
-                              : 3,
+                      : jawshans[currentIndex].eng.length,
                   itemBuilder: (context, index) {
                     return WidgetAnimator(
                       child: Text(
                         jLang == 1
                             ? '${jawshans[currentIndex].ar[index]}'
-                            : jLang == 2
-                                ? '${jawshans[currentIndex].eng[index]}'
-                                : jLang == 4
-                                    ? jawshans[currentIndex].tr[index]
-                                    : '',
+                            : '${jawshans[currentIndex].eng[index]}',
                         style: TextStyle(
                           fontSize: jLang == 1 ? 25 : 18,
                           color: black,
@@ -83,41 +70,43 @@ class _JawshanPageState extends State<JawshanPage> {
                             : ui.TextDirection.ltr,
                       ),
                     );
-                  }),
-            ),
-          ),
-          Container(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  '${currentIndex + 1}',
-                  style: TextStyle(color: black),
-                ),
-                Slider(
-                  activeColor: color,
-                  thumbColor: colorStr,
-                  max: 99,
-                  divisions: 20,
-                  min: 1,
-                  label: currentIndex.toString(),
-                  value: currentIndex + 1,
-                  onChanged: (val) {
-                    setState(() {
-                      currentIndex = val.toInt();
-                    });
                   },
                 ),
-              ],
+              ),
             ),
-          ),
-        ]),
+            Container(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    '${currentIndex + 1}',
+                    style: TextStyle(color: black),
+                  ),
+                  Slider(
+                    activeColor: color,
+                    thumbColor: colorStr,
+                    max: 99,
+                    divisions: 20,
+                    min: 0,
+                    label: (currentIndex + 1).toString(),
+                    value: currentIndex.toDouble(),
+                    onChanged: (val) {
+                      setState(
+                        () {
+                          currentIndex = val.toInt();
+                        },
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-String bap = '';
 
 class Jawshan {
   final List<String> eng;

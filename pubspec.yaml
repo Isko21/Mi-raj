@@ -77,6 +77,7 @@ dependencies:
   path: ^1.8.0
   sleek_circular_slider: ^2.0.1
   syncfusion_flutter_gauges: ^20.1.50
+  swipe: ^0.0.1
 
 dependency_overrides:
   geolocator: ^8.2.0
@@ -95,7 +96,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/

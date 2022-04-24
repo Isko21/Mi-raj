@@ -3,6 +3,7 @@ import 'package:muslim_today/components/properties.dart';
 import 'package:muslim_today/pages/sub_pages/asmaulhusna.dart';
 import 'package:muslim_today/pages/sub_pages/missed_prays.dart';
 import 'package:muslim_today/pages/sub_pages/qibla_compass.dart';
+import 'package:muslim_today/pages/sub_pages/shahada.dart';
 import 'package:muslim_today/pages/tasbihs_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
@@ -333,7 +334,8 @@ class ToolsRow extends StatelessWidget {
                       )),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => Shahada())),
                   child: Container(
                       width: width / 5,
                       child: Column(

@@ -91,7 +91,9 @@ class AppBarJawshan extends StatelessWidget with PreferredSizeWidget {
                                         Card(
                                           elevation: 2.0,
                                           child: PopupMenuItem(
-                                            onTap: () => change(1),
+                                            onTap: () {
+                                              change(1);
+                                            },
                                             child: ListTile(
                                               leading: Text(
                                                 "1.",
@@ -114,7 +116,9 @@ class AppBarJawshan extends StatelessWidget with PreferredSizeWidget {
                                         Card(
                                           elevation: 2.0,
                                           child: PopupMenuItem(
-                                            onTap: () => change(2),
+                                            onTap: () {
+                                              change(2);
+                                            },
                                             child: ListTile(
                                               leading: Text(
                                                 "2.",
@@ -128,52 +132,6 @@ class AppBarJawshan extends StatelessWidget with PreferredSizeWidget {
                                               ),
                                               trailing: Text(
                                                 '🇬🇧',
-                                                style:
-                                                    TextStyle(color: colorStr),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Card(
-                                          elevation: 2.0,
-                                          child: PopupMenuItem(
-                                            onTap: () => change(3),
-                                            child: ListTile(
-                                              leading: Text(
-                                                "3.",
-                                                style:
-                                                    TextStyle(color: colorStr),
-                                              ),
-                                              title: Text(
-                                                "Turkish",
-                                                style:
-                                                    TextStyle(color: colorStr),
-                                              ),
-                                              trailing: Text(
-                                                '🇹🇷',
-                                                style:
-                                                    TextStyle(color: colorStr),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Card(
-                                          elevation: 2.0,
-                                          child: PopupMenuItem(
-                                            onTap: () => change(4),
-                                            child: ListTile(
-                                              leading: Text(
-                                                "4.",
-                                                style:
-                                                    TextStyle(color: colorStr),
-                                              ),
-                                              title: Text(
-                                                "Transliteration",
-                                                style:
-                                                    TextStyle(color: colorStr),
-                                              ),
-                                              trailing: Text(
-                                                '🔤',
                                                 style:
                                                     TextStyle(color: colorStr),
                                               ),
