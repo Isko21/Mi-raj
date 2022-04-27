@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "175847291599-7dpjhf87enk7me1ot3h5gaft4a3jmg2f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.isko.dailymuslim",
+            "certificate_hash": "279a9fc34616d7bc9b421301bfac330e625297bd"
+          }
+        },
+        {
+          "client_id": "175847291599-v6bf87pvf6h5t68ovpbh54vnhatgdj69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.isko.dailymuslim",
+            "certificate_hash": "49f7dadabec85442539edd211878fdec42fcd0f2"
+          }
+        },
+        {
           "client_id": "175847291599-j2ndn2163r7kp4mvh5ru0d62uh8khgn0.apps.googleusercontent.com",
           "client_type": 3
         }
