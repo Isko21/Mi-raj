@@ -65,6 +65,7 @@ dependencies:
   sleek_circular_slider: ^2.0.1
   syncfusion_flutter_gauges: ^20.1.50
   swipe: ^0.0.1
+  package_info: ^2.0.2
 
 dependency_overrides:
   geolocator: ^8.2.0
