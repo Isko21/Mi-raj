@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
           '/isha': (context) => Isha(),
           '/surahIndex': (context) => SurahIndex(),
           '/sajdaIndex': (context) => SajdaIndex(),
-          '/juzIndex': (context) => JuzIndex(),
+          '/juzIndex': (context) => JuzIndex(), 
           '/tasbih': (context) => TasbihsPage()
         },
         debugShowCheckedModeBanner: false,
@@ -109,6 +109,10 @@ class _LoggedInState extends State<LoggedIn> {
     isArabic = AllUserData.getLang();
   }
 
+  void state() {
+    setState(() {});
+  }
+
   late final appBars = [
     AppBarCustom(title: "Mi'raj", elevation: 0),
     AppBarCustom(title: 'Quran', elevation: 1),
@@ -117,7 +121,7 @@ class _LoggedInState extends State<LoggedIn> {
       if (a == 1)
         jLang = 1;
       else if (a == 2) jLang = 2;
-      setState(() {});
+      state();
     }),
     AppBarCustom(title: 'Settings', elevation: 1)
   ];

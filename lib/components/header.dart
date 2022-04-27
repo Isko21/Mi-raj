@@ -123,7 +123,7 @@ class Header extends StatelessWidget {
                             Text(
                               city,
                               style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   color: white,
                                   fontWeight: FontWeight.bold),
                             ),

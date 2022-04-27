@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 
 class LocationErrorWidget extends StatelessWidget {
@@ -31,7 +29,7 @@ class LocationErrorWidget extends StatelessWidget {
               style: TextStyle(color: errorColor, fontWeight: FontWeight.bold),
             ),
             box,
-            RaisedButton(
+            ElevatedButton(
               child: Text("Retry"),
               onPressed: () => callback(),
             )

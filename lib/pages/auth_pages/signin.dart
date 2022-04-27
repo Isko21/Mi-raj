@@ -126,30 +126,6 @@ class _AuthPageState extends State<AuthPage> {
                           valueColor: AlwaysStoppedAnimation<Color>(white),
                         )),
                 SizedBox(height: 30.0),
-                ElevatedButton.icon(
-                  style: ButtonStyle(
-                    elevation: MaterialStateProperty.resolveWith((states) => 3),
-                    shadowColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.black),
-                    minimumSize: MaterialStateProperty.resolveWith(
-                        (states) => Size(100, 60)),
-                    foregroundColor:
-                        MaterialStateColor.resolveWith((states) => color),
-                    backgroundColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.white),
-                  ),
-                  onPressed: () => print('your button is working properly'),
-                  icon: FaIcon(
-                    FontAwesomeIcons.envelopesBulk,
-                  ),
-                  label: Text(
-                    'Sign in with Email',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
               ],
             )
           ],

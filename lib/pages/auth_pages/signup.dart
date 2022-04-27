@@ -2,9 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim_today/components/textinput.dart';
-
 import 'package:muslim_today/pages/auth_pages/signin.dart';
-
 import '../../components/properties.dart';
 
 class SignUp extends StatefulWidget {
@@ -159,13 +157,9 @@ class _SignUpState extends State<SignUp> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              // ignore: deprecated_member_use
-              child: FlatButton(
-                height: 50,
-                color: color,
+              child: TextButton(
                 onPressed: () {
-                  // ignore: unnecessary_statements
-                  _startLoading;
+                  _startLoading.call();
                 },
                 child: _isLoading
                     ? CircularProgressIndicator(
