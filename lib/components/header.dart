@@ -141,7 +141,7 @@ class Header extends StatelessWidget {
             ),
           ],
         ),
-        user.displayName != null
+        !isGuest
             ? WidgetAnimator(
                 child: Text(
                   'Assalamu alaikum, ${user.displayName!.split(' ').first}',
@@ -151,7 +151,7 @@ class Header extends StatelessWidget {
             : WidgetAnimator(
                 child: Text(
                   'Assalamu alaikum',
-                  style: getStyle(23, black, true),
+                  style: getStyle(23, white, true),
                 ),
               ),
       ]),

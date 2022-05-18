@@ -32,3 +32,20 @@ class GoogleSignInProvider extends ChangeNotifier {
     FirebaseAuth.instance.signOut();
   }
 }
+
+class AnonymousSignInProvider extends ChangeNotifier {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  Future signIn() async {
+    try {
+      final result = await auth.signInAnonymously();
+      User user = result.user!;
+      return user;
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
+  notifyListeners();
+}

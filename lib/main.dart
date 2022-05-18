@@ -44,7 +44,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await AllUserData.init();
-
+  isGuest = AllUserData.getBool('guest');
   runApp(MyApp());
 }
 
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
           '/isha': (context) => Isha(),
           '/surahIndex': (context) => SurahIndex(),
           '/sajdaIndex': (context) => SajdaIndex(),
-          '/juzIndex': (context) => JuzIndex(), 
+          '/juzIndex': (context) => JuzIndex(),
           '/tasbih': (context) => TasbihsPage()
         },
         debugShowCheckedModeBanner: false,

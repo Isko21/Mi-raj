@@ -151,7 +151,7 @@ class _SettingsState extends State<Settings>
             radius: 40,
             child: WidgetAnimator(
               child: Text(
-                firstName[0].toUpperCase(),
+                !isGuest ? firstName[0].toUpperCase() : 'G',
                 style: TextStyle(
                     color: white, fontSize: 41, fontWeight: FontWeight.bold),
               ),

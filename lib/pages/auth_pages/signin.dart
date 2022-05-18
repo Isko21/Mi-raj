@@ -49,6 +49,7 @@ class _AuthPageState extends State<AuthPage> {
     }
   }
 
+  final AnonymousSignInProvider _provider = AnonymousSignInProvider();
   bool pressed = false;
   @override
   Widget build(BuildContext context) {
@@ -125,7 +126,38 @@ class _AuthPageState extends State<AuthPage> {
                         child: CircularProgressIndicator.adaptive(
                           valueColor: AlwaysStoppedAnimation<Color>(white),
                         )),
-                SizedBox(height: 30.0),
+                SizedBox(height: 10.0),
+                ElevatedButton.icon(
+                    style: ButtonStyle(
+                        elevation:
+                            MaterialStateProperty.resolveWith((states) => 3),
+                        shadowColor: MaterialStateColor.resolveWith(
+                            (states) => Colors.black),
+                        minimumSize: MaterialStateProperty.resolveWith(
+                            (states) => Size(100, 60)),
+                        backgroundColor: MaterialStateColor.resolveWith(
+                            (states) => colorStr)),
+                    onPressed: () async {
+                      print('started');
+                      dynamic res = await _provider.signIn();
+                      if (res == null) {
+                        print('error');
+                      } else {
+                        print("success");
+                        setState(() {
+                          AllUserData.setBool('guest', true);
+                          isGuest = AllUserData.getBool('guest');
+                        });
+                      }
+                    },
+                    icon: FaIcon(FontAwesomeIcons.userSecret),
+                    label: Text(
+                      "Sign in as a Guest",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ))
               ],
             )
           ],

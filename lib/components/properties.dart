@@ -9,10 +9,11 @@ import '../pages/home.dart';
 import '../pages/jawshan_page.dart';
 import '../pages/quran_page.dart';
 
-String userName = user.displayName.toString();
-String firstName = userName.split(' ')[0];
-String userEmail = user.email.toString();
-String userPhoto = user.photoURL.toString();
+bool isGuest = false;
+String userName = isGuest ? 'Guest' : user.displayName.toString();
+String firstName = isGuest ? '' : userName.split(' ')[0];
+String userEmail = isGuest ? '' : user.email.toString();
+String userPhoto = isGuest ? '' : user.photoURL.toString();
 Color black = Colors.black;
 Color red = Colors.red;
 Color white = Colors.white;

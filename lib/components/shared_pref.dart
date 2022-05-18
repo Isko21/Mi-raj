@@ -14,6 +14,9 @@ class AllUserData {
     return _preferences.getInt(name) ?? 0;
   }
 
+  static Future setBool(String key, bool value) async =>
+      await _preferences.setBool(key, value);
+  static bool getBool(String key) => _preferences.getBool(key) ?? false;
   static void addPrayer(String name, int count) async {
     setPrayers(name, getPrayers(name) + count);
   }
