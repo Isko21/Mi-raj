@@ -1,4 +1,4 @@
-# Daily Muslim
+# Mi'raj
 
 A new Flutter project.
 
