@@ -138,8 +138,7 @@ class _SettingsState extends State<Settings>
     double width = MediaQuery.of(context).size.width;
     return Container(
       color: color.withAlpha(50),
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
+      height: height,
       child: ListView(
         padding: EdgeInsets.only(right: 15, left: 15, top: 0),
         children: <Widget>[

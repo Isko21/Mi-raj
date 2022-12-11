@@ -146,45 +146,76 @@ class ToolsRow extends StatelessWidget {
     return Container(
         margin: EdgeInsets.all(20),
         padding: EdgeInsets.only(right: 8),
-        width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => new TasbihsPage())),
-                  child: Container(
-                    width: width / 5,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                            margin: EdgeInsets.all(5),
-                            child: ClipRRect(
-                              borderRadius:
-                                  BorderRadius.circular(20), // Image border
-                              child: SizedBox.fromSize(
-                                size: Size.fromRadius(30),
-                                child: Image.asset('assets/img/tasbih.png',
-                                    fit: BoxFit.cover),
-                              ),
-                            )),
-                        Text(
-                          'Tasbih',
-                          style: TextStyle(color: white, fontSize: 12),
-                        ),
-                        SizedBox(height: 8)
-                      ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => new TasbihsPage())),
+                    child: Container(
+                      width: width / 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.all(5),
+                              child: ClipRRect(
+                                borderRadius:
+                                    BorderRadius.circular(20), // Image border
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(30),
+                                  child: Image.asset('assets/img/tasbih.png',
+                                      fit: BoxFit.cover),
+                                ),
+                              )),
+                          Text(
+                            'Tasbih',
+                            style: TextStyle(color: white, fontSize: 12),
+                          ),
+                          SizedBox(height: 8)
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                InkWell(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => MissedPrays())),
-                  child: Container(
+                  InkWell(
+                    onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => MissedPrays())),
+                    child: Container(
+                        width: width / 5,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: SizedBox.fromSize(
+                                    size: Size.fromRadius(30),
+                                    child: Image.asset('assets/img/missed.png',
+                                        fit: BoxFit.cover),
+                                  ),
+                                )),
+                            Text('Missed Prayers',
+                                textAlign: TextAlign.center,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(color: white, fontSize: 12)),
+                            SizedBox(height: 8),
+                          ],
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => QiblaCompass())),
+                    child: Container(
                       width: width / 5,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -198,204 +229,178 @@ class ToolsRow extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                                 child: SizedBox.fromSize(
                                   size: Size.fromRadius(30),
-                                  child: Image.asset('assets/img/missed.png',
+                                  child: Image.asset('assets/img/qibla.png',
                                       fit: BoxFit.cover),
                                 ),
                               )),
-                          Text('Missed Prayers',
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
+                          Text('Qibla',
                               style: TextStyle(color: white, fontSize: 12)),
                           SizedBox(height: 8),
                         ],
-                      )),
-                ),
-                InkWell(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => QiblaCompass())),
-                  child: Container(
-                    width: width / 5,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                            margin: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: SizedBox.fromSize(
-                                size: Size.fromRadius(30),
-                                child: Image.asset('assets/img/qibla.png',
-                                    fit: BoxFit.cover),
-                              ),
-                            )),
-                        Text('Qibla',
-                            style: TextStyle(color: white, fontSize: 12)),
-                        SizedBox(height: 8),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-                InkWell(
-                  onTap: () => launch(
-                      'https://www.google.com/maps/search/mosques+near+me'),
-                  child: Container(
-                      width: width / 5,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: SizedBox.fromSize(
-                                  size: Size.fromRadius(30),
-                                  child: Image.asset('assets/img/mosque.png',
-                                      fit: BoxFit.cover),
-                                ),
-                              )),
-                          Text('Mosques',
-                              style: TextStyle(fontSize: 12, color: white)),
-                          SizedBox(height: 8),
-                        ],
-                      )),
-                ),
-              ],
+                  InkWell(
+                    onTap: () => launch(
+                        'https://www.google.com/maps/search/mosques+near+me'),
+                    child: Container(
+                        width: width / 5,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: SizedBox.fromSize(
+                                    size: Size.fromRadius(30),
+                                    child: Image.asset('assets/img/mosque.png',
+                                        fit: BoxFit.cover),
+                                  ),
+                                )),
+                            Text('Mosques',
+                                style: TextStyle(fontSize: 12, color: white)),
+                            SizedBox(height: 8),
+                          ],
+                        )),
+                  ),
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                  onTap: () => launch(
-                      'https://www.google.com/maps/search/halal+places+near+me'),
-                  child: Container(
-                      width: width / 5,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: SizedBox.fromSize(
-                                  size: Size.fromRadius(30),
-                                  child: Image.asset('assets/img/halal.png',
-                                      fit: BoxFit.cover),
-                                ),
-                              )),
-                          Text('Halal Places',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: white,
-                                  fontSize: 12,
-                                  overflow: TextOverflow.ellipsis)),
-                          SizedBox(height: 8),
-                        ],
-                      )),
-                ),
-                InkWell(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => AsMaulHusna())),
-                  child: Container(
-                      width: width / 5,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: SizedBox.fromSize(
-                                  size: Size.fromRadius(30),
-                                  child: Image.asset('assets/img/name.png',
-                                      fit: BoxFit.cover),
-                                ),
-                              )),
-                          Text('Names',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: white,
-                                  fontSize: 12,
-                                  overflow: TextOverflow.ellipsis)),
-                          SizedBox(height: 8),
-                        ],
-                      )),
-                ),
-                InkWell(
-                  onTap: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => Shahada())),
-                  child: Container(
-                      width: width / 5,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: SizedBox.fromSize(
-                                  size: Size.fromRadius(30),
-                                  child: Image.asset('assets/img/dua.png',
-                                      fit: BoxFit.cover),
-                                ),
-                              )),
-                          Text('Shahada',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: white,
-                                  fontSize: 12,
-                                  overflow: TextOverflow.ellipsis)),
-                          SizedBox(height: 8),
-                        ],
-                      )),
-                ),
-                InkWell(
-                  onTap: () =>
-                      launch('https://www.youtube.com/watch?v=h4LV2viNHmk'),
-                  child: Container(
-                      width: width / 5,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: SizedBox.fromSize(
-                                  size: Size.fromRadius(30),
-                                  child: Image.asset('assets/img/kaaba.png',
-                                      fit: BoxFit.cover),
-                                ),
-                              )),
-                          Text('Kaaba Live',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: white,
-                                  fontSize: 12,
-                                  overflow: TextOverflow.ellipsis)),
-                          SizedBox(height: 8),
-                        ],
-                      )),
-                ),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    onTap: () => launch(
+                        'https://www.google.com/maps/search/halal+places+near+me'),
+                    child: Container(
+                        width: width / 5,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: SizedBox.fromSize(
+                                    size: Size.fromRadius(30),
+                                    child: Image.asset('assets/img/halal.png',
+                                        fit: BoxFit.cover),
+                                  ),
+                                )),
+                            Text('Halal Places',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: white,
+                                    fontSize: 12,
+                                    overflow: TextOverflow.ellipsis)),
+                            SizedBox(height: 8),
+                          ],
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => AsMaulHusna())),
+                    child: Container(
+                        width: width / 5,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: SizedBox.fromSize(
+                                    size: Size.fromRadius(30),
+                                    child: Image.asset('assets/img/name.png',
+                                        fit: BoxFit.cover),
+                                  ),
+                                )),
+                            Text('Names',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: white,
+                                    fontSize: 12,
+                                    overflow: TextOverflow.ellipsis)),
+                            SizedBox(height: 8),
+                          ],
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Shahada())),
+                    child: Container(
+                        width: width / 5,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: SizedBox.fromSize(
+                                    size: Size.fromRadius(30),
+                                    child: Image.asset('assets/img/dua.png',
+                                        fit: BoxFit.cover),
+                                  ),
+                                )),
+                            Text('Shahada',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: white,
+                                    fontSize: 12,
+                                    overflow: TextOverflow.ellipsis)),
+                            SizedBox(height: 8),
+                          ],
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () =>
+                        launch('https://www.youtube.com/watch?v=h4LV2viNHmk'),
+                    child: Container(
+                        width: width / 5,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: SizedBox.fromSize(
+                                    size: Size.fromRadius(30),
+                                    child: Image.asset('assets/img/kaaba.png',
+                                        fit: BoxFit.cover),
+                                  ),
+                                )),
+                            Text('Kaaba Live',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: white,
+                                    fontSize: 12,
+                                    overflow: TextOverflow.ellipsis)),
+                            SizedBox(height: 8),
+                          ],
+                        )),
+                  ),
+                ],
+              ),
             )
           ],
         ),

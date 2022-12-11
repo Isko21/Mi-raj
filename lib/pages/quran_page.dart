@@ -36,14 +36,11 @@ class _QuranPageState extends State<QuranPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
       color: color.withAlpha(50),
       child: AnimatedBuilder(
         animation: animationController,
         builder: (context, _) {
-          return Container(
-            child: MainScreen(),
-          );
+          return MainScreen();
         },
       ),
     );
@@ -55,7 +52,8 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[

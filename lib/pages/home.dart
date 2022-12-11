@@ -64,15 +64,12 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-
     return Container(
-        height: height,
-        width: width,
+        height: MediaQuery.of(context).size.height,
         color: color.withAlpha(50),
         child: SingleChildScrollView(
           child: Column(
+            mainAxisSize: MainAxisSize.max,
             children: [
               Header(),
               WidgetAnimator(child: ToolsRow()),

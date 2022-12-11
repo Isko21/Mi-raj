@@ -1,3 +1,6 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:device_preview_screenshot/device_preview_screenshot.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:muslim_today/pages/jawshan_page.dart';
 import 'package:muslim_today/pages/sub_pages/asmaulhusna.dart';
@@ -45,7 +48,12 @@ Future<void> main() async {
   await Firebase.initializeApp();
   await AllUserData.init();
   isGuest = AllUserData.getBool('guest');
-  runApp(MyApp());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -73,7 +81,7 @@ class _MyAppState extends State<MyApp> {
           '/tasbih': (context) => TasbihsPage()
         },
         debugShowCheckedModeBanner: false,
-        title: 'Miraj',
+        title: "Mi'raj",
         builder: (context, child) {
           return MediaQuery(
             child: child!,

@@ -37,10 +37,8 @@ class Header extends StatelessWidget {
         break;
     }
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Container(
       height: height * 0.3,
-      width: width,
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         Column(
