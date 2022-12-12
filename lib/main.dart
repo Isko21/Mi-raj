@@ -1,6 +1,3 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:device_preview_screenshot/device_preview_screenshot.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:muslim_today/pages/jawshan_page.dart';
 import 'package:muslim_today/pages/sub_pages/asmaulhusna.dart';
@@ -48,12 +45,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   await AllUserData.init();
   isGuest = AllUserData.getBool('guest');
-  runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => MyApp(),
-    ),
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
