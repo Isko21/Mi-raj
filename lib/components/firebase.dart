@@ -47,5 +47,14 @@ class AnonymousSignInProvider extends ChangeNotifier {
     }
   }
 
+  Future signOut() async {
+    try {
+      return await auth.signOut();
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
   notifyListeners();
 }
