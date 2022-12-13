@@ -10,10 +10,10 @@ import '../pages/jawshan_page.dart';
 import '../pages/quran_page.dart';
 
 bool isGuest = false;
-String userName = isGuest ? 'Guest' : user!.displayName.toString();
+String userName = isGuest ? 'Guest' : user.displayName.toString();
 String firstName = isGuest ? '' : userName.split(' ')[0];
-String userEmail = isGuest ? '' : user!.email.toString();
-String userPhoto = isGuest ? '' : user!.photoURL.toString();
+String userEmail = isGuest ? '' : user.email.toString();
+String userPhoto = isGuest ? '' : user.photoURL.toString();
 Color black = Colors.black;
 Color red = Colors.red;
 Color white = Colors.white;
@@ -31,7 +31,7 @@ late String dailyVerseUrl = '';
 String dailyAyatSurah = '';
 late int ayat;
 String language = 'ar';
-User? user = FirebaseAuth.instance.currentUser!;
+var user = FirebaseAuth.instance.currentUser!;
 
 enum Pages {
   home,

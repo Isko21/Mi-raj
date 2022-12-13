@@ -185,6 +185,7 @@ class _LoggedInState extends State<LoggedIn> {
       try {
         setState(() {
           city = placeMark!.subLocality!;
+          print(city);
         });
       } catch (e) {
         print(e);

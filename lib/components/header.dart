@@ -36,9 +36,7 @@ class Header extends StatelessWidget {
         time = getTime(prayerTimes.fajr);
         break;
     }
-    double height = MediaQuery.of(context).size.height;
     return Container(
-      height: height * 0.3,
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         Column(
@@ -142,7 +140,7 @@ class Header extends StatelessWidget {
         !isGuest
             ? WidgetAnimator(
                 child: Text(
-                  'Assalamu alaikum, ${user!.displayName!.split(' ').first}',
+                  'Assalamu alaikum, ${user.displayName!.split(' ').first}',
                   style: getStyle(23, white, true),
                 ),
               )
