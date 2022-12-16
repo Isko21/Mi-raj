@@ -58,3 +58,13 @@ class AnonymousSignInProvider extends ChangeNotifier {
 
   notifyListeners();
 }
+
+class AppleIdsignInProvider extends ChangeNotifier {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  // Future signIn() async{
+  //   try{
+  //     final result = await auth.signInWithApp
+  //   }
+  // }
+}

@@ -9,6 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../components/location.dart';
 import '../components/picker.dart';
@@ -156,21 +157,27 @@ class _SettingsState extends State<Settings>
               ),
             ),
             SizedBox(height: 10),
-            WidgetAnimator(
-              child: Text(
-                userName,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 24, color: white),
+            if (!isGuest)
+              Column(
+                children: [
+                  WidgetAnimator(
+                    child: Text(
+                      userName,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 24, color: white),
+                    ),
+                  ),
+                  WidgetAnimator(
+                    child: Text(
+                      userEmail,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 18, color: white.withOpacity(0.5)),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                ],
               ),
-            ),
-            WidgetAnimator(
-              child: Text(
-                userEmail,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, color: white.withOpacity(0.5)),
-              ),
-            ),
-            SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -765,7 +772,10 @@ class _SettingsState extends State<Settings>
             SizedBox(height: 10),
             WidgetAnimator(
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  SharedPreferences preferences =
+                      await SharedPreferences.getInstance();
+                  await preferences.clear();
                   !isGuest
                       ? GoogleSignInProvider().logOut()
                       : AnonymousSignInProvider().signOut();
@@ -787,6 +797,59 @@ class _SettingsState extends State<Settings>
                       ),
                       Text(
                         'Log out',
+                        style: TextStyle(
+                            color: white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17),
+                      ),
+                      Expanded(
+                        child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Icon(
+                                FontAwesomeIcons.ellipsis,
+                                size: 20,
+                                color: white,
+                              ),
+                            )),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            WidgetAnimator(
+              child: InkWell(
+                onTap: () async {
+                  SharedPreferences preferences =
+                      await SharedPreferences.getInstance();
+                  await preferences.clear();
+
+                  !isGuest
+                      ? GoogleSignInProvider().logOut()
+                      : AnonymousSignInProvider().signOut();
+                  setState(() {});
+                  // exit(0);
+                },
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                      color: white.withAlpha(50),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Icon(
+                          Icons.exit_to_app_rounded,
+                          color: white,
+                          size: 35,
+                        ),
+                      ),
+                      Text(
+                        'Delete account',
                         style: TextStyle(
                             color: white,
                             fontWeight: FontWeight.bold,

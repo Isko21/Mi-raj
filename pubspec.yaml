@@ -14,6 +14,7 @@ dependencies:
   adhan: ^2.0.0-nullsafety.2
   android_intent: ^2.0.2
   animated_splash_screen: ^1.2.0
+  apple_sign_in_safety: ^0.0.6
   audioplayers: ^0.20.1
   auto_size_text: ^3.0.0
   bottom_navy_bar: ^6.0.0
