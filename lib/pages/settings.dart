@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../components/location.dart';
 import '../components/picker.dart';
 
@@ -599,56 +598,11 @@ class _SettingsState extends State<Settings>
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             WidgetAnimator(
               child: Text(
                 'OTHER',
                 style: TextStyle(color: white, fontSize: 18),
-              ),
-            ),
-            SizedBox(height: 10),
-            WidgetAnimator(
-              child: InkWell(
-                onTap: () => launch('https://www.buymeacoffee.com/iskhak'),
-                child: Container(
-                  height: 60,
-                  decoration: BoxDecoration(
-                      color: white.withAlpha(50),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Icon(
-                          CupertinoIcons.money_dollar_circle_fill,
-                          color: white,
-                          size: 35,
-                        ),
-                      ),
-                      Text(
-                        'Support the project',
-                        style: TextStyle(
-                            color: white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17),
-                      ),
-                      Expanded(
-                        child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Icon(
-                                FontAwesomeIcons.ellipsis,
-                                size: 20,
-                                color: white,
-                              ),
-                            )),
-                      ),
-                    ],
-                  ),
-                ),
               ),
             ),
             WidgetAnimator(
@@ -737,7 +691,7 @@ class _SettingsState extends State<Settings>
                         ),
                       ),
                       Text(
-                        'About the app',
+                        'About app',
                         style: TextStyle(
                             color: white,
                             fontWeight: FontWeight.bold,
@@ -758,15 +712,6 @@ class _SettingsState extends State<Settings>
                     ],
                   ),
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            WidgetAnimator(
-              child: Text(
-                'ACCOUNT',
-                style: TextStyle(color: white, fontSize: 18),
               ),
             ),
             SizedBox(height: 10),
@@ -843,7 +788,7 @@ class _SettingsState extends State<Settings>
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Icon(
-                          Icons.exit_to_app_rounded,
+                          Icons.delete,
                           color: white,
                           size: 35,
                         ),

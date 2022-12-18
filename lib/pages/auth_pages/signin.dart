@@ -120,12 +120,43 @@ class _AuthPageState extends State<AuthPage> {
                                 (states) => Colors.black),
                             minimumSize: MaterialStateProperty.resolveWith(
                                 (states) => Size(100, 60)),
-                            backgroundColor:
-                                MaterialStateColor.resolveWith((states) => color)),
+                            backgroundColor: MaterialStateColor.resolveWith(
+                                (states) => color)),
                         onPressed: () {},
                         child: CircularProgressIndicator.adaptive(
                           valueColor: AlwaysStoppedAnimation<Color>(white),
-                        )),
+                        ),
+                      ),
+                SizedBox(height: 10.0),
+                ElevatedButton.icon(
+                  style: ButtonStyle(
+                      elevation:
+                          MaterialStateProperty.resolveWith((states) => 3),
+                      shadowColor: MaterialStateColor.resolveWith(
+                          (states) => Colors.black),
+                      minimumSize: MaterialStateProperty.resolveWith(
+                          (states) => Size(100, 60)),
+                      backgroundColor:
+                          MaterialStateColor.resolveWith((states) => color)),
+                  onPressed: () {
+                    final provider = Provider.of<GoogleSignInProvider>(context,
+                        listen: false);
+                    provider.googleLogIn();
+                    setState(() {
+                      pressed = !pressed;
+                    });
+                  },
+                  icon: FaIcon(
+                    FontAwesomeIcons.apple,
+                  ),
+                  label: Text(
+                    'Sign in with Apple',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
                 SizedBox(height: 10.0),
                 ElevatedButton.icon(
                     style: ButtonStyle(
