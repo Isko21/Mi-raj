@@ -64,6 +64,7 @@ dependencies:
   shared_preferences: ^2.0.13
   shared_preferences_web: ^2.0.3
   shimmer: ^2.0.0
+  sign_in_with_apple: ^4.2.0
   sleek_circular_slider: ^2.0.1
   swipe: ^0.0.1
   syncfusion_flutter_gauges: ^20.1.50
