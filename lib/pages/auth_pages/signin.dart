@@ -1,5 +1,9 @@
+import 'dart:io' show Platform;
+import 'package:apple_sign_in_safety/apple_sign_in.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:muslim_today/components/shared_pref.dart';
@@ -128,36 +132,66 @@ class _AuthPageState extends State<AuthPage> {
                         ),
                       ),
                 SizedBox(height: 10.0),
-                ElevatedButton.icon(
-                  style: ButtonStyle(
-                      elevation:
-                          MaterialStateProperty.resolveWith((states) => 3),
-                      shadowColor: MaterialStateColor.resolveWith(
-                          (states) => Colors.black),
-                      minimumSize: MaterialStateProperty.resolveWith(
-                          (states) => Size(100, 60)),
-                      backgroundColor:
-                          MaterialStateColor.resolveWith((states) => color)),
-                  onPressed: () {
-                    final provider = Provider.of<GoogleSignInProvider>(context,
-                        listen: false);
-                    provider.googleLogIn();
-                    setState(() {
-                      pressed = !pressed;
-                    });
-                  },
-                  icon: FaIcon(
-                    FontAwesomeIcons.apple,
-                  ),
-                  label: Text(
-                    'Sign in with Apple',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                if (Platform.isIOS)
+                  ElevatedButton.icon(
+                    style: ButtonStyle(
+                        elevation:
+                            MaterialStateProperty.resolveWith((states) => 3),
+                        shadowColor: MaterialStateColor.resolveWith(
+                            (states) => Colors.black),
+                        minimumSize: MaterialStateProperty.resolveWith(
+                            (states) => Size(100, 60)),
+                        backgroundColor:
+                            MaterialStateColor.resolveWith((states) => color)),
+                    onPressed: () async {
+                      if (!await AppleSignIn.isAvailable()) {
+                        return;
+                      }
+                      final res = await AppleSignIn.performRequests([
+                        AppleIdRequest(
+                            requestedScopes: [Scope.email, Scope.fullName])
+                      ]);
+                      switch (res.status) {
+                        case AuthorizationStatus.authorized:
+                          try {
+                            final AppleIdCredential appleIdCredential =
+                                res.credential!;
+                            final OAuthProvider oAuthProvider =
+                                OAuthProvider('apple.com');
+                            final credential = oAuthProvider.credential(
+                                idToken: String.fromCharCodes(
+                                    appleIdCredential.identityToken!),
+                                accessToken: String.fromCharCodes(
+                                    appleIdCredential.authorizationCode!));
+                            final result = await FirebaseAuth.instance
+                                .signInWithCredential(credential);
+                            result.user!.displayName;
+                          } on PlatformException catch (e) {
+                            print(e);
+                          } on FirebaseAuthException catch (e) {
+                            print(e);
+                          }
+                          break;
+                        case AuthorizationStatus.error:
+                          print('break');
+                          break;
+                        case AuthorizationStatus.cancelled:
+                          print('cancelled');
+                          break;
+                      }
+                    },
+                    icon: FaIcon(
+                      FontAwesomeIcons.apple,
+                    ),
+                    label: Text(
+                      'Sign in with Apple',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 10.0),
+                if (Platform.isIOS) SizedBox(height: 10.0),
                 ElevatedButton.icon(
                     style: ButtonStyle(
                         elevation:

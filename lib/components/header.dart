@@ -137,19 +137,12 @@ class Header extends StatelessWidget {
             ),
           ],
         ),
-        !isGuest
-            ? WidgetAnimator(
-                child: Text(
-                  'Assalamu alaikum, ${user.displayName!.split(' ').first}',
-                  style: getStyle(23, white, true),
-                ),
-              )
-            : WidgetAnimator(
-                child: Text(
-                  'Assalamu alaikum',
-                  style: getStyle(23, white, true),
-                ),
-              ),
+        WidgetAnimator(
+          child: Text(
+            'Assalamu alaikum',
+            style: getStyle(23, white, true),
+          ),
+        ),
       ]),
       decoration: BoxDecoration(
         image: DecorationImage(

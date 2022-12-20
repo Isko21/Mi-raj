@@ -149,7 +149,11 @@ class _SettingsState extends State<Settings>
               radius: 40,
               child: WidgetAnimator(
                 child: Text(
-                  !isGuest ? firstName[0].toUpperCase() : 'G',
+                  !isGuest
+                      ? firstName[0].toUpperCase() == 'N'
+                          ? 'A'
+                          : firstName[0].toUpperCase()
+                      : 'G',
                   style: TextStyle(
                       color: white, fontSize: 41, fontWeight: FontWeight.bold),
                 ),
@@ -161,7 +165,7 @@ class _SettingsState extends State<Settings>
                 children: [
                   WidgetAnimator(
                     child: Text(
-                      userName,
+                      userName == 'null' ? 'Apple User' : userName,
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 24, color: white),
                     ),
