@@ -31,7 +31,7 @@ late String dailyVerseUrl = '';
 String dailyAyatSurah = '';
 late int ayat;
 String language = 'ar';
-late User? user;
+var user = FirebaseAuth.instance.currentUser;
 
 enum Pages {
   home,

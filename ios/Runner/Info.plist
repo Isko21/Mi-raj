@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Miraj</string>
+	<string>Mi&apos;raj</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -35,7 +35,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.175847291599-3ujl3hiqbtahf6vf13vocu7ih1uegbcj</string>
+				<string>com.googleusercontent.apps.175847291599-1nvi47f46q00d4dqlm6odrv2geuatv8q</string>
 			</array>
 		</dict>
 	</array>
@@ -51,7 +51,7 @@
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app needs access to the location when it opens and in the background to get the current location and calculate prayer times based on its location..</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app needs access to the location when it is running in the background to update the user's current location and prayer time..</string>
+	<string>This app needs access to the location when it is running in the background to update the user&apos;s current location and prayer time..</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to the location when opened to get the current location and calculate prayer times.</string>
 	<key>UILaunchStoryboardName</key>

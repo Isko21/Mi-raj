@@ -23,11 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    if (FirebaseAuth.instance.currentUser == null) {
-      isGuest = true;
-    } else {
-      user = FirebaseAuth.instance.currentUser!;
-    }
+    print(user);
     dailyAyatAR = AllUserData.getVerse('ar');
     dailyAyatEN = AllUserData.getVerse('en');
     dailyAyatSurah = AllUserData.getSurahName();
