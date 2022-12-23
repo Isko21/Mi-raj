@@ -30,7 +30,6 @@ class _JawshanPageState extends State<JawshanPage> {
       padding: EdgeInsets.all(20),
       color: color.withAlpha(50),
       height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
       child: Container(
         decoration: BoxDecoration(
             color: white.withAlpha(200),

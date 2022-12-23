@@ -36,11 +36,7 @@ class Header extends StatelessWidget {
         time = getTime(prayerTimes.fajr);
         break;
     }
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Container(
-      height: height * 0.3,
-      width: width,
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         Column(
@@ -141,19 +137,12 @@ class Header extends StatelessWidget {
             ),
           ],
         ),
-        !isGuest
-            ? WidgetAnimator(
-                child: Text(
-                  'Assalamu alaikum, ${user.displayName!.split(' ').first}',
-                  style: getStyle(23, white, true),
-                ),
-              )
-            : WidgetAnimator(
-                child: Text(
-                  'Assalamu alaikum',
-                  style: getStyle(23, white, true),
-                ),
-              ),
+        WidgetAnimator(
+          child: Text(
+            'Assalamu alaikum',
+            style: getStyle(23, white, true),
+          ),
+        ),
       ]),
       decoration: BoxDecoration(
         image: DecorationImage(

@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/header.dart';
 import 'package:muslim_today/components/verses.dart';
@@ -21,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    print(user);
     dailyAyatAR = AllUserData.getVerse('ar');
     dailyAyatEN = AllUserData.getVerse('en');
     dailyAyatSurah = AllUserData.getSurahName();
@@ -64,26 +67,24 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-
     return Container(
-        height: height,
-        width: width,
-        color: color.withAlpha(50),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Header(),
-              WidgetAnimator(child: ToolsRow()),
-              WidgetAnimator(
-                child: DailyVerse(
-                  url: dailyVerseUrl,
-                ),
+      height: MediaQuery.of(context).size.height,
+      color: color.withAlpha(50),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Header(),
+            WidgetAnimator(child: ToolsRow()),
+            WidgetAnimator(
+              child: DailyVerse(
+                url: dailyVerseUrl,
               ),
-            ],
-          ),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> {
           '/tasbih': (context) => TasbihsPage()
         },
         debugShowCheckedModeBanner: false,
-        title: 'Miraj',
+        title: "Mi'raj",
         builder: (context, child) {
           return MediaQuery(
             child: child!,
@@ -185,6 +185,7 @@ class _LoggedInState extends State<LoggedIn> {
       try {
         setState(() {
           city = placeMark!.subLocality!;
+          print(city);
         });
       } catch (e) {
         print(e);

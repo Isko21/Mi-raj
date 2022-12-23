@@ -47,5 +47,24 @@ class AnonymousSignInProvider extends ChangeNotifier {
     }
   }
 
+  Future signOut() async {
+    try {
+      return await auth.signOut();
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
   notifyListeners();
+}
+
+class AppleIdsignInProvider extends ChangeNotifier {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  // Future signIn() async{
+  //   try{
+  //     final result = await auth.signInWithApp
+  //   }
+  // }
 }
