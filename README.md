@@ -17,6 +17,10 @@
   
   <div align="left">
   
+## Credits
+  * The calculation of the prayer time was done with [adhan-dart](https://github.com/iamriajul/adhan-dart)
+  * The design of the Qur'an was based on [Holy Quran](https://github.com/mhmzdev/the-holy-quran-app) on GitHub
+  
 ## Contributing
 
   If you'd like to contribute, please take a look at the [PRs](https://github.com/Isko21/Mi-raj/issues?q=is%3Aissue+is%3Aopen+label%3A%22PRs+Welcome%22) label on the issue tracker. For new features, please open an issue to discuss it before beginning implementation.
@@ -36,6 +40,6 @@ If you liked my work, don't forget to mark my project with a star :star: and fol
     
   ##
   <img src="https://github.com/Isko21/Mi-raj/blob/main/assets/for_play_store/feature-graphivs.jpg" style="margin-top: 30px;"/>
-  
+  <div align="center">
   <h4>Made with ❤️ in Kyrgysztan 2022</h4>
 </div>
