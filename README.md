@@ -17,13 +17,23 @@
   
   <div align="left">
   
+## Features
+  * Exact times of prayer depending on your locality and madhhab
+  * Read al-Qur'an offline. Search by Juz, Surah and Ayyat Sajda
+  * Protect yourself by reciting dua [Jawshan Kabeer](https://en.wikipedia.org/wiki/Jawshan_Kabir#:~:text=Jawshan%20means%20%22steel%20plate%22%20or,war%2C%20instead%20of%20hard%20armor.)
+  * Hijri and the Gregorian calendar
+  * Daily Qur'anic verses
+  * Ability to see halal places and mosques around me
+  * 99 names of Allah
+  * Tasbih for each namaz and your dikr counter
+    
 ## Credits
   * The calculation of the prayer time was done with [adhan-dart](https://github.com/iamriajul/adhan-dart)
   * The design of the Qur'an was based on [Holy Quran](https://github.com/mhmzdev/the-holy-quran-app) on GitHub
   
 ## Contributing
 
-  If you'd like to contribute, please take a look at the [PRs](https://github.com/Isko21/Mi-raj/issues?q=is%3Aissue+is%3Aopen+label%3A%22PRs+Welcome%22) label on the issue tracker. For new features, please open an issue to discuss it before beginning implementation.
+  If you would like to contribute, please look at the [PRs](https://github.com/Isko21/Mi-raj/issues?q=is%3Aissue+is%3Aopen+label%3A%22PRs+Welcome%22) tag on the issue tracker. For new features, please open an issue to discuss before implementation.
     
 ## Support
     
