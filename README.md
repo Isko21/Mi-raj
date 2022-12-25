@@ -30,7 +30,7 @@
 ## Credits
   * The calculation of the prayer time was done with [adhan-dart](https://github.com/iamriajul/adhan-dart)
   * The design of the Qur'an was based on [Holy Quran](https://github.com/mhmzdev/the-holy-quran-app) on GitHub
-  * [Kylym](https://github.com/kylym1631) and [Abdykadyr](https://github.com/abd1lazov) for supporting me throughout the project and providing me with their Macbooks to build the iOS app and deploy it in the AppStore
+  * [@Kylym](https://github.com/kylym1631) and [@Abdykadyr](https://github.com/abd1lazov) for supporting me throughout the project and providing me with their Macbooks to build the iOS app and deploy it in the AppStore
   
 ## Contributing
 
