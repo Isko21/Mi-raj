@@ -38,7 +38,7 @@
     
 ## Support
     
-**Free Support:**
+**Free:**
 
 If you liked my work, don't forget to mark my project with a star :star: and follow me. You can also share it with your friends and rate it.
 
