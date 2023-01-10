@@ -52,5 +52,5 @@ If you liked my work, don't forget to mark my project with a star :star: and fol
   ##
   <img src="https://github.com/Isko21/Mi-raj/blob/main/assets/for_play_store/feature-graphivs.jpg" style="margin-top: 30px;"/>
   <div align="center">
-  <h4>Made with ❤️ in Kyrgysztan 2022</h4>
+  <h4>Made with ❤️ in Poland 2022</h4>
 </div>
