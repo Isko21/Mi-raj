@@ -42,7 +42,7 @@
 
 If you liked my work, don't forget to mark my project with a star :star: and follow me. You can also share it with your friends and rate it.
 
-**Or :**
+**Or:**
 
 <a href="https://www.buymeacoffee.com/iskhak" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-orange.png" alt="Buy Me A Coffee" width="140px" heigh="50px" ></a>
 
