@@ -23,7 +23,7 @@
   * Protect yourself by reciting dua [Jawshan Kabeer](https://en.wikipedia.org/wiki/Jawshan_Kabir#:~:text=Jawshan%20means%20%22steel%20plate%22%20or,war%2C%20instead%20of%20hard%20armor.)
   * Hijri and the Gregorian calendar
   * Daily Qur'anic verses
-  * Ability to see halal places and mosques around me
+  * Halal places and mosques around me
   * 99 names of Allah
   * Tasbih for each namaz and your dikr counter
     
