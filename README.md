@@ -7,6 +7,7 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![Version](https://img.shields.io/github/v/release/Isko21/Mi-raj?sort=semver)](https://github.com/Isko21/Mi-raj/releases/latest)
   [![Github Downloads](https://img.shields.io/github/downloads/Isko21/Mi-raj/total?logo=Github)](https://github.com/Isko21/Mi-raj/releases)
+  [![wakatime](https://wakatime.com/badge/github/Isko21/Mi-raj.svg)](https://wakatime.com/badge/github/Isko21/Mi-raj)
 
   <h3>An app that helps all Muslims around the world perform daily worship</h3>
     
