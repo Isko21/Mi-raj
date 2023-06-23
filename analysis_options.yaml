@@ -1,0 +1,8 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    avoid_print: false
+    sort_child_properties_last: true
+    library_private_types_in_public_api: false
+    depend_on_referenced_packages: false
