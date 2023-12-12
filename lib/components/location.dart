@@ -1,57 +1,33 @@
-import 'package:flutter/services.dart';
-import 'package:location/location.dart';
-import 'package:geocoding/geocoding.dart' as geo;
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 
-class UsersLocation {
-  late Location _location;
-  bool isEnabled = false;
-  PermissionStatus? _status;
-  UsersLocation() {
-    _location = Location();
-  }
+class LocationService {
+  Future<List<String>> determinePosition() async {
+    bool serviceEnabled;
+    LocationPermission permission;
 
-  Future<bool> checkPermission() async {
-    if (await checkService()) {
-      _status = await _location.hasPermission();
-      if (_status == PermissionStatus.denied) {
-        _status = await _location.requestPermission();
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Location services are disabled.');
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied');
       }
     }
-    return _status == PermissionStatus.granted;
-  }
 
-  Future<bool> checkService() async {
-    try {
-      isEnabled = await _location.serviceEnabled();
-      if (!isEnabled) {
-        isEnabled = await _location.requestService();
-      }
-    } on PlatformException catch (err) {
-      print(err.message);
-      isEnabled = false;
-      await checkService();
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
     }
-    return isEnabled;
-  }
+    final position = await Geolocator.getCurrentPosition();
+    final place = await placemarkFromCoordinates(
+        position.latitude, position.longitude,
+        localeIdentifier: 'en_US');
 
-  Future<LocationData?> getLocation() async {
-    if (await checkPermission()) {
-      final locationData = _location.getLocation();
-      return locationData;
-    }
-    return null;
-  }
-
-  Future<geo.Placemark?> getPlaceMark(
-      {required LocationData locationData}) async {
-    final List<geo.Placemark> placeMarks = await geo.placemarkFromCoordinates(
-      locationData.latitude!,
-      locationData.longitude!,
-    );
-    // ignore: unnecessary_null_comparison
-    if (placeMarks != null && placeMarks.isNotEmpty) {
-      return placeMarks[0];
-    }
-    return null;
+    return [place[0].locality!, place[0].country!];
   }
 }

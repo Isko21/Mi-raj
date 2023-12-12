@@ -40,7 +40,7 @@ class TextInput extends StatelessWidget {
           icon.icon,
           color: color,
         ),
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
       ),
     );
   }

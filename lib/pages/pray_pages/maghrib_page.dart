@@ -1,6 +1,4 @@
-import 'package:muslim_today/components/shared_pref.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_today/components/appbar.dart';
 import 'package:flutter/services.dart';
 
 import '../../components/properties.dart';
@@ -9,16 +7,18 @@ import '../../tasbihs/duas.dart';
 import 'dhuhr_page.dart';
 
 class Maghrib extends StatefulWidget {
+  const Maghrib({Key? key}) : super(key: key);
+
   @override
   State<Maghrib> createState() => _MaghribState();
 }
 
 class _MaghribState extends State<Maghrib> {
+  bool isArabic = false;
   @override
   void initState() {
     super.initState();
     getName();
-    isArabic = AllUserData.getLang();
   }
 
   List<String> list = <String>[];
@@ -35,18 +35,6 @@ class _MaghribState extends State<Maghrib> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white70,
-      appBar: AppBarWithSetState(
-          title: "Maghrib",
-          change: (int a) {
-            setState(() {
-              if (a == 1) {
-                isArabic = true;
-              } else {
-                isArabic = false;
-              }
-              AllUserData.setLang(isArabic);
-            });
-          }),
       body: Container(
         color: white.withAlpha(100),
         child: ListView(
@@ -165,15 +153,15 @@ class _MaghribState extends State<Maghrib> {
             divider(),
             Container(
               padding: isArabic
-                  ? EdgeInsets.fromLTRB(5, 0, 10, 10)
-                  : EdgeInsets.fromLTRB(5, 5, 5, 10),
+                  ? const EdgeInsets.fromLTRB(5, 0, 10, 10)
+                  : const EdgeInsets.fromLTRB(5, 5, 5, 10),
               child: Column(
                 children: <Widget>[
                   if (true)
                     Padding(
                       padding: isArabic
-                          ? EdgeInsets.all(0)
-                          : EdgeInsets.symmetric(vertical: 15),
+                          ? const EdgeInsets.all(0)
+                          : const EdgeInsets.symmetric(vertical: 15),
                       child: isArabic
                           ? Image.asset(
                               'assets/img/bismi.png',
@@ -185,10 +173,10 @@ class _MaghribState extends State<Maghrib> {
                                   color: black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 21,
-                                  fontFamily: 'Comfortaa')),
+                                  fontFamily: 'OpenSans')),
                     ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 15),
                     child: !isArabic
                         ? Yaa(list: list)
                         : Text(

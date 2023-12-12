@@ -1,4 +1,3 @@
-import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/appbar.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:muslim_today/controller/quran_controller.dart';
@@ -45,88 +44,86 @@ class _SurahIndexState extends State<SurahIndex> {
                     },
                     itemCount: _surahs!.length,
                     itemBuilder: (context, index) {
-                      return WidgetAnimator(
-                        child: InkWell(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SurahAyats(
-                                ayatsList: _surahs![index].ayahs,
-                                surahName: _surahs![index].name,
-                                surahEnglishName: _surahs![index].englishName,
-                                englishMeaning:
-                                    _surahs![index].englishNameTranslation,
+                      return InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SurahAyats(
+                              ayatsList: _surahs![index].ayahs,
+                              surahName: _surahs![index].name,
+                              surahEnglishName: _surahs![index].englishName,
+                              englishMeaning:
+                                  _surahs![index].englishNameTranslation,
+                            ),
+                          ),
+                        ),
+                        onLongPress: () => _surahInforBox(index),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 15),
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: black),
+                            boxShadow: const [
+                              BoxShadow(
+                                  color: Colors.black,
+                                  blurRadius: 20.0,
+                                  offset: Offset(5, 5)),
+                              BoxShadow(color: Colors.white)
+                            ],
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(
+                                10,
                               ),
                             ),
                           ),
-                          onLongPress: () => _surahInforBox(index),
-                          child: Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 15),
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: black),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.black,
-                                    blurRadius: 20.0,
-                                    offset: Offset(5, 5)),
-                                BoxShadow(color: Colors.white)
-                              ],
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(
-                                  10,
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                        margin:
+                                            const EdgeInsets.only(right: 10),
+                                        height: 70,
+                                        width: 70,
+                                        decoration: BoxDecoration(
+                                            color: black,
+                                            image: const DecorationImage(
+                                              fit: BoxFit.cover,
+                                              opacity: 0.5,
+                                              image: AssetImage(
+                                                  'assets/img/quran_page.jpg'),
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.all(
+                                                    Radius.circular(20))),
+                                        child: Center(
+                                            child: Text(
+                                          _surahs![index].number.toString(),
+                                          style: getStyle(
+                                              21, Colors.white54, true),
+                                        ))),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "${_surahs![index].englishName}",
+                                          style: const TextStyle(fontSize: 18),
+                                        ),
+                                        Text(
+                                            "${_surahs![index].englishNameTranslation}"),
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                              ),
-                            ),
-                            child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                          margin: EdgeInsets.only(right: 10),
-                                          height: 70,
-                                          width: 70,
-                                          decoration: BoxDecoration(
-                                              color: black,
-                                              image: const DecorationImage(
-                                                fit: BoxFit.cover,
-                                                opacity: 0.5,
-                                                image: AssetImage(
-                                                    'assets/img/quran_page.jpg'),
-                                              ),
-                                              borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(20))),
-                                          child: Center(
-                                              child: Text(
-                                            _surahs![index].number.toString(),
-                                            style: getStyle(
-                                                21, Colors.white54, true),
-                                          ))),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "${_surahs![index].englishName}",
-                                            style: TextStyle(fontSize: 18),
-                                          ),
-                                          Text(
-                                              "${_surahs![index].englishNameTranslation}"),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  Text(
-                                    "${_surahs![index].name!.substring(7).trim()}",
-                                    style: TextStyle(
-                                        fontSize: 19, fontFamily: 'Noore'),
-                                  ),
-                                ]),
-                          ),
+                                Text(
+                                  _surahs![index].name!.substring(7).trim(),
+                                  style: const TextStyle(
+                                      fontSize: 19, fontFamily: 'Noore'),
+                                ),
+                              ]),
                         ),
                       );
                     },
@@ -153,18 +150,18 @@ class _SurahIndexState extends State<SurahIndex> {
 
   // getting data
   Future<void> _getSurahData() async {
-    SurahsList? _cacheSurahList = await _hiveBox.get('surahList');
-    if (_cacheSurahList == null || _cacheSurahList.surahs!.isEmpty) {
-      SurahsList _newSurahsList = await QuranAPI.getSurahList();
+    SurahsList? cacheSurahList = await _hiveBox.get('surahList');
+    if (cacheSurahList == null || cacheSurahList.surahs!.isEmpty) {
+      SurahsList newSurahsList = await QuranAPI.getSurahList();
       if (mounted) {
         setState(() {
-          _surahs = _newSurahsList.surahs;
+          _surahs = newSurahsList.surahs;
         });
       }
     } else {
       if (mounted) {
         setState(() {
-          _surahs = _cacheSurahList.surahs;
+          _surahs = cacheSurahList.surahs;
         });
       }
     }
@@ -241,7 +238,7 @@ class _SurahInformationState extends State<SurahInformation>
               children: <Widget>[
                 Text(
                   "Surah Information",
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 SizedBox(
                   height: height * 0.02,
@@ -251,11 +248,11 @@ class _SurahInformationState extends State<SurahInformation>
                   children: <Widget>[
                     Text(
                       widget.englishName!,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                     Text(
                       widget.arabicName!,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ],
                 ),

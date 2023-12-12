@@ -65,17 +65,3 @@ wait() {
   duration += const Duration(milliseconds: 100);
   return duration;
 }
-
-class WidgetAnimator extends StatelessWidget {
-  final Widget? child;
-
-  const WidgetAnimator({Key? key, this.child}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Animator(
-      child: child,
-      time: wait(),
-    );
-  }
-}

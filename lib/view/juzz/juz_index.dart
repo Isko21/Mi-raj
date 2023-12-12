@@ -1,4 +1,3 @@
-import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/appbar.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:muslim_today/controller/quran_controller.dart';
@@ -19,10 +18,10 @@ class _JuzIndexState extends State<JuzIndex> {
 
   // getting all Juz once!
   Future<void> _getAllJuzHiveBox() async {
-    bool? _check = await _hive.get('isJuzIndexed');
+    bool? check = await _hive.get('isJuzIndexed');
 
     // putting values
-    if (_check == null || !_check) {
+    if (check == null || !check) {
       for (int i = 1; i <= 30; i++) {
         // create box
         await QuranAPI.getJuzz(i);
@@ -47,59 +46,56 @@ class _JuzIndexState extends State<JuzIndex> {
         child: SafeArea(
             child: Stack(
           children: <Widget>[
-            Container(
-              child: GridView.builder(
-                itemCount: 30,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3),
-                itemBuilder: (context, index) {
-                  return WidgetAnimator(
-                    child: GestureDetector(
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Juz(juzIndex: index + 1),
+            GridView.builder(
+              itemCount: 30,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3),
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Juz(juzIndex: index + 1),
+                    ),
+                  ),
+                  child: Container(
+                    margin: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20))),
+                    padding: const EdgeInsets.all(15),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: black),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 20.0,
+                              offset: Offset(5, 5)),
+                          BoxShadow(color: Colors.white)
+                        ],
+                        color: black,
+                        image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          opacity: 0.5,
+                          image: AssetImage('assets/img/quran_page.jpg'),
                         ),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20)),
                       ),
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: white,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        padding: EdgeInsets.all(15),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(color: black),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black,
-                                  blurRadius: 20.0,
-                                  offset: Offset(5, 5)),
-                              BoxShadow(color: Colors.white)
-                            ],
-                            color: black,
-                            image: const DecorationImage(
-                              fit: BoxFit.cover,
-                              opacity: 0.5,
-                              image: AssetImage('assets/img/quran_page.jpg'),
-                            ),
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                          ),
-                          alignment: Alignment.center,
-                          child: Text(
-                            "${index + 1}",
-                            style: TextStyle(
-                                fontSize: 21,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "${index + 1}",
+                        style: const TextStyle(
+                            fontSize: 21,
+                            color: Colors.white70,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
           ],
         )),

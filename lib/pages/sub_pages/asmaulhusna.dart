@@ -8,7 +8,7 @@ class AsMaulHusna extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: black.withAlpha(50),
+      backgroundColor: colorBg,
       appBar: AppBarCustom(title: 'Al Asma Ul Husna', elevation: 1),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -17,7 +17,7 @@ class AsMaulHusna extends StatelessWidget {
             itemCount: 99,
             itemBuilder: (context, index) {
               return Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: ListTile(
                   title: Text(names[index].eng,
                       style: TextStyle(color: white.withAlpha(200))),
@@ -39,7 +39,7 @@ class AsMaulHusna extends StatelessWidget {
 }
 
 class AlHusna {
-  final ar, tr, eng;
+  final String ar, tr, eng;
   AlHusna({required this.tr, required this.eng, required this.ar});
 }
 

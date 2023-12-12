@@ -1,4 +1,3 @@
-import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/appbar.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:muslim_today/controller/quran_controller.dart';
@@ -55,20 +54,20 @@ class _JuzState extends State<Juz> {
 
   // getting data
   Future<void> _getJuzData() async {
-    JuzList? _cacheJuzList = await _hive.get('juzList${widget.juzIndex}');
+    JuzList? cacheJuzList = await _hive.get('juzList${widget.juzIndex}');
 
-    if (_cacheJuzList == null || _cacheJuzList.juzAyahs!.isEmpty) {
-      JuzList _newJuzList = await QuranAPI.getJuzz(widget.juzIndex);
+    if (cacheJuzList == null || cacheJuzList.juzAyahs!.isEmpty) {
+      JuzList newJuzList = await QuranAPI.getJuzz(widget.juzIndex);
 
       if (mounted) {
         setState(() {
-          _juzAyahs = _newJuzList.juzAyahs;
+          _juzAyahs = newJuzList.juzAyahs;
         });
       }
     } else {
       if (mounted) {
         setState(() {
-          _juzAyahs = _cacheJuzList.juzAyahs;
+          _juzAyahs = cacheJuzList.juzAyahs;
         });
       }
     }
@@ -90,25 +89,23 @@ class JuzAyahsBuilder extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: juzAyahs!.length,
       itemBuilder: (context, index) {
-        return WidgetAnimator(
-          child: ListTile(
-            title: Text(juzAyahs![index].ayahsText ?? '',
-                textAlign: TextAlign.right,
+        return ListTile(
+          title: Text(juzAyahs![index].ayahsText ?? '',
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: black,
+                  fontFamily: 'Noore')),
+          trailing: CircleAvatar(
+            radius: MediaQuery.of(context).size.height * 0.018,
+            backgroundColor: const Color(0xff04364f),
+            child: CircleAvatar(
+              radius: MediaQuery.of(context).size.height * 0.017,
+              backgroundColor: Colors.white,
+              child: Text(
+                juzAyahs![index].ayahNumber.toString(),
                 style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.03,
-                    color: black,
-                    fontFamily: 'Noore')),
-            trailing: CircleAvatar(
-              radius: MediaQuery.of(context).size.height * 0.018,
-              backgroundColor: const Color(0xff04364f),
-              child: CircleAvatar(
-                radius: MediaQuery.of(context).size.height * 0.017,
-                backgroundColor: Colors.white,
-                child: Text(
-                  juzAyahs![index].ayahNumber.toString(),
-                  style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.height * 0.0135),
-                ),
+                    fontSize: MediaQuery.of(context).size.height * 0.0135),
               ),
             ),
           ),

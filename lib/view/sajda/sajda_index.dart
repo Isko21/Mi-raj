@@ -1,4 +1,3 @@
-import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/appbar.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:muslim_today/controller/quran_controller.dart';
@@ -46,95 +45,96 @@ class _SajdaIndexState extends State<SajdaIndex> {
                         return const SizedBox(height: 0);
                       },
                       itemBuilder: (context, index) {
-                        return WidgetAnimator(
-                          child: InkWell(
-                            onLongPress: () => _sajdaInfoBox(index),
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SajdaAyah(
-                                  surahName: _sajdas![index].surahName,
-                                  surahEnglishName:
-                                      _sajdas![index].surahEnglishName,
-                                  englishNameTranslation:
-                                      _sajdas![index].englishNameTranslation,
-                                  juz: _sajdas![index].juzNumber,
-                                  manzil: _sajdas![index].manzilNumber,
-                                  ruku: _sajdas![index].rukuNumber,
-                                  sajdaAyahs: _sajdas![index].text,
-                                  sajdaNumber: _sajdas![index].sajdaNumber,
-                                  revelationType:
-                                      _sajdas![index].revelationType,
-                                ),
+                        return InkWell(
+                          onLongPress: () => _sajdaInfoBox(index),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SajdaAyah(
+                                surahName: _sajdas![index].surahName,
+                                surahEnglishName:
+                                    _sajdas![index].surahEnglishName,
+                                englishNameTranslation:
+                                    _sajdas![index].englishNameTranslation,
+                                juz: _sajdas![index].juzNumber,
+                                manzil: _sajdas![index].manzilNumber,
+                                ruku: _sajdas![index].rukuNumber,
+                                sajdaAyahs: _sajdas![index].text,
+                                sajdaNumber: _sajdas![index].sajdaNumber,
+                                revelationType: _sajdas![index].revelationType,
                               ),
                             ),
-                            child: Container(
-                              padding: EdgeInsets.all(10),
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 15),
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: black),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Colors.black,
-                                        blurRadius: 20.0,
-                                        offset: Offset(5, 5)),
-                                    BoxShadow(color: Colors.white)
-                                  ],
-                                  color: white,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                            margin: EdgeInsets.only(right: 10),
-                                            height: 70,
-                                            width: 70,
-                                            decoration: BoxDecoration(
-                                                color: black,
-                                                image: const DecorationImage(
-                                                  fit: BoxFit.cover,
-                                                  opacity: 0.5,
-                                                  image: AssetImage(
-                                                      'assets/img/quran_page.jpg'),
-                                                ),
-                                                borderRadius:
-                                                    const BorderRadius.all(
-                                                        Radius.circular(20))),
-                                            child: Center(
-                                                child: Text(
-                                              "${_sajdas![index].sajdaNumber}",
-                                              style: getStyle(
-                                                  21, Colors.white54, true),
-                                            ))),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "${_sajdas![index].surahEnglishName}",
-                                              style: TextStyle(fontSize: 18),
-                                            ),
-                                            Text(
-                                              "${_sajdas![index].englishNameTranslation}",
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "${_sajdas![index].surahName!.substring(7).trim()}",
-                                      style: TextStyle(
-                                          fontSize: 19, fontFamily: 'Noore'),
-                                    ),
-                                  ]),
-                            ),
+                          ),
+                          child: Container(
+                            padding: const EdgeInsets.all(10),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 15),
+                            decoration: BoxDecoration(
+                                border: Border.all(color: black),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 20.0,
+                                      offset: Offset(5, 5)),
+                                  BoxShadow(color: Colors.white)
+                                ],
+                                color: white,
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(10))),
+                            child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                          margin:
+                                              const EdgeInsets.only(right: 10),
+                                          height: 70,
+                                          width: 70,
+                                          decoration: BoxDecoration(
+                                              color: black,
+                                              image: const DecorationImage(
+                                                fit: BoxFit.cover,
+                                                opacity: 0.5,
+                                                image: AssetImage(
+                                                    'assets/img/quran_page.jpg'),
+                                              ),
+                                              borderRadius:
+                                                  const BorderRadius.all(
+                                                      Radius.circular(20))),
+                                          child: Center(
+                                              child: Text(
+                                            "${_sajdas![index].sajdaNumber}",
+                                            style: getStyle(
+                                                21, Colors.white54, true),
+                                          ))),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "${_sajdas![index].surahEnglishName}",
+                                            style:
+                                                const TextStyle(fontSize: 18),
+                                          ),
+                                          Text(
+                                            "${_sajdas![index].englishNameTranslation}",
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    _sajdas![index]
+                                        .surahName!
+                                        .substring(7)
+                                        .trim(),
+                                    style: const TextStyle(
+                                        fontSize: 19, fontFamily: 'Noore'),
+                                  ),
+                                ]),
                           ),
                         );
                       },
@@ -148,20 +148,20 @@ class _SajdaIndexState extends State<SajdaIndex> {
 
   // gettin data
   Future<void> _getSajdaData() async {
-    SajdaList? _cacheSajdaList = await _hive.get('sajdaList');
+    SajdaList? cacheSajdaList = await _hive.get('sajdaList');
 
-    if (_cacheSajdaList == null || _cacheSajdaList.sajdaAyahs!.isEmpty) {
-      SajdaList _newSajdaList = await QuranAPI.getSajda();
+    if (cacheSajdaList == null || cacheSajdaList.sajdaAyahs!.isEmpty) {
+      SajdaList newSajdaList = await QuranAPI.getSajda();
 
       if (mounted) {
         setState(() {
-          _sajdas = _newSajdaList.sajdaAyahs;
+          _sajdas = newSajdaList.sajdaAyahs;
         });
       }
     } else {
       if (mounted) {
         setState(() {
-          _sajdas = _cacheSajdaList.sajdaAyahs;
+          _sajdas = cacheSajdaList.sajdaAyahs;
         });
       }
     }
@@ -254,7 +254,7 @@ class _SajdaInformationState extends State<SajdaInformation>
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Text("Sajda Information",
-                    style: Theme.of(context).textTheme.headline5),
+                    style: Theme.of(context).textTheme.headlineSmall),
                 SizedBox(
                   height: height * 0.02,
                 ),
@@ -263,11 +263,11 @@ class _SajdaInformationState extends State<SajdaInformation>
                   children: <Widget>[
                     Text(
                       widget.surahEnglishName!,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                     Text(
                       widget.surahName!,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ],
                 ),

@@ -1,11 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:flutter/material.dart';
-import '../animations/bottom_animation.dart';
+import 'package:provider/provider.dart';
+import '../components/appbar.dart';
+import '../model/pray_time/prayer_time.dart';
 import 'home.dart';
 
 class PrayTimes extends StatefulWidget {
-  PrayTimes({Key? key}) : super(key: key);
+  const PrayTimes({Key? key}) : super(key: key);
 
   @override
   State<PrayTimes> createState() => _PrayTimesState();
@@ -13,17 +15,22 @@ class PrayTimes extends StatefulWidget {
 
 class _PrayTimesState extends State<PrayTimes> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      padding: EdgeInsets.only(top: 30),
-      color: color.withAlpha(50),
-      child: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: colorBg,
+      appBar: AppBarCustom(title: "Mi'raj", elevation: 0),
+      body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Image.asset(
@@ -31,7 +38,7 @@ class _PrayTimesState extends State<PrayTimes> {
               height: MediaQuery.of(context).size.height * 0.25,
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Container(
                 decoration: BoxDecoration(
                     boxShadow: [
@@ -39,73 +46,75 @@ class _PrayTimesState extends State<PrayTimes> {
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 2),
+                        offset: const Offset(0, 2),
                       )
                     ],
                     color: Colors.white70,
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: Column(children: [
-                  WidgetAnimator(
-                      child: LinePrayer(
-                          pray: getTime(prayerTimes.fajr), title: 'Fajr')),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Divider(
-                      color: black,
-                    ),
-                  ),
-                  WidgetAnimator(
-                      child: LinePrayer(
-                          pray: getTime(prayerTimes.sunrise),
-                          title: 'Sunrise')),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Divider(
-                      color: black,
-                    ),
-                  ),
-                  WidgetAnimator(
-                      child: LinePrayer(
-                          pray: getTime(prayerTimes.dhuhr), title: 'Dhuhr')),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Divider(
-                      color: black,
-                    ),
-                  ),
-                  WidgetAnimator(
-                      child: LinePrayer(
-                          pray: getTime(prayerTimes.asr), title: 'Asr')),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Divider(
-                      color: black,
-                    ),
-                  ),
-                  WidgetAnimator(
-                      child: LinePrayer(
-                          pray: getTime(prayerTimes.maghrib),
-                          title: 'Maghrib')),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Divider(
-                      color: black,
-                    ),
-                  ),
-                  WidgetAnimator(
-                      child: LinePrayer(
-                          pray: getTime(prayerTimes.isha), title: 'Isha')),
-                ]),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))),
+                child: Consumer<PrayerTimingsProvider>(
+                  builder: (context, prayerTimingsProvider, _) {
+                    if (prayerTimingsProvider.prayerTimings == null) {
+                      return const CircularProgressIndicator.adaptive();
+                    } else {
+                      return Column(children: [
+                        LinePrayer(
+                            pray: prayerTimingsProvider
+                                .prayerTimings!.data!.timings.fajr,
+                            title: 'Fajr'),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Divider(
+                            color: black,
+                          ),
+                        ),
+                        LinePrayer(
+                            pray: prayerTimingsProvider.sunrise!,
+                            title: 'Sunrise'),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Divider(
+                            color: black,
+                          ),
+                        ),
+                        LinePrayer(
+                            pray: prayerTimingsProvider.dhuhr!, title: 'Dhuhr'),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Divider(
+                            color: black,
+                          ),
+                        ),
+                        LinePrayer(
+                            pray: prayerTimingsProvider.asr!, title: 'Asr'),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Divider(
+                            color: black,
+                          ),
+                        ),
+                        LinePrayer(
+                            pray: prayerTimingsProvider.maghrib!,
+                            title: 'Maghrib'),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Divider(
+                            color: black,
+                          ),
+                        ),
+                        LinePrayer(
+                            pray: prayerTimingsProvider.isha!, title: 'Isha'),
+                      ]);
+                    }
+                  },
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-              child: WidgetAnimator(
-                child: AutoSizeText(
-                    'The best act of man is namaz.\nThe best namaz is the timely namaz.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: white)),
-              ),
+              child: AutoSizeText(
+                  'The best act of man is namaz.\nThe best namaz is the timely namaz.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: white)),
             )
           ],
         ),

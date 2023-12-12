@@ -1,97 +1,63 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AllUserData {
-  // ignore: unused_field
   static late SharedPreferences _preferences;
 
-  static Future init() async =>
+  static Future<void> init() async =>
       _preferences = await SharedPreferences.getInstance();
 
-  static Future setPrayers(String name, int value) async =>
-      await _preferences.setInt(name, value);
+  static void setPrayers(String name, int value) =>
+      _preferences.setInt(name, value);
 
-  static int getPrayers(String name) {
-    return _preferences.getInt(name) ?? 0;
-  }
+  static int getPrayers(String name) => _preferences.getInt(name) ?? 0;
 
-  static Future setBool(String key, bool value) async =>
-      await _preferences.setBool(key, value);
+  static void setBool(String key, bool value) =>
+      _preferences.setBool(key, value);
+
   static bool getBool(String key) => _preferences.getBool(key) ?? false;
-  static void addPrayer(String name, int count) async {
-    setPrayers(name, getPrayers(name) + count);
-  }
 
-  static void subtractPrayer(String name, int count) async {
-    setPrayers(name, getPrayers(name) - count);
-  }
+  static void addPrayer(String name, int count) =>
+      setPrayers(name, getPrayers(name) + count);
 
-  static double getLatitude() {
-    return _preferences.getDouble("lat") ?? 0.0;
-  }
+  static void subtractPrayer(String name, int count) =>
+      setPrayers(name, getPrayers(name) - count);
 
-  static double getLongitude() {
-    return _preferences.getDouble("long") ?? 0.0;
-  }
+  static void setLocationData(String value, String key) =>
+      _preferences.setString(key, value);
 
-  static Future setLongitude(double value) async =>
-      await _preferences.setDouble("long", value);
+  static String getLocationData(String key) =>
+      _preferences.getString(key) ?? '';
 
-  static Future setLatitude(double value) async =>
-      await _preferences.setDouble("lat", value);
+  static void setVerse(String value, String key) =>
+      _preferences.setString(key, value);
 
-  static Future setLocationData(String value, String key) async =>
-      await _preferences.setString(key, value);
+  static String getVerse(String key) => _preferences.getString(key) ?? '';
 
-  static String getLocationData(String key) {
-    return _preferences.getString(key) ?? '';
-  }
+  static void setVerseDate(int value) => _preferences.setInt('date', value);
 
-  static Future setVerse(String value, String key) async =>
-      await _preferences.setString(key, value);
+  static int getVerseDate() => _preferences.getInt('date') ?? 0;
 
-  static String getVerse(String key) {
-    return _preferences.getString(key) ?? '';
-  }
+  static void setSurahName(String value) =>
+      _preferences.setString('surah', value);
 
-  static Future setVerseDate(int value) async =>
-      await _preferences.setInt('date', value);
+  static String getSurahName() => _preferences.getString('surah') ?? '';
 
-  static int getVerseDate() {
-    return _preferences.getInt('date') ?? 0;
-  }
+  static void setVerseAudio(String value) =>
+      _preferences.setString('audio', value);
 
-  static Future setSurahName(String value) async =>
-      await _preferences.setString('surah', value);
+  static String getVerseAudio() => _preferences.getString('audio') ?? '';
 
-  static String getSurahName() {
-    return _preferences.getString('surah') ?? '';
-  }
+  static void setInstallDate(String value) =>
+      _preferences.setString('data', value);
 
-  static Future setVerseAudio(String value) async =>
-      await _preferences.setString('audio', value);
+  static String getInstallDate() => _preferences.getString('data') ?? '';
 
-  static String getVerseAudio() {
-    return _preferences.getString('audio') ?? '';
-  }
+  static void setLang(bool lang) => _preferences.setBool('lang', lang);
 
-  static Future setInstallDate(String value) async =>
-      await _preferences.setString('data', value);
+  static bool getLang() => _preferences.getBool('lang') ?? true;
 
-  static String getInstallDate() {
-    return _preferences.getString('data') ?? '';
-  }
+  static void setInteget(String key, int value) =>
+      _preferences.setInt(key, value);
 
-  static Future setLang(bool lang) async =>
-      await _preferences.setBool('lang', lang);
-
-  static bool getLang() {
-    return _preferences.getBool('lang') ?? true;
-  }
-
-  static Future setInteget(String key, int value) async =>
-      await _preferences.setInt(key, value);
-
-  static int getInteger(String key) {
-    return _preferences.getInt(key) ?? 0;
-  }
+  static int getInteger(String key) => _preferences.getInt(key) ?? 0;
 }

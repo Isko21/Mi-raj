@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:async';
 import 'dart:math' show pi;
 import 'package:muslim_today/components/appbar.dart';
@@ -10,6 +12,8 @@ import 'package:geolocator/geolocator.dart';
 import '../../components/location_error.dart';
 
 class QiblaCompass extends StatefulWidget {
+  const QiblaCompass({Key? key}) : super(key: key);
+
   @override
   _QiblaCompassState createState() => _QiblaCompassState();
 }
@@ -30,7 +34,7 @@ class _QiblaCompassState extends State<QiblaCompass> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarCustom(title: 'Qibla', elevation: 1),
-      backgroundColor: black.withAlpha(50),
+      backgroundColor: colorBg,
       body: Container(
         color: color.withAlpha(50),
         alignment: Alignment.center,
@@ -38,8 +42,9 @@ class _QiblaCompassState extends State<QiblaCompass> {
         child: StreamBuilder(
           stream: stream,
           builder: (context, AsyncSnapshot<LocationStatus> snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting)
-              return CircularProgressIndicator.adaptive();
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const CircularProgressIndicator.adaptive();
+            }
             if (snapshot.data?.enabled == true) {
               switch (snapshot.data?.status) {
                 case LocationPermission.always:
@@ -83,8 +88,9 @@ class _QiblaCompassState extends State<QiblaCompass> {
       await FlutterQiblah.requestPermissions();
       final s = await FlutterQiblah.checkLocationStatus();
       _locationStreamController.sink.add(s);
-    } else
+    } else {
       _locationStreamController.sink.add(locationStatus);
+    }
   }
 
   @override
@@ -98,27 +104,28 @@ class _QiblaCompassState extends State<QiblaCompass> {
 class QiblahCompassWidget extends StatelessWidget {
   final _kaabaSvg = SvgPicture.asset('assets/img/kaaba_qibla.svg');
 
+  QiblahCompassWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: FlutterQiblah.qiblahStream,
       builder: (_, AsyncSnapshot<QiblahDirection> snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting)
-          return CircularProgressIndicator.adaptive();
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator.adaptive();
+        }
 
         final qiblahDirection = snapshot.data;
-        var _angle = ((qiblahDirection!.qiblah) * (pi / 180) * -1);
+        var angle = ((qiblahDirection!.qiblah) * (pi / 180) * -1);
         return Stack(
           alignment: Alignment.center,
           children: <Widget>[
             Transform.rotate(
-              angle: _angle,
-              child: SvgPicture.asset('assets/img/circle.svg', // compass
-                  color: color),
+              angle: angle,
+              child: SvgPicture.asset('assets/img/circle.svg', color: color),
             ),
             _kaabaSvg,
-            SvgPicture.asset('assets/img/pointer.svg', //needle
-                color: color),
+            SvgPicture.asset('assets/img/pointer.svg', color: color),
           ],
         );
       },

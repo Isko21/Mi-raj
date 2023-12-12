@@ -5,11 +5,10 @@ import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-import '../../animations/bottom_animation.dart';
 import '../../tasbihs/duas.dart';
 
 class TasbihCounter extends StatefulWidget {
-  TasbihCounter({Key? key}) : super(key: key);
+  const TasbihCounter({Key? key}) : super(key: key);
 
   @override
   State<TasbihCounter> createState() => TasbihCounterState();
@@ -17,13 +16,14 @@ class TasbihCounter extends StatefulWidget {
 
 class TasbihCounterState extends State<TasbihCounter>
     with SingleTickerProviderStateMixin {
+  int loop = 10;
   double pointer = 0;
   double slider = 0;
   @override
   void initState() {
     super.initState();
-    loop = AllUserData.getInteger('loop');
-    tabController = new TabController(length: 2, vsync: this);
+    // loop = AllUserData.getInteger('loop');
+    tabController = TabController(length: 2, vsync: this);
   }
 
   late TabController tabController;
@@ -32,26 +32,23 @@ class TasbihCounterState extends State<TasbihCounter>
     return Scaffold(
       backgroundColor: black.withAlpha(50),
       appBar: AppBar(
-          centerTitle: true,
-          elevation: 1,
-          backgroundColor: colorStr,
-          bottom: TabBar(
-            controller: tabController,
-            tabs: [
-              WidgetAnimator(child: Tab(text: 'Classic')),
-              WidgetAnimator(
-                child: Tab(
-                  text: 'Infinity',
-                  icon: Icon(FontAwesomeIcons.infinity),
-                ),
-              )
-            ],
-          ),
-          title: WidgetAnimator(
-            child: Text('Tasbih Counter',
-                style: TextStyle(
-                    color: white, fontWeight: FontWeight.bold, fontSize: 31)),
-          )),
+        centerTitle: true,
+        elevation: 1,
+        backgroundColor: colorStr,
+        bottom: TabBar(
+          controller: tabController,
+          tabs: const [
+            Tab(text: 'Classic'),
+            Tab(
+              text: 'Infinity',
+              icon: Icon(FontAwesomeIcons.infinity),
+            )
+          ],
+        ),
+        title: Text('Tasbih Counter',
+            style: TextStyle(
+                color: white, fontWeight: FontWeight.bold, fontSize: 31)),
+      ),
       body: TabBarView(
         controller: tabController,
         children: [
@@ -65,55 +62,43 @@ class TasbihCounterState extends State<TasbihCounter>
                 if (pointer <= 32)
                   Column(
                     children: [
-                      WidgetAnimator(
-                        child: Text(
-                          subhanaAllohAR,
-                          style: TextStyle(
-                              color: white, fontSize: 28, fontFamily: 'Noore'),
-                        ),
+                      Text(
+                        subhanaAllohAR,
+                        style: TextStyle(
+                            color: white, fontSize: 28, fontFamily: 'Noore'),
                       ),
-                      WidgetAnimator(
-                        child: Text(
-                          subhanaAllohRU,
-                          style: TextStyle(color: white, fontSize: 21),
-                        ),
+                      Text(
+                        subhanaAllohRU,
+                        style: TextStyle(color: white, fontSize: 21),
                       ),
                     ],
                   )
                 else if (pointer >= 33 && pointer <= 65)
                   Column(
                     children: [
-                      WidgetAnimator(
-                        child: Text(
-                          alhamdulillahAR,
-                          style: TextStyle(
-                              color: white, fontSize: 28, fontFamily: 'Noore'),
-                        ),
+                      Text(
+                        alhamdulillahAR,
+                        style: TextStyle(
+                            color: white, fontSize: 28, fontFamily: 'Noore'),
                       ),
-                      WidgetAnimator(
-                        child: Text(
-                          alhamdulillahRU,
-                          style: TextStyle(color: white, fontSize: 21),
-                        ),
+                      Text(
+                        alhamdulillahRU,
+                        style: TextStyle(color: white, fontSize: 21),
                       ),
                     ],
                   )
                 else if (pointer >= 66 && pointer <= 98)
                   Column(
                     children: [
-                      WidgetAnimator(
-                        child: Text(
-                          AllohuAkbarAR,
-                          style: TextStyle(
-                              color: white, fontSize: 28, fontFamily: 'Noore'),
-                        ),
+                      Text(
+                        AllohuAkbarAR,
+                        style: TextStyle(
+                            color: white, fontSize: 28, fontFamily: 'Noore'),
                       ),
-                      WidgetAnimator(
-                        child: Text(
-                          AllohuAkbarRU,
-                          style: TextStyle(color: white, fontSize: 21),
-                        ),
-                      )
+                      Text(
+                        AllohuAkbarRU,
+                        style: TextStyle(color: white, fontSize: 21),
+                      ),
                     ],
                   )
                 else if (pointer > 98)
@@ -122,25 +107,19 @@ class TasbihCounterState extends State<TasbihCounter>
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 5),
-                        child: WidgetAnimator(
-                          child: Text(
-                            'آَاِلٰهَ اِلاَّاللّٰهُ وَحْدَهُ لاَشَرِ يكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلٰى كُلِّ شَىْءٍقَدِيرٌ',
-                            textDirection: TextDirection.rtl,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: white,
-                                fontSize: 25,
-                                fontFamily: 'Noore'),
-                          ),
+                        child: Text(
+                          'آَاِلٰهَ اِلاَّاللّٰهُ وَحْدَهُ لاَشَرِ يكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلٰى كُلِّ شَىْءٍقَدِيرٌ',
+                          textDirection: TextDirection.rtl,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: white, fontSize: 25, fontFamily: 'Noore'),
                         ),
                       ),
-                      WidgetAnimator(
-                        child: Text(
-                          "Лаа илааха иллаллооху вахдахуу лаа шарийка лах, ва хува 'алаа кулли  шай-ин кодиир.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: white, fontSize: 17),
-                        ),
-                      )
+                      Text(
+                        "Лаа илааха иллаллооху вахдахуу лаа шарийка лах, ва хува 'алаа кулли  шай-ин кодиир.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: white, fontSize: 17),
+                      ),
                     ],
                   ),
                 Center(
@@ -171,21 +150,17 @@ class TasbihCounterState extends State<TasbihCounter>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  WidgetAnimator(
-                                    child: Text(
-                                      '${pointer.round().toInt()}',
-                                      style:
-                                          TextStyle(fontSize: 40, color: white),
-                                    ),
+                                  Text(
+                                    '${pointer.round().toInt()}',
+                                    style:
+                                        TextStyle(fontSize: 40, color: white),
                                   ),
-                                  SizedBox(height: 20),
-                                  WidgetAnimator(
-                                    child: Text(
-                                      'loop: $loop',
-                                      textAlign: TextAlign.center,
-                                      style:
-                                          TextStyle(fontSize: 25, color: white),
-                                    ),
+                                  const SizedBox(height: 20),
+                                  Text(
+                                    'loop: $loop',
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        TextStyle(fontSize: 25, color: white),
                                   ),
                                 ],
                               ))
@@ -229,7 +204,7 @@ class TasbihCounterState extends State<TasbihCounter>
             child: Container(
               color: color.withAlpha(50),
               child: Center(
-                child: Container(
+                child: SizedBox(
                   height: 350,
                   child: SfRadialGauge(
                     axes: <RadialAxis>[
@@ -255,12 +230,10 @@ class TasbihCounterState extends State<TasbihCounter>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  WidgetAnimator(
-                                    child: Text(
-                                      '${slider.round().toInt()}',
-                                      style:
-                                          TextStyle(fontSize: 50, color: white),
-                                    ),
+                                  Text(
+                                    '${slider.round().toInt()}',
+                                    style:
+                                        TextStyle(fontSize: 50, color: white),
                                   ),
                                 ],
                               ))

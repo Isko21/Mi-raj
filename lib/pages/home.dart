@@ -1,17 +1,18 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:convert';
 import 'dart:math';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:muslim_today/animations/bottom_animation.dart';
-import 'package:muslim_today/components/header.dart';
-import 'package:muslim_today/components/verses.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:muslim_today/components/shared_pref.dart';
 import 'package:http/http.dart' as http;
 
+import '../components/appbar.dart';
+import '../components/header.dart';
+import '../components/verses.dart';
+
 class HomePage extends StatefulWidget {
-  HomePage({
+  const HomePage({
     Key? key,
   }) : super(key: key);
 
@@ -20,25 +21,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String dailyAyatAR = '';
+  String dailyAyatEN = '';
+  String dailyAyatSurah = '';
+  int dailyVerseDate = 0;
+  String dailyVerseUrl = '';
+  String city = '';
+  String country = '';
   @override
   void initState() {
     super.initState();
-    print(user);
-    dailyAyatAR = AllUserData.getVerse('ar');
-    dailyAyatEN = AllUserData.getVerse('en');
-    dailyAyatSurah = AllUserData.getSurahName();
-    dailyVerseDate = AllUserData.getVerseDate();
-    dailyVerseUrl = AllUserData.getVerseAudio();
+    String dailyAyatAR = AllUserData.getVerse('ar');
+    String dailyAyatEN = AllUserData.getVerse('en');
+    String dailyAyatSurah = AllUserData.getSurahName();
+    int dailyVerseDate = AllUserData.getVerseDate();
+    String dailyVerseUrl = AllUserData.getVerseAudio();
+    String city = AllUserData.getLocationData('city');
+    String country = AllUserData.getLocationData('country');
     if (dailyVerseDate != DateTime.now().day) {
       Random random = Random();
-      ayat = random.nextInt(6236);
+      int ayat = random.nextInt(6236);
       getRandomAyat(ayat);
     }
-    city = AllUserData.getLocationData('city');
-    country = AllUserData.getLocationData('country');
-    long = AllUserData.getLongitude();
-    lat = AllUserData.getLatitude();
-    getPrayer();
   }
 
   void getRandomAyat(int ayat) async {
@@ -67,20 +71,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      color: color.withAlpha(50),
-      child: SingleChildScrollView(
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: colorBg,
+      appBar: AppBarCustom(title: "Mi'raj", elevation: 0),
+      body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Header(),
-            WidgetAnimator(child: ToolsRow()),
-            WidgetAnimator(
-              child: DailyVerse(
-                url: dailyVerseUrl,
-              ),
-            ),
+            const Header(),
+            const ToolsRow(),
+            DailyVerse(url: dailyVerseUrl),
           ],
         ),
       ),
@@ -107,11 +108,11 @@ class LinePrayer extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
           Text(
             pray,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
         ],
       ),

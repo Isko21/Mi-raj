@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'properties.dart';
 
-// ignore: must_be_immutable
 class MissPrayer extends StatelessWidget {
-  MissPrayer({
+  const MissPrayer({
     Key? key,
     required this.title,
     required this.count,
@@ -12,10 +10,11 @@ class MissPrayer extends StatelessWidget {
     required this.plus,
   }) : super(key: key);
 
-  int count;
+  final int count;
   final String title;
-  final Function plus;
-  final Function minus;
+  final Function() plus;
+  final Function() minus;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,7 +31,7 @@ class MissPrayer extends StatelessWidget {
               MaterialButton(
                 color: color,
                 shape: const CircleBorder(),
-                onPressed: () => minus.call(),
+                onPressed: minus,
                 child: const Padding(
                   padding: EdgeInsets.all(5),
                   child: Text(
@@ -48,7 +47,7 @@ class MissPrayer extends StatelessWidget {
               MaterialButton(
                 color: color,
                 shape: const CircleBorder(),
-                onPressed: () => plus.call(),
+                onPressed: plus,
                 child: const Padding(
                   padding: EdgeInsets.all(5),
                   child: Text(

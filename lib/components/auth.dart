@@ -1,11 +1,12 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_today/components/properties.dart';
 import '../main.dart';
 import '../pages/auth_pages/signin.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({
+  const MyHomePage({
     Key? key,
   }) : super(key: key);
 
@@ -20,11 +21,11 @@ class _MyHomePageState extends State<MyHomePage> {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
-            } else if (snapshot.hasData || isGuest) {
-              return LoggedIn();
+              return const Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasData) {
+              return const LoggedIn();
             }
-            return AuthPage();
+            return const AuthPage();
           },
         ),
       );
