@@ -1,8 +1,9 @@
-import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:muslim_today/widgets/calligraphy.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../components/appbar.dart';
 
 class QuranPage extends StatefulWidget {
   const QuranPage({
@@ -34,13 +35,13 @@ class _QuranPageState extends State<QuranPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      color: color.withAlpha(50),
-      child: AnimatedBuilder(
+    return Scaffold(
+      appBar: AppBarCustom(title: "Mi'raj", elevation: 0),
+      backgroundColor: colorBg,
+      body: AnimatedBuilder(
         animation: animationController,
         builder: (context, _) {
-          return MainScreen();
+          return const MainScreen();
         },
       ),
     );
@@ -52,15 +53,15 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          const Calligraphy(),
+          Calligraphy(),
           Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.max,
@@ -73,7 +74,7 @@ class MainScreen extends StatelessWidget {
               ),
             ),
           ),
-          WidgetAnimator(child: const AyahBottom()),
+          AyahBottom(),
         ],
       ),
     );
@@ -84,8 +85,9 @@ class CoolButtonIcon extends StatelessWidget {
   final String image;
   final String title;
   final String route;
-  CoolButtonIcon(
-      {required this.image, required this.title, required this.route});
+  const CoolButtonIcon(
+      {Key? key, required this.image, required this.title, required this.route})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -95,27 +97,23 @@ class CoolButtonIcon extends StatelessWidget {
             elevation: MaterialStateProperty.resolveWith((states) => 3),
             shadowColor:
                 MaterialStateColor.resolveWith((states) => Colors.black),
-            minimumSize:
-                MaterialStateProperty.resolveWith((states) => Size(100, 60)),
+            minimumSize: MaterialStateProperty.resolveWith(
+                (states) => const Size(100, 60)),
             backgroundColor: MaterialStateColor.resolveWith((states) => color)),
         onPressed: () => Navigator.pushNamed(context, route),
-        child: WidgetAnimator(
-          child: Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  'assets/img/$image',
-                  height: 50,
-                ),
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                Icon(CupertinoIcons.right_chevron, color: white)
-              ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.asset(
+              'assets/img/$image',
+              height: 50,
             ),
-          ),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            Icon(CupertinoIcons.right_chevron, color: white)
+          ],
         ),
       ),
     );
@@ -123,7 +121,7 @@ class CoolButtonIcon extends StatelessWidget {
 }
 
 class CoolButton extends StatelessWidget {
-  CoolButton({Key? key, required this.title, required this.route})
+  const CoolButton({Key? key, required this.title, required this.route})
       : super(key: key);
   final String title;
   final String route;
@@ -136,15 +134,13 @@ class CoolButton extends StatelessWidget {
             elevation: MaterialStateProperty.resolveWith((states) => 3),
             shadowColor:
                 MaterialStateColor.resolveWith((states) => Colors.black),
-            minimumSize:
-                MaterialStateProperty.resolveWith((states) => Size(100, 60)),
+            minimumSize: MaterialStateProperty.resolveWith(
+                (states) => const Size(100, 60)),
             backgroundColor: MaterialStateColor.resolveWith((states) => color)),
         onPressed: () => Navigator.pushNamed(context, route),
-        child: WidgetAnimator(
-          child: Text(
-            title,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
+        child: Text(
+          title,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ),
     );

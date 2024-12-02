@@ -8,7 +8,7 @@ class Shahada extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: black.withAlpha(50),
+      backgroundColor: colorBg,
       appBar: AppBarCustom(
         elevation: 1,
         title: 'Shahada',
@@ -19,7 +19,7 @@ class Shahada extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   height: 300,
                   child: Image.asset('assets/img/shahada.png'),
                 ),

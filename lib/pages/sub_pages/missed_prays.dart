@@ -11,7 +11,7 @@ import '../../components/shared_pref.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class MissedPrays extends StatefulWidget {
-  MissedPrays({Key? key}) : super(key: key);
+  const MissedPrays({Key? key}) : super(key: key);
 
   @override
   State<MissedPrays> createState() => _MissedPraysState();
@@ -146,17 +146,17 @@ class _MissedPraysState extends State<MissedPrays>
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: black.withAlpha(50),
+      backgroundColor: colorBg,
       appBar: AppBarCustom(title: "Missed Prays", elevation: 1),
       body: Container(
         color: color.withAlpha(50),
         child: ListView(
           children: [
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: color.withAlpha(50),
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
+                  borderRadius: const BorderRadius.all(Radius.circular(20))),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Column(
@@ -271,14 +271,14 @@ class _MissedPraysState extends State<MissedPrays>
             ),
             Visibility(
               replacement: Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 child: ElevatedButton.icon(
                   style: ButtonStyle(
                     elevation: MaterialStateProperty.resolveWith((states) => 3),
                     shadowColor: MaterialStateColor.resolveWith(
                         (states) => Colors.black),
                     minimumSize: MaterialStateProperty.resolveWith(
-                        (states) => Size(100, 60)),
+                        (states) => const Size(100, 60)),
                     foregroundColor:
                         MaterialStateColor.resolveWith((states) => white),
                     backgroundColor:
@@ -291,10 +291,10 @@ class _MissedPraysState extends State<MissedPrays>
                       });
                     }
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     FontAwesomeIcons.calculator,
                   ),
-                  label: Text(
+                  label: const Text(
                     'Calculate your all missed prays',
                     style: TextStyle(
                       fontSize: 18,
@@ -308,9 +308,9 @@ class _MissedPraysState extends State<MissedPrays>
               maintainSize: isVisible,
               maintainState: isVisible,
               child: Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
+                margin: const EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderRadius: const BorderRadius.all(Radius.circular(20.0)),
                     color: colorStr.withAlpha(50)),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -325,7 +325,7 @@ class _MissedPraysState extends State<MissedPrays>
                                 AutoSizeText(getText(teenAge, 1), maxLines: 1),
                             onPressed: () => pickDate(context, 1)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
@@ -336,12 +336,12 @@ class _MissedPraysState extends State<MissedPrays>
                                 maxLines: 1),
                             onPressed: () => pickDate(context, 2)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       CupertinoButton(
                           color: colorStr,
-                          child: Text('Calculate'),
+                          child: const Text('Calculate'),
                           onPressed: () {
                             print(startPraying.difference(teenAge).inDays);
                             showDialog(

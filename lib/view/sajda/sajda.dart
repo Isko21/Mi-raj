@@ -1,4 +1,3 @@
-import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/appbar.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +100,7 @@ class InfoAppBar extends StatelessWidget {
           Text(englishNameTranslation!),
           Text(
             surahName!,
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.displayLarge,
           )
         ],
       ),
@@ -120,29 +119,27 @@ class Sajda extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WidgetAnimator(
-      child: ListTile(
-        trailing: CircleAvatar(
-          radius: MediaQuery.of(context).size.height * 0.013,
-          backgroundColor: const Color(0xff04364f),
-          child: CircleAvatar(
-              radius: MediaQuery.of(context).size.height * 0.012,
-              backgroundColor: Colors.white,
-              child: Text(
-                index.toString(),
-                style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.height * 0.015,
-                ),
-              )),
-        ),
-        title: Text(
-          ayah!,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: MediaQuery.of(context).size.height * 0.03,
-              color: black,
-              fontFamily: 'Noore'),
-        ),
+    return ListTile(
+      trailing: CircleAvatar(
+        radius: MediaQuery.of(context).size.height * 0.013,
+        backgroundColor: const Color(0xff04364f),
+        child: CircleAvatar(
+            radius: MediaQuery.of(context).size.height * 0.012,
+            backgroundColor: Colors.white,
+            child: Text(
+              index.toString(),
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.015,
+              ),
+            )),
+      ),
+      title: Text(
+        ayah!,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontSize: MediaQuery.of(context).size.height * 0.03,
+            color: black,
+            fontFamily: 'Noore'),
       ),
     );
   }
@@ -198,7 +195,7 @@ class InfoText extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Text(
-          leading! + ": ",
+          "${leading!}: ",
           style: TextStyle(
             color: Colors.white,
             fontSize: MediaQuery.of(context).size.height * 0.025,

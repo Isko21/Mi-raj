@@ -1,4 +1,3 @@
-import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
@@ -16,20 +15,22 @@ class LoadingShimmer extends StatelessWidget {
       highlightColor: const Color(0xfff9e9b8),
       enabled: true,
       child: Container(
-        width: width, 
+        width: width,
         height: height,
         color: Colors.transparent,
         padding: const EdgeInsets.all(8.0),
         child: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset('assets/img/ico.png', height: height * 0.1),
-            WidgetAnimator(
-                child: Text("Loading $text..!",
-                    style: TextStyle(fontSize: height * 0.02)))
-          ],
-        )),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.asset('assets/img/ico.png', height: height * 0.1),
+              Text(
+                "Loading $text..!",
+                style: TextStyle(fontSize: height * 0.02),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

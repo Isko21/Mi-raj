@@ -10,23 +10,24 @@ class QiblaDirection extends StatelessWidget {
     return FutureBuilder(
       future: _deviceSupport,
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting)
-          return Center(
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
             child: CircularProgressIndicator.adaptive(
               strokeWidth: 2,
             ),
           );
+        }
 
-        if (snapshot.hasError)
+        if (snapshot.hasError) {
           return Center(
             child: Text('Error: ${snapshot.error.toString()}'),
           );
-        if (snapshot.hasData)
-          return QiblaCompass();
-        else
-          return Container(
-            child: Text('Error'),
-          );
+        }
+        if (snapshot.hasData) {
+          return const QiblaCompass();
+        } else {
+          return const Text('Error');
+        }
       },
     );
   }

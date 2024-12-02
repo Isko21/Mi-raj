@@ -1,4 +1,3 @@
-import 'package:muslim_today/animations/bottom_animation.dart';
 import 'package:muslim_today/components/appbar.dart';
 import 'package:muslim_today/components/properties.dart';
 import 'package:muslim_today/model/ayat/ayat.dart';
@@ -42,41 +41,39 @@ class SurahAyats extends StatelessWidget {
   Widget line(double height, int index, double width) {
     return Padding(
       padding: EdgeInsets.fromLTRB(width * 0.015, 0, 0, 0),
-      child: WidgetAnimator(
-        child: Column(
-          children: [
-            if (index == 0 &&
-                surahEnglishName! != 'Al-Faatiha' &&
-                surahEnglishName! != 'At-Tawba')
-              Image.asset('assets/img/bismi.png', height: 120),
-            ListTile(
-              trailing: CircleAvatar(
-                radius: height * 0.013,
-                backgroundColor: const Color(0xff04364f),
-                child: CircleAvatar(
-                    radius: height * 0.012,
-                    backgroundColor: Colors.white,
-                    child: Text(
-                      ayatsList![index].number.toString(),
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(fontSize: height * 0.015),
-                    )),
-              ),
-              title: Text(
-                  surahEnglishName! != 'Al-Faatiha' &&
-                          surahEnglishName! != 'At-Tawba'
-                      ? index == 0
-                          ? ayatsList![index].text!.substring(38).trim()
-                          : ayatsList![index].text!
-                      : ayatsList![index].text!,
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                      fontSize: height * 0.033,
-                      color: black,
-                      fontFamily: 'Noore')),
+      child: Column(
+        children: [
+          if (index == 0 &&
+              surahEnglishName! != 'Al-Faatiha' &&
+              surahEnglishName! != 'At-Tawba')
+            Image.asset('assets/img/bismi.png', height: 120),
+          ListTile(
+            trailing: CircleAvatar(
+              radius: height * 0.013,
+              backgroundColor: const Color(0xff04364f),
+              child: CircleAvatar(
+                  radius: height * 0.012,
+                  backgroundColor: Colors.white,
+                  child: Text(
+                    ayatsList![index].number.toString(),
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(fontSize: height * 0.015),
+                  )),
             ),
-          ],
-        ),
+            title: Text(
+                surahEnglishName! != 'Al-Faatiha' &&
+                        surahEnglishName! != 'At-Tawba'
+                    ? index == 0
+                        ? ayatsList![index].text!.substring(38).trim()
+                        : ayatsList![index].text!
+                    : ayatsList![index].text!,
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                    fontSize: height * 0.033,
+                    color: black,
+                    fontFamily: 'Noore')),
+          ),
+        ],
       ),
     );
   }

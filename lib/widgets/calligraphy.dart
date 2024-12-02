@@ -7,7 +7,7 @@ class Calligraphy extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Center(
-      child: Image.asset("assets/img/reading.jpg", height: height * 0.4),
+      child: Image.asset("assets/img/reading.png", height: height * 0.4),
     );
   }
 }
